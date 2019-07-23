@@ -38,8 +38,8 @@
         }
     }
 
-    li {
-        a.active-menuitem-routerlink {
+    li:not(:first-child) {
+        > a.active-menuitem-routerlink {
             .menuitem-text {
                 color: $menuitemActiveTextColor;
             }

@@ -9758,10 +9758,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-light .layout-menu > li > .layout-submenu-container {
   background-color: #eeeeee;
 }
-.layout-menu-light .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-light .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #457fca;
 }
-.layout-menu-light .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-light .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #457fca;
 }
 .layout-menu-light .layout-menu li.active-menuitem > a .menuitem-text {
@@ -9870,10 +9870,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-dark .layout-menu > li > .layout-submenu-container {
   background-color: #373737;
 }
-.layout-menu-dark .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-dark .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #457fca;
 }
-.layout-menu-dark .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-dark .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #457fca;
 }
 .layout-menu-dark .layout-menu li.active-menuitem > a .menuitem-text {
@@ -9982,10 +9982,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-blue .layout-menu > li > .layout-submenu-container {
   background-color: #6a98d4;
 }
-.layout-menu-blue .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-blue .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-blue .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-blue .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-blue .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10094,10 +10094,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-ash .layout-menu > li > .layout-submenu-container {
   background-color: #667290;
 }
-.layout-menu-ash .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-ash .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #00BCD4;
 }
-.layout-menu-ash .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-ash .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #00BCD4;
 }
 .layout-menu-ash .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10206,10 +10206,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-kashmir .layout-menu > li > .layout-submenu-container {
   background-color: #8A6DAD;
 }
-.layout-menu-kashmir .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-kashmir .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-kashmir .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-kashmir .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-kashmir .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10318,10 +10318,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-orange .layout-menu > li > .layout-submenu-container {
   background-color: #E69E5A;
 }
-.layout-menu-orange .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-orange .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #D4E157;
 }
-.layout-menu-orange .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-orange .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #D4E157;
 }
 .layout-menu-orange .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10430,10 +10430,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-midnight .layout-menu > li > .layout-submenu-container {
   background-color: #575B5E;
 }
-.layout-menu-midnight .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-midnight .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #4FC3F7;
 }
-.layout-menu-midnight .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-midnight .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #4FC3F7;
 }
 .layout-menu-midnight .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10542,10 +10542,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-sunset .layout-menu > li > .layout-submenu-container {
   background-color: #DF7575;
 }
-.layout-menu-sunset .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-sunset .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-sunset .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-sunset .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-sunset .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10654,10 +10654,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-marley .layout-menu > li > .layout-submenu-container {
   background-color: #47A0C7;
 }
-.layout-menu-marley .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-marley .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-marley .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-marley .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-marley .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10766,10 +10766,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-harvey .layout-menu > li > .layout-submenu-container {
   background-color: #538C76;
 }
-.layout-menu-harvey .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-harvey .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-harvey .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-harvey .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-harvey .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10878,10 +10878,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-vanusa .layout-menu > li > .layout-submenu-container {
   background-color: #AE3F86;
 }
-.layout-menu-vanusa .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-vanusa .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-vanusa .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-vanusa .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-vanusa .layout-menu li.active-menuitem > a .menuitem-text {
@@ -10990,10 +10990,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-skyline .layout-menu > li > .layout-submenu-container {
   background-color: #4F74C0;
 }
-.layout-menu-skyline .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-skyline .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-skyline .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-skyline .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-skyline .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11102,10 +11102,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-royal .layout-menu > li > .layout-submenu-container {
   background-color: #566B91;
 }
-.layout-menu-royal .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-royal .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-royal .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-royal .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-royal .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11214,10 +11214,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-disco .layout-menu > li > .layout-submenu-container {
   background-color: #899DAA;
 }
-.layout-menu-disco .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-disco .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-disco .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-disco .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-disco .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11326,10 +11326,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-sky .layout-menu > li > .layout-submenu-container {
   background-color: #4BA1C5;
 }
-.layout-menu-sky .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-sky .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFB300;
 }
-.layout-menu-sky .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-sky .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFB300;
 }
 .layout-menu-sky .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11438,10 +11438,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-rose .layout-menu > li > .layout-submenu-container {
   background-color: #522036;
 }
-.layout-menu-rose .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-rose .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #66BB6A;
 }
-.layout-menu-rose .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-rose .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #66BB6A;
 }
 .layout-menu-rose .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11550,10 +11550,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-revolt .layout-menu > li > .layout-submenu-container {
   background-color: #2D2E5B;
 }
-.layout-menu-revolt .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-revolt .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFC107;
 }
-.layout-menu-revolt .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-revolt .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFC107;
 }
 .layout-menu-revolt .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11662,10 +11662,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-forest .layout-menu > li > .layout-submenu-container {
   background-color: #466E60;
 }
-.layout-menu-forest .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-forest .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #CDDC39;
 }
-.layout-menu-forest .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-forest .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #CDDC39;
 }
 .layout-menu-forest .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11774,10 +11774,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-night .layout-menu > li > .layout-submenu-container {
   background-color: #0D1030;
 }
-.layout-menu-night .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-night .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFCA28;
 }
-.layout-menu-night .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-night .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFCA28;
 }
 .layout-menu-night .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11886,10 +11886,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-apricot .layout-menu > li > .layout-submenu-container {
   background-color: #5A1329;
 }
-.layout-menu-apricot .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-apricot .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #80CBC4;
 }
-.layout-menu-apricot .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-apricot .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #80CBC4;
 }
 .layout-menu-apricot .layout-menu li.active-menuitem > a .menuitem-text {
@@ -11998,10 +11998,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-faraway .layout-menu > li > .layout-submenu-container {
   background-color: #993F2C;
 }
-.layout-menu-faraway .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-faraway .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #00BCD4;
 }
-.layout-menu-faraway .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-faraway .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #00BCD4;
 }
 .layout-menu-faraway .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12110,10 +12110,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-grape .layout-menu > li > .layout-submenu-container {
   background-color: #3C39B5;
 }
-.layout-menu-grape .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-grape .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #F06292;
 }
-.layout-menu-grape .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-grape .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #F06292;
 }
 .layout-menu-grape .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12222,10 +12222,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-river .layout-menu > li > .layout-submenu-container {
   background-color: #072F41;
 }
-.layout-menu-river .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-river .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFB300;
 }
-.layout-menu-river .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-river .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFB300;
 }
 .layout-menu-river .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12334,10 +12334,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-dock .layout-menu > li > .layout-submenu-container {
   background-color: #2F1251;
 }
-.layout-menu-dock .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-dock .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFB300;
 }
-.layout-menu-dock .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-dock .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFB300;
 }
 .layout-menu-dock .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12441,10 +12441,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-materialone .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-materialone .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-materialone .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-materialone .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-materialone .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-materialone .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12538,10 +12538,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-materialtwo .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-materialtwo .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-materialtwo .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-materialtwo .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-materialtwo .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-materialtwo .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12635,10 +12635,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-polygons .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-polygons .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-polygons .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #e1ab41;
 }
-.layout-menu-polygons .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-polygons .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #e1ab41;
 }
 .layout-menu-polygons .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12732,10 +12732,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-connectionsone .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-connectionsone .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-connectionsone .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-connectionsone .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-connectionsone .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-connectionsone .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12829,10 +12829,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-connectionstwo .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-connectionstwo .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-connectionstwo .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-connectionstwo .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-connectionstwo .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-connectionstwo .layout-menu li.active-menuitem > a .menuitem-text {
@@ -12926,10 +12926,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-road .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-road .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-road .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-road .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-road .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-road .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13023,10 +13023,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-reflection .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-reflection .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-reflection .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #4DD0E1;
 }
-.layout-menu-reflection .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-reflection .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #4DD0E1;
 }
 .layout-menu-reflection .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13120,10 +13120,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-waves .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-waves .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-waves .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-waves .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-waves .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-waves .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13217,10 +13217,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-sandiego .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.layout-menu-sandiego .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-sandiego .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #e1ab41;
 }
-.layout-menu-sandiego .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-sandiego .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #e1ab41;
 }
 .layout-menu-sandiego .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13314,10 +13314,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-architecture .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.layout-menu-architecture .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-architecture .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #B39DDB;
 }
-.layout-menu-architecture .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-architecture .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #B39DDB;
 }
 .layout-menu-architecture .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13411,10 +13411,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-snow .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.24);
 }
-.layout-menu-snow .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-snow .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-snow .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-snow .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-snow .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13508,10 +13508,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-palm .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-palm .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-palm .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFC107;
 }
-.layout-menu-palm .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-palm .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFC107;
 }
 .layout-menu-palm .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13605,10 +13605,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-fluid .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-fluid .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-fluid .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-fluid .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-fluid .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-fluid .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13702,10 +13702,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-balloon .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-balloon .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-balloon .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #55E1F3;
 }
-.layout-menu-balloon .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-balloon .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #55E1F3;
 }
 .layout-menu-balloon .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13799,10 +13799,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-downtown .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.layout-menu-downtown .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-downtown .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #00BCD4;
 }
-.layout-menu-downtown .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-downtown .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #00BCD4;
 }
 .layout-menu-downtown .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13896,10 +13896,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-perfection .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.layout-menu-perfection .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-perfection .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #E91E63;
 }
-.layout-menu-perfection .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-perfection .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #E91E63;
 }
 .layout-menu-perfection .layout-menu li.active-menuitem > a .menuitem-text {
@@ -13993,10 +13993,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-northern .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.layout-menu-northern .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-northern .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFA726;
 }
-.layout-menu-northern .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-northern .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFA726;
 }
 .layout-menu-northern .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14090,10 +14090,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-highline .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.layout-menu-highline .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-highline .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #E91E63;
 }
-.layout-menu-highline .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-highline .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #E91E63;
 }
 .layout-menu-highline .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14187,10 +14187,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-mural .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.layout-menu-mural .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-mural .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #66BB6A;
 }
-.layout-menu-mural .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-mural .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #66BB6A;
 }
 .layout-menu-mural .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14284,10 +14284,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-aeriel .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.layout-menu-aeriel .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-aeriel .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #D4E157;
 }
-.layout-menu-aeriel .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-aeriel .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #D4E157;
 }
 .layout-menu-aeriel .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14381,10 +14381,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-wing .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-wing .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-wing .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFEE58;
 }
-.layout-menu-wing .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-wing .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFEE58;
 }
 .layout-menu-wing .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14478,10 +14478,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-skyscraper .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-skyscraper .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-skyscraper .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FDD835;
 }
-.layout-menu-skyscraper .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-skyscraper .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FDD835;
 }
 .layout-menu-skyscraper .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14575,10 +14575,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-wall .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.32);
 }
-.layout-menu-wall .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-wall .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #00BCD4;
 }
-.layout-menu-wall .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-wall .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #00BCD4;
 }
 .layout-menu-wall .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14672,10 +14672,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-dawn .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-dawn .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-dawn .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-dawn .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-dawn .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-dawn .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14769,10 +14769,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-lille .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-lille .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-lille .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-lille .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-lille .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-lille .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14866,10 +14866,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-condo .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.32);
 }
-.layout-menu-condo .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-condo .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-condo .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-condo .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-condo .layout-menu li.active-menuitem > a .menuitem-text {
@@ -14963,10 +14963,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-waterfall .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-waterfall .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-waterfall .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFCA28;
 }
-.layout-menu-waterfall .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-waterfall .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFCA28;
 }
 .layout-menu-waterfall .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15060,10 +15060,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-coffee .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-coffee .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-coffee .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-coffee .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-coffee .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-coffee .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15157,10 +15157,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-mountain .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-mountain .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-mountain .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-mountain .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-mountain .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-mountain .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15254,10 +15254,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-lights .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-lights .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-lights .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-lights .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-lights .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-lights .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15351,10 +15351,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-desert .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-desert .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-desert .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-desert .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-desert .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-desert .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15448,10 +15448,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-beach .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-beach .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-beach .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-beach .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-beach .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-beach .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15545,10 +15545,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-classic .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-classic .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-classic .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFA726;
 }
-.layout-menu-classic .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-classic .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFA726;
 }
 .layout-menu-classic .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15642,10 +15642,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-hazy .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-hazy .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-hazy .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #00BCD4;
 }
-.layout-menu-hazy .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-hazy .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #00BCD4;
 }
 .layout-menu-hazy .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15739,10 +15739,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-exposure .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-exposure .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-exposure .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFA000;
 }
-.layout-menu-exposure .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-exposure .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFA000;
 }
 .layout-menu-exposure .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15836,10 +15836,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-norge .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-norge .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-norge .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-norge .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-norge .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-norge .layout-menu li.active-menuitem > a .menuitem-text {
@@ -15933,10 +15933,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-island .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-island .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-island .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-island .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-island .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-island .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16030,10 +16030,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-station .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-station .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-station .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-station .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-station .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-station .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16127,10 +16127,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-fruity .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.3);
 }
-.layout-menu-fruity .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-fruity .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #E65100;
 }
-.layout-menu-fruity .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-fruity .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #E65100;
 }
 .layout-menu-fruity .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16224,10 +16224,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-tropical .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-tropical .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-tropical .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #D4E157;
 }
-.layout-menu-tropical .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-tropical .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #D4E157;
 }
 .layout-menu-tropical .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16321,10 +16321,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-beyoglu .layout-menu > li > .layout-submenu-container {
   background-color: rgba(0, 0, 0, 0.32);
 }
-.layout-menu-beyoglu .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-beyoglu .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-beyoglu .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-beyoglu .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-beyoglu .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16418,10 +16418,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-timelapse .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-timelapse .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-timelapse .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-timelapse .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-timelapse .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-timelapse .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16515,10 +16515,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-crystal .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-crystal .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-crystal .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-crystal .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-crystal .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-crystal .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16612,10 +16612,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-aquarelle .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-aquarelle .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-aquarelle .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FDD835;
 }
-.layout-menu-aquarelle .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-aquarelle .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FDD835;
 }
 .layout-menu-aquarelle .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16709,10 +16709,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-canvas .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-canvas .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-canvas .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-canvas .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-canvas .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-canvas .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16806,10 +16806,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-olympic .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-olympic .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-olympic .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-olympic .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-olympic .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-olympic .layout-menu li.active-menuitem > a .menuitem-text {
@@ -16903,10 +16903,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-circuit .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-circuit .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-circuit .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FF9800;
 }
-.layout-menu-circuit .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-circuit .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FF9800;
 }
 .layout-menu-circuit .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17000,10 +17000,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-flamingo .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-flamingo .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-flamingo .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #CDDC39;
 }
-.layout-menu-flamingo .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-flamingo .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #CDDC39;
 }
 .layout-menu-flamingo .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17097,10 +17097,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-flight .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-flight .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-flight .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #03A9F4;
 }
-.layout-menu-flight .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-flight .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #03A9F4;
 }
 .layout-menu-flight .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17194,10 +17194,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-tractor .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-tractor .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-tractor .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #D4E157;
 }
-.layout-menu-tractor .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-tractor .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #D4E157;
 }
 .layout-menu-tractor .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17291,10 +17291,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-volcano .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-volcano .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-volcano .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-volcano .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-volcano .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-volcano .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17388,10 +17388,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-pine .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-pine .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-pine .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #EC407A;
 }
-.layout-menu-pine .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-pine .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #EC407A;
 }
 .layout-menu-pine .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17485,10 +17485,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-emptiness .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-emptiness .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-emptiness .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-emptiness .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-emptiness .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-emptiness .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17582,10 +17582,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-splash .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-splash .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-splash .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-splash .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-splash .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-splash .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17679,10 +17679,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-urban .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-urban .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-urban .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-urban .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-urban .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-urban .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17776,10 +17776,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-bloom .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-bloom .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-bloom .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-bloom .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-bloom .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-bloom .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17873,10 +17873,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-tinfoil .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-tinfoil .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-tinfoil .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFCA28;
 }
-.layout-menu-tinfoil .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-tinfoil .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFCA28;
 }
 .layout-menu-tinfoil .layout-menu li.active-menuitem > a .menuitem-text {
@@ -17970,10 +17970,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-hallway .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-hallway .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-hallway .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-hallway .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-hallway .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-hallway .layout-menu li.active-menuitem > a .menuitem-text {
@@ -18067,10 +18067,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-seagull .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-seagull .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-seagull .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #FFA726;
 }
-.layout-menu-seagull .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-seagull .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #FFA726;
 }
 .layout-menu-seagull .layout-menu li.active-menuitem > a .menuitem-text {
@@ -18164,10 +18164,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-city .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-city .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-city .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #D4E157;
 }
-.layout-menu-city .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-city .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #D4E157;
 }
 .layout-menu-city .layout-menu li.active-menuitem > a .menuitem-text {
@@ -18261,10 +18261,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-jet .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-jet .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-jet .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-jet .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-jet .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-jet .layout-menu li.active-menuitem > a .menuitem-text {
@@ -18358,10 +18358,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-louisville .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-louisville .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-louisville .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-louisville .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-louisville .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-louisville .layout-menu li.active-menuitem > a .menuitem-text {
@@ -18455,10 +18455,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-spray .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-spray .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-spray .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-spray .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-spray .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-spray .layout-menu li.active-menuitem > a .menuitem-text {
@@ -18552,10 +18552,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-symmetry .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-symmetry .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-symmetry .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #00BCD4;
 }
-.layout-menu-symmetry .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-symmetry .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #00BCD4;
 }
 .layout-menu-symmetry .layout-menu li.active-menuitem > a .menuitem-text {
@@ -18649,10 +18649,10 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-destination .layout-menu > li > .layout-submenu-container {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.layout-menu-destination .layout-menu li a.active-menuitem-routerlink .menuitem-text {
+.layout-menu-destination .layout-menu li:not(:first-child) > a.active-menuitem-routerlink .menuitem-text {
   color: #ffc107;
 }
-.layout-menu-destination .layout-menu li a.active-menuitem-routerlink i {
+.layout-menu-destination .layout-menu li:not(:first-child) > a.active-menuitem-routerlink i {
   color: #ffc107;
 }
 .layout-menu-destination .layout-menu li.active-menuitem > a .menuitem-text {
