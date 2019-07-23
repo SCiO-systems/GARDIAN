@@ -18,6 +18,7 @@ import {EmptyPage} from './components/EmptyPage';
 import {UtilsDemo} from './components/UtilsDemo';
 import {Documentation} from './components/Documentation';
 import { withRouter } from 'react-router';
+import { CSSTransition } from 'react-transition-group';
 import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 import '@fullcalendar/timegrid/main.css';
@@ -381,12 +382,13 @@ class App extends Component {
 					<i className="material-icons">settings</i>
 				</button>
 
-				<AppConfig configDialogActive={this.state.configDialogActive} topbarColor={this.state.topbarColor} horizontal={this.state.horizontal}
-						   layoutColor={this.state.layoutColor} menuColor={this.state.menuColor} themeColor={this.state.themeColor}
-						   topbarSize={this.state.topbarSize} onConfigCloseClick={this.onConfigCloseClick} changeTopbarTheme={this.changeTopbarTheme}
-						   changeMenuToHorizontal={this.changeMenuToHorizontal} changeMenuTheme={this.changeMenuTheme} changeComponentTheme={this.changeComponentTheme}
-						   changePrimaryColor={this.changePrimaryColor} changeTopbarSize={this.changeTopbarSize}/>
-
+				<CSSTransition classNames="layout-config" timeout={{enter: 150, exit: 150}} in={this.state.configDialogActive}>
+					<AppConfig topbarColor={this.state.topbarColor} horizontal={this.state.horizontal}
+							layoutColor={this.state.layoutColor} menuColor={this.state.menuColor} themeColor={this.state.themeColor}
+							topbarSize={this.state.topbarSize} onConfigCloseClick={this.onConfigCloseClick} changeTopbarTheme={this.changeTopbarTheme}
+							changeMenuToHorizontal={this.changeMenuToHorizontal} changeMenuTheme={this.changeMenuTheme} changeComponentTheme={this.changeComponentTheme}
+							changePrimaryColor={this.changePrimaryColor} changeTopbarSize={this.changeTopbarSize}/>
+				</CSSTransition>
 				{this.state.menuActive && <div className="layout-mask"/>}
 
 				<AppFooter />

@@ -7,7 +7,6 @@ export class AppConfig extends Component {
 
 
 	static defaultProps = {
-		configDialogActive: false,
 		topbarSize: 'large',
 		topbarColor: 'layout-topbar-blue',
 		menuColor: 'layout-menu-light',
@@ -18,7 +17,6 @@ export class AppConfig extends Component {
 	}
 
 	static propTypes = {
-		configDialogActive: PropTypes.bool.isRequired,
 		topbarSize: PropTypes.string.isRequired,
 		topbarColor: PropTypes.string.isRequired,
 		menuColor: PropTypes.string.isRequired,
@@ -259,12 +257,8 @@ export class AppConfig extends Component {
 			{name: 'Yellow', file: 'yellow', image: 'yellow.svg'}
 		];
 
-		const configContainerClassName = classNames('layout-config', {
-				'layout-config-exit-done': !this.props.configDialogActive,
-				'layout-config-enter-done': this.props.configDialogActive});
-
 		return (
-			<div className={configContainerClassName}>
+			<div className="layout-config">
 				<div className="layout-config-content">
 					<button className="layout-config-close" onClick={this.props.onConfigCloseClick}>
 						<i className="material-icons">close</i>
