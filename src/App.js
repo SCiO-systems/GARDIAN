@@ -72,6 +72,7 @@ class App extends Component {
 		}
 
 		if (!this.menuClick) {
+			this.setState({menuHoverActive: false});
 			this.unblockBodyScroll();
 		}
 
@@ -147,6 +148,7 @@ class App extends Component {
 	}
 
 	onRootMenuItemClick(event) {
+		this.menuClick = true;
 		this.setState({
 			menuHoverActive: !this.state.menuHoverActive
 		});
