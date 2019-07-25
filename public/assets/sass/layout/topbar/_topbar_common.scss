@@ -63,8 +63,8 @@
             width: 28px;
             height: 4px;
             position: absolute;
-            top: 22px;
-            left: 10px;
+            top: calc(50% - 2px);
+            left: calc(50% - 14px);
             -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
             transition-timing-function: swing;

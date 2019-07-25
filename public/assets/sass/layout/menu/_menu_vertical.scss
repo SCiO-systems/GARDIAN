@@ -98,7 +98,7 @@
 
             &.layout-submenu-megamenu-container {
                 .layout-submenu-container {
-                    max-height: 1000px;
+                    max-height: 10000px;
                 }
             }
 
@@ -162,7 +162,7 @@
             li {
                 &.active-menuitem {
                     > .layout-submenu-container {
-                        max-height: 1000px;
+                        max-height: 10000px;
                         @include transition(max-height 400ms cubic-bezier(0.86, 0, 0.07, 1));
                     }
                 }
