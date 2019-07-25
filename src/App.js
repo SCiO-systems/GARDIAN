@@ -149,9 +149,11 @@ class App extends Component {
 
 	onRootMenuItemClick(event) {
 		this.menuClick = true;
-		this.setState({
-			menuHoverActive: !this.state.menuHoverActive
-		});
+		if (!this.isMobile()) {
+			this.setState({
+				menuHoverActive: !this.state.menuHoverActive
+			});
+		}
 	}
 
 	onMenuItemClick(event) {
