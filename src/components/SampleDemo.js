@@ -243,13 +243,13 @@ export class SampleDemo extends Component {
             return;
         }
 
-        let src = "assets/demo/images/car/" + car.brand + ".gif";
+        let src = "assets/demo/images/car/" + car.brand + "-big.gif";
 
         if (layout === 'list') {
             return (
                 <div className="p-grid" style={{padding: '2em', borderBottom: '1px solid #d9d9d9'}}>
-                    <div className="p-col-12 p-md-3">
-                        <img src={src} alt={car.brand} />
+                    <div className="p-col-12 p-md-3 car-images">
+                        <img width={72} src={src} alt={car.brand} />
                     </div>
                     <div className="p-col-12 p-md-8 car-details">
                         <div className="p-grid">

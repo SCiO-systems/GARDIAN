@@ -180,6 +180,7 @@ body {
         &.p-menu-overlay {
             @include content();
             @include overlay-input-shadow();
+            padding: .5em 0;
         }
 
         .p-submenu-header {

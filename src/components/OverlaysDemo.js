@@ -33,8 +33,8 @@ export class OverlaysDemo extends Component {
     render() {
         const dialogFooter = (
             <div>
-				<Button icon="pi-md-close" onClick={() => this.setState({display:false})} label="No"/>
-                <Button icon="pi-md-check" onClick={() => this.setState({display:false})} label="Yes"/>
+				<Button onClick={() => this.setState({display:false})} label="Yes" className="flat"/>
+				<Button onClick={() => this.setState({display:false})} label="No" className="p-button-secondary flat"/>
             </div>
         );
 

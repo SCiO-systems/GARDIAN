@@ -26,6 +26,11 @@ body {
                 margin: 0;
                 @include transition(background-color $transitionDuration);
                 @include border-radius(50%);
+
+                span {
+                    margin-top: 1px;
+                    margin-left: 1px;
+                }
                 
                 &:hover {
                     background-color: $primaryLightColor;
