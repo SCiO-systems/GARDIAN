@@ -608,7 +608,6 @@ export class Dashboard extends Component {
 							<Column field="brand" header="Brand" sortable={true}/>
 							<Column field="color" header="Color" sortable={true}/>
 						</DataTable>
-
                     </div>
                 </div>
             </div>
