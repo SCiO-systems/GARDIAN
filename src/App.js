@@ -18,7 +18,6 @@ import {EmptyPage} from './components/EmptyPage';
 import {UtilsDemo} from './components/UtilsDemo';
 import {Documentation} from './components/Documentation';
 import { withRouter } from 'react-router';
-import { CSSTransition } from 'react-transition-group';
 import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 import '@fullcalendar/timegrid/main.css';
@@ -40,16 +39,13 @@ class App extends Component {
 			layoutColor: 'blue',
 			themeColor: 'blue',
 			menuActive: false,
-			configDialogActive: false,
-			menuHoverActive: false
+			configDialogActive: false
 		};
 
 		this.onWrapperClick = this.onWrapperClick.bind(this);
 		this.onMenuButtonClick = this.onMenuButtonClick.bind(this);
 		this.onTopbarUserMenuButtonClick = this.onTopbarUserMenuButtonClick.bind(this);
 		this.onTopbarUserMenuClick = this.onTopbarUserMenuClick.bind(this);
-		this.onConfigButtonClick = this.onConfigButtonClick.bind(this);
-		this.onConfigCloseClick = this.onConfigCloseClick.bind(this);
 		this.onRootMenuItemClick = this.onRootMenuItemClick.bind(this);
 		this.onMenuItemClick = this.onMenuItemClick.bind(this);
 		this.onSidebarClick = this.onSidebarClick.bind(this);
@@ -59,41 +55,51 @@ class App extends Component {
 		this.changeMenuTheme = this.changeMenuTheme.bind(this);
 		this.changeComponentTheme = this.changeComponentTheme.bind(this);
 		this.changePrimaryColor = this.changePrimaryColor.bind(this);
+		this.onToggleBlockBodyScroll = this.onToggleBlockBodyScroll.bind(this);
 		this.createMenu();
 	}
 
 	onWrapperClick(event) {
 		if (!this.menuClick) {
 			this.setState({menuActive: false});
+
+			if (!this.configMenuClick) {
+				this.unblockBodyScroll();
+			}
 		}
 
 		if (!this.userMenuClick) {
 			this.setState({topbarUserMenuActive: false});
 		}
 
-		if (!this.menuClick) {
-			this.setState({menuHoverActive: false});
-			this.unblockBodyScroll();
-		}
-
 		this.userMenuClick = false;
 		this.menuClick = false;
+		this.configMenuClick = false;
 	}
 
-	onMenuButtonClick(event) {
+	onMenuButtonClick(event, isMenuButtonActive) {
 		this.menuClick = true;
 
-		if (!this.state.horizontal || this.isMobile()) {
-			this.setState({menuActive: !this.state.menuActive});
-
-			if (!this.state.menuActive) {
-				this.blockBodyScroll();
-			} else {
-				this.unblockBodyScroll();
-			}
+		if (!this.isHorizontalMenu()) {
+			this.setState({menuActive: !isMenuButtonActive}, () => {
+				if (this.state.menuActive) {
+					this.blockBodyScroll();
+				} else {
+					this.unblockBodyScroll();
+				}
+			});
 		}
 
 		event.preventDefault();
+	}
+
+	onToggleBlockBodyScroll(add) {
+		if (add)
+			this.blockBodyScroll();
+		else
+			this.unblockBodyScroll();
+
+		this.configMenuClick = true;
 	}
 
 	blockBodyScroll() {
@@ -126,42 +132,22 @@ class App extends Component {
 		if (event.target.nodeName === 'BUTTON' || event.target.parentNode.nodeName === 'BUTTON') {
 			this.setState({topbarUserMenuActive: false});
 		}
-
-		event.originalEvent.preventDefault();
-	}
-
-	onConfigButtonClick() {
-		if(!this.state.horizontal)
-			this.setState({menuActive: false});
-		else
-			this.setState({menuHoverActive: false});
-
-		if (!this.userMenuClick) {
-			this.setState({topbarUserMenuActive: false});
-		}
-
-		this.setState({configDialogActive: true})
-	}
-
-	onConfigCloseClick() {
-		this.setState({configDialogActive: false})
-	}
+		event.preventDefault();
+	}	
 
 	onRootMenuItemClick(event) {
 		this.menuClick = true;
-		if (!this.isMobile()) {
+
+		if (this.isHorizontalMenu()) {
 			this.setState({
-				menuHoverActive: !this.state.menuHoverActive
+				menuActive: !this.state.menuActive
 			});
 		}
 	}
 
 	onMenuItemClick(event) {
-		if(!event.item.items) {
-			if(!this.state.horizontal)
-				this.setState({menuActive: false})
-
-			this.setState({menuHoverActive: false});
+		if(!event.item.items && !this.state.horizontal) {
+			this.setState({menuActive: false});
 		}
 	}
 
@@ -171,6 +157,10 @@ class App extends Component {
 
 	isMobile() {
 		return window.innerWidth <= 1024;
+	}
+
+	isHorizontalMenu() {
+		return this.state.horizontal && !this.isMobile();
 	}
 
 	changeTopbarSize(event) {
@@ -345,7 +335,7 @@ class App extends Component {
 	render() {
 		const layoutContainerClassName = classNames('layout-container', {
 			'layout-menu-horizontal': this.state.horizontal,
-			'layout-menu-active': this.state.menuActive,
+			'layout-menu-active': this.state.menuActive && !this.isHorizontalMenu(),
 			'layout-top-small': this.state.topbarSize === 'small',
 			'layout-top-medium': this.state.topbarSize === 'medium',
 			'layout-top-large': this.state.topbarSize === 'large'
@@ -359,7 +349,7 @@ class App extends Component {
 					<AppTopbar topbarUserMenuActive={this.state.topbarUserMenuActive} menuActive={this.state.menuActive}
 							   onMenuButtonClick={this.onMenuButtonClick} onTopbarUserMenuButtonClick={this.onTopbarUserMenuButtonClick}
 							   onTopbarUserMenuClick={this.onTopbarUserMenuClick} model={this.menu} horizontal={this.state.horizontal} onSidebarClick={this.onSidebarClick}
-							   menuHoverActive={this.state.menuHoverActive}  onRootMenuItemClick={this.onRootMenuItemClick} onMenuItemClick={this.onMenuItemClick}/>
+							   onRootMenuItemClick={this.onRootMenuItemClick} onMenuItemClick={this.onMenuItemClick}/>
 
 					<div className="layout-topbar-separator"/>
 
@@ -382,22 +372,16 @@ class App extends Component {
 					<Route path="/documentation" component={Documentation} />
 				</div>
 
-				<button className="layout-config-button p-link " onClick={this.onConfigButtonClick}>
-					<i className="material-icons">settings</i>
-				</button>
+				<AppConfig topbarColor={this.state.topbarColor} horizontal={this.state.horizontal}
+						layoutColor={this.state.layoutColor} menuColor={this.state.menuColor} themeColor={this.state.themeColor}
+						topbarSize={this.state.topbarSize} changeTopbarTheme={this.changeTopbarTheme}
+						changeMenuToHorizontal={this.changeMenuToHorizontal} changeMenuTheme={this.changeMenuTheme} changeComponentTheme={this.changeComponentTheme}
+						changePrimaryColor={this.changePrimaryColor} changeTopbarSize={this.changeTopbarSize} onToggleBlockBodyScroll={this.onToggleBlockBodyScroll}/>
 
-				<CSSTransition classNames="layout-config" timeout={{enter: 150, exit: 150}} in={this.state.configDialogActive}>
-					<AppConfig topbarColor={this.state.topbarColor} horizontal={this.state.horizontal}
-							layoutColor={this.state.layoutColor} menuColor={this.state.menuColor} themeColor={this.state.themeColor}
-							topbarSize={this.state.topbarSize} onConfigCloseClick={this.onConfigCloseClick} changeTopbarTheme={this.changeTopbarTheme}
-							changeMenuToHorizontal={this.changeMenuToHorizontal} changeMenuTheme={this.changeMenuTheme} changeComponentTheme={this.changeComponentTheme}
-							changePrimaryColor={this.changePrimaryColor} changeTopbarSize={this.changeTopbarSize}/>
-				</CSSTransition>
-				{this.state.menuActive && <div className="layout-mask"/>}
+				{(!this.isHorizontalMenu() && this.state.menuActive) && <div className="layout-mask"/>}
 
 				<AppFooter />
 
-				{this.state.configDialogActive && <div className="layout-config-mask"/>}
 			</div>
 		);
 	}

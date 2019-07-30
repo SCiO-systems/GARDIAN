@@ -162,8 +162,20 @@
             }
         }
 
+        &.layout-menu-active {
+            .layout-menu {
+                li.active-menuitem {
+                    > .layout-submenu-container {
+                        max-height: 500px;
+                        @include transition(none);
+                    }
+                }
+            }
+        }
+
         .layout-mask,
         &.layout-top-small .layout-mask {
+            display: none;
             top: 0;
             left: 0;
         }
