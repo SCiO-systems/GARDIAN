@@ -288,8 +288,8 @@ export class Dashboard extends Component {
 										</div>
 									</div>
 									<div className="p-col-fixed p-col-align-center">
-										<Button icon="ui-icon-check" className="blue-btn"/>
-										<Button icon="ui-icon-refresh" className="orange-btn"/>
+										<Button icon="pi-md-check" className="blue-btn"/>
+										<Button icon="pi-md-refresh" className="orange-btn"/>
 									</div>
 								</div>
 							</li>
@@ -308,8 +308,8 @@ export class Dashboard extends Component {
 										</div>
 									</div>
 									<div className="p-col-fixed p-col-align-center">
-										<Button icon="ui-icon-check" className="blue-btn"/>
-										<Button icon="ui-icon-refresh" className="orange-btn"/>
+										<Button icon="pi-md-check" className="blue-btn"/>
+										<Button icon="pi-md-refresh" className="orange-btn"/>
 									</div>
 								</div>
 							</li>
@@ -328,8 +328,8 @@ export class Dashboard extends Component {
 										</div>
 									</div>
 									<div className="p-col-fixed p-col-align-center">
-										<Button icon="ui-icon-check" className="blue-btn"/>
-										<Button icon="ui-icon-refresh" className="orange-btn"/>
+										<Button icon="pi-md-check" className="blue-btn"/>
+										<Button icon="pi-md-refresh" className="orange-btn"/>
 									</div>
 								</div>
 							</li>
@@ -348,8 +348,8 @@ export class Dashboard extends Component {
 										</div>
 									</div>
 									<div className="p-col-fixed p-col-align-center">
-										<Button icon="ui-icon-check" className="blue-btn"/>
-										<Button icon="ui-icon-refresh" className="orange-btn"/>
+										<Button icon="pi-md-check" className="blue-btn"/>
+										<Button icon="pi-md-refresh" className="orange-btn"/>
 									</div>
 								</div>
 							</li>

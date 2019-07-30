@@ -10,7 +10,7 @@ export class AppFooter extends Component {
                             <div className="layout-footer-appname">PrimeReact Premium Template</div>
                         </div>
                         <div className="p-col p-col-align-right">
-                            <span className="ui-icon-copyright"></span>
+                            <span className="pi-md-copyright"></span>
                             <span>All Rights Reserved</span>
                         </div>
                     </div>

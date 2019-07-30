@@ -263,13 +263,15 @@ body {
 
     .p-dataview {
         .p-dataview-header {
-            background-color: #ffffff;
-            color: $textColor;
+            background-color: $panelLightHeaderBgColor;
+            color: $panelLightHeaderTextColor;
             padding: $headerPadding;
             border: 1px solid $dividerColor;
             border-bottom: 0 none;
 
             .p-button {
+                border-radius: 50%;
+
                 &.p-highlight {
                     &:hover {
                         background-color: $accentColor;
@@ -280,14 +282,15 @@ body {
         }
 
         .p-dataview-content {
+            @include content();
             background-color: $contentBgColor;
             color: $textColor;
             border: 1px solid $contentBorderColor;
         }
 
         .p-dataview-footer {
-            background-color: #ffffff;
-            color: $textColor;
+            background-color: $panelLightHeaderBgColor;
+            color: $panelLightHeaderTextColor;
             padding: $headerPadding;
             border: 1px solid $dividerColor;
             border-top: 0 none;
