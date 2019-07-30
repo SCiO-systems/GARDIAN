@@ -14,7 +14,8 @@ class AppSubmenu extends Component {
         menuActive: false,
         parentMenuItemActive: false,
         onMenuItemClick: null,
-        onRootItemClick: null
+        onRootItemClick: null,
+        isHorizontalMenuActive: null
     }
 
     static propTypes = {
@@ -26,7 +27,8 @@ class AppSubmenu extends Component {
         menuActive: PropTypes.bool,
         parentMenuItemActive: PropTypes.bool,
         onMenuItemClick: PropTypes.func,
-        onRootItemClick: PropTypes.func
+        onRootItemClick: PropTypes.func,
+        isHorizontalMenuActive: PropTypes.func
     }
 
     constructor(props) {
@@ -67,17 +69,9 @@ class AppSubmenu extends Component {
             });
         }
     }
-
-    isMobile() {
-		return window.innerWidth <= 1024;
-	}
-    
-    isHorizontalMenu() {
-		return this.props.horizontal && !this.isMobile();
-    }
     
     onMenuItemMouseEnter(index) {
-        if (this.props.root && this.props.menuActive && this.isHorizontalMenu()) {
+        if (this.props.root && this.props.menuActive && this.props.isHorizontalMenuActive()) {
             this.setState({ activeIndex: index });
         }
     }
@@ -146,7 +140,7 @@ class AppSubmenu extends Component {
                     {item.items &&
                         <div className={containerClass} style={{ padding: active ? '' : '0' }}>
                             <AppSubmenu items={item.items} className={submenuClass} onMenuItemClick={this.props.onMenuItemClick} horizontal={this.props.horizontal}
-                                menuActive={this.props.menuActive} mega={item.mega} parentMenuItemActive={active} />
+                                menuActive={this.props.menuActive} mega={item.mega} parentMenuItemActive={active} isHorizontalMenuActive={this.props.isHorizontalMenuActive}/>
                         </div>
                     }
                 </li>
@@ -165,7 +159,8 @@ export class AppMenu extends Component {
         menuActive: null,
         onMenuItemClick: null,
         onRootMenuItemClick: null,
-        onSidebarClick: null
+        onSidebarClick: null,
+        isHorizontalMenuActive: null
     }
 
     static propTypes = {
@@ -174,7 +169,8 @@ export class AppMenu extends Component {
         menuActive: PropTypes.bool,
         onMenuItemClick: PropTypes.func,
         onRootMenuItemClick: PropTypes.func,
-        onSidebarClick: PropTypes.func
+        onSidebarClick: PropTypes.func,
+        isHorizontalMenuActive: PropTypes.func
     }
 
     render() {
@@ -182,7 +178,7 @@ export class AppMenu extends Component {
             <div className="layout-menu-wrapper">
                 <AppSubmenu items={this.props.model} className="layout-menu" mega={false} root={true} parentMenuItemActive={true}
                     menuActive={this.props.menuActive} onRootItemClick={this.props.onRootMenuItemClick}
-                    onMenuItemClick={this.props.onMenuItemClick} horizontal={this.props.horizontal} />
+                    onMenuItemClick={this.props.onMenuItemClick} horizontal={this.props.horizontal} isHorizontalMenuActive={this.props.isHorizontalMenuActive}/>
             </div>
         </div>
     }

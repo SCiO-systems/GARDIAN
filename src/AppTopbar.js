@@ -16,7 +16,8 @@ export class AppTopbar extends Component {
 		onSidebarClick: null,
 		onMenuButtonClick: null,
 		onTopbarUserMenuButtonClick: null,
-		onTopbarUserMenuClick: null
+		onTopbarUserMenuClick: null,
+		isHorizontalMenuActive: null
 	}
 
 	static propTypes = {
@@ -29,19 +30,12 @@ export class AppTopbar extends Component {
 		onSidebarClick: PropTypes.func.isRequired,
 		onMenuButtonClick: PropTypes.func.isRequired,
 		onTopbarUserMenuButtonClick: PropTypes.func.isRequired,
-		onTopbarUserMenuClick: PropTypes.func.isRequired
-	}
-
-	isMobile() {
-		return window.innerWidth <= 1024;
-	}
-
-	isHorizontalMenu() {
-		return this.props.horizontal && !this.isMobile();
+		onTopbarUserMenuClick: PropTypes.func.isRequired,
+		isHorizontalMenuActive: PropTypes.func.isRequired
 	}
 
 	render() {
-		let isMenuButtonActive = !this.isHorizontalMenu() && this.props.menuActive;
+		let isMenuButtonActive = !this.props.isHorizontalMenuActive() && this.props.menuActive;
 		let topbarMenuClassName = classNames('layout-profile-menu fadeInDown ', {'layout-profile-menu-active': this.props.topbarUserMenuActive});
 		let menuButtonClassName = classNames('layout-menubutton ', {'layout-menubutton-active': isMenuButtonActive})
 
@@ -59,7 +53,7 @@ export class AppTopbar extends Component {
 					</div>
 
 					<div className="layout-topbar-grid-column">
-						<AppMenu model={this.props.model} horizontal={this.props.horizontal} menuActive={this.props.menuActive}
+						<AppMenu model={this.props.model} horizontal={this.props.horizontal} menuActive={this.props.menuActive} isHorizontalMenuActive={this.props.isHorizontalMenuActive}
 								onMenuItemClick={this.props.onMenuItemClick} onRootMenuItemClick={this.props.onRootMenuItemClick} onSidebarClick={this.props.onSidebarClick}/>
 					</div>
 

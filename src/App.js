@@ -56,6 +56,7 @@ class App extends Component {
 		this.changeComponentTheme = this.changeComponentTheme.bind(this);
 		this.changePrimaryColor = this.changePrimaryColor.bind(this);
 		this.onToggleBlockBodyScroll = this.onToggleBlockBodyScroll.bind(this);
+		this.isHorizontalMenuActive = this.isHorizontalMenuActive.bind(this);
 		this.createMenu();
 	}
 
@@ -80,7 +81,7 @@ class App extends Component {
 	onMenuButtonClick(event, isMenuButtonActive) {
 		this.menuClick = true;
 
-		if (!this.isHorizontalMenu()) {
+		if (!this.isHorizontalMenuActive()) {
 			this.setState({menuActive: !isMenuButtonActive}, () => {
 				if (this.state.menuActive) {
 					this.blockBodyScroll();
@@ -138,7 +139,7 @@ class App extends Component {
 	onRootMenuItemClick(event) {
 		this.menuClick = true;
 
-		if (this.isHorizontalMenu()) {
+		if (this.isHorizontalMenuActive()) {
 			this.setState({
 				menuActive: !this.state.menuActive
 			});
@@ -159,7 +160,7 @@ class App extends Component {
 		return window.innerWidth <= 1024;
 	}
 
-	isHorizontalMenu() {
+	isHorizontalMenuActive() {
 		return this.state.horizontal && !this.isMobile();
 	}
 
@@ -335,7 +336,7 @@ class App extends Component {
 	render() {
 		const layoutContainerClassName = classNames('layout-container', {
 			'layout-menu-horizontal': this.state.horizontal,
-			'layout-menu-active': this.state.menuActive && !this.isHorizontalMenu(),
+			'layout-menu-active': this.state.menuActive && !this.isHorizontalMenuActive(),
 			'layout-top-small': this.state.topbarSize === 'small',
 			'layout-top-medium': this.state.topbarSize === 'medium',
 			'layout-top-large': this.state.topbarSize === 'large'
@@ -349,7 +350,7 @@ class App extends Component {
 					<AppTopbar topbarUserMenuActive={this.state.topbarUserMenuActive} menuActive={this.state.menuActive}
 							   onMenuButtonClick={this.onMenuButtonClick} onTopbarUserMenuButtonClick={this.onTopbarUserMenuButtonClick}
 							   onTopbarUserMenuClick={this.onTopbarUserMenuClick} model={this.menu} horizontal={this.state.horizontal} onSidebarClick={this.onSidebarClick}
-							   onRootMenuItemClick={this.onRootMenuItemClick} onMenuItemClick={this.onMenuItemClick}/>
+							   onRootMenuItemClick={this.onRootMenuItemClick} onMenuItemClick={this.onMenuItemClick} isHorizontalMenuActive={this.isHorizontalMenuActive}/>
 
 					<div className="layout-topbar-separator"/>
 
@@ -378,7 +379,7 @@ class App extends Component {
 						changeMenuToHorizontal={this.changeMenuToHorizontal} changeMenuTheme={this.changeMenuTheme} changeComponentTheme={this.changeComponentTheme}
 						changePrimaryColor={this.changePrimaryColor} changeTopbarSize={this.changeTopbarSize} onToggleBlockBodyScroll={this.onToggleBlockBodyScroll}/>
 
-				{(!this.isHorizontalMenu() && this.state.menuActive) && <div className="layout-mask"/>}
+				{(!this.isHorizontalMenuActive() && this.state.menuActive) && <div className="layout-mask"/>}
 
 				<AppFooter />
 
