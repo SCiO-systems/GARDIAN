@@ -18,7 +18,14 @@ body {
     }
 
     &.blocked-scroll,
+    &.blocked-scroll-horizontal-menu,
     &.blocked-scroll-config {
         overflow: hidden;
+    }
+
+    @media screen and (min-width: $mobileBreakpoint + 1) {
+        &.blocked-scroll-horizontal-menu {
+            overflow: auto;
+        }
     }
 }

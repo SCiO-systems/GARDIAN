@@ -104,19 +104,21 @@ class App extends Component {
 	}
 
 	blockBodyScroll() {
+		let className = `blocked-scroll${this.state.horizontal ? '-horizontal-menu': ''}`;
 		if (document.body.classList) {
-			document.body.classList.add('blocked-scroll');
+			document.body.classList.add(className);
 		} else {
-			document.body.className += ' blocked-scroll';
+			document.body.className += ` ${className}`;
 		}
 	}
 
 	unblockBodyScroll() {
+		let className = `blocked-scroll${this.state.horizontal ? '-horizontal-menu': ''}`;
 		if (document.body.classList) {
-			document.body.classList.remove('blocked-scroll');
+			document.body.classList.remove(className);
 		} else {
 			document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
-				'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+				`${className}`.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 		}
 	}
 
