@@ -602,7 +602,7 @@ export class Dashboard extends Component {
 					<div className="inventory card">
 						<DataTable value={this.state.cars} header="Inventory" selectionMode="single" selection={this.state.selectedCar1}
                                    onSelectionChange={e => this.setState({selectedCar1: e.value})} style={{marginBottom: '20px'}}
-                                   paginator={true} rows={10} paginatorPosition="both">
+                                   paginator={true} rows={10} paginatorPosition="both" responsive={true}>
 							<Column field="vin" header="Vin" sortable={true}/>
 							<Column field="year" header="Year" sortable={true}/>
 							<Column field="brand" header="Brand" sortable={true}/>
