@@ -149,7 +149,7 @@ class App extends Component {
 	}
 
 	onMenuItemClick(event) {
-		if(!event.item.items && !this.state.horizontal) {
+		if(!event.item.items) {
 			this.setState({menuActive: false});
 		}
 	}
