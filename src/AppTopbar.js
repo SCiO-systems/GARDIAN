@@ -47,7 +47,7 @@ export class AppTopbar extends Component {
 
 				<div className="layout-topbar-grid">
 					<div className="layout-topbar-grid-column layout-topbar-grid-column-fixed">
-						<button className="layout-logo p-link">
+						<button className="layout-logo p-link" onClick={() => {window.location = "/#"}}>
 							<img src="assets/layout/images/logo-white.svg" alt="sapphire-layout"/>
 						</button>
 					</div>

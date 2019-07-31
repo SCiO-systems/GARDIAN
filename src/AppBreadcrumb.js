@@ -13,7 +13,7 @@ export class AppBreadcrumb extends Component {
         return (
             <div className="layout-breadcrumb">
                 <ul>
-                    <li><button className="p-link"><i className="material-icons">home</i></button></li>
+                    <li><button className="p-link" onClick={() => {window.location = "/#"}} ><i className="material-icons">home</i></button></li>
 					<li><i className="material-icons">chevron_right</i></li>
                     <li>{location.pathname.split('/')[1]}</li>
                 </ul>
