@@ -14,10 +14,10 @@ export class Documentation extends Component {
                 <div className="ui-g-12">
                     <div className="card docs">
                         <div className="card-title">Current Version</div>
-                        <p>React 16.7 and PrimeReact 3.1</p>
+                        <p>React 16.8.6 and PrimeReact 3.1.x</p>
 
                         <div className="card-title">Getting Started</div>
-                        <p>Ultima is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
+                        <p>Sapphire is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
                             creating React apps with no configuration. To get started extract the contents of the zip bundle and install the dependencies 
                             with npm or yarn.</p>
 <pre>
@@ -35,7 +35,7 @@ or
 </pre>
 
                         <p>Next step is running the application using the start script and navigate to <b>http://localhost:3000/</b> to view the application. 
-                        That is it, you may now start with the development of your application using the Ultima template.</p>
+                        That is it, you may now start with the development of your application using the Sapphire template.</p>
 
 <pre>
 {
@@ -61,19 +61,17 @@ or
 `}
 </pre>
                         <div className="card-title">Dependencies</div>
-                        <p>Only required dependencies are PrimeReact and PrimeFlex where optional dependencies exist to enable certain components in PrimeReact such as Google Maps.</p>
+                        <p>Only required dependencies is PrimeReact where optional dependencies exist to enable certain components in PrimeReact such as Google Maps.</p>
 
                         <pre>
 {
-`
-"primereact": "^2.0.0-beta.6",       //required: PrimeReact components
-"primeflex": "^1.0.0-rc.1",          //required: Layout 
+`"primereact": "^3.1.4",              //required: PrimeReact components
 "react-router-dom": "^4.2.2"         //optional: Router
 `
 }
 </pre>
                         <div className="card-title">Structure</div>
-                        <p>Ultima consists of 3 main parts; the application layout, layout resources and theme resources for PrimeReact components. <b>App.js</b> inside src folder is the main component containing the template for the base layout
+                        <p>Sapphire consists of 3 main parts; the application layout, layout resources and theme resources for PrimeReact components. <b>App.js</b> inside src folder is the main component containing the template for the base layout
                             whereas required resources for the layout are placed inside the <b>public/assets/layout</b> folder and similarly theme resources are inside <b>public/assets/theme</b> folder.
                         </p>
 
@@ -87,64 +85,54 @@ or
 `
 render() {
     const layoutContainerClassName = classNames('layout-container', {
-        'menu-layout-static': this.state.layoutMode !== 'overlay',
-        'menu-layout-overlay': this.state.layoutMode === 'overlay',
-        'layout-menu-overlay-active': this.state.overlayMenuActive,
-        'menu-layout-slim': this.state.layoutMode === 'slim',
-        'menu-layout-horizontal': this.state.layoutMode === 'horizontal',
-        'layout-menu-static-inactive': this.state.staticMenuDesktopInactive,
-        'layout-menu-static-active': this.state.staticMenuMobileActive
-    });
-    const menuClassName = classNames('layout-menu', {'layout-menu-dark': this.state.darkMenu});
+        'layout-menu-horizontal': this.state.horizontal,
+        'layout-menu-active': this.state.menuActive && !this.isHorizontalMenuActive(),
+        'layout-top-small': this.state.topbarSize === 'small',
+        'layout-top-medium': this.state.topbarSize === 'medium',
+        'layout-top-large': this.state.topbarSize === 'large'
+    }, this.state.topbarColor, this.state.menuColor);
+
     const AppBreadCrumbWithRouter = withRouter(AppBreadcrumb);
-    
+
     return (
-        <div className="layout-wrapper" onClick={this.onDocumentClick}>
-            <div ref={(el) => this.layoutContainer = el} className={layoutContainerClassName}>
-            
-                <AppTopbar profileMode={this.state.profileMode} horizontal={this.props.horizontal} 
-                        topbarMenuActive={this.state.topbarMenuActive} activeTopbarItem={this.state.activeTopbarItem}
-                        onMenuButtonClick={this.onMenuButtonClick} onTopbarMenuButtonClick={this.onTopbarMenuButtonClick} 
-                        onTopbarItemClick={this.onTopbarItemClick} onRightPanelButtonClick={this.onRightPanelButtonClick} />
+        <div ref={(el) => this.layoutContainer = el} className={layoutContainerClassName}  onClick={this.onWrapperClick}>
+            <div className="layout-top">
+                <AppTopbar topbarUserMenuActive={this.state.topbarUserMenuActive} menuActive={this.state.menuActive}
+                           onMenuButtonClick={this.onMenuButtonClick} onTopbarUserMenuButtonClick={this.onTopbarUserMenuButtonClick}
+                           onTopbarUserMenuClick={this.onTopbarUserMenuClick} model={this.menu} horizontal={this.state.horizontal} onSidebarClick={this.onSidebarClick}
+                           onRootMenuItemClick={this.onRootMenuItemClick} onMenuItemClick={this.onMenuItemClick} isHorizontalMenuActive={this.isHorizontalMenuActive}/>
 
-                <div className={menuClassName} onClick={this.onMenuClick}>
-                    <ScrollPanel ref={(el) => this.layoutMenuScroller = el} style={{height: '100%'}}>
-                        <div className="menu-scroll-content">
-                            {(this.state.profileMode === 'inline' && this.state.layoutMode !== 'horizontal') && <AppInlineProfile />}
-                            <AppMenu model={this.menu} onMenuItemClick={this.onMenuItemClick} onRootMenuItemClick={this.onRootMenuItemClick} 
-                                    layoutMode={this.state.layoutMode} active={this.state.menuActive} /> 
-                        </div>
-                    </ScrollPanel>
-                </div>
+                <div className="layout-topbar-separator"/>
 
-                <div className="layout-main">
-
-                    <AppBreadCrumbWithRouter />
-
-                    <div className="layout-content">
-
-                        <Route path="/" exact component={Dashboard} />
-                        <Route path="/forms" component={FormsDemo} />
-                        <Route path="/sample" component={SampleDemo} />
-                        <Route path="/data" component={DataDemo} />
-                        <Route path="/panels" component={PanelsDemo} />
-                        <Route path="/overlays" component={OverlaysDemo} />
-                        <Route path="/menus" component={MenusDemo} />
-                        <Route path="/messages" component={MessagesDemo} />
-                        <Route path="/charts" component={ChartsDemo} />
-                        <Route path="/misc" component={MiscDemo} />
-                        <Route path="/empty" component={EmptyPage} />
-                        <Route path="/utils" component={UtilsDemo} />
-                        <Route path="/documentation" component={Documentation} />
-
-                        <AppFooter />
-                    </div>
-                </div>
-                
-                <AppRightPanel expanded={this.state.rightPanelActive} onContentClick={this.onRightPanelClick} />
-                
-                <div className="layout-mask"></div>
+                <AppBreadCrumbWithRouter />
             </div>
+
+            <div className="layout-content">
+                <Route path="/" exact component={Dashboard} />
+                <Route path="/forms" component={FormsDemo} />
+                <Route path="/sample" component={SampleDemo} />
+                <Route path="/data" component={DataDemo} />
+                <Route path="/panels" component={PanelsDemo} />
+                <Route path="/overlays" component={OverlaysDemo} />
+                <Route path="/menus" component={MenusDemo} />
+                <Route path="/messages" component={MessagesDemo} />
+                <Route path="/charts" component={ChartsDemo} />
+                <Route path="/misc" component={MiscDemo} />
+                <Route path="/empty" component={EmptyPage} />
+                <Route path="/utils" component={UtilsDemo} />
+                <Route path="/documentation" component={Documentation} />
+            </div>
+
+            <AppConfig topbarColor={this.state.topbarColor} horizontal={this.state.horizontal}
+                    layoutColor={this.state.layoutColor} menuColor={this.state.menuColor} themeColor={this.state.themeColor}
+                    topbarSize={this.state.topbarSize} changeTopbarTheme={this.changeTopbarTheme}
+                    changeMenuToHorizontal={this.changeMenuToHorizontal} changeMenuTheme={this.changeMenuTheme} changeComponentTheme={this.changeComponentTheme}
+                    changePrimaryColor={this.changePrimaryColor} changeTopbarSize={this.changeTopbarSize} onToggleBlockBodyScroll={this.onToggleBlockBodyScroll}/>
+
+            {(!this.isHorizontalMenuActive() && this.state.menuActive) && <div className="layout-mask"/>}
+
+            <AppFooter />
+
         </div>
     );
 }
@@ -163,64 +151,76 @@ render() {
 `
 createMenu() {
     this.menu = [
-        {label: 'Dashboard', icon: 'dashboard', command:()=>{ window.location.hash="/"}},
+        {label: 'Dashboard', icon: 'dashboard', to: '/'},
         {
-            label: 'Themes', icon: 'palette', badge: '6',
+            label: 'Components', icon: 'list',
             items: [
-                {label: 'Indigo - Pink', icon: 'brush', command: (event) => {this.changeTheme('indigo')}},
-                {label: 'Brown - Green', icon: 'brush', command: (event) => {this.changeTheme('brown')}},
-                {label: 'Blue - Amber', icon: 'brush', command: (event) => {this.changeTheme('blue')}},
-                {label: 'Blue Grey - Green', icon: 'brush', command: (event) => {this.changeTheme('blue-grey')}},
-                {label: 'Dark - Blue', icon: 'brush', command: (event) => {this.changeTheme('dark-blue')}},
-                {label: 'Dark - Green', icon: 'brush', command: (event) => {this.changeTheme('dark-green')}},
-                {label: 'Green - Yellow', icon: 'brush', command: (event) => {this.changeTheme('green')}},
-                {label: 'Purple - Cyan', icon: 'brush', command: (event) => {this.changeTheme('purple-cyan')}},
-                {label: 'Purple - Amber', icon: 'brush', command: (event) => {this.changeTheme('purple-amber')}},
-                {label: 'Teal - Lime', icon: 'brush', command: (event) => {this.changeTheme('teal')}},
-                {label: 'Cyan - Amber', icon: 'brush', command: (event) => {this.changeTheme('cyan')}},
-                {label: 'Grey - Deep Orange', icon: 'brush', command: (event) => {this.changeTheme('grey')}}
+                {label: 'Sample Page', icon: 'desktop_mac', to: '/sample'},
+                {label: 'Forms', icon: 'input', to: '/forms'},
+                {label: 'Data', icon: 'grid_on', to: '/data'},
+                {label: 'Panels', icon: 'content_paste', to: '/panels'},
+                {label: 'Overlays', icon: 'content_copy', to: '/overlays'},
+                {label: 'Menus', icon: 'menu', to: '/menus'},
+                {label: 'Messages', icon: 'message',to: '/messages'},
+                {label: 'Charts', icon: 'insert_chart', to: '/charts'},
+                {label: 'Misc', icon: 'toys', to: '/misc'}
             ]
         },
         {
-            label: 'Customization', icon: 'settings_application',
+            label: 'Mega', icon: 'list', badge: 2, mega: true,
             items: [
-                {label: 'Static Menu', icon: 'menu',  command: () => this.setState({layoutMode: 'static'} )},
-                {label: 'Overlay Menu', icon: 'exit_to_app',  command: () => this.setState({layoutMode: 'overlay'}) },
-                {label: 'Slim Menu', icon: 'more_vert',  command: () => this.setState({layoutMode: 'slim'}) },
-                {label: 'Horizontal Menu', icon: 'border_horizontal',  command: () => this.setState({layoutMode: 'horizontal'}) },
-                {label: 'Light Menu', icon: 'label_outline',  command: () => this.setState({darkMenu: false}) },
-                {label: 'Dark Menu', icon: 'label',  command: () => this.setState({darkMenu: true}) },
-                {label: 'Inline Profile', icon: 'contacts',  command: () => this.setState({profileMode: 'inline'}) },
-                {label: 'Top Profile', icon: 'person_pin',  command: () => this.setState({profileMode: 'top'}) },
+                {
+                    label: 'Components',
+                    items: [
+                        {label: 'Sample Page', icon: 'desktop_mac', to: '/sample'},
+                        {label: 'Forms', icon: 'input', to: '/forms'},
+                        {label: 'Data', icon: 'grid_on', to: '/data'},
+                        {label: 'Panels', icon: 'content_paste', to: '/panels'},
+                        {label: 'Overlays', icon: 'content_copy', to: '/overlays'},
+                        {label: 'Menus', icon: 'menu', to: '/menus'},
+                        {label: 'Messages', icon: 'message',to: '/messages'},
+                        {label: 'Charts', icon: 'insert_chart', to: '/charts'},
+                        {label: 'Misc', icon: 'toys', to: '/misc'}
+                    ]
+                },
+                {
+                    label: 'Templates',
+                    items: [
+                        {label: 'Ultima', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/ultima-ng' },
+                        {label: 'Serenity', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/serenity-ng'},
+                        {label: 'Avalon', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/avalon-ng'},
+                        {label: 'Apollo', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/apollo-ng'},
+                        {label: 'Roma', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/roma-ng'},
+                        {label: 'Babylon', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/babylon-ng'},
+                        {label: 'Manhattan', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/manhattan-ng'},
+                        {label: 'Verona', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/verona-ng'},
+                        {label: 'Olympia', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/olympia-ng'},
+                        {label: 'Ecuador', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/ecuador-ng'}
+                    ]
+                },
+                {
+                    label: 'Demo',
+                    items: [
+                        {label: 'PrimeFaces', icon: 'desktop_mac', url: 'https://www.primefaces.org/showcase'},
+                        {label: 'PrimeNG', icon: 'desktop_mac',  url: 'https://www.primefaces.org/primeng'},
+                        {label: 'PrimeReact', icon: 'desktop_mac',  url: 'https://www.primefaces.org/primereact'}
+                    ]
+                }
             ]
         },
         {
-            label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'teal-badge',
+            label: 'Pages', icon: 'get_app',
             items: [
-                {label: 'Sample Page', icon: 'desktop_mac', command:()=>{ window.location.hash="/sample"; }},
-                {label: 'Forms', icon: 'input', command:()=>{ window.location.hash="/forms"; }},
-                {label: 'Data', icon: 'grid_on', command:()=>{ window.location.hash="/data"; }},
-                {label: 'Panels', icon: 'content_paste', command:()=>{ window.location.hash="/panels"; }},
-                {label: 'Overlays', icon: 'content_copy', command:()=>{ window.location.hash="/overlays"; }},
-                {label: 'Menus', icon: 'menu', command:()=>{ window.location.hash="/menus"; }},
-                {label: 'Messages', icon: 'message', command:()=>{ window.location.hash="/messages"; }},
-                {label: 'Charts', icon: 'insert_chart', command:()=>{ window.location.hash="/charts"; }},
-                {label: 'Misc', icon: 'toys', command:()=>{ window.location.hash="/misc"; }}
-            ]
-        },
-        {
-            label: 'Template Pages', icon: 'get_app',
-            items: [
-                {label: 'Empty Page', icon: 'hourglass_empty', command:()=>{ window.location.hash="/empty"; }},
+                {label: 'Empty Page', icon: 'hourglass_empty', to: '/empty'},
                 {label: 'Landing Page', icon: 'flight_land', url: 'assets/pages/landing.html', target: '_blank'},
-                {label: 'Login Page', icon: 'verified_user', url: 'assets/pages/login.html', target: '_blank'},
-                {label: 'Error Page', icon: 'error', url: 'assets/pages/error.html', target: '_blank'},
-                {label: '404 Page', icon: 'error_outline', url: 'assets/pages/404.html', target: '_blank'},
-                {label: 'Access Denied Page', icon: 'security', url: 'assets/pages/access.html', target: '_blank'}
+                {label: 'Login Page', icon: 'verified_user', to: '/login'},
+                {label: 'Error Page', icon: 'error', to: '/error'},
+                {label: '404 Page', icon: 'error_outline', to: '/notfound'},
+                {label: 'Access Denied Page', icon: 'security', to: '/access'}
             ]
         },
         {
-            label: 'Menu Hierarchy', icon: 'menu',
+            label: 'Hierarchy', icon: 'menu',
             items: [
                 {
                     label: 'Submenu 1', icon: 'subject',
@@ -264,8 +264,9 @@ createMenu() {
                 }
             ]
         },
-        {label: 'Utils', icon: 'build',  command:()=>{ window.location.hash="/utils"; }},
-        {label: 'Documentation', icon: 'find_in_page',  command:()=>{ window.location.hash="/documentation"; }}
+        {label: 'Utils', icon: 'build',  command:()=>{ window.location = "#/utils"}},
+        {label: 'Documentation', icon: 'find_in_page',  command:()=>{ window.location = "#/documentation"}},
+        {label: 'Buy Now', icon: 'credit_card', command: () => { window.location = "https://www.primefaces.org/store"}},
     ];
 }
     
@@ -273,21 +274,27 @@ createMenu() {
 </pre>
 
                         <div className="card-title">Theme and Layout SASS</div>
-                        <p>Ultima provides 12 PrimeReact themes out of the box, setup of a theme simple including the css of theme to your page that are located inside resources/theme folder.</p>
-                        
+                        <p>Sapphire provides 18 PrimeReact themes out of the box, setup of a theme simple including the css of theme to your page that are located inside assets/theme folder.</p>
+
                         <ul>
-                            <li>theme-blue-grey</li>
+                            <li>theme-amber</li>
                             <li>theme-blue</li>
+                            <li>theme-bluegrey</li>
                             <li>theme-brown</li>
                             <li>theme-cyan</li>
-                            <li>theme-dark-blue</li>
-                            <li>theme-dark-green</li>
+                            <li>theme-deeporange</li>
+                            <li>theme-deeppurple</li>
+                            <li>theme-gray</li>
                             <li>theme-green</li>
-                            <li>theme-grey</li>
                             <li>theme-indigo</li>
-                            <li>theme-purple-amber</li>
-                            <li>theme-purple-cyan</li>
+                            <li>theme-lightblue</li>
+                            <li>theme-lightgreen</li>
+                            <li>theme-lime</li>
+                            <li>theme-orange</li>
+                            <li>theme-pink</li>
+                            <li>theme-purple</li>
                             <li>theme-teal</li>
+                            <li>theme-yellow</li>
                         </ul>
 
                         <p>A custom theme can be developed by the following steps.</p>
@@ -304,13 +311,15 @@ createMenu() {
 <pre>
 {
 `
-$primaryColor: #607D8B;
-$primaryDarkColor: #37474F;
-$primaryLightColor: #B0BEC5;
-$accentColor: #8BC34A;
-$accentDarkColor: #558B2F;
-$accentLightColor: #C5E1A5;
-$accentTextColor: #ffffff;
+$primaryColor:#1E88E5;
+$primaryDarkColor:#1565C0;
+$primaryLightColor:#42A5F5;
+$primaryLightestColor:#E3F2FD;
+$primaryTextColor:#ffffff;
+$accentColor:#FFB300;
+$accentDarkColor: #FF8F00;
+$accentLightColor: #FFCA28;
+$accentTextColor: #212121;
 
 @import '../sass/theme/_theme';
 
@@ -318,391 +327,590 @@ $accentTextColor: #ffffff;
 }
 </pre> 
 
-                        <p> An example sass command to compile the css would be;</p>
+                        <p>You may import the scss directly in your App.js if you prefer webpack to include the theme however if you'd like to do it manually, an example sass command to compile the css would be;</p>
                             
 <pre>
-sass public/assets/theme/theme-myown.scss public/assets/theme/theme-myown.css 
+sass public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css 
 </pre> 
 
                         <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
                         so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
 <pre>
-sass -w public/assets/ --sourcemap=none
+sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css  --sourcemap=none
 </pre>
 
-                        <p>Same can also be applied to layout itself;</p>
+<div className="card-title">TopBar</div>
+
+                        <p>TopBar comes in 3 sizes; large, medium and small. A specific style class with the layout-top-* prefix is defined at the main container element in order to apply a size. Below are the all 3 options;</p>
+<pre>
+{
+`<div className="layout-container layout-top-small">
+<div className="layout-container layout-top-medium">
+<div className="layout-container layout-top-large">
+`
+}
+</pre>
+
+                        <p>Similarly TopBar style theme is also defined at the main container element, template below uses the default blue topbar.</p>
+<pre>
+&lt;div className="layout-container layout-topbar-blue"&gt;
+</pre>
+
+                        <p>Full list of topbar options are the following, note that <i>layout-topbar-</i> prefix needs to be added to apply the style such as <b>layout-topbar-midnight</b>.</p>
+
                         <ul>
-                            <li>Choose a layout name such as layout-myown.</li>
-                            <li>Create an empty file named layout-myown.scss inside <i>assets/layout/css</i> folder.</li>
-                            <li>Define the variables listed below and import the <i>../sass/layout/_layout.scss</i> file.</li>
-                            <li>Build the scss to generate css</li>
-                            <li>Serve the css by importing it using a link tag or a bundler.</li>
+                            <li>aerial</li>
+                            <li>apricot</li>
+                            <li>aquarelle</li>
+                            <li>architecture</li>
+                            <li>ash</li>
+                            <li>balloon</li>
+                            <li>beach</li>
+                            <li>beyoglu</li>
+                            <li>bloom</li>
+                            <li>blue</li>
+                            <li>canvas</li>
+                            <li>circuit</li>
+                            <li>city</li>
+                            <li>classic</li>
+                            <li>coffee</li>
+                            <li>condo</li>
+                            <li>connectionsone</li>
+                            <li>connectionstwo</li>
+                            <li>crystal</li>
+                            <li>dark</li>
+                            <li>dawn</li>
+                            <li>desert</li>
+                            <li>destination</li>
+                            <li>disco</li>
+                            <li>dock</li>
+                            <li>downtown</li>
+                            <li>emptiness</li>
+                            <li>exposure</li>
+                            <li>faraway</li>
+                            <li>flamingo</li>
+                            <li>flight</li>
+                            <li>fluid</li>
+                            <li>forest</li>
+                            <li>fruity</li>
+                            <li>grape</li>
+                            <li>hallway</li>
+                            <li>harvey</li>
+                            <li>hazy</li>
+                            <li>highline</li>
+                            <li>island</li>
+                            <li>jet</li>
+                            <li>kashmir</li>
+                            <li>light</li>
+                            <li>lights</li>
+                            <li>lille</li>
+                            <li>louisville</li>
+                            <li>marley</li>
+                            <li>materialone</li>
+                            <li>materialtwo</li>
+                            <li>midnight</li>
+                            <li>mountain</li>
+                            <li>mural</li>
+                            <li>night</li>
+                            <li>norge</li>
+                            <li>northern</li>
+                            <li>olympic</li>
+                            <li>orange</li>
+                            <li>palm</li>
+                            <li>perfection</li>
+                            <li>pine</li>
+                            <li>polygons</li>
+                            <li>reflection</li>
+                            <li>revolt</li>
+                            <li>river</li>
+                            <li>road</li>
+                            <li>rose</li>
+                            <li>royal</li>
+                            <li>sandiego</li>
+                            <li>seagull</li>
+                            <li>sky</li>
+                            <li>skyline</li>
+                            <li>skyscaper</li>
+                            <li>snow</li>
+                            <li>splash</li>
+                            <li>spray</li>
+                            <li>station</li>
+                            <li>sunset</li>
+                            <li>symmetry</li>
+                            <li>timelapse</li>
+                            <li>tinfoil</li>
+                            <li>tractor</li>
+                            <li>tropical</li>
+                            <li>urban</li>
+                            <li>vanusa</li>
+                            <li>volcano</li>
+                            <li>wall</li>
+                            <li>waterfall</li>
+                            <li>waves</li>
+                            <li>wing</li>
                         </ul>
 
-                        <p>Here are the variables required to create a layout, you may need to change the last line according to the 
-                            relative path of the sass folder in your application.</p>
+                        <p>Creating your own topbar requires a couple of steps.</p>
+                        <ul>
+                            <li>Choose a topbar name such as mytopbar.</li>
+                            <li>Create an empty file named _topbar_mytopbar.scss inside public/assets/sass/layout/topbar/themes folder.</li>
+                            <li>Add your file to the import section of the _topbar.scss in the same folder.</li>
+                            <li>Define the variables listed below and import the <i>../_topbar_theme</i> file.</li>
+                            <li>Build the scss to generate css</li>
+                            <li>Apply layout-topbar-mytopbar class to the main wrapper element of in app.main.component template.</li>
+                        </ul>
+
+<pre>
+&lt;div class="layout-container layout-topbar-mytopbar"&gt;
+</pre>
+
+                        <p>Here are the variables required to create a gradient based topbar.</p>
 
 <pre>
 {
-`$primaryColor: #607D8B;
-$primaryDarkColor: #37474F;
-$primaryLightColor: #B0BEC5;
-$accentColor: #8BC34A;
-$accentDarkColor: #558B2F;
-$accentLightColor: #C5E1A5;
-$accentTextColor: #ffffff;
-$darkMenuBgColor: #424242;
-$darkMenuHoverColor: #676767;
-$darkMenuRouterLinkActiveColor: #8BC34A;
-$lightMenuRouterLinkActiveColor: #8BC34A;
-$horizontalLightMenuRouterLinkActiveColor: #8BC34A;
+`
+.layout-topbar-mytopbar {
+    $topbarLeftBgColor:#F1719A;
+    $topbarRightBgColor:#FE9473;
+    $topbarSearchInputColor:#FDD5CF;
+    $topbarSearchFocusedInputColor:#ffffff;
+    $topbarUserIconHoverBorderColor:#ffffff;
+    $topbarSeparatorColor:#ffffff;
+
+    //vertical menubutton
+    $menuButtonBgColor:#fafafa;
+    $menuButtonIconColor:#F1719A;
+    $menuButtonHoverBgColor:#e0e0e0;
+    $menuButtonHoverIconColor:#F1719A;
+    $menuButtonActiveBgColor:rgba(169,53,89,.6);
+    $menuButtonActiveIconColor:#ffffff;
+
+    //horizontal menu
+    $horizontalMenuitemTextColor:#ffffff;
+    $horizontalMenuitemIconColor:#ffffff;
+    $horizontalMenuitemActiveBorderColor:#ffffff;
+    $horizontalMenuitemHoverBorderColor:#FDD5CF;
+
+    //breadcrumb
+    $breadcrumbIconColor:#ffffff;
+    $breadcrumbTextColor:#ffffff;
+    $breadcrumbLinkColor:#80CBC4;
+    
+    @import '../_topbar_theme';
+}
+
+`
+}
+</pre>
+
+                        <p>If you prefer an image for the background, use the template below.</p>
+
+<pre>
+{
+`
+.layout-topbar-mytopbar {
+    $topbarBgImage:'reflection-topbar.jpg';
+    $topbarSearchInputColor:#BFDEE2;
+    $topbarSearchFocusedInputColor:#ffffff;
+    $topbarUserIconHoverBorderColor:#ffffff;
+    $topbarSeparatorColor:#ffffff;
+
+    //vertical menubutton
+    $menuButtonBgColor:#fafafa;
+    $menuButtonIconColor:#1C1F20;
+    $menuButtonHoverBgColor:#e0e0e0;
+    $menuButtonHoverIconColor:#1C1F20;
+    $menuButtonActiveBgColor:rgba(0,172,193,.6);
+    $menuButtonActiveIconColor:#ffffff;
+
+    //horizontal menu
+    $horizontalMenuitemTextColor:#ffffff;
+    $horizontalMenuitemIconColor:#ffffff;
+    $horizontalMenuitemActiveBorderColor:#ffffff;
+    $horizontalMenuitemHoverBorderColor:#BFDEE2;
+
+    //breadcrumb
+    $breadcrumbIconColor:#ffffff;
+    $breadcrumbTextColor:#ffffff;
+    $breadcrumbLinkColor:#4DD0E1;
+
+    @import '../_topbar_theme';
+}
+`
+}
+</pre>
+
+                        <div className="card-title">Menu Themes</div>
+                        <p>Menu themes apply to the vertical menu, submenus of horizontal menu and the profile menu. Menu style used across the template is defined at the main container element, template below uses the default light menus.</p>
+<pre>
+&lt;div className="layout-container layout-menu-light"&gt;
+</pre>
+
+                        <p>Full list of menu themes are the following, note that <i>layout-menu-</i> prefix needs to be added to apply the style such as <b>layout-menu-dark</b>.</p>
+
+                        <ul>
+                            <li>aerial</li>
+                            <li>apricot</li>
+                            <li>aquarelle</li>
+                            <li>architecture</li>
+                            <li>ash</li>
+                            <li>balloon</li>
+                            <li>beach</li>
+                            <li>beyoglu</li>
+                            <li>bloom</li>
+                            <li>blue</li>
+                            <li>canvas</li>
+                            <li>circuit</li>
+                            <li>city</li>
+                            <li>classic</li>
+                            <li>coffee</li>
+                            <li>condo</li>
+                            <li>connectionsone</li>
+                            <li>connectionstwo</li>
+                            <li>crystal</li>
+                            <li>dark</li>
+                            <li>dawn</li>
+                            <li>desert</li>
+                            <li>destination</li>
+                            <li>disco</li>
+                            <li>dock</li>
+                            <li>downtown</li>
+                            <li>emptiness</li>
+                            <li>exposure</li>
+                            <li>faraway</li>
+                            <li>flamingo</li>
+                            <li>flight</li>
+                            <li>fluid</li>
+                            <li>forest</li>
+                            <li>fruity</li>
+                            <li>grape</li>
+                            <li>hallway</li>
+                            <li>harvey</li>
+                            <li>hazy</li>
+                            <li>highline</li>
+                            <li>island</li>
+                            <li>jet</li>
+                            <li>kashmir</li>
+                            <li>light</li>
+                            <li>lights</li>
+                            <li>lille</li>
+                            <li>louisville</li>
+                            <li>marley</li>
+                            <li>materialone</li>
+                            <li>materialtwo</li>
+                            <li>midnight</li>
+                            <li>mountain</li>
+                            <li>mural</li>
+                            <li>night</li>
+                            <li>norge</li>
+                            <li>northern</li>
+                            <li>olympic</li>
+                            <li>orange</li>
+                            <li>palm</li>
+                            <li>perfection</li>
+                            <li>pine</li>
+                            <li>polygons</li>
+                            <li>reflection</li>
+                            <li>revolt</li>
+                            <li>river</li>
+                            <li>road</li>
+                            <li>rose</li>
+                            <li>royal</li>
+                            <li>sandiego</li>
+                            <li>seagull</li>
+                            <li>sky</li>
+                            <li>skyline</li>
+                            <li>skyscaper</li>
+                            <li>snow</li>
+                            <li>splash</li>
+                            <li>spray</li>
+                            <li>station</li>
+                            <li>sunset</li>
+                            <li>symmetry</li>
+                            <li>timelapse</li>
+                            <li>tinfoil</li>
+                            <li>tractor</li>
+                            <li>tropical</li>
+                            <li>urban</li>
+                            <li>vanusa</li>
+                            <li>volcano</li>
+                            <li>wall</li>
+                            <li>waterfall</li>
+                            <li>waves</li>
+                            <li>wing</li>
+                        </ul>
+
+                        <p>Creating your own menu theme requires a couple of steps.</p>
+                        <ul>
+                            <li>Choose a menu name such as mymenu.</li>
+                            <li>Create an empty file named _menu_mymenu.scss inside public/assets/sass/layout/menu/themes folder.</li>
+                            <li>Add your file to the import section of the _menu.scss in the same folder.</li>
+                            <li>Define the variables listed below and import the <i>../_menu_theme</i> file.</li>
+                            <li>Build the scss to generate css</li>
+                            <li>Add layout-menu-mymenu to the main wrapper element of in app.main.component template.</li>
+                        </ul>
+
+<pre>
+&lt;div className="layout-container layout-menu-mymenu"&gt;
+</pre>
+
+                        <p>Here are the variables required to create a gradient based topbar.</p>
+
+<pre>
+{
+`
+.layout-menu-mymenu {
+    $menuTopBgColor:#457fca;
+    $menuBottomBgColor:#5691c8;
+    $menuitemTextColor:#ffffff;
+    $menuitemIconColor:#ffffff;
+    $menuitemHoverBgColor:#578bcf;
+    $menuitemHoverTextColor:#ffffff;
+    $menuitemHoverIconColor:#ffffff;
+    $menuitemActiveTextColor:#ffc107;
+    $menuitemActiveIconColor:#ffc107;
+    $verticalActiveRootMenuitemBgColor:#ffffff; 
+    $verticalActiveRootMenuitemTextColor:#457fca;   
+    $verticalActiveRootMenuitemIconColor:#457fca;
+    $verticalSubmenuBgColor:#6a98d4;
+
+    @import '../_menu_theme';
+}
+`
+}
+</pre>
+
+                        <p>If you prefer an image for the background, use the template below.</p>
+
+<pre>
+{
+`
+.layout-menu-mymenu {
+    $menuBgImage:'architecture-menu.jpg';
+    $menuitemTextColor:#ffffff;
+    $menuitemIconColor:#ffffff;
+    $menuitemHoverBgColor:rgba(255,255,255,0.32);
+    $menuitemHoverTextColor:#ffffff;
+    $menuitemHoverIconColor:#ffffff;
+    $menuitemActiveTextColor:#B39DDB;
+    $menuitemActiveIconColor:#B39DDB;
+    $verticalActiveRootMenuitemBgColor:#673AB7; 
+    $verticalActiveRootMenuitemTextColor:#ffffff;   
+    $verticalActiveRootMenuitemIconColor:#ffffff;
+    $verticalSubmenuBgColor:rgba(0,0,0,0.2);
+
+    @import '../_menu_theme';
+}
+`
+}
+</pre>
+
+                        <div className="card-title">Menu Highlight Color</div>
+                        <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself. 
+                            This color scheme is specified by the layout file such as layout-blue.scss which is still a mandatory file to be included regardless of the menu type as it defines the structure for the layout itself.</p>
+
+                        <p>Full list of menu highlight themes are the following.</p>
+                        <ul>
+                            <li>amber</li>
+                            <li>blue</li>
+                            <li>bluegray</li>
+                            <li>brown</li>
+                            <li>cyan</li>
+                            <li>deeporange</li>
+                            <li>deeppurple</li>
+                            <li>gray</li>
+                            <li>green</li>
+                            <li>indigo</li>
+                            <li>lightblue</li>
+                            <li>lightgreen</li>
+                            <li>lime</li>
+                            <li>orange</li>
+                            <li>pink</li>
+                            <li>purple</li>
+                            <li>teal</li>
+                            <li>yellow</li>
+                        </ul>
+
+                        <p>Creating your own menu highlight theme requires a couple of steps.</p>
+                        <ul>
+                            <li>Choose a layout name such as myown.</li>
+                            <li>Create an empty file named layout-myown.scss inside public/assets/layout/css folder.</li>
+                            <li>Define the variables listed below and import the <i>../../sass/layout/_layout</i> file.</li>
+                            <li>Build the scss to generate css</li>
+                            <li>Import the layout css file in your application.</li>
+                        </ul>
+
+<pre>
+{
+`
+$primaryColor:#607D8B;
+$primaryTextColor:#ffffff;
+$accentColor:#FFC107;
+$accentTextColor:#212121;
 
 @import '../../sass/layout/_layout';
 `
 }
-</pre> 
+</pre>
 
-                        <p>In case you would like to customize the shared variables, the _variables.scss files are where the options are defined for layout and theme.</p>
+                        <div className="card-title">Common SASS Variables</div>
+                        <p>In case you'd like to customize the shared variables, use the variables files under sass/variables folder.</p>
 
-                        <h3>sass/_variables.scss</h3>
+<h3>sass/_common.scss</h3>
 <pre>
 {
-`/* Common */
-$textColor: #212121;
-$textSecondaryColor: #757575;
-$fontFamily: "Roboto","Helvetica Neue",sans-serif;
-$fontSize: 14px;
-$lineHeight: 18px;
-$transitionDuration: .3s;
-$borderRadius: 3px;
-$iconFontSize:1.5em;
-$iconWidth:1em;
-$iconHeight:1em;
-$overlayMaskBgColor:#424242;
-$errorColor:#e62a10;
-$errorTextColor:#ffffff;
+`
+//general
+$fontSize:14px;
+$fontFamily:"Roboto","Helvetica Neue",sans-serif;
+$textColor:#212121;
+$textSecondaryColor:#616161;
+$borderRadius:2px;
+$letterSpacing:.25px;
+$transitionDuration:.2s;
+
+//icons
+$iconWidth:20px;
+$iconHeight:20px;
+$iconFontSize:20px;
+
+//list item hover
 $hoverBgColor:#e8e8e8;
 $hoverTextColor:#000000;
+
 $dividerColor:#dbdbdb;
-$dividerLightColor:#cacaca;
-$inlineSpacing:.5em;
-
-$blueGrey:#607D8B;
-$cyan:#00BCD4;
-$teal:#009688;
-$red:#F44336;
-$green:#4CAF50;
-$deepOrange:#FF5722;
-$purple:#673AB7;
-$pink:#E91E63;
-$amber:#FFC107;
-$orange:#FF9800;
-$brown:#795548;
-$indigo:#3F51B5;
-$blue:#03A9F4;
-$secondary:#ffffff;
-
-$blueGreyDark:#37474F;
-$cyanDark:#00838F;
-$tealDark:#009688;
-$redDark:#C62828;
-$greenDark:#2E7D32;
-$deepOrangeDark:#D84315;
-$purpleDark:#4527A0;
-$pinkDark:#AD1457;
-$amberDark:#FF8F00;
-$orangeDark:#EF6C00;
-$brownDark:#4E342E;
-$indigoDark:#283593;
-$blueDark:#0277BD;
+$dividerLightColor:#f8f8f8;
 `
 }
 </pre>
-                        <h3>sass/layout/_variables</h3>
+
+<h3>sass/variables/_layout.scss</h3>
 <pre>
 {
 `
-@import '../_variables';
+@import './common';
 
-$bodyBgColor:#f7f7f7;
-$maskBgColor:#424242;
-$topbarButtonColor:#ffffff;
-$topbarButtonHoverColor:#e8e8e8;
-$topbarSearchBorderColor:#ffffff;
-$topbarSearchColor:#ffffff;
-$layoutMenuBgColor:#ffffff;
-$layoutMenuScrollbarBgColor:#aaaaaa;
-$layoutMenuItemIconColor:#757575;
-$layoutMenuItemActiveColor:#e8e8e8;
-$rightPanelBgColor:#ffffff;
-$topbarSubmenuBgColor:#ffffff;
-$profileMenuBorderBottomColor:#d6d5d5;
-$profileMenuDarkBorderBottomColor:#545454;
-$darkMenuColor:#ffffff;
-$slimMenuTooltipColor:#ffffff;
-$activeMenuItemBadgeColor:#ffffff;
-$activeMenuItemBadgeTextColor:#212121;
+$bodyBgColor:#f4f4f7;
+$bodySidePadding:100px;
+$mobileBreakpoint:1024px;
+$footerBgColor:#212121;
+$footerTextColor:#9f9f9f;
+$menuitemBorderRadius:6px;
+$maskBgColor:#252529;
+
+//horizontal menu
+$horizontalOverlaySubmenuShadow:0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
 `
-
 }
 </pre>
 
-                        <h3>sass/theme/_variables</h3>
-                        <pre>
+<h3>sass/variables/_theme.scss</h3>
+<pre>
 {
-`@import '../_variables';
+`
+@import './common';
 
-$headerFontSize:1em;
-$headerPadding:.625em 1em;
-$headerBgColor:$primaryColor;
+$headerPadding:.714em 1em;
 $headerTextColor:#ffffff;
-$headerIconColor:#ffffff;
+$headerFontWeight:500;
 
-$contentPadding:.625em 1em;
-$contentBgColor:#ffffff;
+$contentPadding:.857em 1em;
 $contentBorderColor:#d8d8d8;
-$contentLineHeight: 18px;
+$contentBgColor:#ffffff;
 
-// InputText
 $inputBorderColor:#bdbdbd;
-$inputPadding:2px 2px 1px 2px;
-$inputHeaderPadding:.625em 1em;
-$inputGroupAddonBgColor:#e6e6e6;
-$textboxBgColor:#f7f7f7;
+$inputInvalidBorderColor:#e62a10;
 $inputBgColor:#ffffff;
+$inputErrorTextColor:#e62a10;
+$inputHeaderPadding:.714em 1em;
+$inputBorderErrorColor:#e62a10;
 $inputFieldLabelTextColor:#999999;
 $inputFieldBoxBgColor:#f7f7f7;
 $inputFieldFillBgColor:#f7f7f7;
-$inputAutoFillBorderColor: #bdbdbd;
+$inputAutoFillBorderColor:#bdbdbd;
+$textboxBgColor:#f7f7f7;
 
-// Input lists
-$listItemPadding:.625em 1em;
-$inputListItemFilterTextColor:#ffffff;
+//inputs with lists
+$inputListPadding: .5em 0;
 
-//input switch
-$inputSwitchOffHandleBgColor:#ffffff;
+//groups
+$inputGroupBorderColor:#bdbdbd;
+$inputGroupBgColor:transparent;
+$inputGroupTextColor:#757575;
+$inputGroupIconColor:#bdbdbd;
+$inputGroupAddonMinWidth:2*$fontSize;
+$checkboxWidth:18px;
+$checkboxHeight:18px;
+$inputGroupPadding:2px 2px 1px 2px;
+$inputGroupIconFontSize: 1.5em;
 
-// Button
-$buttonFontSize:1em;
+//panels
+$accordionHeaderBgColor:#eeeeee;
+$accordionHeaderTextColor:$textColor;
+$accordionHeaderHoverBgColor:#d9d9d9;
+$accordionHeaderHoverTextColor:$textColor;
+
+$panelContentLineHeight:1.5;
+$panelLightHeaderBgColor:#eeeeee;
+$panelLightHeaderTextColor:$textColor;
+$panelLightHeaderIconHoverBgColor:#d9d9d9;
+$panelDarkHeaderBgColor:#212121;
+$panelDarkHeaderTextColor:#ffffff;
+$panelDarkHeaderIconHoverBgColor:#424242;
+
 $buttonTextColor:#ffffff;
 
-//radiobutton
-$radioButtonBorderColor:#757575;
+$listItemPadding:.571em .857em;
 
-//checkbox
+$radioButtonBorderColor:#757575;
 $checkboxBorderColor:#757575;
 
-//editor
-$editorHeaderBgColor:#e8e8e8;
-$editorExpandLabelColor:#444444;
+$errorMessageFontSize:11px;
+$errorMessageIconFontSize:13px;
 
-//datatable
-$dataTableBorderColor:#cacaca;
-$dataTableFilterInputBgColor:#ffffff;
-$dataTableEditableCellInputBorderColor:#ffffff;
-$dataTableEditableCellInputColor:#ffffff;
+//data
+$dataTableHeaderPadding:.857em;
+$dataTableCellPadding:.714em .857em;
 $dataTableRowBgColorEven:#f4f4f4;
-$dataTableEvenRowBgColor:#f4f4f4;
+$paginatorPadding:.714em 1em;
 
-//dataview
-$dataviewHeaderBgColor:#ffffff;
-
-//steps
-$stepsNumberBgColor:#757575;
-$stepsNumberColor:#ffffff;
-
-//messages, growl, toast
-$messageIconColor:#ffffff;
-$infoMessageBgColor:#2196F3;
-$infoMessageBorderColor:#2196F3;
-$infoMessageTextColor:#ffffff;
-
-$warnMessageBgColor:#ffc107;
-$warnMessageBorderColor:#ffc107;
-$warnMessageTextColor:#ffffff;
-
-$errorMessageBgColor:#e62a10;
-$errorMessageBorderColor:#e62a10;
-$errorMessageTextColor:#ffffff;
-
-$successMessageBgColor:#8BC34A;
-$successMessageBorderColor:#8BC34A;
-$successMessageTextColor:#ffffff;
-
-//tooltip
-$tooltipBgColor:#323232;
-
-//dialog
-$dialogHeaderBgColor:#ffffff;
-$dialogHeaderTextColor:$textColor;
-$dialogFooterButtonBgColor:#ffffff;
-$dialogFooterButtonTextColor:$textColor;
-`
-
+//menus
+$menuitemPadding:.571em .857em;
+$menuListPadding: .5em 0;   
 }
+`
+} 
 </pre>
 
-                        <p>In the demo app layout and theme css files are defined using link tags in index.html so the demo can switch them on
-                            the fly by changing the path however if this is not a requirement, you may also import them in App.js so that webpack adds them to the bundle.</p>
-
-                        <div className="card-title">Menu Item Badges</div>
-                        <p>Badges are numerical indicators associated with a link.
-                           The badge property is the value of the badge and badgeStyleClass is style class of the badge.</p>
-<pre>
-label: 'Components', icon: 'list', badge: '2', badgeClassName: 'red-badge'
-</pre>  
-                        <p>Default badge uses the accent color of ultima layout and there are three more alternative colors.</p>
-                        <ul>
-                            <li>red-badge</li>
-                            <li>purple-badge</li>
-                            <li>teal-badge</li>
-                        </ul>
-                                                
                         <div className="card-title">Menu Modes</div>
-                        <p>Menu has 4 modes, static, overlay, slim and horizontal. Main layout container element in App.js is used to define which mode to use by adding specific classes. List
+                        <p>Menu has 2 modes; horizontal and overlay. Layout container element in App.js is used to define which mode to use by adding specific classes. List
                         below indicates the style classes for each mode.</p>
-                        
+
                         <ul>
-                            <li>Static: "layout-wrapper menu-layout-static"</li>
-                            <li>Overlay: "layout-wrapper menu-layout-overlay"</li>
-                            <li>Slim: "layout-wrapper menu-layout-static menu-layout-slim"</li>
-                            <li>Horizontal: "layout-wrapper menu-layout-static menu-layout-horizontal"</li>
+                            <li>Horizontal: <b>"layout-container layout-menu-horizontal"</b></li>
+                            <li>Overlay: <b>"layout-container"</b></li>
                         </ul>
 
-                        <p>For example to create a horizontal menu, the div element should be in following form;</p>
-<pre>
-&lt;div className="layout-wrapper menu-layout-static menu-layout-horizontal"&gt;
-</pre>            
+                        <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. 
+                            Sample application has an example implementation of such use case. Refer to App.js for an example..</p>
 
-                        <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
-                        application has an example implementation of such use case. Refer to App.js for an example.</p>          
+                        <p>Result will be reflected at application breadcrumb component such as "Home Icon" -> "Admin" -> "Control Panel".</p>
 
-                        <div className="card-title">Dark Menu</div>
-                        <p>Default color scheme of menu is light and alternative dark mode can be activated by adding <i>layout-menu-dark</i> style class to the menu container.</p>
+                        <div className="card-title">PrimeFlex Grid Syste</div>
+                        <p>Sapphire uses PrimeFlex Grid System throughout the samples, although any Grid library can be used we suggest using PrimeFlex as your grid system as it is well tested and supported by PrimeReact. 
+                            PrimeFlex is available at npm and defined at package.json of Ultima so that it gets installed by default.</p>
 
-<pre>
-&lt;div className="layout-menu layout-menu-dark"&gt;
-</pre>
-
-                        <div className="card-title">Profile Modes</div>
-                        <p>There are two possible locations for the user profile menu, first option is inline located inside the main menu and second option is the topbar menu. For inline mode,
-                        profile content should be placed above the menu and for inline mode content goes in topbar-items list. The sample demo application provides examples for
-                        both cases.</p>
-                        
-                        <div className="card-title">Utilites</div>
-                        <p>Ultima provides various helper features such as material iconset compatible with PrimeNG components and helper classes. Visit utils page for details.</p>
-                                
-                        <div className="card-title">PrimeFlex Grid System</div>
-                        <p>Ultima uses PrimeFlex Grid System throughout the samples, although any Grid library can be used we suggest using PrimeFlex as your grid system as it is well tested and supported by PrimeReact. PrimeFlex is
-                        available at npm and defined at package.json of Ultima so that it gets installed by default.</p>
-
-						<div className="card-title">Customizing Styles</div>
-						<p>It is suggested to add your customizations in the following sass files under the override folder instead of adding them to the
-							scss files under sass folder to avoid maintenance issues after an update.</p>
-
-						<ul>
-							<li><b>_layout_variables</b>: Variables of the layout.</li>
-							<li><b>_layout_styles</b>: Styles for the layout.</li>
-							<li><b>_theme_variables</b>: Variables of the theme.</li>
-							<li><b>_theme_styles</b>: Styles for the theme.</li>
-						</ul>
-
-                        <div className="card-title">Migration Guide</div>
-
-						<p>3.0.0 to 3.0.1</p>
-						<ul>
-							<li>Update layout css files</li>
-							<li>Update theme css files</li>
-						</ul>
-
-						<p>2.0.0-beta.3 to 3.0.0</p>
-						<ul>
-							<li>Update index.jx</li>
-							<li>Update App.js</li>
-							<li>Update AppBreadcrumb.js</li>
-							<li>Update AppInlineProfile.js</li>
-							<li>Update AppMenu.js</li>
-							<li>Update AppTopbar.js</li>
-							<li>Add AppWrapper.js</li>
-							<li>Update layout css files</li>
-							<li>Update theme css files</li>
-						</ul>
-
-                        <p>2.0.0-beta.2 to 2.0.0-beta.3</p>
-                        <ul>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
-                        <p>2.0.0-beta.1 to 2.0.0-beta.2</p>
-                        <ul>
-                            <li>Update theme css files</li>
-                        </ul>
-
-                        <p>1.x to 2.0.0-beta.1</p>
-                        <p>Brings support to PrimeReact 2.x</p>
-                        <ul>
-                            <li>Install PrimeFlex from npm.</li>
-                            <li>Update src/ripple.js</li>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                            <li>Include the new AppBreadcrumb.js component and update App.js.</li>
-                        </ul>
-
-                        <p>1.6.0 to 1.6.1</p>
-                        <p>Brings support for PrimeReact 1.6.x.</p>
+                        <div className="card-title">Customizing Styles</div>
+                        <p>It is suggested to add your customizations in the following sass files under the overrides folder instead of adding them to the
+                            scss files under sass folder to avoid maintenance issues after an update.</p>
 
                         <ul>
-                            <li>Import primeicons.css in App.js.</li>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
-                        <p>1.5.3 to 1.6.0</p>
-                        <ul>
-                            <li>Update AppMenu.js</li>
-                            <li>Update AppRightPanel.js</li>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
-                        <p>1.5.2 to 1.5.3</p>
-                        <ul>
-                            <li>Update App.js</li>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
-                        <p>1.5.1 to 1.5.2</p>
-                        <ul>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
-                        <p>1.5.0 to 1.5.1</p>
-                        <p>Aligns input focus animation with the Material specs.</p>
-                        <ul>
-                            <li>Update AppTopbar.js</li>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
-                        <p>1.4.2 to 1.5.0</p>
-                        <ul>
-                            <li>Update App.js</li>
-                            <li>Update AppRightPanel.js</li>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
-                        <p>1.4.1 to 1.4.2</p>
-                        <ul>
-                            <li>Update theme css files</li>
+                            <li><b>_layout_variables</b>: Variables of the layout.</li>
+                            <li><b>_layout_styles</b>: Styles for the layout.</li>
+                            <li><b>_theme_variables</b>: Variables of the theme.</li>
+                            <li><b>_theme_styles</b>: Styles for the theme.</li>
                         </ul>
                         
-                        <p>1.4.0 to 1.4.1</p>
-                        <ul>
-                            <li>Update theme css files</li>
-                        </ul>
-
-                        <p>1.0.0 to 1.4.0</p>
-                        <ul>
-                            <li>Update PrimeReact to 1.4.0</li>
-                            <li>Update css files of theme and layout</li>
-                        </ul>
                     </div>
                 </div>
             </div>
