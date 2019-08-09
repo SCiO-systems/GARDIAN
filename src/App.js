@@ -151,6 +151,7 @@ class App extends Component {
 	onMenuItemClick(event) {
 		if(!event.item.items) {
 			this.setState({menuActive: false});
+			this.unblockBodyScroll();
 		}
 	}
 
