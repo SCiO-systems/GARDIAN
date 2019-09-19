@@ -913,7 +913,6 @@ body {
         }
 
         &.p-treetable-hoverable-rows {
-            cursor: pointer;
             .p-treetable-tbody > tr:not(.p-highlight):not(.p-highlight-contextmenu):hover {
                 cursor: pointer;
                 @include hover-element();
