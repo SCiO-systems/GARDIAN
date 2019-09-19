@@ -910,6 +910,14 @@ $menuListPadding: .5em 0;
                             <li><b>_theme_variables</b>: Variables of the theme.</li>
                             <li><b>_theme_styles</b>: Styles for the theme.</li>
                         </ul>
+
+						<div className="card-title">Migration Guide</div>
+
+						<p>1.0.0 to 1.0.1</p>
+						<ul>
+							<li>Update layout css files</li>
+							<li>Update theme css files</li>
+						</ul>
                         
                     </div>
                 </div>
