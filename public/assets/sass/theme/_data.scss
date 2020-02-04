@@ -5,29 +5,29 @@ body {
             @include header();
             padding: $headerPadding;
         }
-        
+
         .p-picklist-list {
             @include content();
             @include corner-bottom();
             padding: 0;
         }
-        
+
         li.p-picklist-item {
             padding: $listItemPadding;
             margin: 0;
             @include border-radius(0);
             color: $textColor;
-            
+
             &:not(.p-highlight):hover {
                 @include hover-element();
             }
-            
+
             &.p-highlight {
                 background-color: $accentColor;
                 color: $accentTextColor;
             }
         }
-        
+
         .p-picklist-buttons {
             .p-button {
                 margin: 0 auto 0.571em auto;
@@ -36,9 +36,9 @@ body {
                     width: 2.5em;
                     height: 2.5em;
                 }
-            }        
+            }
         }
-        
+
         .p-picklist-buttons-cell {
             text-align: center;
         }
@@ -72,7 +72,7 @@ body {
             }
         }
     }
-    
+
     .p-organizationchart {
         .p-organizationchart-node-content {
             @include content();
@@ -81,7 +81,7 @@ body {
             &.p-organizationchart-selectable-node:not(.p-highlight):hover {
                 @include hover-element();
             }
-            
+
             &.p-highlight {
                 .p-node-toggler {
                     i {
@@ -93,51 +93,51 @@ body {
         .p-organizationchart-line-down {
             background-color: darken($contentBorderColor, 10%);
         }
-        
+
         .p-organizationchart-line-left {
             border-right: 1px solid darken($contentBorderColor, 10%);
         }
-        
+
         .p-organizationchart-line-right {
-            
+
         }
-        
+
         .p-organizationchart-line-top {
             border-top: 1px solid darken($contentBorderColor, 10%);
         }
-        
+
         .p-organizationchart-node-content {
             border-color: darken($contentBorderColor, 10%);
         }
-        
+
         .p-organizationchart-node-content .p-node-toggler {
             bottom: -1.143em;
             margin-left: -.825em;
             color: darken($contentBorderColor, 10%);
-            
+
             .pi-chevron-down {
                 @include material-icon("keyboard_arrow_down");
             }
-            
+
             .pi-chevron-up {
                 @include material-icon("keyboard_arrow_up");
             }
         }
     }
-    
+
     .p-orderlist {
         .p-orderlist-caption {
             @include header();
             padding: $headerPadding;
             @include border-box-sizing();
         }
-        
+
         .p-orderlist-list {
             @include content();
             @include corner-bottom();
             padding: 0;
             box-sizing: border-box;
-            
+
             li.p-orderlist-item {
                 padding: $listItemPadding;
                 margin: 0;
@@ -147,24 +147,24 @@ body {
                 &:not(.p-highlight):hover {
                     @include hover-element();
                 }
-                
+
                 &.p-highlight {
                     background-color: $accentColor;
                     color: $accentTextColor;
                 }
             }
         }
-        
+
         &.p-orderlist-responsive {
             .p-orderlist-controls {
                 width: 4.286em;
             }
         }
-        
+
         .p-orderlist-controls {
             width: 4.286em;
             text-align: center;
-            
+
             .p-button {
                 &.p-button-icon-only {
                     width: 2.5em;
@@ -174,7 +174,7 @@ body {
             }
         }
     }
-    
+
     .p-paginator {
         @include header();
         background-color: $primaryDarkColor;
@@ -196,7 +196,7 @@ body {
                 @include transition(background-color $transitionDuration);
             }
         }
-        
+
         .p-paginator-next {
             padding: 0;
             vertical-align: middle;
@@ -230,7 +230,7 @@ body {
             height: 1.200em;
             line-height: 1.2;
         }
-        
+
         .p-paginator-pages {
             vertical-align: middle;
             margin: 0 6px 0 12px;
@@ -247,11 +247,11 @@ body {
                 line-height: 1.714em;
                 @include border-radius(50%);
                 @include transition(background-color$transitionDuration);
-                
+
                 &:not(.p-highlight):hover {
                     background-color: $primaryLightColor;
-                }        
-                
+                }
+
                 &.p-highlight {
                     background-color: $accentColor;
                     color: $accentTextColor;
@@ -301,12 +301,12 @@ body {
             }
         }
     }
-    
+
     .p-datagrid {
         .p-datagrid-header {
             padding: $headerPadding;
         }
-        
+
         .p-panel {
             .p-panel-titlebar {
                 background-color: #ffffff;
@@ -314,7 +314,7 @@ body {
             }
         }
     }
-    
+
     .p-datalist {
         .p-datalist-header {
             padding: $headerPadding;
@@ -338,7 +338,7 @@ body {
             padding: $headerPadding;
         }
     }
-    
+
     .p-datatable {
         .p-datatable-header,
         .p-datatable-footer {
@@ -620,7 +620,7 @@ body {
             }
         }
     }
-    
+
     .p-tree-draghelper {
         border: 1px solid $primaryColor;
     }
@@ -709,7 +709,7 @@ body {
             padding-right: 0px;
         }
     }
-    
+
     .p-treetable {
         .p-treetable-header,
         .p-treetable-footer {
@@ -804,8 +804,8 @@ body {
 
         .p-treetable-loading-content {
             .pi-spin {
-                -webkit-animation: 2s linear infinite fa-spin;
-                animation: 2s linear infinite fa-spin;
+                -webkit-animation: 2s linear infinite spin;
+                animation: 2s linear infinite spin;
                 color: #ffffff;
             }
         }
@@ -968,7 +968,7 @@ body {
 }
 
 @media (max-width: 640px) {
-    body {                
+    body {
         .p-picklist {
             &.p-picklist-responsive {
                 .p-picklist-list-wrapper {
@@ -1006,7 +1006,7 @@ body {
                 }
             }
         }
-        
+
         .p-orderlist {
             &.p-grid-responsive {
                 .p-orderlist-controls {
