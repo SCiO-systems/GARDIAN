@@ -268,6 +268,10 @@ body {
             border: 1px solid $dividerColor;
             border-bottom: 0 none;
 
+			.p-inputtext {
+				width: auto;
+			}
+
             .p-button {
                 border-radius: 50%;
 
@@ -284,7 +288,22 @@ body {
             @include content();
             background-color: $contentBgColor;
             color: $textColor;
+            padding: 0;
             border: 1px solid $contentBorderColor;
+
+			> .p-grid {
+				margin-right: 0;
+				margin-left: 0;
+				margin-top: 0;
+			}
+
+			> .p-grid > div {
+				border-bottom: 1px solid $dividerColor;
+
+				&:last-child {
+					border-bottom: 0 none;
+				}
+			}
         }
 
         .p-dataview-footer {
@@ -419,6 +438,10 @@ body {
                 border-right: 1px solid $contentBorderColor;
             }
         }
+
+		.p-column-filter {
+			width: 100%;
+		}
 
         .p-sortable-column {
             color: $textColor;
@@ -953,6 +976,59 @@ body {
             }
         }
     }
+
+	.p-carousel {
+		.p-carousel-content {
+			.p-carousel-prev,
+			.p-carousel-next {
+				background-color: $carouselNavButtonsBgColor;
+				border: $carouselNavButtonsBorder;
+				@include border-radius($carouselNavButtonsBorderRadius);
+				margin: $carouselNavButtonsMargin;
+				color: $carouselNavButtonsColor;
+				@include transition($carouselNavButtonsTransition);
+				height: 2.5em;
+				padding: 0;
+
+				span {
+					color: $textColor;
+					font-size: 26px;
+					vertical-align: middle;
+				}
+
+				&:not(.p-disabled) {
+					&:hover {
+						background-color: $carouselNavButtonsHoverBgColor;
+						color: $carouselNavButtonsHoverColor;
+						border-color: $carouselNavButtonsHoverBorderColor;
+					}
+				}
+			}
+		}
+
+		.p-carousel-dots-container {
+			.p-carousel-dot-item {
+				.p-carousel-dot-icon {
+					width: $carouselDotIconWidth;
+					height: $carouselDotIconHeight;
+					background-color: $carouselDotIconBgColor;
+					margin: $carouselDotIconMargin;
+
+					&::before {
+						content: ' ';
+					}
+				}
+
+				&.p-highlight {
+					background-color: #ffffff;
+
+					.p-carousel-dot-icon {
+						background-color: $carouselActiveDotIconBgColor;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 40em) {

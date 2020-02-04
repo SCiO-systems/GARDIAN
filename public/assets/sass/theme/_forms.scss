@@ -9,24 +9,24 @@ body {
         font-size: 1em;
         padding: 2px;
         @include border-radius(0px);
-        
+
         &:focus,
         &.p-focus {
             border-width: 0;
             background-size: 100% 2px, 100% 1px;
             padding-bottom: 2px;
         }
-        
+
         &:disabled {
             border-bottom: 1px dotted;
         }
-        
+
         &.p-widget-content {
             border-width: 1px;
             background: transparent;
             background-image: none;
         }
-        
+
         &.p-error {
             border-color: $inputInvalidBorderColor;
             background-image: linear-gradient(to bottom, $inputInvalidBorderColor, $inputInvalidBorderColor), linear-gradient(to bottom, $inputInvalidBorderColor, $inputInvalidBorderColor);
@@ -42,8 +42,8 @@ body {
 
     .md-inputfield {
         display: block;
-        position:relative; 
-        
+        position:relative;
+
         > label {
             color:#999;
             font-weight:normal;
@@ -55,7 +55,7 @@ body {
             -moz-transition: $transitionDuration ease all;
             -webkit-transition: $transitionDuration ease all;
         }
-        
+
         input:focus ~ label,
         input.p-filled ~ label,
         .p-inputwrapper-focus ~ label,
@@ -74,7 +74,7 @@ body {
         input.ng-dirty.ng-invalid ~ label {
             color: $inputErrorTextColor;
         }
-        
+
         .p-message {
             &.p-messages-error {
                 background-color: transparent;
@@ -134,7 +134,7 @@ body {
             }
         }
     }
-    
+
     .p-listbox {
         @include content();
         @include corner-all();
@@ -142,16 +142,16 @@ body {
         background-color: $inputBgColor;
         border: 0 none;
         @include border-radius($borderRadius);
-        
+
         &.p-inputtext {
             padding: 0;
         }
-        
+
         .p-listbox-list {
             padding: $inputListPadding;
             border: 1px solid $contentBorderColor;
         }
-        
+
         .p-listbox-item {
             overflow: hidden;
             padding: $listItemPadding;
@@ -165,15 +165,15 @@ body {
                 color: $accentTextColor;
             }
         }
-        
+
         &:not(.p-disabled) {
             .p-listbox-item {
                 &:not(.p-highlight):hover {
                     @include hover-element();
-                }                
+                }
             }
         }
-        
+
         .p-listbox-header {
             @include header();
             @include border-radius(0);
@@ -181,13 +181,13 @@ body {
             padding: $inputHeaderPadding;
             background-color: $primaryColor;
             @include border-radius-top($borderRadius);
-            
+
             .p-checkbox {
                 .p-checkbox-box {
                     border-color: darken($headerTextColor, 15%);
                 }
             }
-            
+
             .p-listbox-filter-container {
                 .p-inputtext {
                     border-color: darken($headerTextColor, 15%);
@@ -202,7 +202,7 @@ body {
                     }
 
                 }
-                
+
                 .pi {
                     top: -2px;
                     left: 0;
@@ -210,7 +210,7 @@ body {
             }
         }
     }
-        
+
     .p-button {
         @include corner-all();
         overflow: hidden;
@@ -225,16 +225,16 @@ body {
         -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
         box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
         @include transition(background-color $transitionDuration);
-        
+
         &:enabled:not(:focus):not(.p-dataview-header .p-highlight):hover {
-            background-color: $primaryDarkColor;   
+            background-color: $primaryDarkColor;
         }
-        
+
         &:focus {
             outline: 0 none;
             background-color: lighten($primaryColor,10%);
         }
-        
+
         .p-button-text {
             padding: 0;
             line-height: 2.143em;
@@ -257,21 +257,21 @@ body {
         &.p-button-text-icon-right {
             padding-right: 2.571em;
         }
-                                                
+
         &.secondary-btn {
             background-color: $accentColor;
             color: $accentTextColor;
-            
+
             &:enabled:not(:focus):hover {
-                background-color: $accentDarkColor;   
+                background-color: $accentDarkColor;
             }
-            
+
             &:focus {
                 outline: 0 none;
                 background-color: lighten($accentColor,10%);
             }
         }
-        
+
         &.blue-grey-btn {
             background-color: #607D8B;
 
@@ -284,7 +284,7 @@ body {
                 background-color: lighten(#607D8B,10%);
             }
         }
-        
+
         &.cyan-btn {
             background-color: #00BCD4;
 
@@ -297,7 +297,7 @@ body {
                 background-color: lighten(#00BCD4,10%);
             }
         }
-        
+
         &.teal-btn {
             background-color: #009688;
 
@@ -310,7 +310,7 @@ body {
                 background-color: lighten(#009688,10%);
             }
         }
-        
+
         &.red-btn {
             background-color: #F44336;
 
@@ -323,7 +323,7 @@ body {
                 background-color: lighten(#F44336,10%);
             }
         }
-        
+
         &.green-btn {
             background-color: #4CAF50;
 
@@ -336,7 +336,7 @@ body {
                 background-color: lighten(#4CAF50,10%);
             }
         }
-        
+
         &.deep-orange-btn {
             background-color: #FF5722;
 
@@ -349,7 +349,7 @@ body {
                 background-color: lighten(#FF5722,10%);
             }
         }
-        
+
         &.purple-btn {
             background-color: #673AB7;
 
@@ -362,7 +362,7 @@ body {
                 background-color: lighten(#673AB7,10%);
             }
         }
-        
+
         &.pink-btn {
             background-color: #E91E63;
 
@@ -375,7 +375,7 @@ body {
                 background-color: lighten(#E91E63,10%);
             }
         }
-        
+
         &.amber-btn {
             background-color: #FFC107;
             color: #212121;
@@ -389,7 +389,7 @@ body {
                 background-color: lighten(#FFC107,10%);
             }
         }
-        
+
         &.orange-btn {
             background-color: #FF9800;
 
@@ -402,7 +402,7 @@ body {
                 background-color: lighten(#FF9800,10%);
             }
         }
-        
+
         &.brown-btn {
             background-color: #795548;
 
@@ -427,7 +427,7 @@ body {
                 background-color: lighten(#3F51B5,10%);
             }
         }
-        
+
         &.flat-btn {
             @include no-shadow();
         }
@@ -509,7 +509,7 @@ body {
             background-color: lighten(#F44336,10%);
         }
     }
-    
+
     .p-buttonset {
         .p-button {
             @include border-radius(0);
@@ -531,7 +531,7 @@ body {
             }
         }
     }
-    
+
     .p-togglebutton {
         &:not(.p-highlight):not(.p-disabled):hover {
             background-color: $primaryDarkColor;
@@ -542,7 +542,7 @@ body {
             color: $accentTextColor;
         }
     }
-    
+
     .p-splitbutton {
         @include border-radius($borderRadius + 1);
         -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
@@ -559,7 +559,7 @@ body {
                 @include border-radius-left($borderRadius);
                 @include border-radius-right(0);
             }
-            
+
             &:active {
                 background-color: lighten($primaryColor,10%);
             }
@@ -589,7 +589,7 @@ body {
             }
         }
     }
-    
+
     .p-fluid {
         .p-splitbutton {
             .p-button:first-child {
@@ -601,7 +601,7 @@ body {
             }
         }
     }
-        
+
     .p-checkbox {
         display: inline-block;
         vertical-align: middle;
@@ -610,7 +610,7 @@ body {
         height: 1.429em;
         cursor: default;
         margin: 0 .5em 0 0;
-        
+
         .p-checkbox-box {
             border: 2px solid $checkboxBorderColor;
             width: 1.429em;
@@ -631,13 +631,13 @@ body {
                 opacity: 0;
                 margin: 0;
             }
-            
+
             .p-checkbox-icon {
                 font-size: 1.25em;
                 margin-left: -1px;
                 margin-top: -1px;
             }
-            
+
             &.p-highlight {
                 border-color: $primaryColor;
                 background-color: $primaryColor;
@@ -651,7 +651,7 @@ body {
                     animation: rippleOn 400ms forwards ease-out;
                 }
             }
-            
+
             &.p-focus {
                 border-color: $primaryColor;
                 @include content-shadow();
@@ -659,7 +659,7 @@ body {
             }
         }
     }
-    
+
     .p-radiobutton {
         position: relative;
         margin: 0 .5em 0 0;
@@ -731,7 +731,7 @@ body {
             }
         }
     }
-        
+
     .p-autocomplete-panel {
         @include content();
         @include corner-all();
@@ -739,34 +739,34 @@ body {
         border: 0 none;
         @include border-radius(0);
         @include overlay-input-shadow();
-        
+
         .p-autocomplete-list {
             padding: $inputListPadding;
-            
+
             .p-autocomplete-list-item {
                 padding: $listItemPadding;
                 color: $textColor;
                 margin: 0;
                 @include border-radius(0);
-                
+
                 .p-autocomplete-query {
                     font-weight: 700;
                 }
-                
+
                 &:hover, &.p-highlight {
                     background-color: $accentColor;
                     color: $accentTextColor;
                 }
             }
-            
+
             .p-autocomplete-group {
                 padding: $listItemPadding;
             }
         }
     }
-    
+
     .p-autocomplete {
-        
+
         .p-autocomplete-loader {
             @include material-icon('refresh');
             @include animation(0, 1000ms, spin);
@@ -779,7 +779,7 @@ body {
                 right: 1em;
             }
         }
-        
+
         .p-autocomplete-dropdown {
             background-color: transparent;
             @include no-shadow();
@@ -790,7 +790,7 @@ body {
             bottom: 0;
             margin-right: 0;
             position: absolute;
-                
+
             .p-button-text {
                 display: none;
             }
@@ -800,7 +800,7 @@ body {
                 color: $textSecondaryColor;
             }
         }
-        
+
         &.p-autocomplete-multiple {
             .p-autocomplete-multiple-container {
                 &.p-inputtext {
@@ -812,33 +812,33 @@ body {
                     border-bottom: 1px dotted;
                 }
             }
-            
+
             .p-autocomplete-input-token {
                 float: none;
                 display: inline-block;
                 margin: 0 1px;
                 vertical-align: middle;
-                
+
                 > input {
                     padding: 0;
                     margin: 0;
                     font-size: 1em;
                 }
             }
-            
+
             .p-autocomplete-token {
                 display: inline-block;
                 float: none;
                 vertical-align: middle;
                 font-size: 1em;
                 @include corner-all();
-                
+
                 .p-autocomplete-token-label {
                     display: inline-block;
                     vertical-align: middle;
                 }
             }
-            
+
             .p-autocomplete-dropdown.p-button.p-button-icon-only {
                 bottom: 3px;
             }
@@ -848,12 +848,12 @@ body {
             }
         }
     }
-    
+
     .p-fluid {
         .p-autocomplete {
             &.p-autocomplete-dd {
                 > .p-inputtext {
-                    width: 100%;    
+                    width: 100%;
                 }
             }
         }
@@ -870,7 +870,7 @@ body {
         padding-bottom: 2px;
         box-sizing: border-box;
         @include border-radius(0);
-        
+
         .p-dropdown-trigger-icon {
             height: 1.5em;
             width:  1.5em;
@@ -891,7 +891,7 @@ body {
                 font-family: $fontFamily;
             }
         }
-                
+
         &:not(.p-disabled).p-focus {
             border-width: 0;
             background-size: 100% 2px, 100% 1px;
@@ -903,7 +903,7 @@ body {
             }
         }
     }
-    
+
     .p-dropdown-panel {
         @include content();
         @include corner-all();
@@ -914,29 +914,29 @@ body {
         .p-dropdown-list {
             padding: $inputListPadding;
         }
-        
+
         .p-dropdown-item {
             margin: 0;
             padding: $listItemPadding;
             color: $textColor;
             @include border-radius(0);
-            
+
             &:not(.p-highlight):not(.p-disabled):hover {
                 @include hover-element();
             }
-            
+
             &.p-highlight {
                 background-color: $accentColor;
                 color: $accentTextColor;
             }
         }
-        
+
         .p-dropdown-filter-container {
             display: block;
             border-bottom: 1px solid $inputBorderColor;
             background-color: $primaryColor;
             padding: $inputHeaderPadding;
-            
+
             input {
                 color: #ffffff;
 
@@ -944,7 +944,7 @@ body {
                     border-bottom-color: #ffffff;
                 }
             }
-            
+
             .pi {
                 top: .325em;
                 right: .75em;
@@ -952,21 +952,22 @@ body {
             }
         }
     }
-    
+
     .p-multiselect {
         border-bottom: 1px solid $inputBorderColor;
         box-sizing: border-box;
         @include border-radius(0);
         @include transition(border-color .3s);
-        
+
         .p-multiselect-label-container {
             padding-right: 1.5em;
-            
+
             .p-multiselect-label {
                 padding: 2px;
+                font-weight: normal;
             }
         }
-            
+
         .p-multiselect-trigger-icon {
             height: 1.5em;
             width:  1.5em;
@@ -978,13 +979,13 @@ body {
                 font-size: $iconFontSize;
                 color: $textSecondaryColor;
             }
-        } 
-        
+        }
+
         &:not(.p-disabled).p-focus {
             border-bottom: 2px solid $primaryColor;
         }
     }
-    
+
     .p-multiselect-panel {
         @include content();
         @include corner-all();
@@ -992,7 +993,7 @@ body {
         border: 0 none;
         @include border-radius(0);
         @include overlay-input-shadow();
-                
+
         .p-multiselect-header {
             @include corner-all();
             @include header();
@@ -1009,11 +1010,11 @@ body {
 
                 .p-checkbox-box {
                     border-color: $headerTextColor;
-                    
+
                     .p-checkbox-icon {
                         border-color: $headerTextColor;
                     }
-                    
+
                     &.p-highlight {
                         .p-checkbox-icon {
                             border-color: $headerTextColor;
@@ -1024,7 +1025,7 @@ body {
                             animation: none;
                         }
                     }
-                    
+
                     &.p-focus {
                         background-color: $primaryLightColor;
                         @include transition(background-color .3s);
@@ -1037,7 +1038,7 @@ body {
                 display: inline-block;
                 vertical-align: middle;
                 float: none;
-                
+
                 .pi {
                     top: -2px;
                     left: 0;
@@ -1056,14 +1057,14 @@ body {
                     }
                 }
             }
-            
+
             .p-multiselect-close {
                 position: absolute;
                 right: .5em;
                 top: .625em;
                 height: 1.5em;
                 width: 1.5em;
-                
+
                 span {
                     position: absolute;
                     left: 50%;
@@ -1074,7 +1075,7 @@ body {
                     margin-left: -.5em;
                     color: $primaryTextColor;;
                 }
-                
+
                 &:hover {
                     background-color: $primaryLightColor;
                     @include border-radius(50%);
@@ -1114,7 +1115,7 @@ body {
             }
         }
     }
-        
+
     .p-spinner {
         @include corner-all();
 
@@ -1135,7 +1136,7 @@ body {
             .pi-triangle-1-s {
                 color: $textColor;
             }
-                        
+
             .pi {
                 top: .25em;
                 font-size: $iconFontSize;
@@ -1148,24 +1149,24 @@ body {
                 background-color: transparent;
             }
         }
-        
+
         .p-spinner-up {
             .pi {
                 top: .25em;
             }
         }
-        
+
         .p-spinner-down {
             .pi {
                 top: .167em;
             }
         }
-        
+
         .p-spinner-input {
             padding-right: 30px;
         }
     }
-    
+
     .p-fluid {
         .p-spinner {
             .p-spinner-button {
@@ -1244,7 +1245,7 @@ body {
             }
         }
     }
-    
+
     .p-slider {
         @include content();
         @include corner-all();
@@ -1258,37 +1259,37 @@ body {
             height: 1.429em;
             transform: scale(.7);
             @include transition(all .4s cubic-bezier(.25,.8,.25,1));
-            
+
             &.p-focus,
             &:hover {
                 transform: scale(1);
-            } 
-            
+            }
+
             &:focus {
                 outline: 0 none;
             }
         }
-        
+
         &.p-slider-horizontal {
             height: 2px;
             border: 0 none;
             background-color: $inputBorderColor;
-            
+
             .p-slider-handle {
                 top: -.65em;
             }
         }
-        
+
         &.p-slider-vertical {
             width: 2px;
             border: 0 none;
             background-color: $inputBorderColor;
-            
+
             .p-slider-handle {
                 left: -0.643em;
             }
         }
-        
+
         .p-slider-range {
             @include corner-all();
             padding: 0;
@@ -1304,7 +1305,7 @@ body {
             }
         }
     }
-    
+
     .p-calendar {
         .p-datepicker {
             min-width: auto;
@@ -1342,7 +1343,7 @@ body {
             }
         }
     }
-    
+
     .p-datepicker {
         @include content();
         @include corner-all();
@@ -1575,11 +1576,11 @@ body {
     #p-datepicker-div {
         @include overlay-input-shadow();
     }
-    
+
     .p-rating {
         font-size: inherit;
         min-height: 1.5em;
-        
+
         .pi-ban {
             @include material-icon("cancel");
             color: $textSecondaryColor;
@@ -1591,14 +1592,14 @@ body {
             color: $accentColor;
             font-size: $iconFontSize;
         }
-        
+
         .pi-star-o {
             @include material-icon("star_border");
             color: $textSecondaryColor;
             font-size: $iconFontSize;
         }
     }
-    
+
     .p-chips {
         > ul.p-inputtext {
             padding: 2px;
@@ -1636,7 +1637,7 @@ body {
             }
         }
     }
-    
+
     .p-password-panel {
         @include corner-all();
 
@@ -1644,17 +1645,17 @@ body {
             @include overlay-input-shadow();
         }
     }
-    
+
     .p-fileupload {
         .p-fileupload-buttonbar {
             @include header();
             @include corner-top();
             padding: $headerPadding;
-            
+
             .pi-arrowreturnthick-1-n {
                 @include icon_override('file_upload');
             }
-            
+
             .p-button {
                 @include corner-all();
                 background-color: $accentColor;
@@ -1664,7 +1665,7 @@ body {
                 .pi {
                     color: $accentTextColor;
                 }
-                
+
                 &:enabled:hover {
                     background-color: $accentDarkColor;
                 }
@@ -1676,7 +1677,7 @@ body {
                 }
             }
         }
-        
+
         .p-fileupload-content {
             @include content();
             @include corner-bottom();
@@ -1688,32 +1689,32 @@ body {
             }
         }
     }
-    
+
     .p-fileupload-choose:not(.p-disabled):hover,
     .p-fileupload-choose.p-focus {
         &.p-button {
             background-color: darken($accentColor, 5%);
         }
     }
-    
+
     .p-fileupload-choose:not(.p-disabled):active {
         &.p-button {
             background-color: darken($accentColor, 10%);
         }
     }
-    
+
     .p-editor-container {
         .p-editor-toolbar {
             background-color: #e8e8e8;
         }
-        
+
         .ql-picker.ql-expanded {
             .ql-picker-label {
                 color: #444444;
             }
         }
     }
-    
+
     /* InputGroup */
     .p-inputgroup {
         .p-inputgroup-addon {
@@ -1774,7 +1775,7 @@ body {
             }
         }
     }
-    
+
     /* Validation */
     .p-inputtext.p-error,
     .p-dropdown.p-error,
@@ -1798,16 +1799,16 @@ body {
 }
 
 @media (max-width: 640px) {
-    body {                
+    body {
         .p-buttonset {
             > .p-button {
                 display: block;
                 @include border-radius(0);
-                
+
                 &:first-child {
                     @include border-radius-top($borderRadius);
                 }
-                
+
                 &:last-child {
                     @include border-radius-bottom($borderRadius);
                 }
@@ -1820,7 +1821,7 @@ body {
                 &:first-child {
                     @include border-radius-top(0);
                 }
-                
+
                 &:last-child {
                     @include border-radius-bottom(0);
                 }

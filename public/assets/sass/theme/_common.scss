@@ -21,7 +21,7 @@ body {
             color: $textSecondaryColor;
         }
     }
-    
+
     .p-widget-header {
         background-color: $primaryColor;
         color: $headerTextColor;
@@ -52,10 +52,9 @@ body {
     }
 
     .p-component-overlay {
-        background-color: #000000;
-        @include opacity(.32);
+        background-color: rgba(0, 0, 0, 0.4);
     }
-        
+
     a {
         color: $primaryColor;
         text-decoration: none;

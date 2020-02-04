@@ -77,3 +77,19 @@ $errorMessageBgColor:#e62a10;
 $errorMessageTextColor:#ffffff;
 $successMessageBgColor:#8BC34A;
 $successMessageTextColor:#ffffff;
+
+//carousel
+$carouselNavButtonsBgColor: #ffffff;
+$carouselNavButtonsBorder: none;
+$carouselNavButtonsBorderRadius: 50%;
+$carouselNavButtonsMargin: .2em;
+$carouselNavButtonsColor: $textColor;
+$carouselNavButtonsHoverBgColor: $hoverBgColor;
+$carouselNavButtonsHoverColor: $hoverTextColor;
+$carouselNavButtonsHoverBorderColor: none;
+$carouselNavButtonsTransition: color $transitionDuration;
+$carouselDotIconWidth: 20px;
+$carouselDotIconHeight: 6px;
+$carouselDotIconBgColor: #b2c1cd;
+$carouselDotIconMargin: 0 .2em;
+$carouselActiveDotIconBgColor: $primaryColor;
