@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppWrapper from './AppWrapper';
 import {HashRouter} from 'react-router-dom';
-import 'babel-polyfill';
-import 'primeflex/primeflex.css';
-import 'primereact/resources/primereact.min.css';
 import * as serviceWorker from './serviceWorker';
+import 'babel-polyfill';
+import 'prismjs/themes/prism-coy.css';
 
 ReactDOM.render(
 	<HashRouter>

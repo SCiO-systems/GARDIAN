@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Documentation.css';
+import {CodeHighlight} from "./CodeHighlight";
 
 export class Documentation extends Component {
 
@@ -14,40 +15,32 @@ export class Documentation extends Component {
                 <div className="ui-g-12">
                     <div className="card docs">
                         <div className="card-title">Current Version</div>
-                        <p>React 16.8.6 and PrimeReact 3.1.x</p>
+                        <p>React 16.11.0 and PrimeReact 3.4.x</p>
 
                         <div className="card-title">Getting Started</div>
                         <p>Sapphire is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
-                            creating React apps with no configuration. To get started extract the contents of the zip bundle and install the dependencies 
+                            creating React apps with no configuration. To get started extract the contents of the zip bundle and install the dependencies
                             with npm or yarn.</p>
 <pre>
 {
 `npm install
+
+# OR
+
+yarn
 `}
 </pre>
 
-or 
-
-<pre>
-{
-`yarn
-`}
-</pre>
-
-                        <p>Next step is running the application using the start script and navigate to <b>http://localhost:3000/</b> to view the application. 
+                        <p>Next step is running the application using the start script and navigate to <b>http://localhost:3000/</b> to view the application.
                         That is it, you may now start with the development of your application using the Sapphire template.</p>
 
 <pre>
 {
 `npm start
-`}
-</pre>
 
-or 
+# OR
 
-<pre>
-{
-`yarn start
+yarn start
 `}
 </pre>
 
@@ -61,11 +54,13 @@ or
 `}
 </pre>
                         <div className="card-title">Dependencies</div>
-                        <p>Only required dependencies is PrimeReact where optional dependencies exist to enable certain components in PrimeReact such as Google Maps.</p>
+                        <p>Dependencies of Sapphire are listed below and needs to be added to package.json. Sapphire has no direct dependency, even PrimeReact components are an optional dependency.</p>
 
                         <pre>
 {
-`"primereact": "^3.1.4",              //required: PrimeReact components
+`"primereact": "^3.4.0",              //optional: PrimeReact components
+"primeicons": "^2.0.0",              //optional: PrimeReact component icons
+"primeflex": "1.0.0",                //optional: Samples
 "react-router-dom": "^4.2.2"         //optional: Router
 `
 }
@@ -80,7 +75,7 @@ or
                             App.js component that implements the logic such as menu state, layout modes and so on.
                         </p>
 
-<pre>
+<CodeHighlight>
 {
 `
 render() {
@@ -139,14 +134,15 @@ render() {
 
 `
 }
-</pre>
+</CodeHighlight>
 
                         <div className="card-title">Menu</div>
                         <p>Menu is a separate component defined in AppMenu.js file based on PrimeReact MenuModel API. In order to define the menuitems,
                             navigate to createMenu() method App.js file and define your own model as a nested structure. Here is the menu component from the demo application.
                             Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
-                            
-<pre>
+
+<div style={{overflow: 'auto', height: '400px'}}>
+<CodeHighlight lang="js">
 {
 `
 createMenu() {
@@ -271,7 +267,8 @@ createMenu() {
 }
     
 `}
-</pre>
+</CodeHighlight>
+</div>
 
                         <div className="card-title">Theme and Layout SASS</div>
                         <p>Sapphire provides 18 PrimeReact themes out of the box, setup of a theme simple including the css of theme to your page that are located inside assets/theme folder.</p>
@@ -307,8 +304,8 @@ createMenu() {
                         </ul>
 
                         <p>Here are the variables required to create a theme.</p>
-                            
-<pre>
+
+<CodeHighlight lang="css">
 {
 `
 $primaryColor:#1E88E5;
@@ -325,13 +322,13 @@ $accentTextColor: #212121;
 
 `
 }
-</pre> 
+</CodeHighlight>
 
                         <p>You may import the scss directly in your App.js if you prefer webpack to include the theme however if you'd like to do it manually, an example sass command to compile the css would be;</p>
-                            
+
 <pre>
-sass public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css 
-</pre> 
+sass public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css
+</pre>
 
                         <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
                         so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
@@ -466,7 +463,7 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
 
                         <p>Here are the variables required to create a gradient based topbar.</p>
 
-<pre>
+<CodeHighlight lang="css">
 {
 `
 .layout-topbar-mytopbar {
@@ -501,11 +498,11 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
 
 `
 }
-</pre>
+</CodeHighlight>
 
                         <p>If you prefer an image for the background, use the template below.</p>
 
-<pre>
+<CodeHighlight lang="css">
 {
 `
 .layout-topbar-mytopbar {
@@ -538,7 +535,7 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
 }
 `
 }
-</pre>
+</CodeHighlight>
 
                         <div className="card-title">Menu Themes</div>
                         <p>Menu themes apply to the vertical menu, submenus of horizontal menu and the profile menu. Menu style used across the template is defined at the main container element, template below uses the default light menus.</p>
@@ -656,7 +653,7 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
 
                         <p>Here are the variables required to create a gradient based topbar.</p>
 
-<pre>
+<CodeHighlight lang="css">
 {
 `
 .layout-menu-mymenu {
@@ -678,11 +675,11 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
 }
 `
 }
-</pre>
+</CodeHighlight>
 
                         <p>If you prefer an image for the background, use the template below.</p>
 
-<pre>
+<CodeHighlight lang="css">
 {
 `
 .layout-menu-mymenu {
@@ -703,10 +700,10 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
 }
 `
 }
-</pre>
+</CodeHighlight>
 
                         <div className="card-title">Menu Highlight Color</div>
-                        <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself. 
+                        <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself.
                             This color scheme is specified by the layout file such as layout-blue.scss which is still a mandatory file to be included regardless of the menu type as it defines the structure for the layout itself.</p>
 
                         <p>Full list of menu highlight themes are the following.</p>
@@ -740,7 +737,7 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
                             <li>Import the layout css file in your application.</li>
                         </ul>
 
-<pre>
+<CodeHighlight lang="css">
 {
 `
 $primaryColor:#607D8B;
@@ -751,13 +748,13 @@ $accentTextColor:#212121;
 @import '../../sass/layout/_layout';
 `
 }
-</pre>
+</CodeHighlight>
 
                         <div className="card-title">Common SASS Variables</div>
                         <p>In case you'd like to customize the shared variables, use the variables files under sass/variables folder.</p>
 
 <h3>sass/_common.scss</h3>
-<pre>
+<CodeHighlight lang="css">
 {
 `
 //general
@@ -782,10 +779,10 @@ $dividerColor:#dbdbdb;
 $dividerLightColor:#f8f8f8;
 `
 }
-</pre>
+</CodeHighlight>
 
 <h3>sass/variables/_layout.scss</h3>
-<pre>
+<CodeHighlight lang="css">
 {
 `
 @import './common';
@@ -802,10 +799,10 @@ $maskBgColor:#252529;
 $horizontalOverlaySubmenuShadow:0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
 `
 }
-</pre>
+</CodeHighlight>
 
 <h3>sass/variables/_theme.scss</h3>
-<pre>
+<CodeHighlight lang="css">
 {
 `
 @import './common';
@@ -879,8 +876,8 @@ $menuitemPadding:.571em .857em;
 $menuListPadding: .5em 0;   
 }
 `
-} 
-</pre>
+}
+</CodeHighlight>
 
                         <div className="card-title">Menu Modes</div>
                         <p>Menu has 2 modes; horizontal and overlay. Layout container element in App.js is used to define which mode to use by adding specific classes. List
@@ -891,13 +888,13 @@ $menuListPadding: .5em 0;
                             <li>Overlay: <b>"layout-container"</b></li>
                         </ul>
 
-                        <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. 
+                        <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes.
                             Sample application has an example implementation of such use case. Refer to App.js for an example..</p>
 
                         <p>Result will be reflected at application breadcrumb component such as "Home Icon" -> "Admin" -> "Control Panel".</p>
 
                         <div className="card-title">PrimeFlex Grid Syste</div>
-                        <p>Sapphire uses PrimeFlex Grid System throughout the samples, although any Grid library can be used we suggest using PrimeFlex as your grid system as it is well tested and supported by PrimeReact. 
+                        <p>Sapphire uses PrimeFlex Grid System throughout the samples, although any Grid library can be used we suggest using PrimeFlex as your grid system as it is well tested and supported by PrimeReact.
                             PrimeFlex is available at npm and defined at package.json of Ultima so that it gets installed by default.</p>
 
                         <div className="card-title">Customizing Styles</div>
@@ -918,7 +915,7 @@ $menuListPadding: .5em 0;
 							<li>Update layout css files</li>
 							<li>Update theme css files</li>
 						</ul>
-                        
+
                     </div>
                 </div>
             </div>
