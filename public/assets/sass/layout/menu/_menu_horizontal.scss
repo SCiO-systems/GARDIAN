@@ -3,11 +3,11 @@
         .layout-menubutton {
             display: none;
         }
-    
+
         .layout-logo {
             margin-right: 2em;
         }
-        
+
         .layout-menu-container {
             position: static;
             display: block;
@@ -18,14 +18,14 @@
             @include transition(none);
             @include shadow(none);
         }
-    
+
         .layout-menu {
             padding: 0;
-            
+
             > li {
                 display: inline-block;
                 position: relative;
-    
+
                 > a {
                     display: block;
                     padding: 1em;
@@ -35,11 +35,11 @@
                     border-bottom: 4px solid transparent;
                     @include border-radius(0);
                     @include transition(border-bottom-color $transitionDuration);
-                    
+
                     .menuitem-text {
                         margin: 0 .5em;
                     }
-    
+
                     i {
                         font-size: 16px;
 
@@ -52,7 +52,7 @@
                         }
                     }
                 }
-    
+
                 > .layout-submenu-container {
                     position: absolute;
                     min-width: 250px;
@@ -61,6 +61,10 @@
                     max-height: 0px;
                     overflow: auto;
                     @include shadow($horizontalOverlaySubmenuShadow);
+
+                    &.layout-submenu-exit-active {
+                        transition: none;
+                    }
 
                     > .layout-megamenu {
                         max-height: none;
@@ -83,12 +87,12 @@
                     }
                 }
             }
-    
+
             li {
                 .layout-submenu-toggler {
                     @include transition(transform $transitionDuration);
                 }
-    
+
                 &.active-menuitem {
                     > a {
                         .layout-submenu-toggler {
@@ -101,54 +105,54 @@
                     }
                 }
             }
-    
-            .layout-submenu { 
+
+            .layout-submenu {
                 li {
                     a {
                         display: block;
                         position: relative;
                         padding: .75em;
                         @include border-radius($menuitemBorderRadius);
-            
+
                         .menuitem-text {
                             vertical-align: middle;
                         }
-                
+
                         i {
                             vertical-align: middle;
                             font-size: 20px;
-            
+
                             &.layout-submenu-toggler {
                                 position: absolute;
                                 right: .75em;
                             }
-            
+
                             &:first-child {
                                 margin-right: 7px;
                             }
                         }
                     }
-    
+
                     li {
                         a {
                             padding-left: 1.75em;
                         }
-    
+
                         li {
                             a {
                                 padding-left: 2.75em;
                             }
-    
+
                             li {
                                 a {
                                     padding-left: 3.75em;
                                 }
-    
+
                                 li {
                                     a {
                                         padding-left: 4.75em;
                                     }
-    
+
                                     li {
                                         a {
                                             padding-left: 5.75em;

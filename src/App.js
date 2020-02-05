@@ -136,7 +136,7 @@ class App extends Component {
 			this.setState({topbarUserMenuActive: false});
 		}
 		event.preventDefault();
-	}	
+	}
 
 	onRootMenuItemClick(event) {
 		this.menuClick = true;
@@ -198,7 +198,8 @@ class App extends Component {
 		let urlTokens = element.getAttribute('href').split('/');
 		urlTokens[urlTokens.length - 1] = 'theme-' + event.theme + '.css';
 		let newURL = urlTokens.join('/');
-		element.setAttribute('href', newURL);
+
+		this.replaceLink(element, newURL);
 
 		event.originalEvent.preventDefault();
 	}
@@ -210,9 +211,25 @@ class App extends Component {
 		let urlTokens = element.getAttribute('href').split('/');
 		urlTokens[urlTokens.length - 1] = 'layout-' + event.color + '.css';
 		let newURL = urlTokens.join('/');
-		element.setAttribute('href', newURL);
+
+		this.replaceLink(element, newURL);
 
 		event.originalEvent.preventDefault();
+	}
+
+	replaceLink(linkElement, href) {
+		const id = linkElement.getAttribute('id');
+		const cloneLinkElement = linkElement.cloneNode(true);
+
+		cloneLinkElement.setAttribute('href', href);
+		cloneLinkElement.setAttribute('id', id + '-clone');
+
+		linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+
+		cloneLinkElement.addEventListener('load', () => {
+			linkElement.remove();
+			cloneLinkElement.setAttribute('id', id);
+		});
 	}
 
 	createMenu() {
