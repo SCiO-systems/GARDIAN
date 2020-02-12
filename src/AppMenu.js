@@ -53,10 +53,6 @@ class AppSubmenu extends Component {
             });
         }
 
-        if (item.items) {
-            event.preventDefault();
-        }
-
         //execute command
         if (item.command) {
             item.command({originalEvent: event, item: item});
@@ -73,6 +69,12 @@ class AppSubmenu extends Component {
                 originalEvent: event,
                 item: item
             });
+        }
+    }
+
+    onKeyDown(event, item, index) {
+        if (event.key === 'Enter') {
+            this.onMenuItemClick(event, item, index);
         }
     }
 
@@ -124,9 +126,9 @@ class AppSubmenu extends Component {
             )
         } else {
             return (
-                <a className={classNames("ripplelink", item.styleClass)} href={item.url || '#'} role="menuitem"
+                <a className={classNames("ripplelink", item.styleClass)} href={item.url} tabIndex={item.url ? '' : 0} role="menuitem"
                    onClick={(e) => this.onMenuItemClick(e, item, i)} target={item.target}
-                   onMouseEnter={(e) => this.onMenuItemMouseEnter(i)}>
+                   onMouseEnter={(e) => this.onMenuItemMouseEnter(i)} onKeyDown={(e) => this.onKeyDown(e, item, i)}>
                     {content}
                 </a>
             );
