@@ -274,6 +274,7 @@
 .docs {
 	pre[class*="language-"] {
 		padding: 0 !important;
+		background-color: #fdfdfd;
 		border-left: none;
 		@include shadow(none);
 

@@ -15,7 +15,7 @@ export class Documentation extends Component {
                 <div className="ui-g-12">
                     <div className="card docs">
                         <div className="card-title">Current Version</div>
-                        <p>React 16.11.0 and PrimeReact 3.4.x</p>
+                        <p>React 16.13.0 and PrimeReact 4.x</p>
 
                         <div className="card-title">Getting Started</div>
                         <p>Sapphire is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
@@ -909,6 +909,14 @@ $menuListPadding: .5em 0;
                         </ul>
 
 						<div className="card-title">Migration Guide</div>
+                        <p>1.0.1 to 4.0.0</p>
+                        <ul>
+                            <li>Update index.jx</li>
+                            <li>Update App.js</li>
+                            <li>Update AppMenu.js</li>
+                            <li>Update layout css files</li>
+                            <li>Update theme css files</li>
+                        </ul>
 
 						<p>1.0.0 to 1.0.1</p>
 						<ul>
