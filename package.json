@@ -1,6 +1,6 @@
 {
 	"name": "sapphire",
-	"version": "4.0.0",
+	"version": "4.0.1-SNAPSHOT",
 	"homepage": ".",
 	"private": true,
 	"dependencies": {
