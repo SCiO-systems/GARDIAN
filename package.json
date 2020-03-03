@@ -1,6 +1,6 @@
 {
 	"name": "sapphire",
-	"version": "4.0.1-SNAPSHOT",
+	"version": "4.0.1",
 	"homepage": ".",
 	"private": true,
 	"dependencies": {
@@ -36,12 +36,18 @@
 		"production": [
 			">0.2%",
 			"not dead",
-			"not op_mini all"
+			"not op_mini all",
+			"ie 11",
+			"ie 9-11",
+			"ie > 9"
 		],
 		"development": [
 			"last 1 chrome version",
 			"last 1 firefox version",
-			"last 1 safari version"
+			"last 1 safari version",
+			"ie 11",
+			"ie 9-11",
+			"ie > 9"
 		]
 	}
 }

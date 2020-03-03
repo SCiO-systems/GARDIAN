@@ -52,6 +52,7 @@
         height: 36px;
         line-height: 36px;
         text-align: center;
+        padding: 6px;
         right: -18px;
         top: -18px;
         background-color: #E91E63;
@@ -61,10 +62,8 @@
 
         i {
             color: #ffffff;
-            line-height: inherit;
             font-size: 24px;
             margin-left: -1px;
-            margin-top: -2px;
         }
 
         &:hover {
@@ -76,27 +75,27 @@
         display: block;
         opacity: 0;
     }
-    
+
     &.layout-config-enter-active {
         opacity: 1;
         transform: translateX(-50%) translateY(-50%) scale(1);
         transition: all 150ms cubic-bezier(0, 0, 0.2, 1);
     }
-    
+
     &.layout-config-enter-done {
         display: block;
     }
-    
+
     &.layout-config-exit {
         opacity: 1;
         display: block;
     }
-    
+
     &.layout-config-exit-active {
         opacity: 0;
         transition: all 150ms cubic-bezier(0, 0, 0.2, 1);
     }
-    
+
     &.layout-config-exit-done {
         display: none;
     }
@@ -157,7 +156,7 @@
                 top: auto;
                 margin: 0 0.125em 0px 0;
             }
-        } 
+        }
 
         .p-tabview-panels {
             padding: 1em 0;

@@ -909,6 +909,13 @@ $menuListPadding: .5em 0;
                         </ul>
 
 						<div className="card-title">Migration Guide</div>
+                        <p>4.0.0 to 4.0.1</p>
+                        <ul>
+                            <li>Update App.js</li>
+                            <li>Update layout css files</li>
+                            <li>Update theme css files</li>
+                        </ul>
+
                         <p>1.0.1 to 4.0.0</p>
                         <ul>
                             <li>Update index.jx</li>
