@@ -240,10 +240,6 @@ body {
             line-height: 2.143em;
         }
 
-        .pi {
-            color: $buttonTextColor;
-        }
-
         &.p-button-icon-only {
             @include border-radius(50%);
             width: 2.143em;
@@ -445,7 +441,7 @@ body {
             color: $textSecondaryColor;
         }
 
-        &:enabled:hover {
+        &:enabled:not(:focus):not(.p-disabled):not(.p-highlight):hover {
             @include hover-element();
         }
 
@@ -458,7 +454,7 @@ body {
         color: #ffffff;
         background-color: #03A9F4;
 
-        &:enabled:hover {
+        &:enabled:not(:focus):not(.p-disabled):not(.p-highlight):hover {
             background-color: #0277BD;
         }
 
@@ -472,7 +468,7 @@ body {
         color: #ffffff;
         background-color: #4CAF50;
 
-        &:enabled:hover {
+        &:enabled:not(:focus):not(.p-disabled):not(.p-highlight):hover {
             background-color: #2E7D32;
         }
 
@@ -486,7 +482,7 @@ body {
         color: #212121;
         background-color: #FFC107;
 
-        &:enabled:hover {
+        &:enabled:not(:focus):not(.p-disabled):not(.p-highlight):hover {
             background-color: #FF8F00;
         }
 
@@ -500,7 +496,7 @@ body {
         color: #ffffff;
         background-color: #F44336;
 
-        &:enabled:hover {
+        &:enabled:not(:focus):not(.p-disabled):not(.p-highlight):hover {
             background-color: #C62828;
         }
 
@@ -521,8 +517,14 @@ body {
             &:last-child {
                 @include border-radius-right($borderRadius);
             }
-            &:not(.p-disabled):not(.p-highlight):hover {
+
+            &:not(:focus):not(.p-disabled):not(.p-highlight):hover {
                 background-color: $primaryDarkColor;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($primaryColor,10%);
             }
 
             &.p-highlight {
@@ -535,6 +537,11 @@ body {
     .p-togglebutton {
         &:not(.p-highlight):not(.p-disabled):hover {
             background-color: $primaryDarkColor;
+        }
+
+        &:focus {
+            outline: 0 none;
+            background-color: lighten($primaryColor,10%);
         }
 
         &.p-highlight {
@@ -558,10 +565,6 @@ body {
                 @include corner-left();
                 @include border-radius-left($borderRadius);
                 @include border-radius-right(0);
-            }
-
-            &:active {
-                background-color: lighten($primaryColor,10%);
             }
 
             &.p-splitbutton-menubutton {
