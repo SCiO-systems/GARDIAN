@@ -21,11 +21,11 @@
 
         &:hover {
             background-color: $menuitemHoverBgColor;
-            
+
             .menuitem-text {
                 color: $menuitemHoverTextColor;
             }
-    
+
             i {
                 color: $menuitemHoverIconColor;
             }
@@ -38,8 +38,8 @@
         }
     }
 
-    li:not(:first-child) {
-        > a.active-menuitem-routerlink {
+    li.active-menuitem:not(:first-child) {
+        a.router-link-active {
             .menuitem-text {
                 color: $menuitemActiveTextColor;
             }
@@ -55,7 +55,7 @@
             .menuitem-text {
                 color: $menuitemActiveTextColor;
             }
-    
+
             i {
                 color: $menuitemActiveIconColor;
             }
@@ -65,11 +65,11 @@
     > li.active-menuitem {
         > a {
             background-color: $verticalActiveRootMenuitemBgColor;
-            
+
             .menuitem-text {
                 color: $verticalActiveRootMenuitemTextColor;
             }
-    
+
             i {
                 color: $verticalActiveRootMenuitemIconColor;
             }
@@ -109,7 +109,7 @@
     }
 }
 
-.layout-profile-menu { 
+.layout-profile-menu {
     @if variable-exists(menuBgImage) {
         background-image: url("../../layout/images/special/#{$menuBgImage}");
         background-position: 0 0;
@@ -132,11 +132,11 @@
 
         &:hover {
             background-color: $menuitemHoverBgColor;
-            
+
             .menuitem-text {
                 color: $menuitemHoverTextColor;
             }
-    
+
             i {
                 color: $menuitemHoverIconColor;
             }
@@ -147,7 +147,7 @@
         .p-inputtext {
             color: $menuitemTextColor;
             background-image: linear-gradient(to bottom, $menuitemTextColor, $menuitemTextColor), linear-gradient(to bottom, $menuitemTextColor, $menuitemTextColor);
-            
+
             &:focus ~ label,
             &:focus ~ i {
                 color: $menuitemTextColor;

@@ -1,83 +1,77 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Documentation.css';
-import {CodeHighlight} from "./CodeHighlight";
+import { CodeHighlight } from "./CodeHighlight";
 
-export class Documentation extends Component {
+export const Documentation = () => {
 
-    constructor() {
-        super();
-        this.state = {};
-    }
+    return (
+        <div className="ui-g">
+            <div className="ui-g-12">
+                <div className="card docs">
+                    <div className="card-title">Current Version</div>
+                    <p>React 16.x.x and PrimeReact 5.x</p>
 
-    render() {
-        return (
-            <div className="ui-g">
-                <div className="ui-g-12">
-                    <div className="card docs">
-                        <div className="card-title">Current Version</div>
-                        <p>React 16.13.0 and PrimeReact 4.x</p>
-
-                        <div className="card-title">Getting Started</div>
-                        <p>Sapphire is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
+                    <div className="card-title">Getting Started</div>
+                    <p>Sapphire is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
                             creating React apps with no configuration. To get started extract the contents of the zip bundle and install the dependencies
                             with npm or yarn.</p>
-<pre>
-{
-`npm install
+                    <pre>
+                        {
+                            `npm install
 
 # OR
 
 yarn
 `}
-</pre>
+                    </pre>
 
-                        <p>Next step is running the application using the start script and navigate to <b>http://localhost:3000/</b> to view the application.
+                    <p>Next step is running the application using the start script and navigate to <b>http://localhost:3000/</b> to view the application.
                         That is it, you may now start with the development of your application using the Sapphire template.</p>
 
-<pre>
-{
-`npm start
+                    <pre>
+                        {
+                            `npm start
 
 # OR
 
 yarn start
 `}
-</pre>
+                    </pre>
 
-                        <div className="card-title">React Scripts</div>
-                        <p>Following commands are derived from create-app-app.</p>
-<pre>
-{
-`"npm start" or "yarn start": Starts the development server
+                    <div className="card-title">React Scripts</div>
+                    <p>Following commands are derived from create-app-app.</p>
+                    <pre>
+                        {
+                            `"npm start" or "yarn start": Starts the development server
 "npm test" or "yarn test": Runs the tests.
 "npm run build" or "yarn run build": Creates a production build.
 `}
-</pre>
-                        <div className="card-title">Dependencies</div>
-                        <p>Dependencies of Sapphire are listed below and needs to be added to package.json. Sapphire has no direct dependency, even PrimeReact components are an optional dependency.</p>
+                    </pre>
+                    <div className="card-title">Dependencies</div>
+                    <p>Dependencies of Sapphire are listed below and needs to be added to package.json. Sapphire has no direct dependency, even PrimeReact components are an optional dependency.</p>
 
-                        <pre>
-{
-`"primereact": "^3.4.0",              //optional: PrimeReact components
-"primeicons": "^2.0.0",              //optional: PrimeReact component icons
-"primeflex": "1.0.0",                //optional: Samples
-"react-router-dom": "^4.2.2"         //optional: Router
+                    <pre>
+                        {
+                            `"primereact": "^5.0.1",              //optional: PrimeReact components
+"primeicons": "^4.0.0",              //optional: PrimeReact component icons
+"primeflex": "2.0.0",                //optional: Samples
+"react-router-dom": "^5.2.0"         //optional: Router
 `
-}
-</pre>
-                        <div className="card-title">Structure</div>
-                        <p>Sapphire consists of 3 main parts; the application layout, layout resources and theme resources for PrimeReact components. <b>App.js</b> inside src folder is the main component containing the template for the base layout
+                        }
+                    </pre>
+                    <div className="card-title">Structure</div>
+                    <p>Sapphire consists of 3 main parts; the application layout, layout resources and theme resources for PrimeReact components. <b>App.js</b> inside src folder is the main component containing the template for the base layout
                             whereas required resources for the layout are placed inside the <b>public/assets/layout</b> folder and similarly theme resources are inside <b>public/assets/theme</b> folder.
                         </p>
 
-                        <div className="card-title">Template</div>
-                        <p>Main layout is the JSX of the App.js, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is render method of the
-                            App.js component that implements the logic such as menu state, layout modes and so on.
+                    <div className="card-title">Template</div>
+                    <p>Main layout is the JSX of the App.js, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is render method of the
+                    App.js component that implements the logic such as menu state, layout modes and so on.
                         </p>
 
-<CodeHighlight>
-{
-`
+                    <CodeHighlight>
+                        {
+                            `
 render() {
     const layoutContainerClassName = classNames('layout-container', {
         'layout-menu-horizontal': this.state.horizontal,
@@ -133,18 +127,18 @@ render() {
 }
 
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-                        <div className="card-title">Menu</div>
-                        <p>Menu is a separate component defined in AppMenu.js file based on PrimeReact MenuModel API. In order to define the menuitems,
-                            navigate to createMenu() method App.js file and define your own model as a nested structure. Here is the menu component from the demo application.
+                    <div className="card-title">Menu</div>
+                    <p>Menu is a separate component defined in AppMenu.js file based on PrimeReact MenuModel API. In order to define the menuitems,
+                    navigate to createMenu() method App.js file and define your own model as a nested structure. Here is the menu component from the demo application.
                             Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
 
-<div style={{overflow: 'auto', height: '400px'}}>
-<CodeHighlight lang="js">
-{
-`
+                    <div style={{ overflow: 'auto', height: '400px' }}>
+                        <CodeHighlight lang="js">
+                            {
+                                `
 createMenu() {
     this.menu = [
         {label: 'Dashboard', icon: 'dashboard', to: '/'},
@@ -267,47 +261,47 @@ createMenu() {
 }
     
 `}
-</CodeHighlight>
-</div>
+                        </CodeHighlight>
+                    </div>
 
-                        <div className="card-title">Theme and Layout SASS</div>
-                        <p>Sapphire provides 18 PrimeReact themes out of the box, setup of a theme simple including the css of theme to your page that are located inside assets/theme folder.</p>
+                    <div className="card-title">Theme and Layout SASS</div>
+                    <p>Sapphire provides 18 PrimeReact themes out of the box, setup of a theme simple including the css of theme to your page that are located inside assets/theme folder.</p>
 
-                        <ul>
-                            <li>theme-amber</li>
-                            <li>theme-blue</li>
-                            <li>theme-bluegrey</li>
-                            <li>theme-brown</li>
-                            <li>theme-cyan</li>
-                            <li>theme-deeporange</li>
-                            <li>theme-deeppurple</li>
-                            <li>theme-gray</li>
-                            <li>theme-green</li>
-                            <li>theme-indigo</li>
-                            <li>theme-lightblue</li>
-                            <li>theme-lightgreen</li>
-                            <li>theme-lime</li>
-                            <li>theme-orange</li>
-                            <li>theme-pink</li>
-                            <li>theme-purple</li>
-                            <li>theme-teal</li>
-                            <li>theme-yellow</li>
-                        </ul>
+                    <ul>
+                        <li>theme-amber</li>
+                        <li>theme-blue</li>
+                        <li>theme-bluegrey</li>
+                        <li>theme-brown</li>
+                        <li>theme-cyan</li>
+                        <li>theme-deeporange</li>
+                        <li>theme-deeppurple</li>
+                        <li>theme-gray</li>
+                        <li>theme-green</li>
+                        <li>theme-indigo</li>
+                        <li>theme-lightblue</li>
+                        <li>theme-lightgreen</li>
+                        <li>theme-lime</li>
+                        <li>theme-orange</li>
+                        <li>theme-pink</li>
+                        <li>theme-purple</li>
+                        <li>theme-teal</li>
+                        <li>theme-yellow</li>
+                    </ul>
 
-                        <p>A custom theme can be developed by the following steps.</p>
-                        <ul>
-                            <li>Choose a custom theme name such as theme-myown.</li>
-                            <li>Create a file named theme-myown.scss under <i>public/assets/theme folder</i>.</li>
-                            <li>Define the variables listed below and import the <i>../sass/theme/_theme.scss</i> file.</li>
-                            <li>Build the scss to generate css</li>
-                            <li>Include the generated theme.css to your application.</li>
-                        </ul>
+                    <p>A custom theme can be developed by the following steps.</p>
+                    <ul>
+                        <li>Choose a custom theme name such as theme-myown.</li>
+                        <li>Create a file named theme-myown.scss under <i>public/assets/theme folder</i>.</li>
+                        <li>Define the variables listed below and import the <i>../sass/theme/_theme.scss</i> file.</li>
+                        <li>Build the scss to generate css</li>
+                        <li>Include the generated theme.css to your application.</li>
+                    </ul>
 
-                        <p>Here are the variables required to create a theme.</p>
+                    <p>Here are the variables required to create a theme.</p>
 
-<CodeHighlight lang="css">
-{
-`
+                    <CodeHighlight lang="css">
+                        {
+                            `
 $primaryColor:#1E88E5;
 $primaryDarkColor:#1565C0;
 $primaryLightColor:#42A5F5;
@@ -321,151 +315,151 @@ $accentTextColor: #212121;
 @import '../sass/theme/_theme';
 
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-                        <p>You may import the scss directly in your App.js if you prefer webpack to include the theme however if you'd like to do it manually, an example sass command to compile the css would be;</p>
+                    <p>You may import the scss directly in your App.js if you prefer webpack to include the theme however if you'd like to do it manually, an example sass command to compile the css would be;</p>
 
-<pre>
-sass public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css
+                    <pre>
+                        sass public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css
 </pre>
 
-                        <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
+                    <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
                         so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
-<pre>
-sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css  --sourcemap=none
+                    <pre>
+                        sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css  --sourcemap=none
 </pre>
 
-<div className="card-title">TopBar</div>
+                    <div className="card-title">TopBar</div>
 
-                        <p>TopBar comes in 3 sizes; large, medium and small. A specific style class with the layout-top-* prefix is defined at the main container element in order to apply a size. Below are the all 3 options;</p>
-<pre>
-{
-`<div className="layout-container layout-top-small">
+                    <p>TopBar comes in 3 sizes; large, medium and small. A specific style class with the layout-top-* prefix is defined at the main container element in order to apply a size. Below are the all 3 options;</p>
+                    <pre>
+                        {
+                            `<div className="layout-container layout-top-small">
 <div className="layout-container layout-top-medium">
 <div className="layout-container layout-top-large">
 `
-}
+                        }
+                    </pre>
+
+                    <p>Similarly TopBar style theme is also defined at the main container element, template below uses the default blue topbar.</p>
+                    <pre>
+                        &lt;div className="layout-container layout-topbar-blue"&gt;
 </pre>
 
-                        <p>Similarly TopBar style theme is also defined at the main container element, template below uses the default blue topbar.</p>
-<pre>
-&lt;div className="layout-container layout-topbar-blue"&gt;
+                    <p>Full list of topbar options are the following, note that <i>layout-topbar-</i> prefix needs to be added to apply the style such as <b>layout-topbar-midnight</b>.</p>
+
+                    <ul>
+                        <li>aerial</li>
+                        <li>apricot</li>
+                        <li>aquarelle</li>
+                        <li>architecture</li>
+                        <li>ash</li>
+                        <li>balloon</li>
+                        <li>beach</li>
+                        <li>beyoglu</li>
+                        <li>bloom</li>
+                        <li>blue</li>
+                        <li>canvas</li>
+                        <li>circuit</li>
+                        <li>city</li>
+                        <li>classic</li>
+                        <li>coffee</li>
+                        <li>condo</li>
+                        <li>connectionsone</li>
+                        <li>connectionstwo</li>
+                        <li>crystal</li>
+                        <li>dark</li>
+                        <li>dawn</li>
+                        <li>desert</li>
+                        <li>destination</li>
+                        <li>disco</li>
+                        <li>dock</li>
+                        <li>downtown</li>
+                        <li>emptiness</li>
+                        <li>exposure</li>
+                        <li>faraway</li>
+                        <li>flamingo</li>
+                        <li>flight</li>
+                        <li>fluid</li>
+                        <li>forest</li>
+                        <li>fruity</li>
+                        <li>grape</li>
+                        <li>hallway</li>
+                        <li>harvey</li>
+                        <li>hazy</li>
+                        <li>highline</li>
+                        <li>island</li>
+                        <li>jet</li>
+                        <li>kashmir</li>
+                        <li>light</li>
+                        <li>lights</li>
+                        <li>lille</li>
+                        <li>louisville</li>
+                        <li>marley</li>
+                        <li>materialone</li>
+                        <li>materialtwo</li>
+                        <li>midnight</li>
+                        <li>mountain</li>
+                        <li>mural</li>
+                        <li>night</li>
+                        <li>norge</li>
+                        <li>northern</li>
+                        <li>olympic</li>
+                        <li>orange</li>
+                        <li>palm</li>
+                        <li>perfection</li>
+                        <li>pine</li>
+                        <li>polygons</li>
+                        <li>reflection</li>
+                        <li>revolt</li>
+                        <li>river</li>
+                        <li>road</li>
+                        <li>rose</li>
+                        <li>royal</li>
+                        <li>sandiego</li>
+                        <li>seagull</li>
+                        <li>sky</li>
+                        <li>skyline</li>
+                        <li>skyscaper</li>
+                        <li>snow</li>
+                        <li>splash</li>
+                        <li>spray</li>
+                        <li>station</li>
+                        <li>sunset</li>
+                        <li>symmetry</li>
+                        <li>timelapse</li>
+                        <li>tinfoil</li>
+                        <li>tractor</li>
+                        <li>tropical</li>
+                        <li>urban</li>
+                        <li>vanusa</li>
+                        <li>volcano</li>
+                        <li>wall</li>
+                        <li>waterfall</li>
+                        <li>waves</li>
+                        <li>wing</li>
+                    </ul>
+
+                    <p>Creating your own topbar requires a couple of steps.</p>
+                    <ul>
+                        <li>Choose a topbar name such as mytopbar.</li>
+                        <li>Create an empty file named _topbar_mytopbar.scss inside public/assets/sass/layout/topbar/themes folder.</li>
+                        <li>Add your file to the import section of the _topbar.scss in the same folder.</li>
+                        <li>Define the variables listed below and import the <i>../_topbar_theme</i> file.</li>
+                        <li>Build the scss to generate css</li>
+                        <li>Apply layout-topbar-mytopbar class to the main wrapper element of in app.main.component template.</li>
+                    </ul>
+
+                    <pre>
+                        &lt;div class="layout-container layout-topbar-mytopbar"&gt;
 </pre>
 
-                        <p>Full list of topbar options are the following, note that <i>layout-topbar-</i> prefix needs to be added to apply the style such as <b>layout-topbar-midnight</b>.</p>
+                    <p>Here are the variables required to create a gradient based topbar.</p>
 
-                        <ul>
-                            <li>aerial</li>
-                            <li>apricot</li>
-                            <li>aquarelle</li>
-                            <li>architecture</li>
-                            <li>ash</li>
-                            <li>balloon</li>
-                            <li>beach</li>
-                            <li>beyoglu</li>
-                            <li>bloom</li>
-                            <li>blue</li>
-                            <li>canvas</li>
-                            <li>circuit</li>
-                            <li>city</li>
-                            <li>classic</li>
-                            <li>coffee</li>
-                            <li>condo</li>
-                            <li>connectionsone</li>
-                            <li>connectionstwo</li>
-                            <li>crystal</li>
-                            <li>dark</li>
-                            <li>dawn</li>
-                            <li>desert</li>
-                            <li>destination</li>
-                            <li>disco</li>
-                            <li>dock</li>
-                            <li>downtown</li>
-                            <li>emptiness</li>
-                            <li>exposure</li>
-                            <li>faraway</li>
-                            <li>flamingo</li>
-                            <li>flight</li>
-                            <li>fluid</li>
-                            <li>forest</li>
-                            <li>fruity</li>
-                            <li>grape</li>
-                            <li>hallway</li>
-                            <li>harvey</li>
-                            <li>hazy</li>
-                            <li>highline</li>
-                            <li>island</li>
-                            <li>jet</li>
-                            <li>kashmir</li>
-                            <li>light</li>
-                            <li>lights</li>
-                            <li>lille</li>
-                            <li>louisville</li>
-                            <li>marley</li>
-                            <li>materialone</li>
-                            <li>materialtwo</li>
-                            <li>midnight</li>
-                            <li>mountain</li>
-                            <li>mural</li>
-                            <li>night</li>
-                            <li>norge</li>
-                            <li>northern</li>
-                            <li>olympic</li>
-                            <li>orange</li>
-                            <li>palm</li>
-                            <li>perfection</li>
-                            <li>pine</li>
-                            <li>polygons</li>
-                            <li>reflection</li>
-                            <li>revolt</li>
-                            <li>river</li>
-                            <li>road</li>
-                            <li>rose</li>
-                            <li>royal</li>
-                            <li>sandiego</li>
-                            <li>seagull</li>
-                            <li>sky</li>
-                            <li>skyline</li>
-                            <li>skyscaper</li>
-                            <li>snow</li>
-                            <li>splash</li>
-                            <li>spray</li>
-                            <li>station</li>
-                            <li>sunset</li>
-                            <li>symmetry</li>
-                            <li>timelapse</li>
-                            <li>tinfoil</li>
-                            <li>tractor</li>
-                            <li>tropical</li>
-                            <li>urban</li>
-                            <li>vanusa</li>
-                            <li>volcano</li>
-                            <li>wall</li>
-                            <li>waterfall</li>
-                            <li>waves</li>
-                            <li>wing</li>
-                        </ul>
-
-                        <p>Creating your own topbar requires a couple of steps.</p>
-                        <ul>
-                            <li>Choose a topbar name such as mytopbar.</li>
-                            <li>Create an empty file named _topbar_mytopbar.scss inside public/assets/sass/layout/topbar/themes folder.</li>
-                            <li>Add your file to the import section of the _topbar.scss in the same folder.</li>
-                            <li>Define the variables listed below and import the <i>../_topbar_theme</i> file.</li>
-                            <li>Build the scss to generate css</li>
-                            <li>Apply layout-topbar-mytopbar class to the main wrapper element of in app.main.component template.</li>
-                        </ul>
-
-<pre>
-&lt;div class="layout-container layout-topbar-mytopbar"&gt;
-</pre>
-
-                        <p>Here are the variables required to create a gradient based topbar.</p>
-
-<CodeHighlight lang="css">
-{
-`
+                    <CodeHighlight lang="css">
+                        {
+                            `
 .layout-topbar-mytopbar {
     $topbarLeftBgColor:#F1719A;
     $topbarRightBgColor:#FE9473;
@@ -497,14 +491,14 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
 }
 
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-                        <p>If you prefer an image for the background, use the template below.</p>
+                    <p>If you prefer an image for the background, use the template below.</p>
 
-<CodeHighlight lang="css">
-{
-`
+                    <CodeHighlight lang="css">
+                        {
+                            `
 .layout-topbar-mytopbar {
     $topbarBgImage:'reflection-topbar.jpg';
     $topbarSearchInputColor:#BFDEE2;
@@ -534,128 +528,128 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
     @import '../_topbar_theme';
 }
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-                        <div className="card-title">Menu Themes</div>
-                        <p>Menu themes apply to the vertical menu, submenus of horizontal menu and the profile menu. Menu style used across the template is defined at the main container element, template below uses the default light menus.</p>
-<pre>
-&lt;div className="layout-container layout-menu-light"&gt;
+                    <div className="card-title">Menu Themes</div>
+                    <p>Menu themes apply to the vertical menu, submenus of horizontal menu and the profile menu. Menu style used across the template is defined at the main container element, template below uses the default light menus.</p>
+                    <pre>
+                        &lt;div className="layout-container layout-menu-light"&gt;
 </pre>
 
-                        <p>Full list of menu themes are the following, note that <i>layout-menu-</i> prefix needs to be added to apply the style such as <b>layout-menu-dark</b>.</p>
+                    <p>Full list of menu themes are the following, note that <i>layout-menu-</i> prefix needs to be added to apply the style such as <b>layout-menu-dark</b>.</p>
 
-                        <ul>
-                            <li>aerial</li>
-                            <li>apricot</li>
-                            <li>aquarelle</li>
-                            <li>architecture</li>
-                            <li>ash</li>
-                            <li>balloon</li>
-                            <li>beach</li>
-                            <li>beyoglu</li>
-                            <li>bloom</li>
-                            <li>blue</li>
-                            <li>canvas</li>
-                            <li>circuit</li>
-                            <li>city</li>
-                            <li>classic</li>
-                            <li>coffee</li>
-                            <li>condo</li>
-                            <li>connectionsone</li>
-                            <li>connectionstwo</li>
-                            <li>crystal</li>
-                            <li>dark</li>
-                            <li>dawn</li>
-                            <li>desert</li>
-                            <li>destination</li>
-                            <li>disco</li>
-                            <li>dock</li>
-                            <li>downtown</li>
-                            <li>emptiness</li>
-                            <li>exposure</li>
-                            <li>faraway</li>
-                            <li>flamingo</li>
-                            <li>flight</li>
-                            <li>fluid</li>
-                            <li>forest</li>
-                            <li>fruity</li>
-                            <li>grape</li>
-                            <li>hallway</li>
-                            <li>harvey</li>
-                            <li>hazy</li>
-                            <li>highline</li>
-                            <li>island</li>
-                            <li>jet</li>
-                            <li>kashmir</li>
-                            <li>light</li>
-                            <li>lights</li>
-                            <li>lille</li>
-                            <li>louisville</li>
-                            <li>marley</li>
-                            <li>materialone</li>
-                            <li>materialtwo</li>
-                            <li>midnight</li>
-                            <li>mountain</li>
-                            <li>mural</li>
-                            <li>night</li>
-                            <li>norge</li>
-                            <li>northern</li>
-                            <li>olympic</li>
-                            <li>orange</li>
-                            <li>palm</li>
-                            <li>perfection</li>
-                            <li>pine</li>
-                            <li>polygons</li>
-                            <li>reflection</li>
-                            <li>revolt</li>
-                            <li>river</li>
-                            <li>road</li>
-                            <li>rose</li>
-                            <li>royal</li>
-                            <li>sandiego</li>
-                            <li>seagull</li>
-                            <li>sky</li>
-                            <li>skyline</li>
-                            <li>skyscaper</li>
-                            <li>snow</li>
-                            <li>splash</li>
-                            <li>spray</li>
-                            <li>station</li>
-                            <li>sunset</li>
-                            <li>symmetry</li>
-                            <li>timelapse</li>
-                            <li>tinfoil</li>
-                            <li>tractor</li>
-                            <li>tropical</li>
-                            <li>urban</li>
-                            <li>vanusa</li>
-                            <li>volcano</li>
-                            <li>wall</li>
-                            <li>waterfall</li>
-                            <li>waves</li>
-                            <li>wing</li>
-                        </ul>
+                    <ul>
+                        <li>aerial</li>
+                        <li>apricot</li>
+                        <li>aquarelle</li>
+                        <li>architecture</li>
+                        <li>ash</li>
+                        <li>balloon</li>
+                        <li>beach</li>
+                        <li>beyoglu</li>
+                        <li>bloom</li>
+                        <li>blue</li>
+                        <li>canvas</li>
+                        <li>circuit</li>
+                        <li>city</li>
+                        <li>classic</li>
+                        <li>coffee</li>
+                        <li>condo</li>
+                        <li>connectionsone</li>
+                        <li>connectionstwo</li>
+                        <li>crystal</li>
+                        <li>dark</li>
+                        <li>dawn</li>
+                        <li>desert</li>
+                        <li>destination</li>
+                        <li>disco</li>
+                        <li>dock</li>
+                        <li>downtown</li>
+                        <li>emptiness</li>
+                        <li>exposure</li>
+                        <li>faraway</li>
+                        <li>flamingo</li>
+                        <li>flight</li>
+                        <li>fluid</li>
+                        <li>forest</li>
+                        <li>fruity</li>
+                        <li>grape</li>
+                        <li>hallway</li>
+                        <li>harvey</li>
+                        <li>hazy</li>
+                        <li>highline</li>
+                        <li>island</li>
+                        <li>jet</li>
+                        <li>kashmir</li>
+                        <li>light</li>
+                        <li>lights</li>
+                        <li>lille</li>
+                        <li>louisville</li>
+                        <li>marley</li>
+                        <li>materialone</li>
+                        <li>materialtwo</li>
+                        <li>midnight</li>
+                        <li>mountain</li>
+                        <li>mural</li>
+                        <li>night</li>
+                        <li>norge</li>
+                        <li>northern</li>
+                        <li>olympic</li>
+                        <li>orange</li>
+                        <li>palm</li>
+                        <li>perfection</li>
+                        <li>pine</li>
+                        <li>polygons</li>
+                        <li>reflection</li>
+                        <li>revolt</li>
+                        <li>river</li>
+                        <li>road</li>
+                        <li>rose</li>
+                        <li>royal</li>
+                        <li>sandiego</li>
+                        <li>seagull</li>
+                        <li>sky</li>
+                        <li>skyline</li>
+                        <li>skyscaper</li>
+                        <li>snow</li>
+                        <li>splash</li>
+                        <li>spray</li>
+                        <li>station</li>
+                        <li>sunset</li>
+                        <li>symmetry</li>
+                        <li>timelapse</li>
+                        <li>tinfoil</li>
+                        <li>tractor</li>
+                        <li>tropical</li>
+                        <li>urban</li>
+                        <li>vanusa</li>
+                        <li>volcano</li>
+                        <li>wall</li>
+                        <li>waterfall</li>
+                        <li>waves</li>
+                        <li>wing</li>
+                    </ul>
 
-                        <p>Creating your own menu theme requires a couple of steps.</p>
-                        <ul>
-                            <li>Choose a menu name such as mymenu.</li>
-                            <li>Create an empty file named _menu_mymenu.scss inside public/assets/sass/layout/menu/themes folder.</li>
-                            <li>Add your file to the import section of the _menu.scss in the same folder.</li>
-                            <li>Define the variables listed below and import the <i>../_menu_theme</i> file.</li>
-                            <li>Build the scss to generate css</li>
-                            <li>Add layout-menu-mymenu to the main wrapper element of in app.main.component template.</li>
-                        </ul>
+                    <p>Creating your own menu theme requires a couple of steps.</p>
+                    <ul>
+                        <li>Choose a menu name such as mymenu.</li>
+                        <li>Create an empty file named _menu_mymenu.scss inside public/assets/sass/layout/menu/themes folder.</li>
+                        <li>Add your file to the import section of the _menu.scss in the same folder.</li>
+                        <li>Define the variables listed below and import the <i>../_menu_theme</i> file.</li>
+                        <li>Build the scss to generate css</li>
+                        <li>Add layout-menu-mymenu to the main wrapper element of in app.main.component template.</li>
+                    </ul>
 
-<pre>
-&lt;div className="layout-container layout-menu-mymenu"&gt;
+                    <pre>
+                        &lt;div className="layout-container layout-menu-mymenu"&gt;
 </pre>
 
-                        <p>Here are the variables required to create a gradient based topbar.</p>
+                    <p>Here are the variables required to create a gradient based topbar.</p>
 
-<CodeHighlight lang="css">
-{
-`
+                    <CodeHighlight lang="css">
+                        {
+                            `
 .layout-menu-mymenu {
     $menuTopBgColor:#457fca;
     $menuBottomBgColor:#5691c8;
@@ -674,14 +668,14 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
     @import '../_menu_theme';
 }
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-                        <p>If you prefer an image for the background, use the template below.</p>
+                    <p>If you prefer an image for the background, use the template below.</p>
 
-<CodeHighlight lang="css">
-{
-`
+                    <CodeHighlight lang="css">
+                        {
+                            `
 .layout-menu-mymenu {
     $menuBgImage:'architecture-menu.jpg';
     $menuitemTextColor:#ffffff;
@@ -699,47 +693,47 @@ sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myow
     @import '../_menu_theme';
 }
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-                        <div className="card-title">Menu Highlight Color</div>
-                        <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself.
+                    <div className="card-title">Menu Highlight Color</div>
+                    <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself.
                             This color scheme is specified by the layout file such as layout-blue.scss which is still a mandatory file to be included regardless of the menu type as it defines the structure for the layout itself.</p>
 
-                        <p>Full list of menu highlight themes are the following.</p>
-                        <ul>
-                            <li>amber</li>
-                            <li>blue</li>
-                            <li>bluegray</li>
-                            <li>brown</li>
-                            <li>cyan</li>
-                            <li>deeporange</li>
-                            <li>deeppurple</li>
-                            <li>gray</li>
-                            <li>green</li>
-                            <li>indigo</li>
-                            <li>lightblue</li>
-                            <li>lightgreen</li>
-                            <li>lime</li>
-                            <li>orange</li>
-                            <li>pink</li>
-                            <li>purple</li>
-                            <li>teal</li>
-                            <li>yellow</li>
-                        </ul>
+                    <p>Full list of menu highlight themes are the following.</p>
+                    <ul>
+                        <li>amber</li>
+                        <li>blue</li>
+                        <li>bluegray</li>
+                        <li>brown</li>
+                        <li>cyan</li>
+                        <li>deeporange</li>
+                        <li>deeppurple</li>
+                        <li>gray</li>
+                        <li>green</li>
+                        <li>indigo</li>
+                        <li>lightblue</li>
+                        <li>lightgreen</li>
+                        <li>lime</li>
+                        <li>orange</li>
+                        <li>pink</li>
+                        <li>purple</li>
+                        <li>teal</li>
+                        <li>yellow</li>
+                    </ul>
 
-                        <p>Creating your own menu highlight theme requires a couple of steps.</p>
-                        <ul>
-                            <li>Choose a layout name such as myown.</li>
-                            <li>Create an empty file named layout-myown.scss inside public/assets/layout/css folder.</li>
-                            <li>Define the variables listed below and import the <i>../../sass/layout/_layout</i> file.</li>
-                            <li>Build the scss to generate css</li>
-                            <li>Import the layout css file in your application.</li>
-                        </ul>
+                    <p>Creating your own menu highlight theme requires a couple of steps.</p>
+                    <ul>
+                        <li>Choose a layout name such as myown.</li>
+                        <li>Create an empty file named layout-myown.scss inside public/assets/layout/css folder.</li>
+                        <li>Define the variables listed below and import the <i>../../sass/layout/_layout</i> file.</li>
+                        <li>Build the scss to generate css</li>
+                        <li>Import the layout css file in your application.</li>
+                    </ul>
 
-<CodeHighlight lang="css">
-{
-`
+                    <CodeHighlight lang="css">
+                        {
+                            `
 $primaryColor:#607D8B;
 $primaryTextColor:#ffffff;
 $accentColor:#FFC107;
@@ -747,16 +741,16 @@ $accentTextColor:#212121;
 
 @import '../../sass/layout/_layout';
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-                        <div className="card-title">Common SASS Variables</div>
-                        <p>In case you'd like to customize the shared variables, use the variables files under sass/variables folder.</p>
+                    <div className="card-title">Common SASS Variables</div>
+                    <p>In case you'd like to customize the shared variables, use the variables files under sass/variables folder.</p>
 
-<h3>sass/_common.scss</h3>
-<CodeHighlight lang="css">
-{
-`
+                    <h3>sass/_common.scss</h3>
+                    <CodeHighlight lang="css">
+                        {
+                            `
 //general
 $fontSize:14px;
 $fontFamily:"Roboto","Helvetica Neue",sans-serif;
@@ -778,13 +772,13 @@ $hoverTextColor:#000000;
 $dividerColor:#dbdbdb;
 $dividerLightColor:#f8f8f8;
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-<h3>sass/variables/_layout.scss</h3>
-<CodeHighlight lang="css">
-{
-`
+                    <h3>sass/variables/_layout.scss</h3>
+                    <CodeHighlight lang="css">
+                        {
+                            `
 @import './common';
 
 $bodyBgColor:#f4f4f7;
@@ -798,13 +792,13 @@ $maskBgColor:#252529;
 //horizontal menu
 $horizontalOverlaySubmenuShadow:0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-<h3>sass/variables/_theme.scss</h3>
-<CodeHighlight lang="css">
-{
-`
+                    <h3>sass/variables/_theme.scss</h3>
+                    <CodeHighlight lang="css">
+                        {
+                            `
 @import './common';
 
 $headerPadding:.714em 1em;
@@ -876,64 +870,64 @@ $menuitemPadding:.571em .857em;
 $menuListPadding: .5em 0;   
 }
 `
-}
-</CodeHighlight>
+                        }
+                    </CodeHighlight>
 
-                        <div className="card-title">Menu Modes</div>
-                        <p>Menu has 2 modes; horizontal and overlay. Layout container element in App.js is used to define which mode to use by adding specific classes. List
+                    <div className="card-title">Menu Modes</div>
+                    <p>Menu has 2 modes; horizontal and overlay. Layout container element in App.js is used to define which mode to use by adding specific classes. List
                         below indicates the style classes for each mode.</p>
 
-                        <ul>
-                            <li>Horizontal: <b>"layout-container layout-menu-horizontal"</b></li>
-                            <li>Overlay: <b>"layout-container"</b></li>
-                        </ul>
+                    <ul>
+                        <li>Horizontal: <b>"layout-container layout-menu-horizontal"</b></li>
+                        <li>Overlay: <b>"layout-container"</b></li>
+                    </ul>
 
-                        <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes.
+                    <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes.
                             Sample application has an example implementation of such use case. Refer to App.js for an example..</p>
 
-                        <p>Result will be reflected at application breadcrumb component such as "Home Icon" -> "Admin" -> "Control Panel".</p>
+                    <p>Result will be reflected at application breadcrumb component such as "Home Icon" -> "Admin" -> "Control Panel".</p>
 
-                        <div className="card-title">PrimeFlex Grid Syste</div>
-                        <p>Sapphire uses PrimeFlex Grid System throughout the samples, although any Grid library can be used we suggest using PrimeFlex as your grid system as it is well tested and supported by PrimeReact.
+                    <div className="card-title">PrimeFlex Grid Syste</div>
+                    <p>Sapphire uses PrimeFlex Grid System throughout the samples, although any Grid library can be used we suggest using PrimeFlex as your grid system as it is well tested and supported by PrimeReact.
                             PrimeFlex is available at npm and defined at package.json of Ultima so that it gets installed by default.</p>
 
-                        <div className="card-title">Customizing Styles</div>
-                        <p>It is suggested to add your customizations in the following sass files under the overrides folder instead of adding them to the
+                    <div className="card-title">Customizing Styles</div>
+                    <p>It is suggested to add your customizations in the following sass files under the overrides folder instead of adding them to the
                             scss files under sass folder to avoid maintenance issues after an update.</p>
 
-                        <ul>
-                            <li><b>_layout_variables</b>: Variables of the layout.</li>
-                            <li><b>_layout_styles</b>: Styles for the layout.</li>
-                            <li><b>_theme_variables</b>: Variables of the theme.</li>
-                            <li><b>_theme_styles</b>: Styles for the theme.</li>
-                        </ul>
+                    <ul>
+                        <li><b>_layout_variables</b>: Variables of the layout.</li>
+                        <li><b>_layout_styles</b>: Styles for the layout.</li>
+                        <li><b>_theme_variables</b>: Variables of the theme.</li>
+                        <li><b>_theme_styles</b>: Styles for the theme.</li>
+                    </ul>
 
-						<div className="card-title">Migration Guide</div>
-                        <p>4.0.0 to 4.0.1</p>
-                        <ul>
-                            <li>Update App.js</li>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
+                    <div className="card-title">Migration Guide</div>
+                    <p>4.0.0 to 4.0.1</p>
+                    <ul>
+                        <li>Update App.js</li>
+                        <li>Update layout css files</li>
+                        <li>Update theme css files</li>
+                    </ul>
 
-                        <p>1.0.1 to 4.0.0</p>
-                        <ul>
-                            <li>Update index.jx</li>
-                            <li>Update App.js</li>
-                            <li>Update AppMenu.js</li>
-                            <li>Update layout css files</li>
-                            <li>Update theme css files</li>
-                        </ul>
+                    <p>1.0.1 to 4.0.0</p>
+                    <ul>
+                        <li>Update index.jx</li>
+                        <li>Update App.js</li>
+                        <li>Update AppMenu.js</li>
+                        <li>Update layout css files</li>
+                        <li>Update theme css files</li>
+                    </ul>
 
-						<p>1.0.0 to 1.0.1</p>
-						<ul>
-							<li>Update layout css files</li>
-							<li>Update theme css files</li>
-						</ul>
+                    <p>1.0.0 to 1.0.1</p>
+                    <ul>
+                        <li>Update layout css files</li>
+                        <li>Update theme css files</li>
+                    </ul>
 
-                    </div>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+
 }

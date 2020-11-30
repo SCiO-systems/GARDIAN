@@ -1,42 +1,44 @@
-import React, {Component} from 'react';
-import {InputText} from 'primereact/inputtext';
-import {Button} from 'primereact/button';
+import React from 'react';
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
 
-export default class Login extends Component {
+const Login = () => {
 
-	render() {
-		return <div className="login-body">
-			<div className="login-panel ui-fluid">
-				<div className="login-panel-header">
-					<img src="assets/layout/images/login/logo-sapphire-color.png" alt="sapphire"/>
+	return (
+		<div class="login-body">
+			<div class="login-panel ui-fluid">
+				<div class="login-panel-header">
+					<img src="assets/layout/images/login/logo-sapphire-color.png" alt="sapphire" />
 				</div>
-				<div className="login-panel-content">
-					<div className="p-grid">
-						<div className="p-col-12">
+				<div class="login-panel-content">
+					<div class="p-grid">
+						<div class="p-col-12">
 							<h1>SAPPHIRE NETWORK</h1>
 							<h2>Welcome, please use the form to sign-in</h2>
 						</div>
-						<div className="p-col-12">
-                        <span className="md-inputfield">
-							<InputText style={{width: '100%'}}/>
-                            <label>Username</label>
-                        </span>
+						<div class="p-col-12">
+							<span class="p-float-label">
+								<InputText id="username" type="text" style={{ width: '100%' }} v-model="username" />
+								<label for="username">Username</label>
+							</span>
 						</div>
-						<div className="p-col-12">
-                        <span className="md-inputfield">
-							<InputText type="password" style={{width: '100%'}}/>
-                            <label>Password</label>
-                        </span>
+						<div class="p-col-12">
+							<span class="p-float-label">
+								<InputText id="password" type="text" style={{ width: '100%' }} v-model="password" />
+								<label for="password">Password</label>
+							</span>
 						</div>
-						<div className="p-col-6">
-							<button className="p-link">Forget Password?</button>
+						<div class="p-col-6">
+							<button class="p-link">Forget Password?</button>
 						</div>
-						<div className="p-col-6" style={{textAlign: "right"}}>
-							<Button label="NEXT" onClick={() => {window.location = "/#"}} style={{width:'100%'}}/>
+						<div class="p-col-6" style={{ textAlign: 'right' }}>
+							<Button label="NEXT" onClick={() => { window.location = "/#" }} style={{ width: '100%' }} />
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	}
+	)
 }
+
+export default Login;

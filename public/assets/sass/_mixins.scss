@@ -149,41 +149,6 @@
     box-sizing: border-box;
 }
 
-@mixin material-icon($icon) {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: $iconFontSize;
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: 'liga';
-
-    &:before {
-        content: $icon;
-    }
-}
-
-@mixin icon-override($icon) {
-    @include material-icon($icon);
-}
-
 @mixin rotate($deg) {
     -webkit-transform: rotate($deg);
     -moz-transform: rotate($deg);
@@ -200,11 +165,6 @@
     transform: scale($deg);
 }
 
-@mixin rippleitem() {
-    position: relative;
-    overflow: hidden;
-}
-
 @mixin clearfix() {
     &:before,
     &:after {
@@ -217,61 +177,56 @@
 }
 
 @mixin flex() {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 }
 
-@mixin animation($delay, $duration, $animation) {
-    -webkit-animation-delay: $delay;
-    -webkit-animation-duration: $duration;
-    -webkit-animation-name: $animation;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-
-    -moz-animation-delay: $delay;
-    -moz-animation-duration: $duration;
-    -moz-animation-name: $animation;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-
-    animation-delay: $delay;
-    animation-duration: $duration;
-    animation-name: $animation;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+@mixin flex-wrap($value) {
+    -ms-flex-wrap: $value;
+    flex-wrap: $value;
 }
 
-@mixin content() {
-    background-color: $contentBgColor;
-    border: 1px solid $contentBorderColor;
-    padding: $contentPadding;
+@mixin flex-direction-row() {
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
 
-@mixin header() {
-    background-color: $primaryColor;
-    color: $headerTextColor;
-    border: 1px solid $primaryColor;
-    padding: $headerPadding;
-    font-weight: $headerFontWeight;
+@mixin flex-direction-column() {
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
-@mixin corner-all {
-    @include border-radius($borderRadius);
+@mixin flex-justify-center() {
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
-@mixin corner-top {
-    @include border-radius-top($borderRadius);
+@mixin flex-justify-between() {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
-@mixin corner-bottom {
-    @include border-radius-bottom($borderRadius);
+@mixin flex-align-center() {
+    -ms-flex-align: center;
+    align-items: center;
 }
 
-@mixin corner-left {
-    @include border-radius-left($borderRadius);
+@mixin flex-align-start() {
+    -ms-flex-align: start;
+    align-items: flex-start;
 }
 
-@mixin corner-right {
-    @include border-radius-right($borderRadius);
+@mixin flex-align-end() {
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+@mixin flex-justify-start() {
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+@mixin flex-justify-end() {
+    -ms-flex-pack: end;
+    justify-content: flex-end;
 }

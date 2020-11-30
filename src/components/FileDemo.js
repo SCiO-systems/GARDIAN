@@ -1,43 +1,25 @@
-import React, { Component } from 'react';
-import {FileUpload} from 'primereact/components/fileupload/FileUpload';
-import {Growl} from 'primereact/components/growl/Growl';
+import React, { useRef } from 'react';
+import { FileUpload } from 'primereact/fileupload';
 
-export class FileDemo extends Component {
+export const FileDemo = () => {
 
-    constructor() {
-        super();
-        this.state = {messages:null};
+    const toast = useRef(null);
 
-        this.onUpload = this.onUpload.bind(this);
-        this.uploadedFiles = [];
+    const onUpload = () => {
+        toast.current.show({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 });
     }
 
-    onUpload(event){
-        for(let file of event.files) {
-            this.uploadedFiles.push(file);
-        }
-        this.setState({messages:[{severity: 'info', summary: 'File Uploaded', detail: ''}]});
-    }
+    return (
+        <div className="p-grid">
+            <div className="p-col-12">
+                <div className="card">
+                    <h5>Advanced</h5>
+                    <FileUpload name="demo[]" url="./upload.php" onUpload={onUpload} multiple accept="image/*" maxFileSize={1000000} />
 
-    render() {
-        return(
-            <div className="container">
-                <div className="p-grid">
-                    <div className="p-col-12">
-                        <div className="card">
-                            <div className="card-title">Upload</div>
-                            <Growl value={this.state.messages}/>
-                    
-                            <FileUpload name="demo[]" url="./upload.php" onUpload={this.onUpload} multiple={true} accept="image/*" maxFileSize={1000000}>
-                                {this.uploadedFiles.length &&
-                                <ul>
-                                    {this.uploadedFiles && this.uploadedFiles.map((file,index)=><li key={index}>{file.name} - {file.size} bytes</li>)}
-                                </ul>}
-                            </FileUpload>
-                        </div>
-                    </div>
+                    <h5>Basic</h5>
+                    <FileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize={1000000} onUpload={onUpload} />
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }

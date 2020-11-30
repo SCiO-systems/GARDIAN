@@ -1,89 +1,242 @@
-import React, {Component} from 'react';
+import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
-import {AppTopbar} from './AppTopbar';
-import {AppBreadcrumb} from "./AppBreadcrumb";
-import {AppFooter} from './AppFooter';
-import {Route} from 'react-router-dom'
-import {Dashboard} from './components/Dashboard';
-import {FormsDemo} from './components/FormsDemo';
-import {SampleDemo} from './components/SampleDemo';
-import {DataDemo} from './components/DataDemo';
-import {PanelsDemo} from './components/PanelsDemo';
-import {OverlaysDemo} from './components/OverlaysDemo';
-import {MenusDemo} from './components/MenusDemo';
-import {MessagesDemo} from './components/MessagesDemo';
-import {ChartsDemo} from './components/ChartsDemo';
-import {MiscDemo} from './components/MiscDemo';
-import {EmptyPage} from './components/EmptyPage';
-import {UtilsDemo} from './components/UtilsDemo';
-import {Documentation} from './components/Documentation';
+import { AppTopbar } from './AppTopbar';
+import { AppBreadcrumb } from "./AppBreadcrumb";
+import { AppFooter } from './AppFooter';
+import { AppConfig } from "./AppConfig";
+import { Route } from 'react-router-dom'
 import { withRouter } from 'react-router';
+
+import { Dashboard } from './components/Dashboard';
+import { ButtonDemo } from './components/ButtonDemo';
+import { ChartDemo } from './components/ChartDemo';
+import { MessagesDemo } from './components/MessagesDemo';
+import { Documentation } from './components/Documentation';
+import { FileDemo } from './components/FileDemo';
+import { FormLayoutDemo } from './components/FormLayoutDemo';
+import { InputDemo } from './components/InputDemo';
+import { ListDemo } from './components/ListDemo';
+import { MiscDemo } from './components/MiscDemo';
+import { MenuDemo } from './components/MenuDemo';
+import { OverlayDemo } from './components/OverlayDemo';
+import { PanelDemo } from './components/PanelDemo';
+import { TableDemo } from './components/TableDemo';
+import { TreeDemo } from './components/TreeDemo';
+
+import { Crud } from './pages/Crud';
+import { Calendar } from './pages/Calendar';
+import { Invoice } from './pages/Invoice';
+import { EmptyPage } from './pages/EmptyPage';
+import { Help } from './pages/Help';
+
+import { DisplayDemo } from './utilities/DisplayDemo';
+import { ElevationDemo } from './utilities/ElevationDemo';
+import { FlexBoxDemo } from './utilities/FlexboxDemo';
+import { GridDemo } from './utilities/GridDemo';
+import { IconsDemo } from './utilities/IconsDemo';
+import { SpacingDemo } from './utilities/SpacingDemo';
+import { TextDemo } from './utilities/TextDemo';
+import { TypographyDemo } from './utilities/TypographyDemo';
+import { WidgetsDemo } from './utilities/WidgetsDemo';
+
 import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 import '@fullcalendar/timegrid/main.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeflex/primeflex.css';
-import './ripple.js';
-import './App.css';
-import {AppConfig} from "./AppConfig";
+import './App.scss';
+import 'primeicons/primeicons.css';
 
-class App extends Component {
 
-	constructor() {
-		super();
-		this.state = {
-			horizontal: true,
-			topbarSize: 'large',
-			topbarColor: 'layout-topbar-blue',
-			menuColor: 'layout-menu-light',
-			layoutColor: 'blue',
-			themeColor: 'blue',
-			menuActive: false,
-			configDialogActive: false
-		};
+const App = () => {
 
-		this.onWrapperClick = this.onWrapperClick.bind(this);
-		this.onMenuButtonClick = this.onMenuButtonClick.bind(this);
-		this.onTopbarUserMenuButtonClick = this.onTopbarUserMenuButtonClick.bind(this);
-		this.onTopbarUserMenuClick = this.onTopbarUserMenuClick.bind(this);
-		this.onRootMenuItemClick = this.onRootMenuItemClick.bind(this);
-		this.onMenuItemClick = this.onMenuItemClick.bind(this);
-		this.onSidebarClick = this.onSidebarClick.bind(this);
-		this.changeTopbarTheme = this.changeTopbarTheme.bind(this);
-		this.changeTopbarSize = this.changeTopbarSize.bind(this);
-		this.changeMenuToHorizontal = this.changeMenuToHorizontal.bind(this);
-		this.changeMenuTheme = this.changeMenuTheme.bind(this);
-		this.changeComponentTheme = this.changeComponentTheme.bind(this);
-		this.changePrimaryColor = this.changePrimaryColor.bind(this);
-		this.onToggleBlockBodyScroll = this.onToggleBlockBodyScroll.bind(this);
-		this.isHorizontalMenuActive = this.isHorizontalMenuActive.bind(this);
-		this.createMenu();
-	}
+	const [horizontal, setHorizontal] = useState(true);
+	const [topbarSize, setTopbarSize] = useState('large');
+	const [topbarColor, setTopbarColor] = useState('layout-topbar-blue');
+	const [menuColor, setMenuColor] = useState('layout-menu-light');
+	const [layoutColor, setLayoutColor] = useState('blue');
+	const [themeColor, setThemeColor] = useState('blue');
+	const [menuActive, setMenuActive] = useState(false);
+	const [configDialogActive, setConfigDialogActive] = useState(false);
+	const [topbarUserMenuActive, setTopbarUserMenuActive] = useState(false);
+	const layoutContainer = useRef(null);
 
-	onWrapperClick(event) {
-		if (!this.menuClick) {
-			this.setState({menuActive: false});
+	let menuClick;
+	let configMenuClick;
+	let userMenuClick;
 
-			if (!this.configMenuClick) {
-				this.unblockBodyScroll();
+	const onWrapperClick = (event) => {
+		if (!menuClick) {
+			setMenuActive(false)
+
+			if (!configMenuClick) {
+				unblockBodyScroll();
 			}
 		}
 
-		if (!this.userMenuClick) {
-			this.setState({topbarUserMenuActive: false});
+		if (!userMenuClick) {
+			setTopbarUserMenuActive(false);
 		}
 
-		this.userMenuClick = false;
-		this.menuClick = false;
-		this.configMenuClick = false;
+		userMenuClick = false;
+		menuClick = false;
+		configMenuClick = false;
 	}
 
-	onMenuButtonClick(event, isMenuButtonActive) {
-		this.menuClick = true;
+	const menu = [
+		{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
+		{
+			label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
+			items: [
+				{ label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
+				{ label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
+				{ label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
+				{ label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
+				{ label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
+				{ label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
+				{ label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
+				{ label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
+				{ label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
+				{ label: "Media", icon: "pi pi-fw pi-image", to: "/media" },
+				{ label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu' },
+				{ label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
+				{ label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
+				{ label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
+				{ label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
+			]
+		},
+		{
+			label: 'Mega', icon: 'pi pi-fw pi-list', badge: 2, mega: true,
+			items: [
+				{
+					label: 'UI Kit', icon: 'pi pi-fw pi-sitemap', badge: 6,
+					items: [
+						{ label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
+						{ label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
+						{ label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
+						{ label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
+						{ label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
+						{ label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
+						{ label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
+						{ label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
+						{ label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
+						{ label: "Media", icon: "pi pi-fw pi-image", to: "/media" },
+						{ label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menus' },
+						{ label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
+						{ label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
+						{ label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
+						{ label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
+					]
+				},
+				{
+					label: 'Templates',
+					items: [
+						{ label: 'Diamond', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/diamond-vue' },
+						{ label: 'Sapphire', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/sapphire-vue' },
+						{ label: 'Serenity', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/serenity-vue' },
+						{ label: 'Ultima', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/ultima-vue' },
+						{ label: 'Avalon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/avalon-vue' },
+						{ label: 'Babylon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/babylon-vue' },
+						{ label: 'Apollo', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/apollo-vue' },
+						{ label: 'Roma', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/roma-vue' },
+						{ label: 'Prestige', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/prestige-vue' }
+					]
+				},
+				{
+					label: 'Demo',
+					items: [
+						{ label: 'PrimeFaces', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/showcase' },
+						{ label: 'PrimeNG', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/primeng' },
+						{ label: 'PrimeReact', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/primereact' }
+					]
+				}
+			]
+		},
+		{
+			label: "Utilities", icon: 'pi pi-fw pi-globe',
+			items: [
+				{ label: 'Display', icon: 'pi pi-fw pi-desktop', to: '/display' },
+				{ label: 'Elevation', icon: 'pi pi-fw pi-external-link', to: '/elevation' },
+				{ label: 'Flexbox', icon: 'pi pi-fw pi-directions', to: '/flexbox' },
+				{ label: 'Icons', icon: 'pi pi-fw pi-search', to: '/icons' },
+				{ label: 'Widgets', icon: 'pi pi-fw pi-star-o', to: '/widgets' },
+				{ label: 'Grid System', icon: 'pi pi-fw pi-th-large', to: '/grid' },
+				{ label: 'Spacing', icon: 'pi pi-fw pi-arrow-right', to: '/spacing' },
+				{ label: 'Typography', icon: 'pi pi-fw pi-align-center', to: '/typography' },
+				{ label: 'Text', icon: 'pi pi-fw pi-pencil', to: '/text' },
+			]
+		},
+		{
+			label: 'Pages', icon: 'pi pi-fw pi-clone',
+			items: [
+				{ label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud' },
+				{ label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
+				{ label: 'Landing', icon: 'pi pi-fw pi-user-plus', url: 'assets/pages/landing.html', target: '_blank' },
+				{ label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
+				{ label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice' },
+				{ label: 'Help', icon: 'pi pi-fw pi-question-circle', to: '/help' },
+				{ label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error' },
+				{ label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/notfound' },
+				{ label: 'Access Denied', icon: 'pi pi-fw pi-lock', to: '/access' },
+				{ label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty' }
+			]
+		},
+		{
+			label: 'Menu Hierarchy', icon: 'pi pi-fw pi-align-left',
+			items: [
+				{
+					label: 'Submenu 1', icon: 'pi pi-fw pi-align-left',
+					items: [
+						{
+							label: 'Submenu 1.1', icon: 'pi pi-fw pi-align-left',
+							items: [
+								{ label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-align-left' },
+								{ label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-align-left' },
+								{ label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-align-left' },
+							]
+						},
+						{
+							label: 'Submenu 1.2', icon: 'pi pi-fw pi-align-left',
+							items: [
+								{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-align-left' },
+								{ label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-align-left' }
+							]
+						},
+					]
+				},
+				{
+					label: 'Submenu 2', icon: 'pi pi-fw pi-align-left',
+					items: [
+						{
+							label: 'Submenu 2.1', icon: 'pi pi-fw pi-align-left',
+							items: [
+								{ label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-align-left' },
+								{ label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-align-left' },
+								{ label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-align-left' },
+							]
+						},
+						{
+							label: 'Submenu 2.2', icon: 'pi pi-fw pi-align-left',
+							items: [
+								{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-align-left' },
+								{ label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-align-left' }
+							]
+						},
+					]
+				}
+			]
+		},
+		{ label: 'Documentation', icon: 'pi pi-fw pi-question', to: '/documentation' },
+		{ label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', command: () => { window.location = "https://www.primefaces.org/store" } },
+	];
 
-		if (!this.isHorizontalMenuActive()) {
-			this.setState({menuActive: !isMenuButtonActive}, () => {
-				if (this.state.menuActive) {
+
+	const onMenuButtonClick = (event, isMenuButtonActive) => {
+		menuClick = true;
+
+		if (!isHorizontalMenuActive()) {
+			this.setState({ menuActive: !isMenuButtonActive }, () => {
+				if (menuActive) {
 					this.blockBodyScroll();
 				} else {
 					this.unblockBodyScroll();
@@ -94,17 +247,17 @@ class App extends Component {
 		event.preventDefault();
 	}
 
-	onToggleBlockBodyScroll(add) {
+	const onToggleBlockBodyScroll = (add) => {
 		if (add)
-			this.blockBodyScroll();
+			blockBodyScroll();
 		else
-			this.unblockBodyScroll();
+			unblockBodyScroll();
 
-		this.configMenuClick = true;
+		configMenuClick = true;
 	}
 
-	blockBodyScroll() {
-		let className = `blocked-scroll${this.state.horizontal ? '-horizontal-menu': ''}`;
+	const blockBodyScroll = () => {
+		let className = `blocked-scroll${horizontal ? '-horizontal-menu' : ''}`;
 		if (document.body.classList) {
 			document.body.classList.add(className);
 		} else {
@@ -112,8 +265,8 @@ class App extends Component {
 		}
 	}
 
-	unblockBodyScroll() {
-		let className = `blocked-scroll${this.state.horizontal ? '-horizontal-menu': ''}`;
+	const unblockBodyScroll = () => {
+		let className = `blocked-scroll${horizontal ? '-horizontal-menu' : ''}`;
 		if (document.body.classList) {
 			document.body.classList.remove(className);
 		} else {
@@ -122,107 +275,99 @@ class App extends Component {
 		}
 	}
 
-	onTopbarUserMenuButtonClick(event) {
-		this.userMenuClick = true;
-		this.setState({topbarUserMenuActive: !this.state.topbarUserMenuActive});
+	const onTopbarUserMenuButtonClick = (event) => {
+		userMenuClick = true;
+		setTopbarUserMenuActive(prevState => !prevState);
 
 		event.preventDefault();
 	}
 
-	onTopbarUserMenuClick(event) {
-		this.userMenuClick = true;
+	const onTopbarUserMenuClick = (event) => {
+		userMenuClick = true;
 
 		if (event.target.nodeName === 'BUTTON' || event.target.parentNode.nodeName === 'BUTTON') {
-			this.setState({topbarUserMenuActive: false});
+			setTopbarUserMenuActive(false)
 		}
 		event.preventDefault();
 	}
 
-	onRootMenuItemClick(event) {
-		this.menuClick = true;
+	const onRootMenuItemClick = (event) => {
+		menuClick = true;
 
-		if (this.isHorizontalMenuActive()) {
-			this.setState({
-				menuActive: !this.state.menuActive
-			});
+		if (isHorizontalMenuActive()) {
+			setMenuActive(prevState => !prevState)
 		}
 	}
 
-	onMenuItemClick(event) {
-		if(!event.item.items) {
-			this.setState({menuActive: false});
-			this.unblockBodyScroll();
+	const onMenuItemClick = (event) => {
+		if (!event.item.items) {
+			setMenuActive(false)
+			unblockBodyScroll();
 		}
 	}
 
-	onSidebarClick(event) {
-		this.menuClick = true;
+	const onSidebarClick = (event) => {
+		menuClick = true;
 	}
 
-	isMobile() {
+	const isMobile = () => {
 		return window.innerWidth <= 1024;
 	}
 
-	isHorizontalMenuActive() {
-		return this.state.horizontal && !this.isMobile();
+	const isHorizontalMenuActive = () => {
+		return horizontal && !isMobile();
 	}
 
-	changeTopbarSize(event) {
-		this.setState({topbarSize: event.size});
-
+	const changeTopbarSize = (event) => {
+		setTopbarSize(event.size)
 		event.originalEvent.preventDefault();
 	}
 
-	changeTopbarTheme(event) {
-		this.setState({topbarColor: 'layout-topbar-' + event.color});
-
+	const changeTopbarTheme = (event) => {
+		setTopbarColor('layout-topbar-' + event.color)
 		event.originalEvent.preventDefault();
 	}
 
-	changeMenuToHorizontal(event) {
-		this.setState({horizontal: event.mode});
-
+	const changeMenuToHorizontal = (event) => {
+		setHorizontal(event.mode)
 		event.originalEvent.preventDefault();
 	}
 
-	changeMenuTheme(event) {
-		this.setState({menuColor: 'layout-menu-' + event.color});
-
+	const changeMenuTheme = (event) => {
+		setMenuColor('layout-menu-' + event.color);
 		event.originalEvent.preventDefault();
 	}
 
-	changeComponentTheme(event) {
-		this.setState({themeColor: event.theme});
-
+	const changeComponentTheme = (event) => {
+		setThemeColor(event.theme);
 		let element = document.getElementById('theme-css');
 		let urlTokens = element.getAttribute('href').split('/');
 		urlTokens[urlTokens.length - 1] = 'theme-' + event.theme + '.css';
 		let newURL = urlTokens.join('/');
 
-		this.replaceLink(element, newURL);
+		replaceLink(element, newURL);
 
 		event.originalEvent.preventDefault();
 	}
 
-	changePrimaryColor(event) {
-		this.setState({layoutColor: event.color});
-
+	const changePrimaryColor = (event) => {
+		setLayoutColor(event.color);
 		let element = document.getElementById('layout-css');
 		let urlTokens = element.getAttribute('href').split('/');
 		urlTokens[urlTokens.length - 1] = 'layout-' + event.color + '.css';
 		let newURL = urlTokens.join('/');
 
-		this.replaceLink(element, newURL);
+		replaceLink(element, newURL);
 
 		event.originalEvent.preventDefault();
 	}
 
-	isIE() {
+	const isIE = () => {
 		return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent)
 	}
 
-	replaceLink(linkElement, href) {
-		if(this.isIE()){
+	const replaceLink = (linkElement, href) => {
+		if (isIE()) {
 			linkElement.setAttribute('href', href);
 		}
 		else {
@@ -241,180 +386,75 @@ class App extends Component {
 		}
 	}
 
-	createMenu() {
-		this.menu = [
-			{label: 'Dashboard', icon: 'dashboard', to: '/'},
-			{
-				label: 'Components', icon: 'list',
-				items: [
-					{label: 'Sample Page', icon: 'desktop_mac', to: '/sample'},
-					{label: 'Forms', icon: 'input', to: '/forms'},
-					{label: 'Data', icon: 'grid_on', to: '/data'},
-					{label: 'Panels', icon: 'content_paste', to: '/panels'},
-					{label: 'Overlays', icon: 'content_copy', to: '/overlays'},
-					{label: 'Menus', icon: 'menu', to: '/menus'},
-					{label: 'Messages', icon: 'message',to: '/messages'},
-					{label: 'Charts', icon: 'insert_chart', to: '/charts'},
-					{label: 'Misc', icon: 'toys', to: '/misc'}
-				]
-			},
-			{
-				label: 'Mega', icon: 'list', badge: 2, mega: true,
-				items: [
-					{
-						label: 'Components',
-						items: [
-							{label: 'Sample Page', icon: 'desktop_mac', to: '/sample'},
-							{label: 'Forms', icon: 'input', to: '/forms'},
-							{label: 'Data', icon: 'grid_on', to: '/data'},
-							{label: 'Panels', icon: 'content_paste', to: '/panels'},
-							{label: 'Overlays', icon: 'content_copy', to: '/overlays'},
-							{label: 'Menus', icon: 'menu', to: '/menus'},
-							{label: 'Messages', icon: 'message',to: '/messages'},
-							{label: 'Charts', icon: 'insert_chart', to: '/charts'},
-							{label: 'Misc', icon: 'toys', to: '/misc'}
-						]
-					},
-					{
-						label: 'Templates',
-						items: [
-							{label: 'Ultima', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/ultima-ng' },
-							{label: 'Serenity', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/serenity-ng'},
-							{label: 'Avalon', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/avalon-ng'},
-							{label: 'Apollo', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/apollo-ng'},
-							{label: 'Roma', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/roma-ng'},
-							{label: 'Babylon', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/babylon-ng'},
-							{label: 'Manhattan', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/manhattan-ng'},
-							{label: 'Verona', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/verona-ng'},
-							{label: 'Olympia', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/olympia-ng'},
-							{label: 'Ecuador', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/ecuador-ng'}
-						]
-					},
-					{
-						label: 'Demo',
-						items: [
-							{label: 'PrimeFaces', icon: 'desktop_mac', url: 'https://www.primefaces.org/showcase'},
-							{label: 'PrimeNG', icon: 'desktop_mac',  url: 'https://www.primefaces.org/primeng'},
-							{label: 'PrimeReact', icon: 'desktop_mac',  url: 'https://www.primefaces.org/primereact'}
-						]
-					}
-				]
-			},
-			{
-				label: 'Pages', icon: 'get_app',
-				items: [
-					{label: 'Empty Page', icon: 'hourglass_empty', to: '/empty'},
-					{label: 'Landing Page', icon: 'flight_land', url: 'assets/pages/landing.html', target: '_blank'},
-					{label: 'Login Page', icon: 'verified_user', to: '/login'},
-					{label: 'Error Page', icon: 'error', to: '/error'},
-					{label: '404 Page', icon: 'error_outline', to: '/notfound'},
-					{label: 'Access Denied Page', icon: 'security', to: '/access'}
-				]
-			},
-			{
-				label: 'Hierarchy', icon: 'menu',
-				items: [
-					{
-						label: 'Submenu 1', icon: 'subject',
-						items: [
-							{
-								label: 'Submenu 1.1', icon: 'subject',
-								items: [
-									{label: 'Submenu 1.1.1', icon: 'subject'},
-									{label: 'Submenu 1.1.2', icon: 'subject'},
-									{label: 'Submenu 1.1.3', icon: 'subject'},
-								]
-							},
-							{
-								label: 'Submenu 1.2', icon: 'subject',
-								items: [
-									{label: 'Submenu 1.2.1', icon: 'subject'},
-									{label: 'Submenu 1.2.2', icon: 'subject'}
-								]
-							},
-						]
-					},
-					{
-						label: 'Submenu 2', icon: 'subject',
-						items: [
-							{
-								label: 'Submenu 2.1', icon: 'subject',
-								items: [
-									{label: 'Submenu 2.1.1', icon: 'subject'},
-									{label: 'Submenu 2.1.2', icon: 'subject'},
-									{label: 'Submenu 2.1.3', icon: 'subject'},
-								]
-							},
-							{
-								label: 'Submenu 2.2', icon: 'subject',
-								items: [
-									{label: 'Submenu 2.2.1', icon: 'subject'},
-									{label: 'Submenu 2.2.2', icon: 'subject'}
-								]
-							},
-						]
-					}
-				]
-			},
-			{label: 'Utils', icon: 'build',  command:()=>{ window.location = "#/utils"}},
-			{label: 'Documentation', icon: 'find_in_page',  command:()=>{ window.location = "#/documentation"}},
-			{label: 'Buy Now', icon: 'credit_card', command: () => { window.location = "https://www.primefaces.org/store"}},
-		];
-	}
+	const layoutContainerClassName = classNames('layout-container', {
+		'layout-menu-horizontal': horizontal,
+		'layout-menu-active': menuActive && !isHorizontalMenuActive(),
+		'layout-top-small': topbarSize === 'small',
+		'layout-top-medium': topbarSize === 'medium',
+		'layout-top-large': topbarSize === 'large'
+	}, topbarColor, menuColor);
 
-	render() {
-		const layoutContainerClassName = classNames('layout-container', {
-			'layout-menu-horizontal': this.state.horizontal,
-			'layout-menu-active': this.state.menuActive && !this.isHorizontalMenuActive(),
-			'layout-top-small': this.state.topbarSize === 'small',
-			'layout-top-medium': this.state.topbarSize === 'medium',
-			'layout-top-large': this.state.topbarSize === 'large'
-		}, this.state.topbarColor, this.state.menuColor);
+	const AppBreadCrumbWithRouter = withRouter(AppBreadcrumb);
 
-		const AppBreadCrumbWithRouter = withRouter(AppBreadcrumb);
+	return (
+		<div ref={layoutContainer} className={layoutContainerClassName} onClick={onWrapperClick}>
+			<div className="layout-top">
+				<AppTopbar topbarUserMenuActive={topbarUserMenuActive} menuActive={menuActive}
+					onMenuButtonClick={onMenuButtonClick} onTopbarUserMenuButtonClick={onTopbarUserMenuButtonClick}
+					onTopbarUserMenuClick={onTopbarUserMenuClick} model={menu} horizontal={horizontal} onSidebarClick={onSidebarClick}
+					onRootMenuItemClick={onRootMenuItemClick} onMenuItemClick={onMenuItemClick} isHorizontalMenuActive={isHorizontalMenuActive} />
 
-		return (
-			<div ref={(el) => this.layoutContainer = el} className={layoutContainerClassName}  onClick={this.onWrapperClick}>
-				<div className="layout-top">
-					<AppTopbar topbarUserMenuActive={this.state.topbarUserMenuActive} menuActive={this.state.menuActive}
-							   onMenuButtonClick={this.onMenuButtonClick} onTopbarUserMenuButtonClick={this.onTopbarUserMenuButtonClick}
-							   onTopbarUserMenuClick={this.onTopbarUserMenuClick} model={this.menu} horizontal={this.state.horizontal} onSidebarClick={this.onSidebarClick}
-							   onRootMenuItemClick={this.onRootMenuItemClick} onMenuItemClick={this.onMenuItemClick} isHorizontalMenuActive={this.isHorizontalMenuActive}/>
+				<div className="layout-topbar-separator" />
 
-					<div className="layout-topbar-separator"/>
+				<AppBreadCrumbWithRouter />
+			</div>
 
-					<AppBreadCrumbWithRouter />
-				</div>
-
-				<div className="layout-content">
-					<Route path="/" exact component={Dashboard} />
-					<Route path="/forms" component={FormsDemo} />
-					<Route path="/sample" component={SampleDemo} />
-					<Route path="/data" component={DataDemo} />
-					<Route path="/panels" component={PanelsDemo} />
-					<Route path="/overlays" component={OverlaysDemo} />
-					<Route path="/menus" component={MenusDemo} />
-					<Route path="/messages" component={MessagesDemo} />
-					<Route path="/charts" component={ChartsDemo} />
-					<Route path="/misc" component={MiscDemo} />
-					<Route path="/empty" component={EmptyPage} />
-					<Route path="/utils" component={UtilsDemo} />
-					<Route path="/documentation" component={Documentation} />
-				</div>
-
-				<AppConfig topbarColor={this.state.topbarColor} horizontal={this.state.horizontal}
-						layoutColor={this.state.layoutColor} menuColor={this.state.menuColor} themeColor={this.state.themeColor}
-						topbarSize={this.state.topbarSize} changeTopbarTheme={this.changeTopbarTheme}
-						changeMenuToHorizontal={this.changeMenuToHorizontal} changeMenuTheme={this.changeMenuTheme} changeComponentTheme={this.changeComponentTheme}
-						changePrimaryColor={this.changePrimaryColor} changeTopbarSize={this.changeTopbarSize} onToggleBlockBodyScroll={this.onToggleBlockBodyScroll}/>
-
-				{(!this.isHorizontalMenuActive() && this.state.menuActive) && <div className="layout-mask"/>}
-
-				<AppFooter />
+			<div className="layout-content">
+				<Route path="/" exact component={Dashboard} />
+				<Route path="/formlayout" component={FormLayoutDemo} />
+				<Route path="/input" component={InputDemo} />
+				<Route path="/button" component={ButtonDemo} />
+				<Route path="/table" component={TableDemo} />
+				<Route path="/list" component={ListDemo} />
+				<Route path="/tree" component={TreeDemo} />
+				<Route path="/panel" component={PanelDemo} />
+				<Route path="/overlay" component={OverlayDemo} />
+				<Route path="/menu" component={MenuDemo} />
+				<Route path="/messages" component={MessagesDemo} />
+				<Route path="/file" component={FileDemo} />
+				<Route path="/chart" component={ChartDemo} />
+				<Route path="/misc" component={MiscDemo} />
+				<Route path="/documentation" component={Documentation} />
+				<Route path="/crud" component={Crud} />
+				<Route path="/calendar" component={Calendar} />
+				<Route path="/help" component={Help} />
+				<Route path="/invoice" component={Invoice} />
+				<Route path="/empty" component={EmptyPage} />
+				<Route path="/display" component={DisplayDemo} />
+				<Route path="/elevation" component={ElevationDemo} />
+				<Route path="/flexbox" component={FlexBoxDemo} />
+				<Route path="/icons" component={IconsDemo} />
+				<Route path="/grid" component={GridDemo} />
+				<Route path="/spacing" component={SpacingDemo} />
+				<Route path="/text" component={TextDemo} />
+				<Route path="/typography" component={TypographyDemo} />
+				<Route path="/widgets" component={WidgetsDemo} />
 
 			</div>
-		);
-	}
+
+			<AppConfig topbarColor={topbarColor} horizontal={horizontal}
+				layoutColor={layoutColor} menuColor={menuColor} themeColor={themeColor}
+				topbarSize={topbarSize} changeTopbarTheme={changeTopbarTheme}
+				changeMenuToHorizontal={changeMenuToHorizontal} changeMenuTheme={changeMenuTheme} changeComponentTheme={changeComponentTheme}
+				changePrimaryColor={changePrimaryColor} changeTopbarSize={changeTopbarSize} onToggleBlockBodyScroll={onToggleBlockBodyScroll} />
+
+			{(!isHorizontalMenuActive() && menuActive) && <div className="layout-mask" />}
+
+			<AppFooter />
+
+		</div>
+	);
+
 }
 
 export default App;

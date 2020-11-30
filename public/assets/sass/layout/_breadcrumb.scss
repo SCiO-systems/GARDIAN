@@ -1,5 +1,5 @@
 .layout-breadcrumb {
-    @include double-shadow(0 2px 10px 0 rgba(0, 0, 0, 0.03), 0 2px 5px 0 rgba(0, 0, 0, 0.05));
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.03), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
 
     ul {
         list-style-type: none;
@@ -11,10 +11,14 @@
         display: inline-block;
         vertical-align: middle;
         text-transform: capitalize;
-        
+
         i {
             font-size: 20px;
             vertical-align: middle;
+
+            &.chevron-icon {
+                font-size: 14px;
+            }
         }
     }
 }

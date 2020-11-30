@@ -1,5 +1,5 @@
 .dashboard {
-        
+
     > div {
         padding: 1em;
     }
@@ -10,7 +10,7 @@
         margin-top: 0;
         padding: 0;
     }
-    
+
     .card {
         height: 100%;
         margin-bottom: 0;
@@ -45,7 +45,7 @@
 
         i {
             color: #9e9e9e;
-            font-size: 24px;
+            font-size: 20px;
             line-height: inherit;
         }
     }
@@ -74,10 +74,7 @@
 
         &.connections {
             .legend-arrow  {
-                vertical-align: top;
                 color: #4caf50;
-                position: relative;
-                top: -4px;
             }
 
             .dot {
@@ -104,7 +101,7 @@
         .card {
             min-height: 100px;
         }
-        
+
         .summary-box-title {
             font-size: 16px;
             margin: 0;
@@ -115,7 +112,7 @@
             margin: .25em 0;
             color: #ffffff;
         }
-        
+
         .summary-box-icon {
             position: absolute;
             right: 24px;
@@ -128,7 +125,7 @@
             left: 0;
             width: 100%;
         }
-        
+
         &.summary-box-messages {
             .card {
                 border-top: 4px solid #0097a7;
@@ -141,7 +138,7 @@
                 border-top: 4px solid #ad1457;
                 background-color: #e91e63;
             }
-            
+
         }
 
         &.summary-box-filessynced {
@@ -149,7 +146,7 @@
                 border-top: 4px solid #f47b08;
                 background-color: #ffb300;
             }
-            
+
         }
 
         &.summary-box-usersonline {
@@ -192,7 +189,7 @@
                 border-bottom: 1px solid #e4e4e4;
 
                 &:last-child {
-                    border-bottom: 0 none; 
+                    border-bottom: 0 none;
                 }
             }
         }
@@ -228,7 +225,7 @@
                 border-bottom: 1px solid #e4e4e4;
 
                 &:last-child {
-                    border-bottom: 0 none; 
+                    border-bottom: 0 none;
                 }
             }
         }
@@ -265,7 +262,7 @@
     }
 
     .userprofile {
-        padding: 0;
+        padding: 0 0 2em 0;
 
         .userprofile-bg {
             width: 100%;
@@ -348,7 +345,7 @@
         }
 
         .dashboard-chart-container {
-            position:relative;
+            position: relative;
         }
     }
 
@@ -372,7 +369,7 @@
             border-left: 6px solid #e91e63;
 
             .switch-status {
-                color: #e91e63; 
+                color: #e91e63;
             }
         }
 
@@ -447,9 +444,9 @@
             font-size: 13px;
             @include border-radius($borderRadius);
 
-            .material-icons {
-                font-size: 13px;
+            i {
                 vertical-align: middle;
+                margin-right: 7px;
             }
 
             span {
@@ -493,7 +490,7 @@
 
     .weather {
         padding: 0;
-        
+
         .weather-image {
             background-image: url("../images/dashboard/primecity.jpg");
             background-size: cover;
@@ -516,7 +513,7 @@
                 font-size: 40px;
             }
         }
-        
+
         .weekdays {
             margin: 1em;
 
@@ -551,16 +548,6 @@
         .p-datatable-reflow .p-reflow-label,
         .p-datatable-reflow .p-reflow-dropdown {
             margin: 1em;
-        }
-    }
-}
-
-@media screen and (max-width: $mobileBreakpoint) {
-    .dashboard {
-        .quarterreport {
-            .dashboard-chart-container {
-                height: 250px;
-            }
         }
     }
 }

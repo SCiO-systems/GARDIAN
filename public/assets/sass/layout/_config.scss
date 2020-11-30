@@ -9,9 +9,10 @@
     top: 230px;
     right: 0;
     z-index: 1000000;
+    border-radius: 0;
     @include border-radius-left($borderRadius);
-    @include transition(background-color $transitionDuration);
-    @include multi-shadow(0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 12px 17px 2px rgba(0, 0, 0, 0.14));
+    transition: background-color $transitionDuration;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 12px 17px 2px rgba(0, 0, 0, 0.14);
 
     &.p-link {
         text-align: center;
@@ -31,7 +32,6 @@
 
 .layout-config {
     z-index: 1000002;
-    display: none;
     position: fixed;
     padding: 0;
     top: 50%;
@@ -39,7 +39,7 @@
     transform: translateX(-50%) translateY(-50%);
     background-color: #ffffff;
     width: 52vw;
-    @include overlay-content-shadow();
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2),0 24px 38px 3px rgba(0,0,0,.14),0 9px 46px 8px rgba(0,0,0,.12);
 
     .layout-config-content {
         padding: 1em;
@@ -52,18 +52,19 @@
         height: 36px;
         line-height: 36px;
         text-align: center;
-        padding: 6px;
         right: -18px;
         top: -18px;
         background-color: #E91E63;
         border: 1px solid #E91E63;
-        @include border-radius(50%);
-        @include transition(background-color $transitionDuration);
+        cursor: pointer;
+        border-radius: 50%;
+        transition: background-color $transitionDuration;
 
         i {
             color: #ffffff;
-            font-size: 24px;
-            margin-left: -1px;
+            line-height: inherit;
+            font-size: 18px;
+            margin-top: -2px;
         }
 
         &:hover {
@@ -71,52 +72,38 @@
         }
     }
 
-    &.layout-config-enter {
-        display: block;
-        opacity: 0;
-    }
-
     &.layout-config-enter-active {
-        opacity: 1;
-        transform: translateX(-50%) translateY(-50%) scale(1);
         transition: all 150ms cubic-bezier(0, 0, 0.2, 1);
     }
 
-    &.layout-config-enter-done {
-        display: block;
+    &.layout-config-leave-active {
+        transition: all 75ms cubic-bezier(0.4, 0.0, 0.2, 1);
     }
 
-    &.layout-config-exit {
-        opacity: 1;
-        display: block;
-    }
-
-    &.layout-config-exit-active {
+    &.layout-config-enter,
+    &.layout-config-leave-to {
         opacity: 0;
-        transition: all 150ms cubic-bezier(0, 0, 0.2, 1);
-    }
-
-    &.layout-config-exit-done {
-        display: none;
+        transform: translateX(-50%) translateY(-50%) scale(0.7);
     }
 
     .layout-config-option {
         width: 100px;
         height: 80px;
-        overflow: hidden;
         line-height: 80px;
         text-align: center;
         display: inline-block;
-        @include transition(transform $transitionDuration);
+        transition: transform $transitionDuration;
+        overflow: hidden;
 
         i {
             line-height: inherit;
-            font-size: 48px;
+            font-size: 30px;
             color: #ffffff;
         }
 
-        &:hover {
-            @include scale(1.1);
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
         }
 
         &.layout-config-option-image {
@@ -126,7 +113,7 @@
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                margin-left: -24px;
+                margin-left: -17px;
                 margin-top: -40px;
             }
 
@@ -139,12 +126,18 @@
             i {
                 color: #000000;
             }
+
+            &:hover,
+            &:focus {
+                &:before {
+                    color: rgba(0, 0, 0, .32);
+                }
+            }
         }
     }
 
     .p-col {
         padding: 1em;
-        -ms-flex-preferred-size: auto;
     }
 
     .p-tabview {
@@ -162,6 +155,11 @@
             padding: 1em 0;
             height: 500px;
             overflow: auto;
+
+            .p-tabview-panel {
+                padding: 0.857em 1em;
+                line-height: 1.5;
+            }
         }
     }
 
@@ -192,6 +190,16 @@
     z-index: 1000001;
     width: 100%;
     height: 100%;
+
+    &.layout-config-mask-enter,
+    &.layout-config-mask-leave-to {
+        opacity: 0;
+    }
+
+    &.layout-config-mask-enter-active,
+    &.layout-config-mask-leave-active {
+        transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
 }
 
 @media screen and (max-width: $mobileBreakpoint) {

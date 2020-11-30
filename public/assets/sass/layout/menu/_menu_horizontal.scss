@@ -15,8 +15,8 @@
             width: auto;
             height: auto;
             overflow: visible;
-            @include transition(none);
-            @include shadow(none);
+            transition: none;
+            box-shadow: none;
         }
 
         .layout-menu {
@@ -31,6 +31,8 @@
                     padding: 1em;
                     font-weight: 500;
                     position: relative;
+                    cursor: pointer;
+                    user-select: none;
                     border-top: 4px solid transparent;
                     border-bottom: 4px solid transparent;
                     @include border-radius(0);
@@ -58,11 +60,20 @@
                     min-width: 250px;
                     z-index: 999;
                     padding: .75em;
-                    max-height: 0px;
                     overflow: auto;
+                    max-height: 500px;
                     @include shadow($horizontalOverlaySubmenuShadow);
 
-                    &.layout-submenu-exit-active {
+                    &.layout-submenu-container-enter-from,
+                    &.layout-submenu-container-leave-to,
+                    &.layout-submenu-container-enter-to,
+                    &.layout-submenu-container-leave-from {
+                        max-height: 500px;
+                    }
+
+                    &.layout-submenu-container-enter-active ,
+                    &.layout-submenu-container-leave-active {
+                        overflow: auto;
                         transition: none;
                     }
 
@@ -99,10 +110,6 @@
                             @include rotate(-180deg);
                         }
                     }
-
-                    > .layout-submenu-container {
-                        max-height: 500px;
-                    }
                 }
             }
 
@@ -120,7 +127,7 @@
 
                         i {
                             vertical-align: middle;
-                            font-size: 20px;
+                            font-size: 16px;
 
                             &.layout-submenu-toggler {
                                 position: absolute;
@@ -166,17 +173,6 @@
             }
         }
 
-        &.layout-menu-active {
-            .layout-menu {
-                li.active-menuitem {
-                    > .layout-submenu-container {
-                        max-height: 500px;
-                        @include transition(none);
-                    }
-                }
-            }
-        }
-
         .layout-mask,
         &.layout-top-small .layout-mask {
             display: none;
@@ -185,5 +181,4 @@
         }
     }
 }
-
 
