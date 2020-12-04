@@ -85,7 +85,7 @@ const AppSubmenu = (props) => {
 
         if (item.to) {
             return (
-                <NavLink activeClassName="active-menuitem-routerlink" to={item.to}
+                <NavLink activeClassName="router-link-active" to={item.to}
                     onClick={(e) => onMenuItemClick(e, item, i)} exact role="menuitem"
                     target={item.target} onMouseEnter={(e) => onMenuItemMouseEnter(i)}
                     className={classNames("ripplelink", item.styleClass)}>{content}</NavLink>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Documentation.css';
-import { CodeHighlight } from "./CodeHighlight";
+import { AppCodeHighlight } from "../AppCodeHighlight";
 
 export const Documentation = () => {
 
@@ -9,7 +9,7 @@ export const Documentation = () => {
             <div className="ui-g-12">
                 <div className="card docs">
                     <div className="card-title">Current Version</div>
-                    <p>React 16.x.x and PrimeReact 5.x</p>
+                    <p>React 17.x and PrimeReact 5.x</p>
 
                     <div className="card-title">Getting Started</div>
                     <p>Sapphire is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
@@ -69,66 +69,81 @@ yarn start
                     App.js component that implements the logic such as menu state, layout modes and so on.
                         </p>
 
-                    <CodeHighlight>
+                    <AppCodeHighlight>
                         {
                             `
-render() {
-    const layoutContainerClassName = classNames('layout-container', {
-        'layout-menu-horizontal': this.state.horizontal,
-        'layout-menu-active': this.state.menuActive && !this.isHorizontalMenuActive(),
-        'layout-top-small': this.state.topbarSize === 'small',
-        'layout-top-medium': this.state.topbarSize === 'medium',
-        'layout-top-large': this.state.topbarSize === 'large'
-    }, this.state.topbarColor, this.state.menuColor);
+const layoutContainerClassName = classNames('layout-container', {
+    'layout-menu-horizontal': horizontal,
+    'layout-menu-active': menuActive && !isHorizontalMenuActive(),
+    'layout-top-small': topbarSize === 'small',
+    'layout-top-medium': topbarSize === 'medium',
+    'layout-top-large': topbarSize === 'large'
+}, topbarColor, menuColor);
 
-    const AppBreadCrumbWithRouter = withRouter(AppBreadcrumb);
+const AppBreadCrumbWithRouter = withRouter(AppBreadcrumb);
 
-    return (
-        <div ref={(el) => this.layoutContainer = el} className={layoutContainerClassName}  onClick={this.onWrapperClick}>
-            <div className="layout-top">
-                <AppTopbar topbarUserMenuActive={this.state.topbarUserMenuActive} menuActive={this.state.menuActive}
-                           onMenuButtonClick={this.onMenuButtonClick} onTopbarUserMenuButtonClick={this.onTopbarUserMenuButtonClick}
-                           onTopbarUserMenuClick={this.onTopbarUserMenuClick} model={this.menu} horizontal={this.state.horizontal} onSidebarClick={this.onSidebarClick}
-                           onRootMenuItemClick={this.onRootMenuItemClick} onMenuItemClick={this.onMenuItemClick} isHorizontalMenuActive={this.isHorizontalMenuActive}/>
+return (
+    <div ref={layoutContainer} className={layoutContainerClassName} onClick={onWrapperClick}>
+        <div className="layout-top">
+            <AppTopbar topbarUserMenuActive={topbarUserMenuActive} menuActive={menuActive}
+                onMenuButtonClick={onMenuButtonClick} onTopbarUserMenuButtonClick={onTopbarUserMenuButtonClick}
+                onTopbarUserMenuClick={onTopbarUserMenuClick} model={menu} horizontal={horizontal} onSidebarClick={onSidebarClick}
+                onRootMenuItemClick={onRootMenuItemClick} onMenuItemClick={onMenuItemClick} isHorizontalMenuActive={isHorizontalMenuActive} />
 
-                <div className="layout-topbar-separator"/>
+            <div className="layout-topbar-separator" />
 
-                <AppBreadCrumbWithRouter />
-            </div>
+            <AppBreadCrumbWithRouter />
+        </div>
 
-            <div className="layout-content">
-                <Route path="/" exact component={Dashboard} />
-                <Route path="/forms" component={FormsDemo} />
-                <Route path="/sample" component={SampleDemo} />
-                <Route path="/data" component={DataDemo} />
-                <Route path="/panels" component={PanelsDemo} />
-                <Route path="/overlays" component={OverlaysDemo} />
-                <Route path="/menus" component={MenusDemo} />
-                <Route path="/messages" component={MessagesDemo} />
-                <Route path="/charts" component={ChartsDemo} />
-                <Route path="/misc" component={MiscDemo} />
-                <Route path="/empty" component={EmptyPage} />
-                <Route path="/utils" component={UtilsDemo} />
-                <Route path="/documentation" component={Documentation} />
-            </div>
-
-            <AppConfig topbarColor={this.state.topbarColor} horizontal={this.state.horizontal}
-                    layoutColor={this.state.layoutColor} menuColor={this.state.menuColor} themeColor={this.state.themeColor}
-                    topbarSize={this.state.topbarSize} changeTopbarTheme={this.changeTopbarTheme}
-                    changeMenuToHorizontal={this.changeMenuToHorizontal} changeMenuTheme={this.changeMenuTheme} changeComponentTheme={this.changeComponentTheme}
-                    changePrimaryColor={this.changePrimaryColor} changeTopbarSize={this.changeTopbarSize} onToggleBlockBodyScroll={this.onToggleBlockBodyScroll}/>
-
-            {(!this.isHorizontalMenuActive() && this.state.menuActive) && <div className="layout-mask"/>}
-
-            <AppFooter />
+        <div className="layout-content">
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/formlayout" component={FormLayoutDemo} />
+            <Route path="/input" component={InputDemo} />
+            <Route path="/button" component={ButtonDemo} />
+            <Route path="/table" component={TableDemo} />
+            <Route path="/list" component={ListDemo} />
+            <Route path="/tree" component={TreeDemo} />
+            <Route path="/panel" component={PanelDemo} />
+            <Route path="/overlay" component={OverlayDemo} />
+            <Route path="/menu" component={MenuDemo} />
+            <Route path="/messages" component={MessagesDemo} />
+            <Route path="/file" component={FileDemo} />
+            <Route path="/chart" component={ChartDemo} />
+            <Route path="/misc" component={MiscDemo} />
+            <Route path="/documentation" component={Documentation} />
+            <Route path="/crud" component={Crud} />
+            <Route path="/calendar" component={Calendar} />
+            <Route path="/help" component={Help} />
+            <Route path="/invoice" component={Invoice} />
+            <Route path="/empty" component={EmptyPage} />
+            <Route path="/display" component={DisplayDemo} />
+            <Route path="/elevation" component={ElevationDemo} />
+            <Route path="/flexbox" component={FlexBoxDemo} />
+            <Route path="/icons" component={IconsDemo} />
+            <Route path="/grid" component={GridDemo} />
+            <Route path="/spacing" component={SpacingDemo} />
+            <Route path="/text" component={TextDemo} />
+            <Route path="/typography" component={TypographyDemo} />
+            <Route path="/widgets" component={WidgetsDemo} />
 
         </div>
-    );
-}
+
+        <AppConfig topbarColor={topbarColor} horizontal={horizontal}
+            layoutColor={layoutColor} menuColor={menuColor} themeColor={themeColor}
+            topbarSize={topbarSize} changeTopbarTheme={changeTopbarTheme}
+            changeMenuToHorizontal={changeMenuToHorizontal} changeMenuTheme={changeMenuTheme} changeComponentTheme={changeComponentTheme}
+            changePrimaryColor={changePrimaryColor} changeTopbarSize={changeTopbarSize} onToggleBlockBodyScroll={onToggleBlockBodyScroll} />
+
+        {(!isHorizontalMenuActive() && menuActive) && <div className="layout-mask" />}
+
+        <AppFooter />
+
+    </div>
+);
 
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <div className="card-title">Menu</div>
                     <p>Menu is a separate component defined in AppMenu.js file based on PrimeReact MenuModel API. In order to define the menuitems,
@@ -136,132 +151,156 @@ render() {
                             Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
 
                     <div style={{ overflow: 'auto', height: '400px' }}>
-                        <CodeHighlight lang="js">
+                        <AppCodeHighlight lang="js">
                             {
-                                `
-createMenu() {
-    this.menu = [
-        {label: 'Dashboard', icon: 'dashboard', to: '/'},
-        {
-            label: 'Components', icon: 'list',
-            items: [
-                {label: 'Sample Page', icon: 'desktop_mac', to: '/sample'},
-                {label: 'Forms', icon: 'input', to: '/forms'},
-                {label: 'Data', icon: 'grid_on', to: '/data'},
-                {label: 'Panels', icon: 'content_paste', to: '/panels'},
-                {label: 'Overlays', icon: 'content_copy', to: '/overlays'},
-                {label: 'Menus', icon: 'menu', to: '/menus'},
-                {label: 'Messages', icon: 'message',to: '/messages'},
-                {label: 'Charts', icon: 'insert_chart', to: '/charts'},
-                {label: 'Misc', icon: 'toys', to: '/misc'}
-            ]
-        },
-        {
-            label: 'Mega', icon: 'list', badge: 2, mega: true,
-            items: [
-                {
-                    label: 'Components',
-                    items: [
-                        {label: 'Sample Page', icon: 'desktop_mac', to: '/sample'},
-                        {label: 'Forms', icon: 'input', to: '/forms'},
-                        {label: 'Data', icon: 'grid_on', to: '/data'},
-                        {label: 'Panels', icon: 'content_paste', to: '/panels'},
-                        {label: 'Overlays', icon: 'content_copy', to: '/overlays'},
-                        {label: 'Menus', icon: 'menu', to: '/menus'},
-                        {label: 'Messages', icon: 'message',to: '/messages'},
-                        {label: 'Charts', icon: 'insert_chart', to: '/charts'},
-                        {label: 'Misc', icon: 'toys', to: '/misc'}
-                    ]
-                },
-                {
-                    label: 'Templates',
-                    items: [
-                        {label: 'Ultima', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/ultima-ng' },
-                        {label: 'Serenity', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/serenity-ng'},
-                        {label: 'Avalon', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/avalon-ng'},
-                        {label: 'Apollo', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/apollo-ng'},
-                        {label: 'Roma', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/roma-ng'},
-                        {label: 'Babylon', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/babylon-ng'},
-                        {label: 'Manhattan', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/manhattan-ng'},
-                        {label: 'Verona', icon: 'desktop_mac', url: 'https://www.primefaces.org/layouts/verona-ng'},
-                        {label: 'Olympia', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/olympia-ng'},
-                        {label: 'Ecuador', icon: 'desktop_mac',  url: 'https://www.primefaces.org/layouts/ecuador-ng'}
-                    ]
-                },
-                {
-                    label: 'Demo',
-                    items: [
-                        {label: 'PrimeFaces', icon: 'desktop_mac', url: 'https://www.primefaces.org/showcase'},
-                        {label: 'PrimeNG', icon: 'desktop_mac',  url: 'https://www.primefaces.org/primeng'},
-                        {label: 'PrimeReact', icon: 'desktop_mac',  url: 'https://www.primefaces.org/primereact'}
-                    ]
-                }
-            ]
-        },
-        {
-            label: 'Pages', icon: 'get_app',
-            items: [
-                {label: 'Empty Page', icon: 'hourglass_empty', to: '/empty'},
-                {label: 'Landing Page', icon: 'flight_land', url: 'assets/pages/landing.html', target: '_blank'},
-                {label: 'Login Page', icon: 'verified_user', to: '/login'},
-                {label: 'Error Page', icon: 'error', to: '/error'},
-                {label: '404 Page', icon: 'error_outline', to: '/notfound'},
-                {label: 'Access Denied Page', icon: 'security', to: '/access'}
-            ]
-        },
-        {
-            label: 'Hierarchy', icon: 'menu',
-            items: [
-                {
-                    label: 'Submenu 1', icon: 'subject',
-                    items: [
-                        {
-                            label: 'Submenu 1.1', icon: 'subject',
-                            items: [
-                                {label: 'Submenu 1.1.1', icon: 'subject'},
-                                {label: 'Submenu 1.1.2', icon: 'subject'},
-                                {label: 'Submenu 1.1.3', icon: 'subject'},
-                            ]
-                        },
-                        {
-                            label: 'Submenu 1.2', icon: 'subject',
-                            items: [
-                                {label: 'Submenu 1.2.1', icon: 'subject'},
-                                {label: 'Submenu 1.2.2', icon: 'subject'}
-                            ]
-                        },
-                    ]
-                },
-                {
-                    label: 'Submenu 2', icon: 'subject',
-                    items: [
-                        {
-                            label: 'Submenu 2.1', icon: 'subject',
-                            items: [
-                                {label: 'Submenu 2.1.1', icon: 'subject'},
-                                {label: 'Submenu 2.1.2', icon: 'subject'},
-                                {label: 'Submenu 2.1.3', icon: 'subject'},
-                            ]
-                        },
-                        {
-                            label: 'Submenu 2.2', icon: 'subject',
-                            items: [
-                                {label: 'Submenu 2.2.1', icon: 'subject'},
-                                {label: 'Submenu 2.2.2', icon: 'subject'}
-                            ]
-                        },
-                    ]
-                }
-            ]
-        },
-        {label: 'Utils', icon: 'build',  command:()=>{ window.location = "#/utils"}},
-        {label: 'Documentation', icon: 'find_in_page',  command:()=>{ window.location = "#/documentation"}},
-        {label: 'Buy Now', icon: 'credit_card', command: () => { window.location = "https://www.primefaces.org/store"}},
-    ];
-}
-    
+`
+const menu = [
+    { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
+    {
+        label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
+        items: [
+            { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
+            { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
+            { label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
+            { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
+            { label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
+            { label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
+            { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
+            { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
+            { label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
+            { label: "Media", icon: "pi pi-fw pi-image", to: "/media" },
+            { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu' },
+            { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
+            { label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
+            { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
+            { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
+        ]
+    },
+    {
+        label: 'Mega', icon: 'pi pi-fw pi-list', badge: 2, mega: true,
+        items: [
+            {
+                label: 'UI Kit', icon: 'pi pi-fw pi-sitemap', badge: 6,
+                items: [
+                    { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
+                    { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
+                    { label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
+                    { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
+                    { label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
+                    { label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
+                    { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
+                    { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
+                    { label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
+                    { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menus' },
+                    { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
+                    { label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
+                    { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
+                    { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
+                ]
+            },
+            {
+                label: 'Templates',
+                items: [
+                    { label: 'Diamond', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/diamond-react' },
+                    { label: 'Sapphire', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/sapphire-react' },
+                    { label: 'Serenity', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/serenity-react' },
+                    { label: 'Ultima', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/ultima-react' },
+                    { label: 'Avalon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/avalon-react' },
+                    { label: 'Babylon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/babylon-react' },
+                    { label: 'Apollo', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/apollo-react' },
+                    { label: 'Roma', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/roma-react' },
+                ]
+            },
+            {
+                label: 'Demo',
+                items: [
+                    { label: 'PrimeFaces', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/showcase' },
+                    { label: 'PrimeNG', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/primeng' },
+                    { label: 'PrimeReact', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/primereact' }
+                ]
+            }
+        ]
+    },
+    {
+        label: "Utilities", icon: 'pi pi-fw pi-globe',
+        items: [
+            { label: 'Display', icon: 'pi pi-fw pi-desktop', to: '/display' },
+            { label: 'Elevation', icon: 'pi pi-fw pi-external-link', to: '/elevation' },
+            { label: 'Flexbox', icon: 'pi pi-fw pi-directions', to: '/flexbox' },
+            { label: 'Icons', icon: 'pi pi-fw pi-search', to: '/icons' },
+            { label: 'Widgets', icon: 'pi pi-fw pi-star-o', to: '/widgets' },
+            { label: 'Grid System', icon: 'pi pi-fw pi-th-large', to: '/grid' },
+            { label: 'Spacing', icon: 'pi pi-fw pi-arrow-right', to: '/spacing' },
+            { label: 'Typography', icon: 'pi pi-fw pi-align-center', to: '/typography' },
+            { label: 'Text', icon: 'pi pi-fw pi-pencil', to: '/text' },
+        ]
+    },
+    {
+        label: 'Pages', icon: 'pi pi-fw pi-clone',
+        items: [
+            { label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud' },
+            { label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
+            { label: 'Landing', icon: 'pi pi-fw pi-user-plus', url: 'assets/pages/landing.html', target: '_blank' },
+            { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
+            { label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice' },
+            { label: 'Help', icon: 'pi pi-fw pi-question-circle', to: '/help' },
+            { label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error' },
+            { label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/notfound' },
+            { label: 'Access Denied', icon: 'pi pi-fw pi-lock', to: '/access' },
+            { label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty' }
+        ]
+    },
+    {
+        label: 'Menu Hierarchy', icon: 'pi pi-fw pi-align-left',
+        items: [
+            {
+                label: 'Submenu 1', icon: 'pi pi-fw pi-align-left',
+                items: [
+                    {
+                        label: 'Submenu 1.1', icon: 'pi pi-fw pi-align-left',
+                        items: [
+                            { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-align-left' },
+                            { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-align-left' },
+                            { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-align-left' },
+                        ]
+                    },
+                    {
+                        label: 'Submenu 1.2', icon: 'pi pi-fw pi-align-left',
+                        items: [
+                            { label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-align-left' },
+                            { label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-align-left' }
+                        ]
+                    },
+                ]
+            },
+            {
+                label: 'Submenu 2', icon: 'pi pi-fw pi-align-left',
+                items: [
+                    {
+                        label: 'Submenu 2.1', icon: 'pi pi-fw pi-align-left',
+                        items: [
+                            { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-align-left' },
+                            { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-align-left' },
+                            { label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-align-left' },
+                        ]
+                    },
+                    {
+                        label: 'Submenu 2.2', icon: 'pi pi-fw pi-align-left',
+                        items: [
+                            { label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-align-left' },
+                            { label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-align-left' }
+                        ]
+                    },
+                ]
+            }
+        ]
+    },
+    { label: 'Documentation', icon: 'pi pi-fw pi-question', to: '/documentation' },
+    { label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', command: () => { window.location = "https://www.primefaces.org/store" } },
+];
+
 `}
-                        </CodeHighlight>
+                        </AppCodeHighlight>
                     </div>
 
                     <div className="card-title">Theme and Layout SASS</div>
@@ -299,7 +338,7 @@ createMenu() {
 
                     <p>Here are the variables required to create a theme.</p>
 
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 $primaryColor:#1E88E5;
@@ -316,7 +355,7 @@ $accentTextColor: #212121;
 
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <p>You may import the scss directly in your App.js if you prefer webpack to include the theme however if you'd like to do it manually, an example sass command to compile the css would be;</p>
 
@@ -457,7 +496,7 @@ $accentTextColor: #212121;
 
                     <p>Here are the variables required to create a gradient based topbar.</p>
 
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 .layout-topbar-mytopbar {
@@ -492,11 +531,11 @@ $accentTextColor: #212121;
 
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <p>If you prefer an image for the background, use the template below.</p>
 
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 .layout-topbar-mytopbar {
@@ -529,7 +568,7 @@ $accentTextColor: #212121;
 }
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <div className="card-title">Menu Themes</div>
                     <p>Menu themes apply to the vertical menu, submenus of horizontal menu and the profile menu. Menu style used across the template is defined at the main container element, template below uses the default light menus.</p>
@@ -647,7 +686,7 @@ $accentTextColor: #212121;
 
                     <p>Here are the variables required to create a gradient based topbar.</p>
 
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 .layout-menu-mymenu {
@@ -669,11 +708,11 @@ $accentTextColor: #212121;
 }
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <p>If you prefer an image for the background, use the template below.</p>
 
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 .layout-menu-mymenu {
@@ -694,7 +733,7 @@ $accentTextColor: #212121;
 }
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <div className="card-title">Menu Highlight Color</div>
                     <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself.
@@ -731,7 +770,7 @@ $accentTextColor: #212121;
                         <li>Import the layout css file in your application.</li>
                     </ul>
 
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 $primaryColor:#607D8B;
@@ -742,13 +781,13 @@ $accentTextColor:#212121;
 @import '../../sass/layout/_layout';
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <div className="card-title">Common SASS Variables</div>
                     <p>In case you'd like to customize the shared variables, use the variables files under sass/variables folder.</p>
 
                     <h3>sass/_common.scss</h3>
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 //general
@@ -773,10 +812,10 @@ $dividerColor:#dbdbdb;
 $dividerLightColor:#f8f8f8;
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <h3>sass/variables/_layout.scss</h3>
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 @import './common';
@@ -793,10 +832,10 @@ $maskBgColor:#252529;
 $horizontalOverlaySubmenuShadow:0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <h3>sass/variables/_theme.scss</h3>
-                    <CodeHighlight lang="css">
+                    <AppCodeHighlight lang="css">
                         {
                             `
 @import './common';
@@ -871,7 +910,7 @@ $menuListPadding: .5em 0;
 }
 `
                         }
-                    </CodeHighlight>
+                    </AppCodeHighlight>
 
                     <div className="card-title">Menu Modes</div>
                     <p>Menu has 2 modes; horizontal and overlay. Layout container element in App.js is used to define which mode to use by adding specific classes. List

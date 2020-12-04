@@ -487,7 +487,7 @@ export const Dashboard = () => {
 									</div>
 
 									<p>Earum porro tenetur consequuntur veritatis eos vel natus quisquam.</p>
-									<button className="p-link">READ MORE</button>
+									<button type="button" className="p-link">READ MORE</button>
 								</div>
 							</div>
 						</div>

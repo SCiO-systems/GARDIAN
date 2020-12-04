@@ -1,7 +1,14 @@
 import React from 'react';
 import { Button } from 'primereact/button';
+import { useHistory } from 'react-router-dom';
 
 const Access = () => {
+
+	const history = useHistory();
+	
+	const goDashboard = () => {
+		history.push('/');
+	}
 
 	return (
 		<div className="exception-body accessdenied" >
@@ -13,7 +20,7 @@ const Access = () => {
 				<div className="exception-detail">
 					<h1>ACCESS DENIED</h1>
 					<p>You do not have the necessary permissons.</p>
-					<Button label="GO TO DASHBOARD" onClick={() => { window.location = "/#" }} />
+					<Button label="GO TO DASHBOARD" onClick={goDashboard} />
 				</div>
 			</div>
 		</div>

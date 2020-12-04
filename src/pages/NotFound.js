@@ -1,7 +1,14 @@
 import React from 'react';
 import { Button } from 'primereact/button';
+import { useHistory } from 'react-router-dom';
 
 const NotFound = () => {
+
+	const history = useHistory();
+
+	const goDashboard = () => {
+		history.push('/');
+	}
 
 	return <div className="exception-body notfound">
 		<div className="exception-panel">
@@ -12,7 +19,7 @@ const NotFound = () => {
 			<div className="exception-detail">
 				<h1>PAGE NOT FOUND</h1>
 				<p>Requested resource is not available.</p>
-				<Button label="GO TO DASHBOARD" onClick={() => { window.location = "/#" }} />
+				<Button label="GO TO DASHBOARD" onClick={goDashboard} />
 			</div>
 		</div>
 	</div>

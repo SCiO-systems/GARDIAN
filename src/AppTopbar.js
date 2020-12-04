@@ -12,33 +12,33 @@ export const AppTopbar = (props) => {
 
 	return (
 		<div className="layout-topbar">
-			<button className={menuButtonClassName} onClick={(e) => props.onMenuButtonClick(e, isMenuButtonActive)}>
+			<button type="button" className={menuButtonClassName} onClick={(e) => props.onMenuButtonClick(e, isMenuButtonActive)}>
 				<div className="layout-menubutton-icon" />
 			</button>
 
 			<div className="layout-topbar-grid">
 				<div className="layout-topbar-grid-column layout-topbar-grid-column-fixed">
-					<button className="layout-logo p-link" onClick={() => { window.location = "/#" }}>
+					<button type="button" className="layout-logo p-link" onClick={() => { window.location = "/#" }}>
 						<img src="assets/layout/images/logo-white.svg" alt="sapphire-layout" />
 					</button>
 				</div>
 
 				<div className="layout-topbar-grid-column">
-						<AppMenu model={props.model} horizontal={props.horizontal} menuActive={props.menuActive} isHorizontalMenuActive={props.isHorizontalMenuActive}
-							onMenuItemClick={props.onMenuItemClick} onRootMenuItemClick={props.onRootMenuItemClick} onSidebarClick={props.onSidebarClick} />
+					<AppMenu model={props.model} horizontal={props.horizontal} menuActive={props.menuActive} isHorizontalMenuActive={props.isHorizontalMenuActive}
+						onMenuItemClick={props.onMenuItemClick} onRootMenuItemClick={props.onRootMenuItemClick} onSidebarClick={props.onSidebarClick} />
 				</div>
 
 				<div className="layout-topbar-grid-column layout-topbar-grid-column-fixed">
 					<span className="layout-topbar-search">
-						<span class="p-float-label p-input-icon-right">
+						<span className="p-float-label p-input-icon-right">
 							<InputText id="search" type="text" placeholder="Search" />
-							<i class="topbar-icon pi pi-search"></i>
+							<i className="topbar-icon pi pi-search"></i>
 						</span>
 					</span>
 				</div>
 
 				<div className="layout-topbar-grid-column layout-topbar-grid-column-fixed">
-					<button className="p-link profile-menu-button" onClick={props.onTopbarUserMenuButtonClick}>
+					<button type="button" className="p-link profile-menu-button" onClick={props.onTopbarUserMenuButtonClick}>
 						<img src="assets/layout/images/avatar.png" alt="Profile" />
 					</button>
 					<ul className={topbarMenuClassName} onClick={props.onTopbarUserMenuClick}>
@@ -50,25 +50,25 @@ export const AppTopbar = (props) => {
 						</li>
 
 						<li role="menuitem">
-							<button className="p-link ripplelink">
+							<button type="button" className="p-link ripplelink">
 								<i className="pi pi-user"></i>
 								<span>Profile</span>
 							</button>
 						</li>
 						<li role="menuitem">
-							<button className="p-link ripplelink">
+							<button type="button" className="p-link ripplelink">
 								<i className="pi pi-envelope"></i>
 								<span>Inbox</span>
 							</button>
 						</li>
 						<li role="menuitem">
-							<button className="p-link ripplelink">
+							<button type="button" className="p-link ripplelink">
 								<i className="pi pi-cog"></i>
 								<span>Settings</span>
 							</button>
 						</li>
 						<li role="menuitem">
-							<button className="p-link ripplelink">
+							<button type="button" className="p-link ripplelink">
 								<i className="pi pi-times"></i>
 								<span>Logout</span>
 							</button>

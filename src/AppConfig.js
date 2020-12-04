@@ -243,15 +243,15 @@ export const AppConfig = (props) => {
 
 	return (
 		<React.Fragment>
-			<button className="layout-config-button p-link " onClick={onConfigButtonClick}>
-				<i class="pi pi-cog"></i>
+			<button type="button" className="layout-config-button p-link " onClick={onConfigButtonClick}>
+				<i className="pi pi-cog"></i>
 			</button>
 
 			<CSSTransition classNames="layout-submenu-container" timeout={{ enter: 150, exit: 150 }} in={configDialogActive} unmountOnExit>
 				<div className="layout-config">
 					<div className="layout-config-content">
-						<button className="layout-config-close" onClick={onConfigCloseClick}>
-							<i class="pi pi-times"></i>
+						<button type="button" className="layout-config-close" onClick={onConfigCloseClick}>
+							<i className="pi pi-times"></i>
 						</button>
 
 						<TabView>
@@ -259,21 +259,21 @@ export const AppConfig = (props) => {
 								<div className="layout-config-subtitle">Size</div>
 								<div className="p-grid">
 									<div className="p-col p-col-fixed">
-										<button className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
+										<button type="button" className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
 											onClick={event => props.changeTopbarSize({ originalEvent: event, size: 'large' })}>
 											<img src="assets/layout/images/configurator/topbar-large.png" alt="sapphire" style={{ width: '100%' }} />
 											{props.topbarSize === 'large' && <i className="pi pi-check"></i>}
 										</button>
 									</div>
 									<div className="p-col p-col-fixed">
-										<button className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
+										<button type="button" className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
 											onClick={event => props.changeTopbarSize({ originalEvent: event, size: 'medium' })}>
 											<img src="assets/layout/images/configurator/topbar-medium.png" alt="sapphire" style={{ width: '100%' }} />
 											{props.topbarSize === 'medium' && <i className="pi pi-checks"></i>}
 										</button>
 									</div>
 									<div className="p-col p-col-fixed">
-										<button className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
+										<button type="button" className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
 											onClick={event => props.changeTopbarSize({ originalEvent: event, size: 'small' })}>
 											<img src="assets/layout/images/configurator/topbar-small.png" alt="sapphire" style={{ width: '100%' }} />
 											{props.topbarSize === 'small' && <i className="pi pi-check"></i>}
@@ -284,7 +284,7 @@ export const AppConfig = (props) => {
 								<div className="p-grid">
 									{topbarThemes && topbarThemes.map((topbarTheme, index) => {
 										return <div className="p-col" key={index}>
-											<button className="p-link layout-config-option layout-config-option-image ui-shadow-1"
+											<button type="button" className="p-link layout-config-option layout-config-option-image ui-shadow-1"
 												onClick={event => props.changeTopbarTheme({ originalEvent: event, color: topbarTheme.file })}>
 												<img src={"assets/layout/images/configurator/" + topbarTheme.image} alt={topbarTheme.name} />
 												{'layout-topbar-' + topbarTheme.file === props.topbarColor && <i className="pi pi-check"></i>}
@@ -299,17 +299,17 @@ export const AppConfig = (props) => {
 								<div className="layout-config-subtitle">Orientation</div>
 								<div className="p-grid">
 									<div className="p-col p-col-fixed">
-										<button className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
+										<button type="button" className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
 											onClick={event => props.changeMenuToHorizontal({ originalEvent: event, mode: true })}>
 											<img src="assets/layout/images/configurator/horizontal.png" alt="sapphire" style={{ width: '100%' }} />
 											{props.horizontal && <i className="pi pi-check"></i>}
 										</button>
 									</div>
 									<div className="p-col p-col-fixed">
-										<button className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
+										<button type="button" className="p-link layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
 											onClick={event => props.changeMenuToHorizontal({ originalEvent: event, mode: false })}>
 											<img src="assets/layout/images/configurator/vertical.png" alt="sapphire" style={{ width: '100%' }} />
-											{!props.horizontal && <i className="pi pi-check">check</i>}
+											{!props.horizontal && <i className="pi pi-check"></i>}
 										</button>
 									</div>
 								</div>
@@ -317,7 +317,7 @@ export const AppConfig = (props) => {
 								<div className="p-grid">
 									{menuThemes && menuThemes.map((menuTheme, index) => {
 										return <div className="p-col" key={index}>
-											<button className={classNames('p-link layout-config-option layout-config-option-image ui-shadow-1',
+											<button type="button" className={classNames('p-link layout-config-option layout-config-option-image ui-shadow-1',
 												{ 'layout-config-option-light': menuTheme.file === 'light' })} onClick={event => props.changeMenuTheme({ originalEvent: event, color: menuTheme.file })}>
 												<img src={"assets/layout/images/configurator/" + menuTheme.image} alt={menuTheme.name} />
 												{'layout-menu-' + menuTheme.file === props.menuColor && <i className="pi pi-check"></i>}
@@ -331,7 +331,7 @@ export const AppConfig = (props) => {
 								<div className="p-grid">
 									{componentThemes && componentThemes.map((componentTheme, index) => {
 										return <div className="p-col" key={index}>
-											<button className='p-link layout-config-option layout-config-option-image ui-shadow-1'
+											<button type="button" className='p-link layout-config-option layout-config-option-image ui-shadow-1'
 												onClick={event => props.changeComponentTheme({ originalEvent: event, theme: componentTheme.file })}>
 												<img src={"assets/layout/images/configurator/theme/" + componentTheme.image} alt={componentTheme.name} />
 												{componentTheme.file === props.themeColor && <i className="pi pi-check"></i>}
@@ -348,7 +348,7 @@ export const AppConfig = (props) => {
 								<div className="p-grid p-primary-colors-grid">
 									{primaryColors && primaryColors.map((primaryColor, index) => {
 										return <div className="p-col" key={index}>
-											<button className='p-link layout-config-option ui-shadow-1' style={{ background: primaryColor.color }}
+											<button type="button" className='p-link layout-config-option ui-shadow-1' style={{ background: primaryColor.color }}
 												onClick={event => props.changePrimaryColor({ originalEvent: event, color: primaryColor.file })}>
 												{primaryColor.file === props.layoutColor && <i className="pi pi-check"></i>}
 											</button>

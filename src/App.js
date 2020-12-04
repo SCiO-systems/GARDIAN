@@ -96,7 +96,6 @@ const App = () => {
 				{ label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
 				{ label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
 				{ label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
-				{ label: "Media", icon: "pi pi-fw pi-image", to: "/media" },
 				{ label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu' },
 				{ label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
 				{ label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
@@ -119,7 +118,6 @@ const App = () => {
 						{ label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
 						{ label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
 						{ label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
-						{ label: "Media", icon: "pi pi-fw pi-image", to: "/media" },
 						{ label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menus' },
 						{ label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
 						{ label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
@@ -130,15 +128,14 @@ const App = () => {
 				{
 					label: 'Templates',
 					items: [
-						{ label: 'Diamond', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/diamond-vue' },
-						{ label: 'Sapphire', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/sapphire-vue' },
-						{ label: 'Serenity', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/serenity-vue' },
-						{ label: 'Ultima', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/ultima-vue' },
-						{ label: 'Avalon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/avalon-vue' },
-						{ label: 'Babylon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/babylon-vue' },
-						{ label: 'Apollo', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/apollo-vue' },
-						{ label: 'Roma', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/roma-vue' },
-						{ label: 'Prestige', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/prestige-vue' }
+						{ label: 'Diamond', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/diamond-react' },
+						{ label: 'Sapphire', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/sapphire-react' },
+						{ label: 'Serenity', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/serenity-react' },
+						{ label: 'Ultima', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/ultima-react' },
+						{ label: 'Avalon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/avalon-react' },
+						{ label: 'Babylon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/babylon-react' },
+						{ label: 'Apollo', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/apollo-react' },
+						{ label: 'Roma', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/roma-react' },
 					]
 				},
 				{
@@ -251,7 +248,6 @@ const App = () => {
 			blockBodyScroll();
 		else
 			unblockBodyScroll();
-
 		configMenuClick = true;
 	}
 
