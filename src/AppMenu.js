@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
@@ -52,21 +52,19 @@ const AppSubmenu = (props) => {
         }
     }
 
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //     if (nextProps.parentMenuItemActive === false) {
-    //         return {
-    //             activeIndex: null
-    //         }
-    //     }
+    const isHorizontalOrSlim = useCallback(() => {
+        return (props.layoutMode === 'horizontal' || props.layoutMode === 'slim');
+    }, [props.layoutMode]);
 
-    //     return null;
-    // }
+    const isMobile = useCallback(() => {
+        return window.innerWidth <= 640;
+    }, []);
 
-    // componentDidUpdate(prevProps, prevState, snapshot) {
-    //     if (this.props.horizontal && prevProps.menuActive && !this.props.menuActive) {
-    //         this.setState({activeIndex: null});
-    //     }
-    // }
+    useEffect(() => {
+        if (!props.menuActive && isHorizontalOrSlim() && !isMobile()) {
+            setActiveIndex(null);
+        }
+    }, [props.menuActive, isHorizontalOrSlim, isMobile]);
 
     const renderLinkContent = (item) => {
         let submenuIcon = item.items && <i className="pi pi-angle-down submenu-icon"></i>;
@@ -116,15 +114,16 @@ const AppSubmenu = (props) => {
                 {!props.root && props.mega &&
                     <span className="layout-megamenu-submenu-text">{item.label}</span>}
                 {item.items &&
-                    <CSSTransition classNames="layout-submenu" timeout={{ enter: 400, exit: 400 }} in={active} unmountOnExit>
-                        <div className={containerClass} style={{ padding: active ? '' : '0' }}>
+                    <div className={containerClass} style={{ padding: active ? '' : '0' }}>
+                        <CSSTransition classNames="layout-submenu-container" timeout={{ enter: 400, exit: 400 }} in={active} unmountOnExit>
                             <AppSubmenu items={item.items} className={submenuClass}
                                 onMenuItemClick={props.onMenuItemClick} horizontal={props.horizontal}
                                 menuActive={props.menuActive} mega={item.mega}
                                 parentMenuItemActive={active}
                                 isHorizontalMenuActive={props.isHorizontalMenuActive} />
-                        </div>
-                    </CSSTransition>
+                        </CSSTransition>
+                    </div>
+
                 }
             </li>
         )

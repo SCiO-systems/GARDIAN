@@ -23,6 +23,5 @@ yarn-error.log*
 /public/assets/layout/css/layout-*.css
 /public/assets/theme/theme-*.css
 /public/assets/sass/theme/designer
-/public/assets/sass/theme/extensions
 
 package-lock.json

@@ -94,6 +94,12 @@ $inputOverlayHeaderBg:$inputListHeaderBg;
 $inputOverlayBorder:0 none;
 $inputOverlayShadow:0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
 
+//password
+$passwordMeterBg:rgba($primaryColor, .32);
+$passwordWeakBg:#FFCDD2;
+$passwordMediumBg:#FFECB3;
+$passwordStrongBg:#C8E6C9;
+
 //button
 $buttonPadding:0.714rem 1rem;
 $buttonIconOnlyWidth:3rem;
@@ -510,6 +516,18 @@ $treeNodePadding:.25rem;
 $treeNodeContentPadding:.75rem;
 $treeNodeChildrenPadding:0 0 0 1rem;
 $treeNodeIconColor:$textSecondaryColor;
+
+
+//timeline
+$timelineVerticalEventContentPadding:0 1rem !default;
+$timelineHorizontalEventContentPadding:1rem 0 !default;
+$timelineEventMarkerWidth:1rem !default;
+$timelineEventMarkerHeight:1rem !default;
+$timelineEventMarkerBorderRadius:50% !default;
+$timelineEventMarkerBorder:0 none !default;
+$timelineEventMarkerBackground:#bdbdbd !default;
+$timelineEventConnectorSize:2px !default;
+$timelineEventColor:#bdbdbd !default;
 
 //org chart
 $organizationChartConnectorColor:rgba(0,0,0,.12);

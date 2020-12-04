@@ -57,7 +57,6 @@ const App = () => {
 	const [layoutColor, setLayoutColor] = useState('blue');
 	const [themeColor, setThemeColor] = useState('blue');
 	const [menuActive, setMenuActive] = useState(false);
-	const [configDialogActive, setConfigDialogActive] = useState(false);
 	const [topbarUserMenuActive, setTopbarUserMenuActive] = useState(false);
 	const layoutContainer = useRef(null);
 

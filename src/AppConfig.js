@@ -247,7 +247,7 @@ export const AppConfig = (props) => {
 				<i class="pi pi-cog"></i>
 			</button>
 
-			<CSSTransition classNames="layout-config" timeout={{ enter: 150, exit: 150 }} in={configDialogActive} unmountOnExit>
+			<CSSTransition classNames="layout-submenu-container" timeout={{ enter: 150, exit: 150 }} in={configDialogActive} unmountOnExit>
 				<div className="layout-config">
 					<div className="layout-config-content">
 						<button className="layout-config-close" onClick={onConfigCloseClick}>

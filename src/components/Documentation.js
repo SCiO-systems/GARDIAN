@@ -52,7 +52,7 @@ yarn start
 
                     <pre>
                         {
-                            `"primereact": "^5.0.1",              //optional: PrimeReact components
+                            `"primereact": "^5.0.2",              //optional: PrimeReact components
 "primeicons": "^4.0.0",              //optional: PrimeReact component icons
 "primeflex": "2.0.0",                //optional: Samples
 "react-router-dom": "^5.2.0"         //optional: Router

@@ -12,7 +12,6 @@ export const Dashboard = () => {
 	const [products, setProducts] = useState(null);
 	const [selectedProduct, setSelectedProduct] = useState(null);
 	const [tasks, setTasks] = useState([]);
-	const [city, setCity] = useState(null);
 	const [checked1, setChecked1] = useState(true);
 	const [checked2, setChecked2] = useState(true);
 	const [checked3, setChecked3] = useState(true);
@@ -122,10 +121,6 @@ export const Dashboard = () => {
 		else
 			selectedTasks.splice(selectedTasks.indexOf(e.value), 1);
 		setTasks(selectedTasks)
-	}
-
-	const onCityChange = (e) => {
-		setCity(e.value)
 	}
 
 	return (

@@ -1,7 +1,4 @@
 import React from 'react';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
-import { InputTextarea } from 'primereact/inputtextarea';
 
 export const WidgetsDemo = () => {
 
@@ -188,7 +185,7 @@ export const WidgetsDemo = () => {
 								</div>
 
 								<p>Earum porro tenetur consequuntur veritatis eos vel natus quisquam.</p>
-								<a href="#">READ MORE</a>
+								<a href="https://www.primefaces.org/">READ MORE</a>
 							</div>
 						</div>
 					</div>
