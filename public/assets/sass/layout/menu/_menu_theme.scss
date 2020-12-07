@@ -10,7 +10,8 @@
 }
 
 .layout-menu {
-    a {
+    a,
+    .p-link {
         .menuitem-text {
             color: $menuitemTextColor;
         }
@@ -39,7 +40,8 @@
     }
 
     li.active-menuitem:not(:first-child) {
-        a.router-link-active {
+        a.router-link-active,
+        .p-link.router-link-active {
             .menuitem-text {
                 color: $menuitemActiveTextColor;
             }
@@ -51,7 +53,8 @@
     }
 
     li.active-menuitem {
-        > a {
+        > a,
+        > .p-link {
             .menuitem-text {
                 color: $menuitemActiveTextColor;
             }
@@ -63,7 +66,8 @@
     }
 
     > li.active-menuitem {
-        > a {
+        > a,
+        > .p-link {
             background-color: $verticalActiveRootMenuitemBgColor;
 
             .menuitem-text {
@@ -119,7 +123,7 @@
         @include background-gradient-top2bottom($menuTopBgColor, $menuBottomBgColor);
     }
 
-    a, button {
+    a, .p-link {
         span {
             font-family: $fontFamily;
             font-size: $fontSize;
@@ -146,7 +150,6 @@
     .layout-profile-menu-search {
         .p-inputtext {
             color: $menuitemTextColor;
-            background-image: linear-gradient(to bottom, $menuitemTextColor, $menuitemTextColor), linear-gradient(to bottom, $menuitemTextColor, $menuitemTextColor);
 
             &:focus ~ label,
             &:focus ~ i {

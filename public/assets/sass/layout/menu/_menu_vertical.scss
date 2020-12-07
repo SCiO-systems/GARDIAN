@@ -36,14 +36,16 @@
             }
 
             &.active-menuitem {
-                > a {
+                > a,
+                > .p-link {
                     .layout-submenu-toggler {
                         transform: rotate(-180deg);
                     }
                 }
             }
 
-            > a {
+            > a,
+            > .p-link {
                 &.rotated-icon {
                     .layout-menuitem-icon {
                         transform: rotate(90deg);
@@ -54,7 +56,8 @@
 
         > li {
             &.active-menuitem {
-                > a {
+                > a,
+                > .p-link {
                     @include border-radius-bottom(0);
                 }
             }
@@ -71,7 +74,8 @@
                         > .layout-submenu-container {
                             display: block;
 
-                            a {
+                            a,
+                            .p-link {
                                 padding-left: .75em;
                             }
                         }
@@ -80,8 +84,10 @@
             }
         }
 
-        a {
+        a,
+        .p-link {
             display: block;
+            width: 100%;
             position: relative;
             padding: .75em;
             cursor: pointer;
@@ -108,24 +114,24 @@
         }
 
         .layout-submenu-container {
-            &.layout-submenu-container-enter-from,
-            &.layout-submenu-container-leave-to {
+            &.layout-submenu-container-enter {
                 max-height: 0;
             }
 
-            &.layout-submenu-container-enter-to,
-            &.layout-submenu-container-leave-from {
+            &.layout-submenu-container-enter-active {
+                max-height: 1000px;
+                overflow: hidden;
+                transition: max-height 1s ease-in-out;
+            }
+
+            &.layout-submenu-container-exit {
                 max-height: 1000px;
             }
 
-            &.layout-submenu-container-leave-active {
+            &.layout-submenu-container-exit-active {
                 overflow: hidden;
+                max-height: 0;
                 transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
-            }
-
-            &.layout-submenu-container-enter-active {
-                overflow: hidden;
-                transition: max-height 1s ease-in-out;
             }
 
             .layout-submenu {
@@ -136,39 +142,46 @@
 
                 &.layout-megamenu {
                     > li {
-                        > a:first-child {
+                        > a:first-child,
+                        > .p-link:first-child {
                             display: none;
                         }
                     }
                 }
             }
 
-            a {
+            a,
+            .p-link {
                 border-radius: 0;
             }
 
             li {
-                a {
+                a,
+                .p-link {
                     padding-left: 1.75em;
                 }
 
                 li {
-                    a {
+                    a,
+                    .p-link {
                         padding-left: 2.75em;
                     }
 
                     li {
-                        a {
+                        a,
+                        .p-link {
                             padding-left: 3.75em;
                         }
 
                         li {
-                            a {
+                            a,
+                            .p-link {
                                 padding-left: 4.75em;
                             }
 
                             li {
-                                a {
+                                a,
+                                .p-link {
                                     padding-left: 5.75em;
                                 }
                             }

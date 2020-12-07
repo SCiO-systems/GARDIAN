@@ -1,4 +1,4 @@
-$emphasis-high:rgba(0,0,0.87);
+$emphasis-high:rgba(0,0,0,.87);
 $emphasis-medium:rgba(0,0,0,.60);
 $emphasis-low:rgba(0,0,0,.38);
 $emphasis-lower:rgba(0,0,0,.12);
@@ -517,7 +517,6 @@ $treeNodeContentPadding:.75rem;
 $treeNodeChildrenPadding:0 0 0 1rem;
 $treeNodeIconColor:$textSecondaryColor;
 
-
 //timeline
 $timelineVerticalEventContentPadding:0 1rem !default;
 $timelineHorizontalEventContentPadding:1rem 0 !default;
@@ -591,6 +590,10 @@ $dialogHeaderPadding:1.5rem;
 $dialogContentPadding: 0 1.5rem 1.5rem 1.5rem;
 $dialogFooterBorder:0 none;
 $dialogFooterPadding:1rem 1.5rem;
+
+//confirmpopup
+$confirmPopupContentPadding:1.5rem;
+$confirmPopupFooterPadding:0 1.5rem 1rem 1.5rem;
 
 //tooltip
 $tooltipBg:rgba(97,97,97,.9);
@@ -729,6 +732,31 @@ $galleriaThumbnailNavigatorHoverColor:rgba(255,255,255,.87);
 $galleriaThumbnailNavigatorBorderRadius:50%;
 $galleriaThumbnailNavigatorWidth:2rem;
 $galleriaThumbnailNavigatorHeight:2rem;
+
+//divider
+$dividerHorizontalMargin:1.25rem 0;
+$dividerHorizontalPadding:0 1.25rem;
+$dividerVerticalMargin:0 1.25rem;
+$dividerVerticalPadding:1.25rem 0;
+$dividerSize:1px;
+$dividerColor:rgba(0,0,0,.12);
+
+//avatar
+$avatarBg:rgba(0,0,0,.12);
+$avatarColor:$textColor;
+
+//scrollTop
+$scrollTopBg:$accentColor;
+$scrollTopHoverBg:rgba($accentColor, .92);
+$scrollTopWidth:3rem;
+$scrollTopHeight:3rem;
+$scrollTopBorderRadius:50%;
+$scrollTopFontSize:1.5rem;
+$scrollTopTextColor:$accentTextColor;
+
+//skeleton
+$skeletonBg:rgba(0,0,0,.08);
+$skeletonAnimationBg:rgba(255,255,255,0.4);
 
 :root {
 	--surface-a:#ffffff;

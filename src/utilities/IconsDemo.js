@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import AppCodeHighlight from '../AppCodeHighlight';
 import { Button } from 'primereact/button';
-import { AppCodeHighlight } from '../AppCodeHighlight';
+import { InputText } from 'primereact/inputtext';
 
 export const IconsDemo = () => {
 
     const [icons, setIcons] = useState([]);
+    const [filteredIcons, setFilteredIcons] = useState([]);
 
     useEffect(() => {
         axios.get('assets/demo/data/icons.json').then(res => {
@@ -20,8 +22,20 @@ export const IconsDemo = () => {
             });
 
             setIcons(icons);
+            setFilteredIcons(icons);
         });
     }, []);
+
+    const onFilter = (event) => {
+        if (!event.target.value) {
+            setFilteredIcons(icons);
+        }
+        else {
+            setFilteredIcons(icons.filter( it => {
+                return it.icon.tags[0].includes(event.target.value);
+            }));
+        }
+    }
 
     return (
         <div className="card icons-demo">
@@ -30,61 +44,64 @@ export const IconsDemo = () => {
 
             <h5>Getting Started</h5>
             <p>PrimeIcons use the pi pi-{`{icon}`} syntax such as pi pi-check. A standalone icon can be displayed using an element like i or span.</p>
-            <AppCodeHighlight>
-                {`
+<AppCodeHighlight>
+{`
 <i className="pi pi-check"></i>
 <i className="pi pi-times"></i>
 `}
-            </AppCodeHighlight>
+</AppCodeHighlight>
 
             <i className="pi pi-check" style={{ marginRight: '.5rem' }}></i>
             <i className="pi pi-times"></i>
 
             <h5>Component Icons</h5>
             <p>Components that have icon properties accept PrimeIcons with the pi pi-{`{icon}`} syntax.</p>
-            <AppCodeHighlight>
-                {`
+<AppCodeHighlight>
+{`
 <Button type="button" label="Confirm" icon="pi pi-check"></Button>
 `}
-            </AppCodeHighlight>
+</AppCodeHighlight>
 
             <Button type="button" label="Confirm" icon="pi pi-check"></Button>
 
             <h5>Size</h5>
             <p>Size of the icons can easily be changed using font-size property.</p>
 
-            <AppCodeHighlight>
-                {`
+<AppCodeHighlight>
+{`
 <i className="pi pi-check"></i>
 `}
-            </AppCodeHighlight>
+</AppCodeHighlight>
 
             <i className="pi pi-check"></i>
 
-            <AppCodeHighlight>
-                {`
+<AppCodeHighlight>
+{`
 <i className="pi pi-check" style={{ fontSize: '2rem' }}></i>
 `}
-            </AppCodeHighlight>
+</AppCodeHighlight>
 
             <i className="pi pi-check" style={{ fontSize: '2rem' }}></i>
 
             <h5>Spinning Animation</h5>
             <p>Special pi-spin class applies continuous rotation to an icon.</p>
-            <AppCodeHighlight>
-                {`
+<AppCodeHighlight>
+{`
 <i className="pi pi-spin pi-spinner" style={{ fontSize: '2rem' }}></i>
 `}
-            </AppCodeHighlight>
+</AppCodeHighlight>
 
             <i className="pi pi-spin pi-spinner" style={{ fontSize: '2rem' }}></i>
 
             <h5>List of Icons</h5>
             <p>Here is the current list of PrimeIcons, more icons are added periodically. You may also <a href="https://github.com/primefaces/primeicons/issues">request new icons</a> at the issue tracker.</p>
 
+            <div>
+                <InputText type="text" className="icon-filter" onInput={onFilter} placeholder="Search an icon" />
+            </div>
             <div className="p-grid icons-list">
                 {
-                    icons && icons.map(icon => {
+                    filteredIcons && filteredIcons.map(icon => {
                         return (
                             <div className="p-col-12 p-md-2" key={icon.properties.name}>
                                 <i className={`pi pi-${icon.properties.name}`}></i>

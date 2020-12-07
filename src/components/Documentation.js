@@ -1,6 +1,5 @@
 import React from 'react';
-import './Documentation.css';
-import { AppCodeHighlight } from "../AppCodeHighlight";
+import AppCodeHighlight from '../AppCodeHighlight';
 
 export const Documentation = () => {
 
@@ -525,7 +524,7 @@ $accentTextColor: #212121;
     $breadcrumbIconColor:#ffffff;
     $breadcrumbTextColor:#ffffff;
     $breadcrumbLinkColor:#80CBC4;
-    
+
     @import '../_topbar_theme';
 }
 
@@ -699,8 +698,8 @@ $accentTextColor: #212121;
     $menuitemHoverIconColor:#ffffff;
     $menuitemActiveTextColor:#ffc107;
     $menuitemActiveIconColor:#ffc107;
-    $verticalActiveRootMenuitemBgColor:#ffffff; 
-    $verticalActiveRootMenuitemTextColor:#457fca;   
+    $verticalActiveRootMenuitemBgColor:#ffffff;
+    $verticalActiveRootMenuitemTextColor:#457fca;
     $verticalActiveRootMenuitemIconColor:#457fca;
     $verticalSubmenuBgColor:#6a98d4;
 
@@ -724,8 +723,8 @@ $accentTextColor: #212121;
     $menuitemHoverIconColor:#ffffff;
     $menuitemActiveTextColor:#B39DDB;
     $menuitemActiveIconColor:#B39DDB;
-    $verticalActiveRootMenuitemBgColor:#673AB7; 
-    $verticalActiveRootMenuitemTextColor:#ffffff;   
+    $verticalActiveRootMenuitemBgColor:#673AB7;
+    $verticalActiveRootMenuitemTextColor:#ffffff;
     $verticalActiveRootMenuitemIconColor:#ffffff;
     $verticalSubmenuBgColor:rgba(0,0,0,0.2);
 
@@ -906,7 +905,7 @@ $paginatorPadding:.714em 1em;
 
 //menus
 $menuitemPadding:.571em .857em;
-$menuListPadding: .5em 0;   
+$menuListPadding: .5em 0;
 }
 `
                         }

@@ -18,7 +18,8 @@ export const GridDemo = () => {
 
     return (
         <div className="flexgrid-demo">
-            <h4>PrimeFlex grid system is a lightweight flex based responsive layout utility optimized for mobile phones, tablets and desktops.</h4>
+            <h4>Grid System</h4>
+            <p>Grid is a lightweight flex based responsive layout utility optimized for mobile phones, tablets and desktops.</p>
 
             <h5>Basic</h5>
             <div className="p-grid">
@@ -159,7 +160,7 @@ export const GridDemo = () => {
 
             <h5>Fixed Width Column</h5>
             <div className="p-grid">
-                <div className="p-col-fixed" style={{ width: '100px' }}>
+                <div className="p-col-fixed" style={{width: '100px'}}>
                     <div className="box">100px</div>
                 </div>
                 <div className="p-col">

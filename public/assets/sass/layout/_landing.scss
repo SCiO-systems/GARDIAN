@@ -564,7 +564,8 @@
 				.footer-social {
 					text-align: center;
 
-					a:first-child {
+                    a:first-child,
+                    button:first-child {
 						margin: 0;
 					}
 				}

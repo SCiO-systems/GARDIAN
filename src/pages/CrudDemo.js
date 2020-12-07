@@ -12,9 +12,9 @@ import { RadioButton } from 'primereact/radiobutton';
 import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
-import { ProductService } from '../service/ProductService';
+import ProductService from '../service/ProductService';
 
-export const Crud = () => {
+export const CrudDemo = () => {
 
     let emptyProduct = {
         id: null,
@@ -272,19 +272,19 @@ export const Crud = () => {
     const productDialogFooter = (
         <>
             <Button label="Cancel" icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
-            <Button label="Save" icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
+            <Button label="Save" icon="pi pi-check" onClick={saveProduct} />
         </>
     );
     const deleteProductDialogFooter = (
         <>
             <Button label="No" icon="pi pi-times" className="p-button-text" onClick={hideDeleteProductDialog} />
-            <Button label="Yes" icon="pi pi-check" className="p-button-text" onClick={deleteProduct} />
+            <Button label="Yes" icon="pi pi-check" onClick={deleteProduct} />
         </>
     );
     const deleteProductsDialogFooter = (
         <>
             <Button label="No" icon="pi pi-times" className="p-button-text" onClick={hideDeleteProductsDialog} />
-            <Button label="Yes" icon="pi pi-check" className="p-button-text" onClick={deleteSelectedProducts} />
+            <Button label="Yes" icon="pi pi-check" onClick={deleteSelectedProducts} />
         </>
     );
 
@@ -358,14 +358,14 @@ export const Crud = () => {
                     </Dialog>
 
                     <Dialog visible={deleteProductDialog} style={{ width: '450px' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
-                        <div className="confirmation-content">
+                        <div className="p-d-flex p-ai-center p-jc-center">
                             <i className="pi pi-exclamation-triangle p-mr-3" style={{ fontSize: '2rem' }} />
                             {product && <span>Are you sure you want to delete <b>{product.name}</b>?</span>}
                         </div>
                     </Dialog>
 
                     <Dialog visible={deleteProductsDialog} style={{ width: '450px' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
-                        <div className="confirmation-content">
+                        <div className="p-d-flex p-ai-center p-jc-center">
                             <i className="pi pi-exclamation-triangle p-mr-3" style={{ fontSize: '2rem' }} />
                             {product && <span>Are you sure you want to delete the selected products?</span>}
                         </div>

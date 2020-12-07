@@ -5,7 +5,76 @@ import { DataTable } from 'primereact/components/datatable/DataTable';
 import { Column } from 'primereact/components/column/Column';
 import { Chart } from 'primereact/chart';
 import { InputSwitch } from 'primereact/inputswitch';
-import { ProductService } from '../service/ProductService';
+import ProductService from '../service/ProductService';
+
+const chartData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [{
+        label: 'Sales',
+        data: [12, 19, 3, 5, 2, 3, 9],
+        borderColor: [
+            '#4CAF50',
+        ],
+        borderWidth: 3,
+        borderDash: [5, 5],
+        fill: false,
+        pointRadius: 3
+    }, {
+        label: 'Income',
+        data: [1, 2, 5, 3, 12, 7, 15],
+        backgroundColor: [
+            'rgba(187,222,251,0.2)',
+        ],
+        borderColor: [
+            '#00BCD4',
+        ],
+        borderWidth: 3,
+        fill: true
+    },
+    {
+        label: 'Expenses',
+        data: [7, 12, 15, 5, 3, 13, 21],
+        borderColor: [
+            '#e91e63',
+        ],
+        borderWidth: 3,
+        fill: false,
+        pointRadius: [4, 6, 4, 12, 8, 0, 4]
+    },
+    {
+        label: 'New Users',
+        data: [3, 7, 2, 17, 15, 13, 19],
+        borderColor: [
+            '#FF8F00',
+        ],
+        borderWidth: 3,
+        fill: false
+    }]
+}
+
+const chartOptions = {
+    maintainAspectRatio: false,
+    responsive: true,
+    hover: {
+        mode: 'index'
+    },
+    scales: {
+        xAxes: [{
+            display: true,
+            scaleLabel: {
+                display: true,
+                labelString: 'Month'
+            }
+        }],
+        yAxes: [{
+            display: true,
+            scaleLabel: {
+                display: true,
+                labelString: 'Value'
+            }
+        }]
+    }
+}
 
 export const Dashboard = () => {
 
@@ -21,76 +90,6 @@ export const Dashboard = () => {
 	const [checked7, setChecked7] = useState(false);
 	const [checked8, setChecked8] = useState(false);
 	const [checked9, setChecked9] = useState(false);
-
-
-	const chartData = {
-		labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-		datasets: [{
-			label: 'Sales',
-			data: [12, 19, 3, 5, 2, 3, 9],
-			borderColor: [
-				'#4CAF50',
-			],
-			borderWidth: 3,
-			borderDash: [5, 5],
-			fill: false,
-			pointRadius: 3
-		}, {
-			label: 'Income',
-			data: [1, 2, 5, 3, 12, 7, 15],
-			backgroundColor: [
-				'rgba(187,222,251,0.2)',
-			],
-			borderColor: [
-				'#00BCD4',
-			],
-			borderWidth: 3,
-			fill: true
-		},
-		{
-			label: 'Expenses',
-			data: [7, 12, 15, 5, 3, 13, 21],
-			borderColor: [
-				'#e91e63',
-			],
-			borderWidth: 3,
-			fill: false,
-			pointRadius: [4, 6, 4, 12, 8, 0, 4]
-		},
-		{
-			label: 'New Users',
-			data: [3, 7, 2, 17, 15, 13, 19],
-			borderColor: [
-				'#FF8F00',
-			],
-			borderWidth: 3,
-			fill: false
-		}]
-	}
-
-	const chartOptions = {
-		maintainAspectRatio: false,
-		responsive: true,
-		hover: {
-			mode: 'index'
-		},
-		scales: {
-			xAxes: [{
-				display: true,
-				scaleLabel: {
-					display: true,
-					labelString: 'Month'
-				}
-			}],
-			yAxes: [{
-				display: true,
-				scaleLabel: {
-					display: true,
-					labelString: 'Value'
-				}
-			}]
-		}
-	}
 
 	useEffect(() => {
 		const productService = new ProductService();

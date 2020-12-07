@@ -21,12 +21,15 @@
 
         .layout-menu {
             padding: 0;
+            display: flex;
+            align-items: center;
 
             > li {
                 display: inline-block;
                 position: relative;
 
-                > a {
+                > a,
+                > .p-link {
                     display: block;
                     padding: 1em;
                     font-weight: 500;
@@ -64,15 +67,13 @@
                     max-height: 500px;
                     @include shadow($horizontalOverlaySubmenuShadow);
 
-                    &.layout-submenu-container-enter-from,
-                    &.layout-submenu-container-leave-to,
-                    &.layout-submenu-container-enter-to,
-                    &.layout-submenu-container-leave-from {
+                    &.layout-submenu-container-enter,
+                    &.layout-submenu-container-exit {
                         max-height: 500px;
                     }
 
-                    &.layout-submenu-container-enter-active ,
-                    &.layout-submenu-container-leave-active {
+                    &.layout-submenu-container-enter-active,
+                    &.layout-submenu-container-exit-active {
                         overflow: auto;
                         transition: none;
                     }
@@ -90,7 +91,8 @@
                             > .layout-submenu-container {
                                 min-width: 200px;
 
-                                a {
+                                a,
+                                .p-link {
                                     padding-left: .75em;
                                 }
                             }
@@ -105,7 +107,8 @@
                 }
 
                 &.active-menuitem {
-                    > a {
+                    > a,
+                    > .p-link {
                         .layout-submenu-toggler {
                             @include rotate(-180deg);
                         }
@@ -115,7 +118,8 @@
 
             .layout-submenu {
                 li {
-                    a {
+                    a,
+                    .p-link {
                         display: block;
                         position: relative;
                         padding: .75em;
@@ -141,27 +145,32 @@
                     }
 
                     li {
-                        a {
+                        a,
+                        .p-link {
                             padding-left: 1.75em;
                         }
 
                         li {
-                            a {
+                            a,
+                            .p-link {
                                 padding-left: 2.75em;
                             }
 
                             li {
-                                a {
+                                a,
+                                .p-link {
                                     padding-left: 3.75em;
                                 }
 
                                 li {
-                                    a {
+                                    a,
+                                    .p-link {
                                         padding-left: 4.75em;
                                     }
 
                                     li {
-                                        a {
+                                        a,
+                                        .p-link {
                                             padding-left: 5.75em;
                                         }
                                     }

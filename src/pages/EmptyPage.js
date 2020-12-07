@@ -12,5 +12,4 @@ export const EmptyPage = () => {
             </div>
         </div>
     );
-
 }

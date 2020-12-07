@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from 'primereact/button';
 import { useHistory } from 'react-router-dom';
 
-const Access = () => {
+export const Access = () => {
 
 	const history = useHistory();
-	
+
 	const goDashboard = () => {
 		history.push('/');
 	}
@@ -25,7 +25,4 @@ const Access = () => {
 			</div>
 		</div>
 	)
-
 }
-
-export default Access;

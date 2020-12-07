@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const WidgetsDemo = () => {
+export const Widgets = () => {
 
 	return (
 		<div className="p-grid">

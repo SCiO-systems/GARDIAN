@@ -1,136 +1,136 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
+import { Ripple } from 'primereact/ripple';
 
 const AppSubmenu = (props) => {
 
     const [activeIndex, setActiveIndex] = useState(null);
 
     const onMenuItemClick = (event, item, index) => {
-        //avoid processing disabled items
         if (item.disabled) {
             event.preventDefault();
-            return true;
+            return;
         }
-
-        if (props.root && props.onRootItemClick) {
-            props.onRootItemClick({
-                originalEvent: event,
-                item: item
-            });
-        }
-
         //execute command
         if (item.command) {
             item.command({ originalEvent: event, item: item });
             event.preventDefault();
         }
-
-        if (index === activeIndex)
-            setActiveIndex(null);
-        else
-            setActiveIndex(index)
-
-        if (props.onMenuItemClick) {
-            props.onMenuItemClick({
+        if (item.items) {
+            event.preventDefault();
+        }
+        if (props.root && props.onRootMenuItemClick) {
+            props.onRootMenuItemClick({
                 originalEvent: event,
-                item: item
+                isSameIndex: index === activeIndex
             });
         }
-    }
-
-    const onKeyDown = (event, item, index) => {
-        if (event.key === 'Enter') {
-            onMenuItemClick(event, item, index);
+        if (item.items) {
+            setActiveIndex(index === activeIndex ? null : index);
         }
-    }
+
+        props.onMenuItemClick({
+            originalEvent: event,
+            item: item
+        });
+    };
 
     const onMenuItemMouseEnter = (index) => {
-        if (props.root && props.menuActive && props.isHorizontalMenuActive()) {
-            setActiveIndex(index)
+        if (props.root && props.menuHoverActive && props.horizontal && !props.isMobile()) {
+            setActiveIndex(index);
         }
+    };
+
+    const visible = (item) => {
+        return (typeof item.visible === 'function' ? item.visible() : item.visible !== false);
+    };
+
+    const getLink = (item, index) => {
+        const menuitemIconClassName = classNames('layout-menuitem-icon', item.icon);
+        const content = (
+            <>
+                <i className={menuitemIconClassName}></i>
+                <span className="menuitem-text">{item.label}</span>
+                { item.items && <i className="pi pi-fw pi-angle-down layout-submenu-toggler"></i>}
+                { item.badge && <span className="menuitem-badge">{item.badge}</span> }
+                <Ripple />
+            </>
+        );
+        const commonLinkProps = {
+            'style': item.style,
+            'className': classNames(item.class, 'p-ripple', { 'p-disabled': item.disabled, 'p-link': !item.to }),
+            'target': item.target,
+            'onClick': (e) => onMenuItemClick(e, item, index),
+            'onMouseEnter': () => onMenuItemMouseEnter(index)
+        }
+
+        if (item.url) {
+            return <a href={item.url} rel="noopener noreferrer" {...commonLinkProps} tabIndex={0}>{content}</a>
+        }
+        else if (!item.to) {
+            return <button type="button" {...commonLinkProps}>{content}</button>
+        }
+
+        return <NavLink to={item.to} exact activeClassName="route-link-active" {...commonLinkProps}>{content}</NavLink>;
+    };
+
+    const isMenuActive = (item, i) => {
+        return item.items && (props.mega ? true : activeIndex === i);
     }
 
-    const isHorizontalOrSlim = useCallback(() => {
-        return (props.layoutMode === 'horizontal' || props.layoutMode === 'slim');
-    }, [props.layoutMode]);
+    const getItems = () => {
+        const timeout = !props.root || !props.horizontal || props.isMobile() ? { enter: 1000, exit: 450 } : 0;
+        return props.items.map((item, i) => {
+            if (visible(item)) {
+                if (!item.separator) {
+                    const menuitemClassName = classNames({ 'active-menuitem': activeIndex === i && !item.disabled });
+                    const submenuContainerClassName = classNames('layout-submenu-container', { 'layout-submenu-megamenu-container': item.mega });
+                    const submenuClassName = classNames('layout-submenu', { 'layout-megamenu':item.mega });
+                    const link = getLink(item, i);
+                    const megaMenuItem = !props.root && props.mega && (
+                        <span className="layout-megamenu-submenu-text">{item.label}</span>
+                    );
 
-    const isMobile = useCallback(() => {
-        return window.innerWidth <= 640;
-    }, []);
+                    return (
+                        <li key={item.label || i} className={menuitemClassName} role="menuitem">
+                            {link}
+                            {megaMenuItem}
+                            <CSSTransition classNames="layout-submenu-container" timeout={timeout} in={isMenuActive(item, i)} unmountOnExit>
+                                <div className={submenuContainerClassName} style={{'padding': activeIndex === i ? '' : '0'}}>
+                                    <AppSubmenu items={visible(item) && item.items} className={submenuClassName} menuHoverActive={props.menuHoverActive}
+                                        horizontal={props.horizontal} mega={item.mega} onMenuItemClick={props.onMenuItemClick} isMobile={props.isMobile}></AppSubmenu>
+                                </div>
+                            </CSSTransition>
+                        </li>
+                    )
+                }
+                else {
+                    return <li className="p-menu-separator" style={item.style} key={`separator${i}`} role="separator"></li>;
+                }
+            }
+
+            return null;
+        })
+    };
 
     useEffect(() => {
-        if (!props.menuActive && isHorizontalOrSlim() && !isMobile()) {
+        if (!props.menuHoverActive && props.horizontal && !props.isMobile()) {
             setActiveIndex(null);
         }
-    }, [props.menuActive, isHorizontalOrSlim, isMobile]);
+    }, [props]);
 
-    const renderLinkContent = (item) => {
-        let submenuIcon = item.items && <i className="pi pi-angle-down submenu-icon"></i>;
-        let badge = item.badge && <span className="menuitem-badge">{item.badge}</span>;
-
-        return (
-            <React.Fragment>
-                <i className={item.icon}></i>
-                <span className="menuitem-text">{item.label}</span>
-                {submenuIcon}
-                {badge}
-            </React.Fragment>
-        );
+    if (!props.items) {
+        return null;
     }
 
-    const renderLink = (item, i) => {
-        let content = renderLinkContent(item);
-
-        if (item.to) {
-            return (
-                <NavLink activeClassName="router-link-active" to={item.to}
-                    onClick={(e) => onMenuItemClick(e, item, i)} exact role="menuitem"
-                    target={item.target} onMouseEnter={(e) => onMenuItemMouseEnter(i)}
-                    className={classNames("ripplelink", item.styleClass)}>{content}</NavLink>
-            )
-        } else {
-            return (
-                <a className={classNames("ripplelink", item.styleClass)} href={item.url} tabIndex={item.url ? '' : 0} role="menuitem"
-                    onClick={(e) => onMenuItemClick(e, item, i)} target={item.target}
-                    onMouseEnter={(e) => onMenuItemMouseEnter(i)} onKeyDown={(e) => onKeyDown(e, item, i)}>
-                    {content}
-                </a>
-            );
-
-        }
-    }
-
-    var items = props.items && props.items.map((item, i) => {
-        let active = activeIndex === i;
-        let styleClass = classNames(item.badgeStyleClass, { 'active-menuitem': active });
-        let containerClass = classNames('layout-submenu-container', { 'layout-submenu-megamenu-container': item.mega });
-        let submenuClass = classNames('layout-submenu', { 'layout-megamenu': item.mega })
-
-        return (
-            <li className={styleClass} key={i} role="none">
-                {renderLink(item, i)}
-                {!props.root && props.mega &&
-                    <span className="layout-megamenu-submenu-text">{item.label}</span>}
-                {item.items &&
-                    <div className={containerClass} style={{ padding: active ? '' : '0' }}>
-                        <CSSTransition classNames="layout-submenu-container" timeout={{ enter: 400, exit: 400 }} in={active} unmountOnExit>
-                            <AppSubmenu items={item.items} className={submenuClass}
-                                onMenuItemClick={props.onMenuItemClick} horizontal={props.horizontal}
-                                menuActive={props.menuActive} mega={item.mega}
-                                parentMenuItemActive={active}
-                                isHorizontalMenuActive={props.isHorizontalMenuActive} />
-                        </CSSTransition>
-                    </div>
-
-                }
-            </li>
-        )
-    });
-
-    return <ul role="menu" className={props.className}>{items}</ul>;
-
+    const items = getItems();
+    return (
+        <ul className={props.className} role="menu">
+            {items}
+        </ul>
+    );
 }
 
 export const AppMenu = (props) => {
@@ -139,12 +139,11 @@ export const AppMenu = (props) => {
         <div className="layout-menu-container" onClick={props.onSidebarClick}>
             <div className="layout-menu-wrapper">
                 <AppSubmenu items={props.model} className="layout-menu" mega={false} root={true}
-                    parentMenuItemActive={true}
-                    menuActive={props.menuActive} onRootItemClick={props.onRootMenuItemClick}
-                    onMenuItemClick={props.onMenuItemClick} horizontal={props.horizontal}
-                    isHorizontalMenuActive={props.isHorizontalMenuActive} />
+                    isMobile={props.isMobile} menuHoverActive={props.menuHoverActive} onRootMenuItemClick={props.onRootMenuItemClick}
+                    onMenuItemClick={props.onMenuItemClick} horizontal={props.horizontal} />
             </div>
         </div>
     )
-
 }
+
+export default AppMenu;

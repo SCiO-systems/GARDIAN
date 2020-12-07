@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'primereact/button';
-import { AppCodeHighlight } from '../AppCodeHighlight';
+import AppCodeHighlight from '../AppCodeHighlight';
 
 export const FlexBoxDemo = () => {
 
@@ -10,8 +10,8 @@ export const FlexBoxDemo = () => {
             <div className="p-col-12">
                 <h4>FlexBox</h4>
                 <p>Easily manage the layout of your components with the responsive FlexBox utilities. If you require a
-                utility to manage the layout of your application,
-                refer to the
+                    utility to manage the layout of your application,
+                    refer to the
                     <Link to="/grid">Grid System</Link>
                     instead.
                 </p>
@@ -19,12 +19,12 @@ export const FlexBoxDemo = () => {
                 <h5>Flex Container</h5>
                 <p>An element can configured as a flexbox container using the <i>p-d-flex</i> or <i>p-d-inline-flex</i> classes.</p>
 
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex">Flex Container</div>
 <div className="p-d-inline-flex">Inline Flex Container</div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
 
                 <div className="box p-d-flex p-mb-3">Flex Container</div>
                 <div className="box p-d-inline-flex">Inline Flex Container</div>
@@ -39,15 +39,15 @@ export const FlexBoxDemo = () => {
                 </ul>
 
                 <h6>Row</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex">
     <div className="p-mr-2">Item 1</div>
     <div className="p-mr-2">Item 2</div>
     <div>Item 3</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex">
                     <div className="p-mr-2">Item 1</div>
                     <div className="p-mr-2">Item 2</div>
@@ -55,15 +55,15 @@ export const FlexBoxDemo = () => {
                 </div>
 
                 <h6>Column</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-flex-column">
     <div className="p-mb-2">Item 1</div>
     <div className="p-mb-2">Item 2</div>
     <div>Item 3</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex p-flex-column">
                     <div className="p-mb-2">Item 1</div>
                     <div className="p-mb-2">Item 2</div>
@@ -73,15 +73,15 @@ export const FlexBoxDemo = () => {
                 <h6>Responsive</h6>
                 <p>Row direction for larger screens and column for smaller.</p>
 
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-flex-column p-flex-md-row">
     <div className="p-mb-2 p-mr-2">Item 1</div>
     <div className="p-mb-2 p-mr-2">Item 2</div>
     <div className="p-mb-2 p-mr-2">Item 3</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
 
                 <div className="p-d-flex p-flex-column p-flex-md-row">
                     <div className="p-mb-2 p-mr-2">Item 1</div>
@@ -117,15 +117,15 @@ export const FlexBoxDemo = () => {
                 <p>Order configures the way in which they appear in the flex container. <i>{`p-order-{value}`}</i> format is used where value can be a number from 0 to 6.</p>
 
                 <h6>Customized</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex">
     <div className="p-mr-2 p-order-3">Item 1</div>
     <div className="p-mr-2 p-order-1">Item 2</div>
     <div className="p-mr-2 p-order-2">Item 3</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex">
                     <div className="p-mr-2 p-order-3">Item 1</div>
                     <div className="p-mr-2 p-order-1">Item 2</div>
@@ -134,15 +134,15 @@ export const FlexBoxDemo = () => {
 
                 <h6>Responsive</h6>
                 <p>Orders change depending on the screen size.</p>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex">
     <div className="p-mr-2 p-order-3 p-order-md-2">Item 1</div>
     <div className="p-mr-2 p-order-1 p-order-md-3">Item 2</div>
     <div className="p-mr-2 p-order-2 p-order-md-1">Item 3</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
 
                 <div className="p-d-flex">
                     <div className="p-mr-2 p-order-3 p-order-md-2">Item 1</div>
@@ -200,8 +200,8 @@ export const FlexBoxDemo = () => {
                 </ul>
 
                 <h6>No Wrap</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex">
     <div className="p-mr-2 p-mb-2">Item 1</div>
     <div className="p-mr-2 p-mb-2">Item 2</div>
@@ -211,7 +211,7 @@ export const FlexBoxDemo = () => {
     <div className="p-mr-2 p-mb-2">Item 6</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex">
                     <div className="p-mr-2 p-mb-2">Item 1</div>
                     <div className="p-mr-2 p-mb-2">Item 2</div>
@@ -222,8 +222,8 @@ export const FlexBoxDemo = () => {
                 </div>
 
                 <h6>Wrap</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-flex-wrap">
     <div className="p-mr-2 p-mb-2">Item 1</div>
     <div className="p-mr-2 p-mb-2">Item 2</div>
@@ -233,7 +233,7 @@ export const FlexBoxDemo = () => {
     <div className="p-mr-2 p-mb-2">Item 6</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex p-flex-wrap">
                     <div className="p-mr-2 p-mb-2">Item 1</div>
                     <div className="p-mr-2 p-mb-2">Item 2</div>
@@ -244,8 +244,8 @@ export const FlexBoxDemo = () => {
                 </div>
 
                 <h6>Wrap Reverse</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-flex-wrap-reverse">
     <div className="p-mr-2 p-mb-2">Item 1</div>
     <div className="p-mr-2 p-mb-2">Item 2</div>
@@ -255,7 +255,7 @@ export const FlexBoxDemo = () => {
     <div className="p-mr-2 p-mb-2">Item 6</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex p-flex-wrap-reverse">
                     <div className="p-mr-2 p-mb-2">Item 1</div>
                     <div className="p-mr-2 p-mb-2">Item 2</div>
@@ -297,28 +297,28 @@ export const FlexBoxDemo = () => {
                 </ul>
 
                 <h6>Between</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-jc-between">
     <div>Item 1</div>
     <div>Item 2</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex p-jc-between">
                     <div>Item 1</div>
                     <div>Item 2</div>
                 </div>
 
                 <h6>Center</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-jc-center">
     <div className="p-mr-2">Item 1</div>
     <div>Item 2</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex p-jc-center">
                     <div className="p-mr-2">Item 1</div>
                     <div>Item 2</div>
@@ -370,31 +370,31 @@ export const FlexBoxDemo = () => {
                 </ul>
 
                 <h6>Start</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-ai-start">
     <div className="p-mr-2" style={{height: '100px'}}>Item 1</div>
     <div style={{height: '50px'}}>Item 2</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex p-ai-start">
-                    <div className="p-mr-2" style={{ height: '100px' }}>Item 1</div>
-                    <div style={{ height: '50px' }}>Item 2</div>
+                    <div className="p-mr-2" style={{height: '100px'}}>Item 1</div>
+                    <div style={{height: '50px'}}>Item 2</div>
                 </div>
 
                 <h6>Center</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-ai-center">
     <div className="p-mr-2" style={{height: '100px'}}>Item 1</div>
     <div style={{height: '50px'}}>Item 2</div>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex p-ai-center">
-                    <div className="p-mr-2" style={{ height: '100px' }}>Item 1</div>
-                    <div style={{ height: '50px' }}>Item 2</div>
+                    <div className="p-mr-2" style={{height: '100px'}}>Item 1</div>
+                    <div style={{height: '50px'}}>Item 2</div>
                 </div>
 
                 <h6>Align Items Classes</h6>
@@ -437,8 +437,8 @@ export const FlexBoxDemo = () => {
                     <li>stretch (default)</li>
                 </ul>
 
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex" style={{height: '150px'}}>
     <div className="p-mr-2 p-as-start">Start</div>
     <div className="p-mr-2 p-as-center">Center</div>
@@ -446,8 +446,8 @@ export const FlexBoxDemo = () => {
     <div className="p-mr-2 p-as-stretch">Stretch</div>
 </div>
 `}
-                </AppCodeHighlight>
-                <div className="p-d-flex" style={{ height: '150px' }}>
+</AppCodeHighlight>
+                <div className="p-d-flex" style={{height: '150px'}}>
                     <div className="p-mr-2 p-as-start">Start</div>
                     <div className="p-mr-2 p-as-center">Center</div>
                     <div className="p-mr-2 p-as-end">End</div>
@@ -533,15 +533,15 @@ export const FlexBoxDemo = () => {
                 <p>When combined with <Link to="/setup">spacing utilities</Link>, flexbox offers endless possibilities.</p>
                 <h6>Horizontal Spacing</h6>
 
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-p-3 card">
     <Button type="Button" icon="pi pi-check" className="p-mr-2" />
     <Button type="Button" icon="pi pi-trash" className="p-button-danger"/>
     <Button type="Button" icon="pi pi-search" className="p-ml-auto p-button-help"/>
 </div>
 `}
-                </AppCodeHighlight>
+</AppCodeHighlight>
                 <div className="p-d-flex p-p-3 card">
                     <Button type="Button" icon="pi pi-check" className="p-mr-2" />
                     <Button type="Button" icon="pi pi-trash" className="p-button-danger" />
@@ -549,15 +549,15 @@ export const FlexBoxDemo = () => {
                 </div>
 
                 <h6>Vertical Spacing</h6>
-                <AppCodeHighlight>
-                    {`
+<AppCodeHighlight>
+{`
 <div className="p-d-flex p-flex-column" style={{height: '150px'}}>
     <div>Item 1</div>
     <div className="p-mt-auto">Item 2</div>
 </div>
 `}
-                </AppCodeHighlight>
-                <div className="p-d-flex p-flex-column" style={{ height: '150px' }}>
+</AppCodeHighlight>
+                <div className="p-d-flex p-flex-column" style={{height: '150px'}}>
                     <div>Item 1</div>
                     <div className="p-mt-auto">Item 2</div>
                 </div>

@@ -12,13 +12,7 @@
 .layout-topbar {
     .layout-topbar-search {
         .p-inputtext {
-            color: $topbarSearchFocusedInputColor;
             background-image: linear-gradient(to bottom, $topbarSearchFocusedInputColor, $topbarSearchFocusedInputColor), linear-gradient(to bottom, $topbarSearchInputColor, $topbarSearchInputColor);
-            
-            &:focus ~ label,
-            &:focus ~ i {
-                color: $topbarSearchFocusedInputColor;
-            }
         }
 
         i {
@@ -78,34 +72,34 @@
         .layout-menu {
             > li {
                 &:hover {
-                    > button, > a {
+                    > .p-link, > a {
                         background-color: transparent;
                     }
                 }
-                
-                > button, > a {
+
+                > .p-link, > a {
                     .menuitem-text {
                         color: $horizontalMenuitemTextColor;
                     }
-    
+
                     i {
                         color: $horizontalMenuitemIconColor;
                     }
-    
+
                     &:hover {
                         border-bottom-color: $horizontalMenuitemHoverBorderColor;
                     }
                 }
-    
+
                 &.active-menuitem {
-                    > button, > a {
+                    > .p-link, > a {
                         background-color: transparent;
                         border-bottom-color: $horizontalMenuitemActiveBorderColor;
 
                         .menuitem-text {
                             color: $horizontalMenuitemTextColor;
                         }
-        
+
                         i {
                             color: $horizontalMenuitemIconColor;
                         }
@@ -117,13 +111,13 @@
 }
 
 .layout-topbar-separator {
-    background-color: $topbarSeparatorColor; 
+    background-color: $topbarSeparatorColor;
 }
 
 .layout-breadcrumb {
     li {
-        color: $breadcrumbLinkColor;
-        
+        color: $breadcrumbTextColor;
+
         i {
             color: $breadcrumbIconColor;
         }

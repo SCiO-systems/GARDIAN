@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'primereact/button';
 import { useHistory } from 'react-router-dom';
 
-const Error = () => {
+export const Error = () => {
 
 	const history = useHistory();
 
@@ -23,7 +23,4 @@ const Error = () => {
 			</div>
 		</div>
 	</div>
-
 }
-
-export default Error;

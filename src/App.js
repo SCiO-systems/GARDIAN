@@ -1,454 +1,439 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import classNames from 'classnames';
-import { AppTopbar } from './AppTopbar';
-import { AppBreadcrumb } from "./AppBreadcrumb";
-import { AppFooter } from './AppFooter';
-import { AppConfig } from "./AppConfig";
-import { Route } from 'react-router-dom'
-import { withRouter } from 'react-router';
+import { Route } from 'react-router-dom';
+
+import AppTopbar from './AppTopbar';
+import AppFooter from './AppFooter';
+import AppConfig from './AppConfig';
+import AppBreadcrumb from './AppBreadcrumb';
 
 import { Dashboard } from './components/Dashboard';
-import { ButtonDemo } from './components/ButtonDemo';
-import { ChartDemo } from './components/ChartDemo';
-import { MessagesDemo } from './components/MessagesDemo';
-import { Documentation } from './components/Documentation';
-import { FileDemo } from './components/FileDemo';
 import { FormLayoutDemo } from './components/FormLayoutDemo';
 import { InputDemo } from './components/InputDemo';
-import { ListDemo } from './components/ListDemo';
-import { MiscDemo } from './components/MiscDemo';
-import { MenuDemo } from './components/MenuDemo';
-import { OverlayDemo } from './components/OverlayDemo';
-import { PanelDemo } from './components/PanelDemo';
+import { FloatLabelDemo } from './components/FloatLabelDemo';
+import { ButtonDemo } from './components/ButtonDemo';
 import { TableDemo } from './components/TableDemo';
+import { ListDemo } from './components/ListDemo';
 import { TreeDemo } from './components/TreeDemo';
-
-import { Crud } from './pages/Crud';
-import { Calendar } from './pages/Calendar';
-import { Invoice } from './pages/Invoice';
-import { EmptyPage } from './pages/EmptyPage';
-import { Help } from './pages/Help';
-
-import { DisplayDemo } from './utilities/DisplayDemo';
-import { ElevationDemo } from './utilities/ElevationDemo';
-import { FlexBoxDemo } from './utilities/FlexboxDemo';
-import { GridDemo } from './utilities/GridDemo';
+import { PanelDemo } from './components/PanelDemo';
+import { OverlayDemo } from './components/OverlayDemo';
+import { MediaDemo } from './components/MediaDemo';
+import { MenuDemo } from './components/MenuDemo';
+import { MessagesDemo } from './components/MessagesDemo';
+import { FileDemo } from './components/FileDemo';
+import { ChartDemo } from './components/ChartDemo';
+import { MiscDemo } from './components/MiscDemo';
+import { Documentation } from './components/Documentation';
 import { IconsDemo } from './utilities/IconsDemo';
+import { Widgets } from './utilities/Widgets';
+import { GridDemo } from './utilities/GridDemo';
 import { SpacingDemo } from './utilities/SpacingDemo';
+import { ElevationDemo } from './utilities/ElevationDemo';
 import { TextDemo } from './utilities/TextDemo';
 import { TypographyDemo } from './utilities/TypographyDemo';
-import { WidgetsDemo } from './utilities/WidgetsDemo';
+import { DisplayDemo } from './utilities/DisplayDemo';
+import { FlexBoxDemo } from './utilities/FlexBoxDemo';
+import { CrudDemo } from './pages/CrudDemo';
+import { CalendarDemo } from './pages/CalendarDemo';
+import { Invoice } from './pages/Invoice';
+import { Help } from './pages/Help';
+import { EmptyPage } from './pages/EmptyPage';
 
-import '@fullcalendar/core/main.css';
-import '@fullcalendar/daygrid/main.css';
-import '@fullcalendar/timegrid/main.css';
+import PrimeReact from 'primereact/utils';
+
 import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import './App.scss';
-import 'primeicons/primeicons.css';
-
 
 const App = () => {
 
-	const [horizontal, setHorizontal] = useState(true);
-	const [topbarSize, setTopbarSize] = useState('large');
-	const [topbarColor, setTopbarColor] = useState('layout-topbar-blue');
-	const [menuColor, setMenuColor] = useState('layout-menu-light');
-	const [layoutColor, setLayoutColor] = useState('blue');
-	const [themeColor, setThemeColor] = useState('blue');
-	const [menuActive, setMenuActive] = useState(false);
-	const [topbarUserMenuActive, setTopbarUserMenuActive] = useState(false);
-	const layoutContainer = useRef(null);
+    const [horizontal, setHorizontal] = useState(true);
+    const [topbarSize, setTopbarSize] = useState('large');
+    const [topbarColor, setTopbarColor] = useState('layout-topbar-blue');
+    const [menuColor, setMenuColor] = useState('layout-menu-light');
+    const [menuActive, setMenuActive] = useState(false);
+    const [menuHoverActive, setMenuHoverActive] = useState(false);
+    const [topbarUserMenuActive, setTopbarUserMenuActive] = useState(false);
+    const [compactMode, setCompactMode] = useState(false);
+    const [layoutColor, setLayoutColor] = useState('blue');
+    const [themeColor, setThemeColor] = useState('blue');
+    const [inputStyle, setInputStyle] = useState('outlined');
+    const [ripple, setRipple] = useState(true);
 
-	let menuClick;
-	let configMenuClick;
-	let userMenuClick;
+    PrimeReact.ripple = true;
 
-	const onWrapperClick = (event) => {
-		if (!menuClick) {
-			setMenuActive(false)
+    const menu = [
+        { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
+        {
+            label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
+            items: [
+                { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
+                { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
+                { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/floatlabel' },
+                { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
+                { label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
+                { label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
+                { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
+                { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
+                { label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
+                { label: 'Media', icon: 'pi pi-fw pi-image', to: '/media' },
+                { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu' },
+                { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
+                { label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
+                { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
+                { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
+            ]
+        },
+        {
+            label: 'Mega', icon: 'pi pi-fw pi-list', badge: 2, mega: true,
+            items: [
+                {
+                    label: 'UI Kit', icon: 'pi pi-fw pi-sitemap', badge: 6,
+                    items: [
+                        { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
+                        { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
+                        { label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
+                        { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
+                        { label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
+                        { label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
+                        { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
+                        { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
+                        { label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
+                        { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menus' },
+                        { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
+                        { label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
+                        { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
+                        { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
+                    ]
+                },
+                {
+                    label: 'Templates',
+                    items: [
+                        { label: 'Diamond', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/diamond-react' },
+                        { label: 'Sapphire', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/sapphire-react' },
+                        { label: 'Serenity', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/serenity-react' },
+                        { label: 'Ultima', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/ultima-react' },
+                        { label: 'Avalon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/avalon-react' },
+                        { label: 'Babylon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/babylon-react' },
+                        { label: 'Apollo', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/apollo-react' },
+                        { label: 'Roma', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/roma-react' },
+                    ]
+                },
+                {
+                    label: 'Demo',
+                    items: [
+                        { label: 'PrimeFaces', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/showcase' },
+                        { label: 'PrimeNG', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/primeng' },
+                        { label: 'PrimeReact', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/primereact' }
+                    ]
+                }
+            ]
+        },
+        {
+            label: "Utilities", icon: 'pi pi-fw pi-globe',
+            items: [
+                { label: 'Display', icon: 'pi pi-fw pi-desktop', to: '/display' },
+                { label: 'Elevation', icon: 'pi pi-fw pi-external-link', to: '/elevation' },
+                { label: 'Flexbox', icon: 'pi pi-fw pi-directions', to: '/flexbox' },
+                { label: 'Icons', icon: 'pi pi-fw pi-search', to: '/icons' },
+                { label: 'Widgets', icon: 'pi pi-fw pi-star-o', to: '/widgets' },
+                { label: 'Grid System', icon: 'pi pi-fw pi-th-large', to: '/grid' },
+                { label: 'Spacing', icon: 'pi pi-fw pi-arrow-right', to: '/spacing' },
+                { label: 'Typography', icon: 'pi pi-fw pi-align-center', to: '/typography' },
+                { label: 'Text', icon: 'pi pi-fw pi-pencil', to: '/text' },
+            ]
+        },
+        {
+            label: 'Pages', icon: 'pi pi-fw pi-clone',
+            items: [
+                { label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud' },
+                { label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
+                { label: 'Landing', icon: 'pi pi-fw pi-user-plus', url: 'assets/pages/landing.html', target: '_blank' },
+                { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
+                { label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice' },
+                { label: 'Help', icon: 'pi pi-fw pi-question-circle', to: '/help' },
+                { label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error' },
+                { label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/notfound' },
+                { label: 'Access Denied', icon: 'pi pi-fw pi-lock', to: '/access' },
+                { label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty' }
+            ]
+        },
+        {
+            label: 'Menu Hierarchy', icon: 'pi pi-fw pi-align-left',
+            items: [
+                {
+                    label: 'Submenu 1', icon: 'pi pi-fw pi-align-left',
+                    items: [
+                        {
+                            label: 'Submenu 1.1', icon: 'pi pi-fw pi-align-left',
+                            items: [
+                                { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-align-left' },
+                                { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-align-left' },
+                                { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-align-left' },
+                            ]
+                        },
+                        {
+                            label: 'Submenu 1.2', icon: 'pi pi-fw pi-align-left',
+                            items: [
+                                { label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-align-left' },
+                                { label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-align-left' }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    label: 'Submenu 2', icon: 'pi pi-fw pi-align-left',
+                    items: [
+                        {
+                            label: 'Submenu 2.1', icon: 'pi pi-fw pi-align-left',
+                            items: [
+                                { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-align-left' },
+                                { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-align-left' },
+                                { label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-align-left' },
+                            ]
+                        },
+                        {
+                            label: 'Submenu 2.2', icon: 'pi pi-fw pi-align-left',
+                            items: [
+                                { label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-align-left' },
+                                { label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-align-left' }
+                            ]
+                        },
+                    ]
+                }
+            ]
+        },
+        { label: 'Documentation', icon: 'pi pi-fw pi-question', to: '/documentation' },
+        { label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', command: () => { window.location = "https://www.primefaces.org/store" } },
+    ];
 
-			if (!configMenuClick) {
-				unblockBodyScroll();
-			}
-		}
+    const routers = [
+        { path: '/', component: Dashboard, exact: true },
+        { path: '/formlayout', component: FormLayoutDemo },
+        { path: '/input', component: InputDemo },
+        { path: '/floatlabel', component: FloatLabelDemo },
+        { path: '/button', component: ButtonDemo },
+        { path: '/table', component: TableDemo },
+        { path: '/list', component: ListDemo },
+        { path: '/tree', component: TreeDemo },
+        { path: '/panel', component: PanelDemo },
+        { path: '/overlay', component: OverlayDemo },
+        { path: '/media', component: MediaDemo },
+        { path: '/menu', component: MenuDemo },
+        { path: '/messages', component: MessagesDemo },
+        { path: '/file', component: FileDemo },
+        { path: '/chart', component: ChartDemo },
+        { path: '/misc', component: MiscDemo },
+        { path: '/icons', component: IconsDemo },
+        { path: '/widgets', component: Widgets },
+        { path: '/grid', component: GridDemo },
+        { path: '/spacing', component: SpacingDemo },
+        { path: '/elevation', component: ElevationDemo },
+        { path: '/typography', component: TypographyDemo },
+        { path: '/display', component: DisplayDemo },
+        { path: '/flexbox', component: FlexBoxDemo },
+        { path: '/text', component: TextDemo },
+        { path: '/crud', component: CrudDemo },
+        { path: '/calendar', component: CalendarDemo },
+        { path: '/invoice', component: Invoice },
+        { path: '/help', component: Help },
+        { path: '/empty', component: EmptyPage },
+        { path: '/documentation', component: Documentation }
+    ];
 
-		if (!userMenuClick) {
-			setTopbarUserMenuActive(false);
-		}
+    let menuClick;
+    let userMenuClick;
 
-		userMenuClick = false;
-		menuClick = false;
-		configMenuClick = false;
-	}
+    const onWrapperClick = () => {
+        if (!menuClick) {
+            setMenuActive(false)
+            unblockBodyScroll();
 
-	const menu = [
-		{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
-		{
-			label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
-			items: [
-				{ label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
-				{ label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
-				{ label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
-				{ label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
-				{ label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
-				{ label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
-				{ label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
-				{ label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
-				{ label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
-				{ label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu' },
-				{ label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
-				{ label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
-				{ label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
-				{ label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
-			]
-		},
-		{
-			label: 'Mega', icon: 'pi pi-fw pi-list', badge: 2, mega: true,
-			items: [
-				{
-					label: 'UI Kit', icon: 'pi pi-fw pi-sitemap', badge: 6,
-					items: [
-						{ label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
-						{ label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
-						{ label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
-						{ label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
-						{ label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
-						{ label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
-						{ label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
-						{ label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
-						{ label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
-						{ label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menus' },
-						{ label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
-						{ label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
-						{ label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
-						{ label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
-					]
-				},
-				{
-					label: 'Templates',
-					items: [
-						{ label: 'Diamond', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/diamond-react' },
-						{ label: 'Sapphire', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/sapphire-react' },
-						{ label: 'Serenity', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/serenity-react' },
-						{ label: 'Ultima', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/ultima-react' },
-						{ label: 'Avalon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/avalon-react' },
-						{ label: 'Babylon', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/babylon-react' },
-						{ label: 'Apollo', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/apollo-react' },
-						{ label: 'Roma', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/layouts/roma-react' },
-					]
-				},
-				{
-					label: 'Demo',
-					items: [
-						{ label: 'PrimeFaces', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/showcase' },
-						{ label: 'PrimeNG', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/primeng' },
-						{ label: 'PrimeReact', icon: 'pi pi-desktop', url: 'https://www.primefaces.org/primereact' }
-					]
-				}
-			]
-		},
-		{
-			label: "Utilities", icon: 'pi pi-fw pi-globe',
-			items: [
-				{ label: 'Display', icon: 'pi pi-fw pi-desktop', to: '/display' },
-				{ label: 'Elevation', icon: 'pi pi-fw pi-external-link', to: '/elevation' },
-				{ label: 'Flexbox', icon: 'pi pi-fw pi-directions', to: '/flexbox' },
-				{ label: 'Icons', icon: 'pi pi-fw pi-search', to: '/icons' },
-				{ label: 'Widgets', icon: 'pi pi-fw pi-star-o', to: '/widgets' },
-				{ label: 'Grid System', icon: 'pi pi-fw pi-th-large', to: '/grid' },
-				{ label: 'Spacing', icon: 'pi pi-fw pi-arrow-right', to: '/spacing' },
-				{ label: 'Typography', icon: 'pi pi-fw pi-align-center', to: '/typography' },
-				{ label: 'Text', icon: 'pi pi-fw pi-pencil', to: '/text' },
-			]
-		},
-		{
-			label: 'Pages', icon: 'pi pi-fw pi-clone',
-			items: [
-				{ label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud' },
-				{ label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
-				{ label: 'Landing', icon: 'pi pi-fw pi-user-plus', url: 'assets/pages/landing.html', target: '_blank' },
-				{ label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
-				{ label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice' },
-				{ label: 'Help', icon: 'pi pi-fw pi-question-circle', to: '/help' },
-				{ label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error' },
-				{ label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/notfound' },
-				{ label: 'Access Denied', icon: 'pi pi-fw pi-lock', to: '/access' },
-				{ label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty' }
-			]
-		},
-		{
-			label: 'Menu Hierarchy', icon: 'pi pi-fw pi-align-left',
-			items: [
-				{
-					label: 'Submenu 1', icon: 'pi pi-fw pi-align-left',
-					items: [
-						{
-							label: 'Submenu 1.1', icon: 'pi pi-fw pi-align-left',
-							items: [
-								{ label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-align-left' },
-								{ label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-align-left' },
-								{ label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-align-left' },
-							]
-						},
-						{
-							label: 'Submenu 1.2', icon: 'pi pi-fw pi-align-left',
-							items: [
-								{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-align-left' },
-								{ label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-align-left' }
-							]
-						},
-					]
-				},
-				{
-					label: 'Submenu 2', icon: 'pi pi-fw pi-align-left',
-					items: [
-						{
-							label: 'Submenu 2.1', icon: 'pi pi-fw pi-align-left',
-							items: [
-								{ label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-align-left' },
-								{ label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-align-left' },
-								{ label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-align-left' },
-							]
-						},
-						{
-							label: 'Submenu 2.2', icon: 'pi pi-fw pi-align-left',
-							items: [
-								{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-align-left' },
-								{ label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-align-left' }
-							]
-						},
-					]
-				}
-			]
-		},
-		{ label: 'Documentation', icon: 'pi pi-fw pi-question', to: '/documentation' },
-		{ label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', command: () => { window.location = "https://www.primefaces.org/store" } },
-	];
+            if (horizontal) {
+                setMenuHoverActive(false);
+            }
+        }
 
+        if (!userMenuClick) {
+            setTopbarUserMenuActive(false);
+        }
 
-	const onMenuButtonClick = (event, isMenuButtonActive) => {
-		menuClick = true;
+        userMenuClick = false;
+        menuClick = false;
+    };
 
-		if (!isHorizontalMenuActive()) {
-			this.setState({ menuActive: !isMenuButtonActive }, () => {
-				if (menuActive) {
-					this.blockBodyScroll();
-				} else {
-					this.unblockBodyScroll();
-				}
-			});
-		}
+    const onInputStyleChange = (inputStyle) => {
+        setInputStyle(inputStyle);
+    };
 
-		event.preventDefault();
-	}
+    const onRippleChange = (e) => {
+        PrimeReact.ripple = e.value;
+        setRipple(e.value);
+    };
 
-	const onToggleBlockBodyScroll = (add) => {
-		if (add)
-			blockBodyScroll();
-		else
-			unblockBodyScroll();
-		configMenuClick = true;
-	}
+    const onMenuButtonClick = (event) => {
+        menuClick = true;
 
-	const blockBodyScroll = () => {
-		let className = `blocked-scroll${horizontal ? '-horizontal-menu' : ''}`;
-		if (document.body.classList) {
-			document.body.classList.add(className);
-		} else {
-			document.body.className += ` ${className}`;
-		}
-	}
+        if (!horizontal || isMobile()) {
+            setMenuActive(prevMenuActive => !prevMenuActive);
+        }
 
-	const unblockBodyScroll = () => {
-		let className = `blocked-scroll${horizontal ? '-horizontal-menu' : ''}`;
-		if (document.body.classList) {
-			document.body.classList.remove(className);
-		} else {
-			document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
-				`${className}`.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-		}
-	}
+        event.preventDefault();
+    };
 
-	const onTopbarUserMenuButtonClick = (event) => {
-		userMenuClick = true;
-		setTopbarUserMenuActive(prevState => !prevState);
+    const blockBodyScroll = useCallback(() => {
+        let className = `blocked-scroll${horizontal ? '-horizontal-menu' : ''}`;
+        if (document.body.classList) {
+            document.body.classList.add(className);
+        }
+        else {
+            document.body.className += ` ${className}`;
+        }
+    }, [horizontal]);
 
-		event.preventDefault();
-	}
+    const unblockBodyScroll = useCallback(() => {
+        let className = `blocked-scroll${horizontal ? '-horizontal-menu' : ''}`;
+        if (document.body.classList) {
+            document.body.classList.remove(className);
+        } else {
+            document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
+                `${className}`.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+    }, [horizontal]);
 
-	const onTopbarUserMenuClick = (event) => {
-		userMenuClick = true;
+    const onTopbarUserMenuButtonClick = (event) => {
+        userMenuClick = true;
+        setTopbarUserMenuActive(prevTopbarUserMenuActive => !prevTopbarUserMenuActive);
 
-		if (event.target.nodeName === 'BUTTON' || event.target.parentNode.nodeName === 'BUTTON') {
-			setTopbarUserMenuActive(false)
-		}
-		event.preventDefault();
-	}
+        event.preventDefault();
+    };
 
-	const onRootMenuItemClick = (event) => {
-		menuClick = true;
+    const onTopbarUserMenuClick = (event) => {
+        userMenuClick = true;
 
-		if (isHorizontalMenuActive()) {
-			setMenuActive(prevState => !prevState)
-		}
-	}
+        if (event.target.nodeName === 'BUTTON' || event.target.parentNode.nodeName === 'BUTTON') {
+            setTopbarUserMenuActive(false)
+        }
+        event.preventDefault();
+    };
 
-	const onMenuItemClick = (event) => {
-		if (!event.item.items) {
-			setMenuActive(false)
-			unblockBodyScroll();
-		}
-	}
+    const onRootMenuItemClick = (event) => {
+        menuClick = true;
+        if (horizontal && isMobile()) {
+            setMenuHoverActive(event.isSameIndex ? false : true);
+        }
+        else {
+            setMenuHoverActive(prevMenuHoverActive => !prevMenuHoverActive);
+        }
+    };
 
-	const onSidebarClick = (event) => {
-		menuClick = true;
-	}
+    const onMenuItemClick = (event) => {
+        if (event.item && !event.item.items) {
+            if (!horizontal || isMobile()) {
+                setMenuActive(false);
+                unblockBodyScroll();
+            }
 
-	const isMobile = () => {
-		return window.innerWidth <= 1024;
-	}
+            setMenuHoverActive(false);
+        }
+    };
 
-	const isHorizontalMenuActive = () => {
-		return horizontal && !isMobile();
-	}
+    const onSidebarClick = () => {
+        menuClick = true;
+    };
 
-	const changeTopbarSize = (event) => {
-		setTopbarSize(event.size)
-		event.originalEvent.preventDefault();
-	}
+    const isMobile = () => {
+        return window.innerWidth <= 1024;
+    };
 
-	const changeTopbarTheme = (event) => {
-		setTopbarColor('layout-topbar-' + event.color)
-		event.originalEvent.preventDefault();
-	}
+    const onTopbarSizeChange = (size) => {
+        setTopbarSize(size);
+    };
 
-	const changeMenuToHorizontal = (event) => {
-		setHorizontal(event.mode)
-		event.originalEvent.preventDefault();
-	}
+    const onTopbarThemeChange = (color) => {
+        setTopbarColor('layout-topbar-' + color);
+    };
 
-	const changeMenuTheme = (event) => {
-		setMenuColor('layout-menu-' + event.color);
-		event.originalEvent.preventDefault();
-	}
+    const onMenuToHorizontalChange = (mode) => {
+        setHorizontal(mode);
+    };
 
-	const changeComponentTheme = (event) => {
-		setThemeColor(event.theme);
-		let element = document.getElementById('theme-css');
-		let urlTokens = element.getAttribute('href').split('/');
-		urlTokens[urlTokens.length - 1] = 'theme-' + event.theme + '.css';
-		let newURL = urlTokens.join('/');
+    const onMenuThemeChange = (color) => {
+        setMenuColor('layout-menu-' + color);
+    };
 
-		replaceLink(element, newURL);
+    const onThemeColorChange = (color) => {
+        setThemeColor(color);
+    };
 
-		event.originalEvent.preventDefault();
-	}
+    const onLayoutColorChange = (color) => {
+        setLayoutColor(color)
+    };
 
-	const changePrimaryColor = (event) => {
-		setLayoutColor(event.color);
-		let element = document.getElementById('layout-css');
-		let urlTokens = element.getAttribute('href').split('/');
-		urlTokens[urlTokens.length - 1] = 'layout-' + event.color + '.css';
-		let newURL = urlTokens.join('/');
+    const onCompactModeChange = (mode) => {
+        setCompactMode(mode);
+    };
 
-		replaceLink(element, newURL);
+    useEffect(() => {
+        if (menuActive) {
+            blockBodyScroll();
+        }
+        else {
+            unblockBodyScroll();
+        }
+    }, [menuActive, blockBodyScroll, unblockBodyScroll]);
 
-		event.originalEvent.preventDefault();
-	}
+    const layoutContainerClassName = classNames('layout-container', {
+        'layout-menu-horizontal': horizontal,
+        'layout-menu-active': menuActive,
+        'layout-top-small': topbarSize === 'small',
+        'layout-top-medium': topbarSize === 'medium',
+        'layout-top-large': topbarSize === 'large',
+        'p-input-filled': inputStyle === 'filled',
+        'p-ripple-disabled': !ripple,
+    }, topbarColor, menuColor);
 
-	const isIE = () => {
-		return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent)
-	}
+    return (
+        <div className={layoutContainerClassName} onClick={onWrapperClick}>
+            <div className="layout-top">
+                <AppTopbar topbarUserMenuActive={topbarUserMenuActive} menuActive={menuActive} menuHoverActive={menuHoverActive}
+                    onMenuButtonClick={onMenuButtonClick} onTopbarUserMenuButtonClick={onTopbarUserMenuButtonClick}
+                    onTopbarUserMenuClick={onTopbarUserMenuClick} model={menu} horizontal={horizontal} onSidebarClick={onSidebarClick}
+                    onRootMenuItemClick={onRootMenuItemClick} onMenuItemClick={onMenuItemClick} isMobile={isMobile} />
 
-	const replaceLink = (linkElement, href) => {
-		if (isIE()) {
-			linkElement.setAttribute('href', href);
-		}
-		else {
-			const id = linkElement.getAttribute('id');
-			const cloneLinkElement = linkElement.cloneNode(true);
+                <div className="layout-topbar-separator" />
 
-			cloneLinkElement.setAttribute('href', href);
-			cloneLinkElement.setAttribute('id', id + '-clone');
+                <AppBreadcrumb />
+            </div>
 
-			linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+            <div className="layout-content">
+                {
+                    routers.map((router, index) => {
+                        if (router.exact) {
+                            return <Route key={`router${index}`} path={router.path} exact component={router.component} />
+                        }
 
-			cloneLinkElement.addEventListener('load', () => {
-				linkElement.remove();
-				cloneLinkElement.setAttribute('id', id);
-			});
-		}
-	}
+                        return <Route key={`router${index}`} path={router.path} component={router.component} />
+                    })
+                }
+            </div>
 
-	const layoutContainerClassName = classNames('layout-container', {
-		'layout-menu-horizontal': horizontal,
-		'layout-menu-active': menuActive && !isHorizontalMenuActive(),
-		'layout-top-small': topbarSize === 'small',
-		'layout-top-medium': topbarSize === 'medium',
-		'layout-top-large': topbarSize === 'large'
-	}, topbarColor, menuColor);
+            <AppConfig topbarSize={topbarSize} onTopbarSizeChange={onTopbarSizeChange}
+                topbarColor={topbarColor} onTopbarThemeChange={onTopbarThemeChange}
+                horizontal={horizontal} onMenuToHorizontalChange={onMenuToHorizontalChange}
+                menuColor={menuColor} onMenuThemeChange={onMenuThemeChange}
+                themeColor={themeColor} onThemeColorChange={onThemeColorChange}
+                layoutColor={layoutColor} onLayoutColorChange={onLayoutColorChange}
+                compactMode={compactMode} onCompactModeChange={onCompactModeChange}
+                rippleActive={ripple} onRippleChange={onRippleChange}
+                inputStyle={inputStyle} onInputStyleChange={onInputStyleChange} />
 
-	const AppBreadCrumbWithRouter = withRouter(AppBreadcrumb);
+            <AppFooter />
 
-	return (
-		<div ref={layoutContainer} className={layoutContainerClassName} onClick={onWrapperClick}>
-			<div className="layout-top">
-				<AppTopbar topbarUserMenuActive={topbarUserMenuActive} menuActive={menuActive}
-					onMenuButtonClick={onMenuButtonClick} onTopbarUserMenuButtonClick={onTopbarUserMenuButtonClick}
-					onTopbarUserMenuClick={onTopbarUserMenuClick} model={menu} horizontal={horizontal} onSidebarClick={onSidebarClick}
-					onRootMenuItemClick={onRootMenuItemClick} onMenuItemClick={onMenuItemClick} isHorizontalMenuActive={isHorizontalMenuActive} />
-
-				<div className="layout-topbar-separator" />
-
-				<AppBreadCrumbWithRouter />
-			</div>
-
-			<div className="layout-content">
-				<Route path="/" exact component={Dashboard} />
-				<Route path="/formlayout" component={FormLayoutDemo} />
-				<Route path="/input" component={InputDemo} />
-				<Route path="/button" component={ButtonDemo} />
-				<Route path="/table" component={TableDemo} />
-				<Route path="/list" component={ListDemo} />
-				<Route path="/tree" component={TreeDemo} />
-				<Route path="/panel" component={PanelDemo} />
-				<Route path="/overlay" component={OverlayDemo} />
-				<Route path="/menu" component={MenuDemo} />
-				<Route path="/messages" component={MessagesDemo} />
-				<Route path="/file" component={FileDemo} />
-				<Route path="/chart" component={ChartDemo} />
-				<Route path="/misc" component={MiscDemo} />
-				<Route path="/documentation" component={Documentation} />
-				<Route path="/crud" component={Crud} />
-				<Route path="/calendar" component={Calendar} />
-				<Route path="/help" component={Help} />
-				<Route path="/invoice" component={Invoice} />
-				<Route path="/empty" component={EmptyPage} />
-				<Route path="/display" component={DisplayDemo} />
-				<Route path="/elevation" component={ElevationDemo} />
-				<Route path="/flexbox" component={FlexBoxDemo} />
-				<Route path="/icons" component={IconsDemo} />
-				<Route path="/grid" component={GridDemo} />
-				<Route path="/spacing" component={SpacingDemo} />
-				<Route path="/text" component={TextDemo} />
-				<Route path="/typography" component={TypographyDemo} />
-				<Route path="/widgets" component={WidgetsDemo} />
-
-			</div>
-
-			<AppConfig topbarColor={topbarColor} horizontal={horizontal}
-				layoutColor={layoutColor} menuColor={menuColor} themeColor={themeColor}
-				topbarSize={topbarSize} changeTopbarTheme={changeTopbarTheme}
-				changeMenuToHorizontal={changeMenuToHorizontal} changeMenuTheme={changeMenuTheme} changeComponentTheme={changeComponentTheme}
-				changePrimaryColor={changePrimaryColor} changeTopbarSize={changeTopbarSize} onToggleBlockBodyScroll={onToggleBlockBodyScroll} />
-
-			{(!isHorizontalMenuActive() && menuActive) && <div className="layout-mask" />}
-
-			<AppFooter />
-
-		</div>
-	);
+            {menuActive && <div className="layout-mask" />}
+        </div>
+    );
 
 }
 
