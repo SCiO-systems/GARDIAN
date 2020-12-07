@@ -723,27 +723,56 @@
 }
 
 .docs {
-    h1 {
-        margin-top: 28px;
-        margin-bottom: 14px;
+    i {
+        background-color: #fcf2a7;
+        font-family: monaco,Consolas,Lucida Console,monospace;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 14px;
+        padding: 2px;
     }
 
-    p {
+    li {
         line-height: 1.5;
     }
 }
 
 pre[class*="language-"] {
-    &:after, &:before {
-        box-shadow: none;
+    &:before, &:after {
+        display: none !important;
     }
 
-    padding: 0 !important;
-    background: transparent;
-    overflow: visible;
-
-    > code {
+    code {
+        border-left: 10px solid var(--surface-d) !important;
         box-shadow: none !important;
-        border-left: 10px solid #0388E5;
+        background: var(--surface-b) !important;
+        margin: 1em 0;
+        color: var(--text-color);
+        font-size: 14px;
+
+        .token {
+            &.tag,
+            &.keyword {
+                color: #2196F3 !important;
+            }
+
+            &.attr-name,
+            &.attr-string {
+                color: #2196F3 !important;
+            }
+
+            &.attr-value {
+                color: #4CAF50 !important;
+            }
+
+            &.punctuation {
+                color: var(--text-color);
+            }
+
+            &.operator,
+            &.string {
+                background: transparent;
+            }
+        }
     }
 }

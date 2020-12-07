@@ -7,152 +7,91 @@ export const Documentation = () => {
         <div className="ui-g">
             <div className="ui-g-12">
                 <div className="card docs">
-                    <div className="card-title">Current Version</div>
+                    <h4>Current Version</h4>
                     <p>React 17.x and PrimeReact 5.x</p>
 
-                    <div className="card-title">Getting Started</div>
-                    <p>Sapphire is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
+                    <h4>Getting Started</h4>
+                    <p>Sapphire is an application template for React, based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
                             creating React apps with no configuration. To get started extract the contents of the zip bundle and install the dependencies
                             with npm or yarn.</p>
-                    <pre>
-                        {
-                            `npm install
-
-# OR
-
-yarn
+<AppCodeHighlight>
+{`
+"npm install" or "yarn"
 `}
-                    </pre>
+</AppCodeHighlight>
 
-                    <p>Next step is running the application using the start script and navigate to <b>http://localhost:3000/</b> to view the application.
-                        That is it, you may now start with the development of your application using the Sapphire template.</p>
+                    <p>Next step is running the application using the start script and navigate to <b>http://localhost:3000/</b> to view the application.</p>
 
-                    <pre>
-                        {
-                            `npm start
-
-# OR
-
-yarn start
+<AppCodeHighlight>
+{`
+"npm start" or "yarn start"
 `}
-                    </pre>
+</AppCodeHighlight>
+                    <p>That is it, you may now start with the development of your application using the Sapphire template.</p>
 
-                    <div className="card-title">React Scripts</div>
+                    <h4>React Scripts</h4>
                     <p>Following commands are derived from create-app-app.</p>
-                    <pre>
-                        {
-                            `"npm start" or "yarn start": Starts the development server
+<AppCodeHighlight>
+{`
+"npm start" or "yarn start": Starts the development server
 "npm test" or "yarn test": Runs the tests.
 "npm run build" or "yarn run build": Creates a production build.
 `}
-                    </pre>
-                    <div className="card-title">Dependencies</div>
-                    <p>Dependencies of Sapphire are listed below and needs to be added to package.json. Sapphire has no direct dependency, even PrimeReact components are an optional dependency.</p>
+</AppCodeHighlight>
 
-                    <pre>
-                        {
-                            `"primereact": "^5.0.2",              //optional: PrimeReact components
-"primeicons": "^4.0.0",              //optional: PrimeReact component icons
-"primeflex": "2.0.0",                //optional: Samples
-"react-router-dom": "^5.2.0"         //optional: Router
-`
-                        }
-                    </pre>
-                    <div className="card-title">Structure</div>
+                    <h4>Structure</h4>
                     <p>Sapphire consists of 3 main parts; the application layout, layout resources and theme resources for PrimeReact components. <b>App.js</b> inside src folder is the main component containing the template for the base layout
                             whereas required resources for the layout are placed inside the <b>public/assets/layout</b> folder and similarly theme resources are inside <b>public/assets/theme</b> folder.
                         </p>
 
-                    <div className="card-title">Template</div>
-                    <p>Main layout is the JSX of the App.js, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is render method of the
-                    App.js component that implements the logic such as menu state, layout modes and so on.
-                        </p>
+                    <h4>Template</h4>
+                    <p>Main layout is the template of the <i>App.js</i>, it is divided into a couple of child components such as topbar, content, menu, right menu, app search and footer. Here is template of the
+                        <i>App.js</i> component that implements the logic such as menu state, layout modes and other configurable options.
+                    </p>
 
-                    <AppCodeHighlight>
-                        {
-                            `
-const layoutContainerClassName = classNames('layout-container', {
-    'layout-menu-horizontal': horizontal,
-    'layout-menu-active': menuActive && !isHorizontalMenuActive(),
-    'layout-top-small': topbarSize === 'small',
-    'layout-top-medium': topbarSize === 'medium',
-    'layout-top-large': topbarSize === 'large'
-}, topbarColor, menuColor);
+<AppCodeHighlight>
+{`
+<div className={layoutContainerClassName} onClick={onWrapperClick}>
+    <div className="layout-top">
+        <AppTopbar topbarUserMenuActive={topbarUserMenuActive} menuActive={menuActive} menuHoverActive={menuHoverActive}
+            onMenuButtonClick={onMenuButtonClick} onTopbarUserMenuButtonClick={onTopbarUserMenuButtonClick}
+            onTopbarUserMenuClick={onTopbarUserMenuClick} model={menu} horizontal={horizontal} onSidebarClick={onSidebarClick}
+            onRootMenuItemClick={onRootMenuItemClick} onMenuItemClick={onMenuItemClick} isMobile={isMobile} />
 
-const AppBreadCrumbWithRouter = withRouter(AppBreadcrumb);
+        <div className="layout-topbar-separator" />
 
-return (
-    <div ref={layoutContainer} className={layoutContainerClassName} onClick={onWrapperClick}>
-        <div className="layout-top">
-            <AppTopbar topbarUserMenuActive={topbarUserMenuActive} menuActive={menuActive}
-                onMenuButtonClick={onMenuButtonClick} onTopbarUserMenuButtonClick={onTopbarUserMenuButtonClick}
-                onTopbarUserMenuClick={onTopbarUserMenuClick} model={menu} horizontal={horizontal} onSidebarClick={onSidebarClick}
-                onRootMenuItemClick={onRootMenuItemClick} onMenuItemClick={onMenuItemClick} isHorizontalMenuActive={isHorizontalMenuActive} />
-
-            <div className="layout-topbar-separator" />
-
-            <AppBreadCrumbWithRouter />
-        </div>
-
-        <div className="layout-content">
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/formlayout" component={FormLayoutDemo} />
-            <Route path="/input" component={InputDemo} />
-            <Route path="/button" component={ButtonDemo} />
-            <Route path="/table" component={TableDemo} />
-            <Route path="/list" component={ListDemo} />
-            <Route path="/tree" component={TreeDemo} />
-            <Route path="/panel" component={PanelDemo} />
-            <Route path="/overlay" component={OverlayDemo} />
-            <Route path="/menu" component={MenuDemo} />
-            <Route path="/messages" component={MessagesDemo} />
-            <Route path="/file" component={FileDemo} />
-            <Route path="/chart" component={ChartDemo} />
-            <Route path="/misc" component={MiscDemo} />
-            <Route path="/documentation" component={Documentation} />
-            <Route path="/crud" component={Crud} />
-            <Route path="/calendar" component={Calendar} />
-            <Route path="/help" component={Help} />
-            <Route path="/invoice" component={Invoice} />
-            <Route path="/empty" component={EmptyPage} />
-            <Route path="/display" component={DisplayDemo} />
-            <Route path="/elevation" component={ElevationDemo} />
-            <Route path="/flexbox" component={FlexBoxDemo} />
-            <Route path="/icons" component={IconsDemo} />
-            <Route path="/grid" component={GridDemo} />
-            <Route path="/spacing" component={SpacingDemo} />
-            <Route path="/text" component={TextDemo} />
-            <Route path="/typography" component={TypographyDemo} />
-            <Route path="/widgets" component={WidgetsDemo} />
-
-        </div>
-
-        <AppConfig topbarColor={topbarColor} horizontal={horizontal}
-            layoutColor={layoutColor} menuColor={menuColor} themeColor={themeColor}
-            topbarSize={topbarSize} changeTopbarTheme={changeTopbarTheme}
-            changeMenuToHorizontal={changeMenuToHorizontal} changeMenuTheme={changeMenuTheme} changeComponentTheme={changeComponentTheme}
-            changePrimaryColor={changePrimaryColor} changeTopbarSize={changeTopbarSize} onToggleBlockBodyScroll={onToggleBlockBodyScroll} />
-
-        {(!isHorizontalMenuActive() && menuActive) && <div className="layout-mask" />}
-
-        <AppFooter />
-
+        <AppBreadcrumb />
     </div>
-);
 
-`
-                        }
-                    </AppCodeHighlight>
+    <div className="layout-content">
+        // routers
+    </div>
 
-                    <div className="card-title">Menu</div>
-                    <p>Menu is a separate component defined in AppMenu.js file based on PrimeReact MenuModel API. In order to define the menuitems,
-                    navigate to createMenu() method App.js file and define your own model as a nested structure. Here is the menu component from the demo application.
-                            Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
+    <AppConfig topbarSize={topbarSize} onTopbarSizeChange={onTopbarSizeChange}
+        topbarColor={topbarColor} onTopbarThemeChange={onTopbarThemeChange}
+        horizontal={horizontal} onMenuToHorizontalChange={onMenuToHorizontalChange}
+        menuColor={menuColor} onMenuThemeChange={onMenuThemeChange}
+        themeColor={themeColor} onThemeColorChange={onThemeColorChange}
+        layoutColor={layoutColor} onLayoutColorChange={onLayoutColorChange}
+        compactMode={compactMode} onCompactModeChange={onCompactModeChange}
+        rippleActive={ripple} onRippleChange={onRippleChange}
+        inputStyle={inputStyle} onInputStyleChange={onInputStyleChange} />
 
-                    <div style={{ overflow: 'auto', height: '400px' }}>
-                        <AppCodeHighlight lang="js">
-                            {
-`
+    <AppFooter />
+
+    {menuActive && <div className="layout-mask" />}
+    </div>
+`}
+</AppCodeHighlight>
+
+                    <h4>Menu</h4>
+                    <p>Menu is a separate component defined in <i>AppMenu.js</i> file based on PrimeReact MenuModel API. In order to define the menuitems,
+                        navigate to data section of <i>App.js</i> file and define your own model as a nested structure using the menu property.
+                        Here is the menu component from the demo application. Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
+
+<div style={{ overflow: 'auto', height: '400px' }}>
+<AppCodeHighlight lang="js">
+{`
 const menu = [
     { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
     {
@@ -160,14 +99,14 @@ const menu = [
         items: [
             { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
             { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
-            { label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
+            { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/floatlabel' },
             { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
             { label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
             { label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
             { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
             { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel' },
             { label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay' },
-            { label: "Media", icon: "pi pi-fw pi-image", to: "/media" },
+            { label: 'Media', icon: 'pi pi-fw pi-image', to: '/media' },
             { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu' },
             { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
             { label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
@@ -297,12 +236,22 @@ const menu = [
     { label: 'Documentation', icon: 'pi pi-fw pi-question', to: '/documentation' },
     { label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', command: () => { window.location = "https://www.primefaces.org/store" } },
 ];
-
 `}
-                        </AppCodeHighlight>
-                    </div>
+</AppCodeHighlight>
+</div>
 
-                    <div className="card-title">Theme and Layout SASS</div>
+                    <p>Dependencies of Layout are listed below and needs to be added to package.json. Only required
+                            dependency is PrimeReact where optional dependencies exist to enable certain components in PrimeReact.</p>
+
+<AppCodeHighlight lang="js">
+{`
+"primereact": "...",                //required: PrimeReact components
+"primeicons": "...",                //required: Icons
+"primeflex": "..."                  //required: Grid system
+`}
+</AppCodeHighlight>
+
+                    <h4>Theme</h4>
                     <p>Sapphire provides 18 PrimeReact themes out of the box, setup of a theme simple including the css of theme to your page that are located inside assets/theme folder.</p>
 
                     <ul>
@@ -328,62 +277,82 @@ const menu = [
 
                     <p>A custom theme can be developed by the following steps.</p>
                     <ul>
-                        <li>Choose a custom theme name such as theme-myown.</li>
-                        <li>Create a file named theme-myown.scss under <i>public/assets/theme folder</i>.</li>
-                        <li>Define the variables listed below and import the <i>../sass/theme/_theme.scss</i> file.</li>
+                        <li>Choose a custom theme name such as "mytheme".</li>
+                        <li>Create a folder named "mytheme" under <i>assets/theme</i> folder.</li>
+                        <li>Create a file such as theme.scss under <i>assets/theme/mytheme</i> folder.</li>
+                        <li>Define the variables listed below in your file and import the <i>../../sass/theme/_theme.scss</i> file.</li>
                         <li>Build the scss to generate css</li>
-                        <li>Include the generated theme.css to your application.</li>
+                        <li>Include the generated theme.css to your page.</li>
                     </ul>
 
-                    <p>Here are the variables required to create a theme.</p>
+                    <p>Here are the variables required to create a sample theme.</p>
 
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
+<AppCodeHighlight lang="css">
+{`
 $primaryColor:#1E88E5;
-$primaryDarkColor:#1565C0;
-$primaryLightColor:#42A5F5;
-$primaryLightestColor:#E3F2FD;
 $primaryTextColor:#ffffff;
 $accentColor:#FFB300;
-$accentDarkColor: #FF8F00;
-$accentLightColor: #FFCA28;
 $accentTextColor: #212121;
 
 @import '../sass/theme/_theme';
+`}
+</AppCodeHighlight>
 
-`
-                        }
-                    </AppCodeHighlight>
+                    <p>An example sass command to compile the css would be;</p>
 
-                    <p>You may import the scss directly in your App.js if you prefer webpack to include the theme however if you'd like to do it manually, an example sass command to compile the css would be;</p>
-
-                    <pre>
-                        sass public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css
-</pre>
+<AppCodeHighlight>
+{`
+sass public/assets/theme/mytheme/theme.scss:public/assets/theme/mytheme/theme.css
+`}
+</AppCodeHighlight>
 
                     <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
                         so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
-                    <pre>
-                        sass --watch public/assets/theme/theme-myown.scss:public/assets/theme/theme-myown.css  --sourcemap=none
-</pre>
+<AppCodeHighlight>
+{`
+sass --watch public/assets:public/assets
+`}
+</AppCodeHighlight>
 
-                    <div className="card-title">TopBar</div>
+                    <p>Same can also be applied to layout itself;</p>
+                    <ul>
+                        <li>Choose a layout name such as layout-myown.</li>
+                        <li>Create an empty file named layout-myown.scss inside <i>assets/layout/css</i> folder.</li>
+                        <li>Define the variables listed below and import the <i>/sass/layout/_layout.scss</i> file.</li>
+                        <li>Build the scss to generate css</li>
+                        <li>Serve the css by importing it using a link tag or a bundler.</li>
+                    </ul>
 
+                    <p>Here are the variables required to create a layout.</p>
+
+<AppCodeHighlight>
+{`
+$primaryColor:#457fca;
+$primaryTextColor:#ffffff;
+$accentColor:#ffc107;
+$accentTextColor:#212121;
+
+@import '../../sass/layout/_layout';
+`}
+</AppCodeHighlight>
+
+
+                    <h4>TopBar</h4>
                     <p>TopBar comes in 3 sizes; large, medium and small. A specific style class with the layout-top-* prefix is defined at the main container element in order to apply a size. Below are the all 3 options;</p>
-                    <pre>
-                        {
-                            `<div className="layout-container layout-top-small">
+<AppCodeHighlight>
+{`
+<div className="layout-container layout-top-small">
 <div className="layout-container layout-top-medium">
 <div className="layout-container layout-top-large">
-`
-                        }
-                    </pre>
+`}
+</AppCodeHighlight>
 
                     <p>Similarly TopBar style theme is also defined at the main container element, template below uses the default blue topbar.</p>
-                    <pre>
-                        &lt;div className="layout-container layout-topbar-blue"&gt;
-</pre>
+<AppCodeHighlight>
+{`
+<div className="layout-container layout-topbar-blue">
+`}
+</AppCodeHighlight>
 
                     <p>Full list of topbar options are the following, note that <i>layout-topbar-</i> prefix needs to be added to apply the style such as <b>layout-topbar-midnight</b>.</p>
 
@@ -482,22 +451,23 @@ $accentTextColor: #212121;
                     <p>Creating your own topbar requires a couple of steps.</p>
                     <ul>
                         <li>Choose a topbar name such as mytopbar.</li>
-                        <li>Create an empty file named _topbar_mytopbar.scss inside public/assets/sass/layout/topbar/themes folder.</li>
+                        <li>Create an empty file named _topbar_mytopbar.scss inside <i>public/assets/sass/layout/topbar/themes</i> folder.</li>
                         <li>Add your file to the import section of the _topbar.scss in the same folder.</li>
                         <li>Define the variables listed below and import the <i>../_topbar_theme</i> file.</li>
                         <li>Build the scss to generate css</li>
-                        <li>Apply layout-topbar-mytopbar class to the main wrapper element of in app.main.component template.</li>
+                        <li>Apply layout-topbar-mytopbar class to the main container element in the App template.</li>
                     </ul>
 
-                    <pre>
-                        &lt;div class="layout-container layout-topbar-mytopbar"&gt;
-</pre>
+<AppCodeHighlight>
+{`
+<div className="layout-container layout-topbar-mytopbar">
+`}
+</AppCodeHighlight>
 
                     <p>Here are the variables required to create a gradient based topbar.</p>
 
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
+<AppCodeHighlight>
+{`
 .layout-topbar-mytopbar {
     $topbarLeftBgColor:#F1719A;
     $topbarRightBgColor:#FE9473;
@@ -527,16 +497,13 @@ $accentTextColor: #212121;
 
     @import '../_topbar_theme';
 }
-
-`
-                        }
-                    </AppCodeHighlight>
+`}
+</AppCodeHighlight>
 
                     <p>If you prefer an image for the background, use the template below.</p>
 
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
+<AppCodeHighlight lang="scss">
+{`
 .layout-topbar-mytopbar {
     $topbarBgImage:'reflection-topbar.jpg';
     $topbarSearchInputColor:#BFDEE2;
@@ -565,15 +532,16 @@ $accentTextColor: #212121;
 
     @import '../_topbar_theme';
 }
-`
-                        }
-                    </AppCodeHighlight>
+`}
+</AppCodeHighlight>
 
-                    <div className="card-title">Menu Themes</div>
+                    <h4>Menu Themes</h4>
                     <p>Menu themes apply to the vertical menu, submenus of horizontal menu and the profile menu. Menu style used across the template is defined at the main container element, template below uses the default light menus.</p>
-                    <pre>
-                        &lt;div className="layout-container layout-menu-light"&gt;
-</pre>
+<AppCodeHighlight>
+{`
+<div className="layout-container layout-menu-light">
+`}
+</AppCodeHighlight>
 
                     <p>Full list of menu themes are the following, note that <i>layout-menu-</i> prefix needs to be added to apply the style such as <b>layout-menu-dark</b>.</p>
 
@@ -672,22 +640,23 @@ $accentTextColor: #212121;
                     <p>Creating your own menu theme requires a couple of steps.</p>
                     <ul>
                         <li>Choose a menu name such as mymenu.</li>
-                        <li>Create an empty file named _menu_mymenu.scss inside public/assets/sass/layout/menu/themes folder.</li>
+                        <li>Create an empty file named _menu_mymenu.scss inside <i>public/assets/sass/layout/menu/themes</i> folder.</li>
                         <li>Add your file to the import section of the _menu.scss in the same folder.</li>
                         <li>Define the variables listed below and import the <i>../_menu_theme</i> file.</li>
                         <li>Build the scss to generate css</li>
-                        <li>Add layout-menu-mymenu to the main wrapper element of in app.main.component template.</li>
+                        <li>Add layout-menu-mymenu to the main wrapper element of in the main App template.</li>
                     </ul>
 
-                    <pre>
-                        &lt;div className="layout-container layout-menu-mymenu"&gt;
-</pre>
+<AppCodeHighlight>
+{`
+<div className="layout-container layout-menu-mymenu">
+`}
+</AppCodeHighlight>
 
-                    <p>Here are the variables required to create a gradient based topbar.</p>
+                    <p>Here are the variables required to create a gradient based menu.</p>
 
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
+<AppCodeHighlight lang="scss">
+{`
 .layout-menu-mymenu {
     $menuTopBgColor:#457fca;
     $menuBottomBgColor:#5691c8;
@@ -705,15 +674,13 @@ $accentTextColor: #212121;
 
     @import '../_menu_theme';
 }
-`
-                        }
-                    </AppCodeHighlight>
+`}
+</AppCodeHighlight>
 
-                    <p>If you prefer an image for the background, use the template below.</p>
+                <p>If you prefer an image for the background, use the template below.</p>
 
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
+<AppCodeHighlight lang="scss">
+{`
 .layout-menu-mymenu {
     $menuBgImage:'architecture-menu.jpg';
     $menuitemTextColor:#ffffff;
@@ -730,13 +697,12 @@ $accentTextColor: #212121;
 
     @import '../_menu_theme';
 }
-`
-                        }
-                    </AppCodeHighlight>
+`}
+</AppCodeHighlight>
 
-                    <div className="card-title">Menu Highlight Color</div>
+                    <h4>Menu Highlight Color</h4>
                     <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself.
-                            This color scheme is specified by the layout file such as layout-blue.scss which is still a mandatory file to be included regardless of the menu type as it defines the structure for the layout itself.</p>
+                        This color scheme is specified by the layout file such as layout-blue.scss which is still a mandatory file to be included regardless of the menu type as it defines the structure for the layout itself.</p>
 
                     <p>Full list of menu highlight themes are the following.</p>
                     <ul>
@@ -763,38 +729,35 @@ $accentTextColor: #212121;
                     <p>Creating your own menu highlight theme requires a couple of steps.</p>
                     <ul>
                         <li>Choose a layout name such as myown.</li>
-                        <li>Create an empty file named layout-myown.scss inside public/assets/layout/css folder.</li>
+                        <li>Create an empty file named layout-myown.scss inside <i>public/assets/sass/layout/css</i> folder.</li>
                         <li>Define the variables listed below and import the <i>../../sass/layout/_layout</i> file.</li>
                         <li>Build the scss to generate css</li>
                         <li>Import the layout css file in your application.</li>
                     </ul>
 
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
+<AppCodeHighlight lang="scss">
+{`
 $primaryColor:#607D8B;
 $primaryTextColor:#ffffff;
 $accentColor:#FFC107;
 $accentTextColor:#212121;
 
 @import '../../sass/layout/_layout';
-`
-                        }
-                    </AppCodeHighlight>
+`}
+</AppCodeHighlight>
 
-                    <div className="card-title">Common SASS Variables</div>
-                    <p>In case you'd like to customize the shared variables, use the variables files under sass/variables folder.</p>
+                    <h4>Common SASS Variables</h4>
+                    <p>In case you'd like to customize the shared variables, use the variables files under sass/theme and sass/layout folders.</p>
 
-                    <h3>sass/_common.scss</h3>
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
+                <h5>sass/variables/_layout.scss</h5>
+<AppCodeHighlight lang="scss">
+{`
 //general
 $fontSize:14px;
-$fontFamily:"Roboto","Helvetica Neue",sans-serif;
-$textColor:#212121;
-$textSecondaryColor:#616161;
-$borderRadius:2px;
+$fontFamily:Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+$textColor:rgba(0,0,0.87);
+$textSecondaryColor:rgba(0,0,0,.60);
+$borderRadius:4px;
 $letterSpacing:.25px;
 $transitionDuration:.2s;
 
@@ -809,15 +772,6 @@ $hoverTextColor:#000000;
 
 $dividerColor:#dbdbdb;
 $dividerLightColor:#f8f8f8;
-`
-                        }
-                    </AppCodeHighlight>
-
-                    <h3>sass/variables/_layout.scss</h3>
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
-@import './common';
 
 $bodyBgColor:#f4f4f7;
 $bodySidePadding:100px;
@@ -829,109 +783,799 @@ $maskBgColor:#252529;
 
 //horizontal menu
 $horizontalOverlaySubmenuShadow:0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-`
-                        }
-                    </AppCodeHighlight>
+`}
+</AppCodeHighlight>
 
-                    <h3>sass/variables/_theme.scss</h3>
-                    <AppCodeHighlight lang="css">
-                        {
-                            `
-@import './common';
+                    <h5>sass/variables/_theme.scss</h5>
+<div style={{ overflow: 'auto', height: '400px', marginBottom: '10px' }}>
+<AppCodeHighlight lang="scss">
+{`
+$emphasis-high:rgba(0,0,0.87);
+$emphasis-medium:rgba(0,0,0,.60);
+$emphasis-low:rgba(0,0,0,.38);
+$emphasis-lower:rgba(0,0,0,.12);
+$overlayColor:#000000;
 
-$headerPadding:.714em 1em;
-$headerTextColor:#ffffff;
-$headerFontWeight:500;
+//global
+$fontFamily:Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+$fontSize:1rem;
+$fontWeight:normal;
+$textColor:$emphasis-high;
+$textSecondaryColor:$emphasis-medium;
+$borderRadius:4px;
+$transitionDuration:.2s;
+$formElementTransition:background-color $transitionDuration, border-color $transitionDuration, color $transitionDuration, box-shadow $transitionDuration, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+$actionIconTransition:background-color $transitionDuration, color $transitionDuration, box-shadow $transitionDuration;
+$listItemTransition:none;
+$primeIconFontSize:1rem;
+$divider:1px solid rgba(0,0,0,.12);
+$inlineSpacing:.5rem;
+$disabledOpacity:.38;
+$maskBg:rgba(0, 0, 0, 0.32);
+$loadingIconFontSize:2rem;
+$errorColor:#B00020;
 
-$contentPadding:.857em 1em;
-$contentBorderColor:#d8d8d8;
-$contentBgColor:#ffffff;
+//selected state
+$highlightBg:rgba($primaryColor, .12);
+$highlightTextColor:$primaryColor;
 
-$inputBorderColor:#bdbdbd;
-$inputInvalidBorderColor:#e62a10;
-$inputBgColor:#ffffff;
-$inputErrorTextColor:#e62a10;
-$inputHeaderPadding:.714em 1em;
-$inputBorderErrorColor:#e62a10;
-$inputFieldLabelTextColor:#999999;
-$inputFieldBoxBgColor:#f7f7f7;
-$inputFieldFillBgColor:#f7f7f7;
-$inputAutoFillBorderColor:#bdbdbd;
-$textboxBgColor:#f7f7f7;
+//scale
+$scaleSM:0.875;
+$scaleLG:1.25;
 
-//inputs with lists
-$inputListPadding: .5em 0;
+//focus
+$focusOutlineColor:transparent;
+$focusOutline:0 none;
+$focusOutlineOffset:0;
+$focusShadow:none;
 
-//groups
-$inputGroupBorderColor:#bdbdbd;
-$inputGroupBgColor:transparent;
-$inputGroupTextColor:#757575;
-$inputGroupIconColor:#bdbdbd;
-$inputGroupAddonMinWidth:2*$fontSize;
+//action icons
+$actionIconWidth:2.5rem;
+$actionIconHeight:2.5rem;
+$actionIconBg:transparent;
+$actionIconBorder:0 none;
+$actionIconColor:$textSecondaryColor;
+$actionIconHoverBg:rgba(0,0,0,.04);
+$actionIconHoverBorderColor:transparent;
+$actionIconHoverColor:$textSecondaryColor;
+$actionIconBorderRadius:50%;
+
+//input field (e.g. inputtext, spinner, inputmask)
+$inputPadding:1rem 1rem;
+$inputTextFontSize:1rem;
+$inputBg:#ffffff;
+$inputTextColor:$emphasis-high;
+$inputIconColor:$emphasis-medium;
+$inputBorder:1px solid $emphasis-low;
+$inputHoverBorderColor:$emphasis-high;
+$inputFocusBorderColor:$primaryColor;
+$inputErrorBorderColor:$errorColor;
+$inputPlaceholderTextColor:$emphasis-medium;
+$inputFilledBg:#f5f5f5;
+$inputFilledHoverBg:#ececec;
+$inputFilledFocusBg:#dcdcdc;
+
+//input groups
+$inputGroupBg:$inputBg;
+$inputGroupTextColor:$emphasis-medium;
+$inputGroupAddOnMinWidth:2.357rem;
+
+//input lists (e.g. dropdown, autocomplete, multiselect, orderlist)
+$inputListBg:#ffffff;
+$inputListTextColor:$textColor;
+$inputListBorder:1px solid #e5e5e5;
+$inputListPadding:0;
+$inputListItemPadding:1rem 1rem;
+$inputListItemBg:transparent;
+$inputListItemTextColor:$textColor;
+$inputListItemHoverBg:rgba(0,0,0,.04);
+$inputListItemTextHoverColor:$textColor;
+$inputListItemBorder:0 none;
+$inputListItemBorderRadius:0;
+$inputListItemMargin:0;
+$inputListItemFocusShadow:none;
+$inputListHeaderPadding:1rem;
+$inputListHeaderMargin:0;
+$inputListHeaderBg:#ffffff;
+$inputListHeaderTextColor:$textColor;
+$inputListHeaderBorder:1px solid rgba(0,0,0,.12);
+
+//inputs with overlays (e.g. autocomplete, dropdown, multiselect)
+$inputOverlayBg:$inputListBg;
+$inputOverlayHeaderBg:$inputListHeaderBg;
+$inputOverlayBorder:0 none;
+$inputOverlayShadow:0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+
+//button
+$buttonPadding:0.714rem 1rem;
+$buttonIconOnlyWidth:3rem;
+$buttonIconOnlyPadding:0.714rem;
+$buttonBg:$primaryColor;
+$buttonTextColor:$primaryTextColor;
+$buttonBorder:0 none;
+$buttonHoverBg:rgba($primaryColor, .92);
+$buttonTextHoverColor:$primaryTextColor;
+$buttonHoverBorderColor:transparent;
+$buttonActiveBg:rgba($primaryColor, .68);
+$buttonTextActiveColor:$primaryTextColor;
+$buttonActiveBorderColor:transparent;
+$raisedButtonShadow:0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+$roundedButtonBorderRadius:2rem;
+
+$textButtonHoverBgOpacity:.04;
+$textButtonActiveBgOpacity:.16;
+$outlinedButtonBorder:1px solid;
+$plainButtonTextColor:$textSecondaryColor;
+$plainButtonHoverBgColor:rgba(0,0,0,.04);
+$plainButtonActiveBgColor:rgba(0,0,0,.16);
+
+$secondaryButtonBg:$accentColor;
+$secondaryButtonTextColor:$accentTextColor;
+$secondaryButtonBorder:0 none;
+$secondaryButtonHoverBg:rgba($accentColor, .92);
+$secondaryButtonTextHoverColor:$accentTextColor;
+$secondaryButtonHoverBorderColor:transparent;
+$secondaryButtonActiveBg:rgba($accentColor, .68);
+$secondaryButtonTextActiveColor:$accentTextColor;
+$secondaryButtonActiveBorderColor:transparent;
+$secondaryButtonFocusShadow:none;
+
+$infoButtonBg:#2196F3;
+$infoButtonTextColor:#ffffff;
+$infoButtonBorder:0 none;
+$infoButtonHoverBg:rgba(#2196F3, .92);
+$infoButtonTextHoverColor:#ffffff;
+$infoButtonHoverBorderColor:transparent;
+$infoButtonActiveBg:rgba(#2196F3, .68);
+$infoButtonTextActiveColor:#ffffff;
+$infoButtonActiveBorderColor:transparent;
+$infoButtonFocusShadow:none;
+
+$successButtonBg:#689F38;
+$successButtonTextColor:#ffffff;
+$successButtonBorder:0 none;
+$successButtonHoverBg:rgba(#689F38, .92);
+$successButtonTextHoverColor:#ffffff;
+$successButtonHoverBorderColor:transparent;
+$successButtonActiveBg:rgba(#689F38, .68);
+$successButtonTextActiveColor:#ffffff;
+$successButtonActiveBorderColor:transparent;
+$successButtonFocusShadow:none;
+
+$warningButtonBg:#FBC02D;
+$warningButtonTextColor:#212529;
+$warningButtonBorder:0 none;
+$warningButtonHoverBg:rgba(#FBC02D, .92);
+$warningButtonTextHoverColor:#212529;
+$warningButtonHoverBorderColor:transparent;
+$warningButtonActiveBg:rgba(#FBC02D, .68);
+$warningButtonTextActiveColor:#212529;
+$warningButtonActiveBorderColor:transparent;
+$warningButtonFocusShadow:none;
+
+$helpButtonBg:#9C27B0;
+$helpButtonTextColor:#ffffff;
+$helpButtonBorder:0 none;
+$helpButtonHoverBg:rgba(#9C27B0, .92);
+$helpButtonTextHoverColor:#ffffff;
+$helpButtonHoverBorderColor:transparent;
+$helpButtonActiveBg:rgba(#9C27B0, .68);
+$helpButtonTextActiveColor:#ffffff;
+$helpButtonActiveBorderColor:transparent;
+$helpButtonFocusShadow:none;
+
+$dangerButtonBg:#D32F2F;
+$dangerButtonTextColor:#ffffff;
+$dangerButtonBorder:0 none;
+$dangerButtonHoverBg:rgba(#D32F2F, .92);
+$dangerButtonTextHoverColor:#ffffff;
+$dangerButtonHoverBorderColor:transparent;
+$dangerButtonActiveBg:rgba(#D32F2F, .68);
+$dangerButtonTextActiveColor:#ffffff;
+$dangerButtonActiveBorderColor:transparent;
+$dangerButtonFocusShadow:none;
+
+$linkButtonColor:transparent;
+$linkButtonHoverColor:transparent;
+$linkButtonTextHoverDecoration:underline;
+$linkButtonFocusShadow:none;
+
+//checkbox
 $checkboxWidth:18px;
 $checkboxHeight:18px;
-$inputGroupPadding:2px 2px 1px 2px;
-$inputGroupIconFontSize: 1.5em;
+$checkboxBorder:2px solid #757575;
+$checkboxIconFontSize:14px;
+$checkboxActiveBorderColor:$primaryColor;
+$checkboxActiveBg:$primaryColor;
+$checkboxIconActiveColor:$primaryTextColor;
+$checkboxActiveHoverBg:$primaryColor;
+$checkboxIconActiveHoverColor:$primaryTextColor;
+$checkboxActiveHoverBorderColor:$primaryColor;
 
-//panels
-$accordionHeaderBgColor:#eeeeee;
+//radiobutton
+$radiobuttonWidth:20px;
+$radiobuttonHeight:20px;
+$radiobuttonBorder:2px solid #757575;
+$radiobuttonIconSize:10px;
+$radiobuttonActiveBorderColor:$primaryColor;
+$radiobuttonActiveBg:$primaryTextColor;
+$radiobuttonIconActiveColor:$primaryColor;
+$radiobuttonActiveHoverBg:$primaryTextColor;
+$radiobuttonIconActiveHoverColor:$primaryColor;
+$radiobuttonActiveHoverBorderColor:$primaryColor;
+
+//colorpicker
+$colorPickerPreviewWidth:2rem;
+$colorPickerPreviewHeight:2rem;
+$colorPickerBg:#323232;
+$colorPickerBorderColor:#191919;
+$colorPickerHandleColor:#ffffff;
+
+//togglebutton
+$toggleButtonBg:#ffffff;
+$toggleButtonBorder:1px solid rgba(0,0,0,.12);
+$toggleButtonTextColor:$textColor;
+$toggleButtonIconColor:$textSecondaryColor;
+$toggleButtonHoverBg:#f6f6f6;
+$toggleButtonHoverBorderColor:rgba(0,0,0,.12);
+$toggleButtonTextHoverColor:$textColor;
+$toggleButtonIconHoverColor:$textSecondaryColor;
+$toggleButtonActiveBg:#e0e0e1;
+$toggleButtonActiveBorderColor:#e0e0e1;
+$toggleButtonTextActiveColor:$textColor;
+$toggleButtonIconActiveColor:$textSecondaryColor;
+$toggleButtonActiveHoverBg:#d9d8d9;
+$toggleButtonActiveHoverBorderColor:#d9d8d9;
+$toggleButtonTextActiveHoverColor:$textColor;
+$toggleButtonIconActiveHoverColor:$textSecondaryColor;;
+
+//inplace
+$inplacePadding:$inputPadding;
+$inplaceHoverBg:rgba(0,0,0,.04);
+$inplaceTextHoverColor:$textColor;
+
+//rating
+$ratingIconFontSize:1.143rem;
+$ratingCancelIconColor:#B00020;
+$ratingCancelIconHoverColor:#B00020;
+$ratingStarIconOffColor:$primaryColor;
+$ratingStarIconOnColor:$primaryColor;
+$ratingStarIconHoverColor:$primaryColor;
+
+//slider
+$sliderBg:#c1c1c1;
+$sliderBorder:0 none;
+$sliderHorizontalHeight:2px;
+$sliderVerticalWidth:2px;
+$sliderHandleWidth:20px;
+$sliderHandleHeight:20px;
+$sliderHandleBg:$primaryColor;
+$sliderHandleBorder:0 none;
+$sliderHandleBorderRadius:50%;
+$sliderHandleHoverBorderColor:0 none;
+$sliderHandleHoverBg:$primaryColor;
+$sliderRangeBg:$primaryColor;
+
+//calendar
+$calendarTableMargin:.5rem 0;
+$calendarPadding:.5rem;
+$calendarBg:#ffffff;
+$calendarInlineBg:$calendarBg;
+$calendarTextColor:$textColor;
+$calendarBorder:$inputListBorder;
+$calendarOverlayBorder:$inputOverlayBorder;
+
+$calendarHeaderPadding:.5rem;
+$calendarHeaderBg:#ffffff;
+$calendarInlineHeaderBg:$calendarBg;
+$calendarHeaderBorder:$divider;
+$calendarHeaderTextColor:$textColor;
+$calendarHeaderFontWeight:500;
+$calendarHeaderCellPadding:.5rem;
+
+$calendarCellDatePadding:.5rem;
+$calendarCellDateWidth:2.5rem;
+$calendarCellDateHeight:2.5rem;
+$calendarCellDateBorderRadius:50%;
+$calendarCellDateBorder:1px solid transparent;
+$calendarCellDateHoverBg:rgba(0,0,0,.04);
+$calendarCellDateTodayBg:#ffffff;
+$calendarCellDateTodayBorderColor: rgba(0,0,0,12);
+$calendarCellDateTodayTextColor:$textColor;
+
+$calendarButtonBarPadding:1rem 0;
+$calendarTimePickerPadding:.5rem;
+$calendarTimePickerElementPadding:0 .5rem;
+$calendarTimePickerTimeFontSize:1.25rem;
+
+$calendarBreakpoint:769px;
+$calendarCellDatePaddingSM:0;
+
+//input switch
+$inputSwitchWidth:2.75rem;
+$inputSwitchHeight:1rem;
+$inputSwitchBorderRadius:.5rem;
+$inputSwitchHandleWidth:1.50rem;
+$inputSwitchHandleHeight:1.50rem;
+$inputSwitchHandleBorderRadius:50%;
+$inputSwitchSliderPadding:-1px;
+$inputSwitchSliderOffBg:rgba(0,0,0,.38);
+$inputSwitchHandleOffBg:#ffffff;
+$inputSwitchSliderOffHoverBg:rgba(0,0,0,.38);
+$inputSwitchSliderOnBg:rgba($primaryColor, .5);
+$inputSwitchSliderOnHoverBg:rgba($primaryColor, .5);
+$inputSwitchHandleOnBg:$primaryColor;
+
+//panel
+$panelHeaderBorder:1px solid #e0e0e0;
+$panelHeaderBg:#ffffff;
+$panelHeaderTextColor:$textColor;
+$panelHeaderFontWeight:500;
+$panelHeaderPadding:1rem;
+$panelToggleableHeaderPadding:.5rem 1rem;
+
+$panelHeaderHoverBg:rgba(0,0,0,.04);
+$panelHeaderHoverBorderColor:#e0e0e0;
+$panelHeaderTextHoverColor:$textColor;
+
+$panelContentBorder:1px solid #e0e0e0;
+$panelContentBg:#ffffff;
+$panelContentTextColor:$textColor;
+$panelContentPadding:1rem;
+
+$panelFooterBorder:1px solid #e0e0e0;
+$panelFooterBg:#ffffff;
+$panelFooterTextColor:$textColor;
+$panelFooterPadding:1rem 1rem;
+
+//accordion
+$accordionSpacing:0;
+$accordionHeaderBorder:0 none;
+$accordionHeaderBg:#ffffff;
 $accordionHeaderTextColor:$textColor;
-$accordionHeaderHoverBgColor:#d9d9d9;
-$accordionHeaderHoverTextColor:$textColor;
+$accordionHeaderFontWeight:400;
+$accordionHeaderPadding:1.5rem;
 
-$panelContentLineHeight:1.5;
-$panelLightHeaderBgColor:#eeeeee;
-$panelLightHeaderTextColor:$textColor;
-$panelLightHeaderIconHoverBgColor:#d9d9d9;
-$panelDarkHeaderBgColor:#212121;
-$panelDarkHeaderTextColor:#ffffff;
-$panelDarkHeaderIconHoverBgColor:#424242;
+$accordionHeaderHoverBg:#f6f6f6;
+$accordionHeaderHoverBorderColor:transparent;
+$accordionHeaderTextHoverColor:$textColor;
 
-$buttonTextColor:#ffffff;
+$accordionHeaderActiveBg:#ffffff;
+$accordionHeaderActiveBorderColor:transparent;
+$accordionHeaderTextActiveColor:$textColor;
 
-$listItemPadding:.571em .857em;
+$accordionHeaderActiveHoverBg:#ffffff;
+$accordionHeaderActiveHoverBorderColor:transparent;
+$accordionHeaderTextActiveHoverColor:$textColor;
 
-$radioButtonBorderColor:#757575;
-$checkboxBorderColor:#757575;
+$accordionContentBorder:0 none;
+$accordionContentBg:#ffffff;
+$accordionContentTextColor:$textColor;
+$accordionContentPadding:1rem 1.5rem;
 
-$errorMessageFontSize:11px;
-$errorMessageIconFontSize:13px;
+//tabview
+$tabviewNavBorder:solid rgba(0,0,0,.12);
+$tabviewNavBorderWidth:0 0 1px 0;
+$tabviewNavBg:#ffffff;
 
-//data
-$dataTableHeaderPadding:.857em;
-$dataTableCellPadding:.714em .857em;
-$dataTableRowBgColorEven:#f4f4f4;
-$paginatorPadding:.714em 1em;
+$tabviewHeaderSpacing:0;
+$tabviewHeaderBorder:none;
+$tabviewHeaderBorderWidth:0 0 0 0;
+$tabviewHeaderBorderColor:transparent transparent transparent transparent;
+$tabviewHeaderBg:#ffffff;
+$tabviewHeaderTextColor:$textSecondaryColor;
+$tabviewHeaderFontWeight:500;
+$tabviewHeaderPadding:1rem 1.5rem;
+$tabviewHeaderMargin:0 0 0 0;
 
-//menus
-$menuitemPadding:.571em .857em;
-$menuListPadding: .5em 0;
+$tabviewHeaderHoverBg:rgba($primaryColor,.04);
+$tabviewHeaderHoverBorderColor:transparent;
+$tabviewHeaderTextHoverColor:$textSecondaryColor;
+
+$tabviewHeaderActiveBg:#ffffff;
+$tabviewHeaderActiveBorderColor:transparent;
+$tabviewHeaderTextActiveColor:$primaryColor;
+
+$tabviewContentBorder:0 none;
+$tabviewContentBg:#ffffff;
+$tabviewContentTextColor:$textColor;
+$tabviewContentPadding:$panelContentPadding;
+
+//upload
+$fileUploadProgressBarHeight:4px;
+$fileUploadContentPadding:2rem 1rem;
+
+//scrollpanel
+$scrollPanelTrackBorder:0 none;
+$scrollPanelTrackBg:rgba(0,0,0,.12);
+
+//card
+$cardBodyPadding:1rem;
+$cardTitleFontSize:1.5rem;
+$cardTitleFontWeight:700;
+$cardSubTitleFontWeight:400;
+$cardSubTitleColor:$textSecondaryColor;
+$cardContentPadding:1rem 0;
+$cardFooterPadding:1rem 0 0 0;
+$cardShadow:0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+
+//editor
+$editorToolbarBg:$panelHeaderBg;
+$editorToolbarBorder:$panelHeaderBorder;
+$editorToolbarPadding:$panelHeaderPadding;
+$editorToolbarIconColor:$textSecondaryColor;
+$editorToolbarIconHoverColor:$textColor;
+$editorIconActiveColor:$primaryColor;
+$editorContentBorder:$panelContentBorder;
+$editorContentBg:$panelContentBg;
+
+//paginator
+$paginatorBg:#ffffff;
+$paginatorTextColor:$textColor;
+$paginatorBorder:solid #e4e4e4;
+$paginatorBorderWidth:0;
+$paginatorPadding:.5rem 1rem;
+$paginatorElementWidth:$buttonIconOnlyWidth;
+$paginatorElementHeight:$buttonIconOnlyWidth;
+$paginatorElementBg:transparent;
+$paginatorElementBorder:0 none;
+$paginatorElementIconColor:$textSecondaryColor;
+$paginatorElementHoverBg:rgba(0,0,0,.04);
+$paginatorElementHoverBorderColor:transparent;
+$paginatorElementIconHoverColor:$textSecondaryColor;
+$paginatorElementBorderRadius:50%;
+$paginatorElementMargin:.143rem;
+$paginatorElementPadding:0;
+
+//table
+$tableHeaderBorder:1px solid #e4e4e4;
+$tableHeaderBorderWidth:0 0 1px 0;
+$tableHeaderBg:#ffffff;
+$tableHeaderTextColor:$textColor;
+$tableHeaderFontWeight:500;
+$tableHeaderPadding:1rem 1rem;
+
+$tableHeaderCellPadding:1rem 1rem;
+$tableHeaderCellBg:#ffffff;
+$tableHeaderCellTextColor:$textColor;
+$tableHeaderCellFontWeight:500;
+$tableHeaderCellBorder:1px solid #e4e4e4;
+$tableHeaderCellBorderWidth:0 0 1px 0;
+$tableHeaderCellHoverBg:rgba(0,0,0,.04);
+$tableHeaderCellTextHoverColor:$textColor;
+$tableHeaderCellIconColor:$textSecondaryColor;
+$tableHeaderCellIconHoverColor:$textSecondaryColor;
+$tableHeaderCellHighlightBg:#ffffff;
+$tableHeaderCellHighlightTextColor:$textColor;
+$tableHeaderCellHighlightHoverBg:rgba(0,0,0,.04);
+$tableHeaderCellHighlightTextHoverColor:$textColor;
+$tableSortableColumnBadgeSize:1.143rem;
+
+$tableBodyRowBg:#ffffff;
+$tableBodyRowTextColor:$textColor;
+$tableBodyRowEvenBg:rgba(0,0,0,.02);
+$tableBodyRowHoverBg:rgba(0,0,0,.04);
+$tableBodyRowTextHoverColor:$textColor;
+$tableBodyCellBorder:1px solid #e4e4e4;
+$tableBodyCellBorderWidth:0 0 1px 0;
+$tableBodyCellPadding:1rem 1rem;
+
+$tableFooterCellPadding:1rem 1rem;
+$tableFooterCellBg:#ffffff;
+$tableFooterCellTextColor:$textColor;
+$tableFooterCellFontWeight:500;
+$tableFooterCellBorder:1px solid #e4e4e4;
+$tableFooterCellBorderWidth:0 0 1px 0;
+$tableResizerHelperBg:$primaryColor;
+
+$tableFooterBorder:1px solid #e4e4e4;
+$tableFooterBorderWidth:0 0 1px 0;
+$tableFooterBg:#ffffff;
+$tableFooterTextColor:$textColor;
+$tableFooterFontWeight:500;
+$tableFooterPadding:1rem 1rem;
+
+$tableCellContentAlignment:left;
+$tableTopPaginatorBorderWidth:0 0 1px 0;
+$tableBottomPaginatorBorderWidth:0 0 1px 0;
+
+$tableScaleSM:0.5;
+$tableScaleLG:1.25;
+
+//dataview
+$dataViewContentPadding:1rem 0;
+$dataViewContentBorder:0 none;
+$dataViewListItemBorder:solid rgba(0,0,0,.12);
+$dataViewListItemBorderWidth:0 0 1px 0;
+
+//orderlist, picklist
+$orderListBreakpoint:769px;
+$pickListBreakpoint:769px;
+
+//schedule
+$fullCalendarEventBg:$highlightBg;
+$fullCalendarEventBorder:1px solid $highlightBg;
+$fullCalendarEventTextColor:$highlightTextColor;
+
+//tree
+$treeNodePadding:.25rem;
+$treeNodeContentPadding:.75rem;
+$treeNodeChildrenPadding:0 0 0 1rem;
+$treeNodeIconColor:$textSecondaryColor;
+
+//timeline
+$timelineVerticalEventContentPadding:0 1rem !default;
+$timelineHorizontalEventContentPadding:1rem 0 !default;
+$timelineEventMarkerWidth:1rem !default;
+$timelineEventMarkerHeight:1rem !default;
+$timelineEventMarkerBorderRadius:50% !default;
+$timelineEventMarkerBorder:0 none !default;
+$timelineEventMarkerBackground:#bdbdbd !default;
+$timelineEventConnectorSize:2px !default;
+$timelineEventColor:#bdbdbd !default;
+
+//org chart
+$organizationChartConnectorColor:rgba(0,0,0,.12);
+
+//message
+$messageMargin:1rem 0;
+$messagePadding: 1.25rem 1.5rem;
+$messageBorderWidth:0 0 0 0;
+$messageIconFontSize:1.5rem;
+$messageTextFontSize:1rem;
+$messageTextFontWeight:500;
+
+//inline message
+$inlineMessagePadding:$inputPadding;
+$inlineMessageMargin:0;
+$inlineMessageIconFontSize:1rem;
+$inlineMessageTextFontSize:1rem;
+$inlineMessageBorderWidth:1px;
+
+//toast
+$toastIconFontSize:2rem;
+$toastMessageTextMargin:0 0 0 1rem;
+$toastMargin:0 0 1rem 0;
+$toastPadding:1.5rem;
+$toastBorderWidth:0 0 0 0;
+$toastShadow:0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+$toastOpacity:.9;
+$toastTitleFontWeight:700;
+$toastDetailMargin:$inlineSpacing 0 0 0;
+
+//severities
+$infoMessageBg:#B3E5FC;
+$infoMessageBorder:solid transparent;
+$infoMessageTextColor:#01579B;
+$infoMessageIconColor:#01579B;
+$successMessageBg:#C8E6C9;
+$successMessageBorder:solid transparent;
+$successMessageTextColor:#1B5E20;
+$successMessageIconColor:#1B5E20;
+$warningMessageBg:#FFECB3;
+$warningMessageBorder:solid transparent;
+$warningMessageTextColor:#7f6003;
+$warningMessageIconColor:#7f6003;
+$errorMessageBg:#FFCDD2;
+$errorMessageBorder:solid transparent;
+$errorMessageTextColor:#B71C1C;
+$errorMessageIconColor:#B71C1C;
+
+//overlays
+$overlayContentBorder:0 none;
+$overlayContentBg:$panelContentBg;
+$overlayContainerShadow:0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+
+//dialog
+$dialogHeaderBg:#ffffff;
+$dialogHeaderBorder:0 none;
+$dialogHeaderTextColor:$textColor;
+$dialogHeaderFontWeight:500;
+$dialogHeaderFontSize:1.25rem;
+$dialogHeaderPadding:1.5rem;
+$dialogContentPadding: 0 1.5rem 1.5rem 1.5rem;
+$dialogFooterBorder:0 none;
+$dialogFooterPadding:1rem 1.5rem;
+
+//confirmpopup
+$confirmPopupContentPadding:1.5rem;
+$confirmPopupFooterPadding:0 1.5rem 1rem 1.5rem;
+
+//tooltip
+$tooltipBg:rgba(97,97,97,.9);
+$tooltipTextColor:#ffffff;
+$tooltipPadding:.5rem;
+
+//steps
+$stepsItemBg:transparent;
+$stepsItemBorder:1px solid transparent;
+$stepsItemTextColor:$textColor;
+$stepsItemNumberWidth:2rem;
+$stepsItemNumberHeight:2rem;
+$stepsItemNumberFontSize:1.143rem;
+$stepsItemNumberColor:$textColor;
+$stepsItemNumberBorderRadius:50%;
+$stepsItemActiveFontWeight:500;
+
+//progressbar
+$progressBarHeight:4px;
+$progressBarBorder:0 none;
+$progressBarBg:rgba($primaryColor, .32);
+$progressBarValueBg:$primaryColor;
+
+//menu (e.g. menu, menubar, tieredmenu)
+$menuWidth:12.5rem;
+$menuBg:#ffffff;
+$menuBorder:1px solid #e5e5e5;
+$menuTextColor:$textColor;
+$menuitemPadding:1rem 1rem;
+$menuitemBorderRadius:0;
+$menuitemTextColor:$textColor;
+$menuitemIconColor:$textSecondaryColor;
+$menuitemTextHoverColor:$textColor;
+$menuitemIconHoverColor:$textSecondaryColor;
+$menuitemHoverBg:rgba(0,0,0,.04);
+$menuitemTextActiveColor:$textColor;
+$menuitemIconActiveColor:$textSecondaryColor;
+$menuitemActiveBg:rgba(0,0,0,.04);
+$menuitemSubmenuIconFontSize:.875rem;
+$submenuHeaderMargin:0;
+$submenuHeaderPadding:1rem;
+$submenuHeaderBg:#ffffff;
+$submenuHeaderTextColor:$textSecondaryColor;
+$submenuHeaderBorderRadius:0;
+$submenuHeaderFontWeight:400;
+$overlayMenuBg:$menuBg;
+$overlayMenuBorder:0 none;
+$overlayMenuShadow:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+$verticalMenuPadding:.5rem 0;
+$menuSeparatorMargin:.5rem 0;
+
+$breadcrumbPadding:1rem;
+$breadcrumbBg:#ffffff;
+$breadcrumbBorder:1px solid #e5e5e5;
+$breadcrumbItemTextColor:$textColor;
+$breadcrumbItemIconColor:$textSecondaryColor;
+$breadcrumbLastItemTextColor:$textColor;
+$breadcrumbLastItemIconColor:$textSecondaryColor;
+$breadcrumbSeparatorColor:$textSecondaryColor;
+
+$horizontalMenuPadding:1rem;
+$horizontalMenuBg:transparent;
+$horizontalMenuBorder:1px solid #e5e5e5;
+$horizontalMenuTextColor:$textColor;
+$horizontalMenuRootMenuitemPadding:1rem;
+$horizontalMenuRootMenuitemBorderRadius:$borderRadius;
+$horizontalMenuRootMenuitemTextColor:$textColor;
+$horizontalMenuRootMenuitemIconColor:$textSecondaryColor;
+$horizontalMenuRootMenuitemTextHoverColor:$textColor;
+$horizontalMenuRootMenuitemIconHoverColor:$textSecondaryColor;
+$horizontalMenuRootMenuitemHoverBg:rgba(0,0,0,.04);
+$horizontalMenuRootMenuitemTextActiveColor:$textColor;
+$horizontalMenuRootMenuitemIconActiveColor:$textSecondaryColor;
+$horizontalMenuRootMenuitemActiveBg:rgba(0,0,0,.04);
+
+//badge and tag
+$badgeBg:$primaryColor;
+$badgeTextColor:$primaryTextColor;
+$badgeMinWidth:1.5rem;
+$badgeHeight:1.5rem;
+$badgeFontWeight:700;
+$badgeFontSize:.75rem;
+
+$tagPadding:.25rem .4rem;
+
+//carousel
+$carouselIndicatorsPadding:1rem;
+$carouselIndicatorBg:#dcdcdc;
+$carouselIndicatorHoverBg:#ececec;
+$carouselIndicatorBorderRadius:0;
+$carouselIndicatorWidth:2rem;
+$carouselIndicatorHeight:.5rem;
+
+//galleria
+$galleriaMaskBg:rgba(0,0,0,0.9);
+$galleriaCloseIconMargin:.5rem;
+$galleriaCloseIconFontSize:2rem;
+$galleriaCloseIconBg:transparent;
+$galleriaCloseIconColor:rgba(255,255,255,.87);
+$galleriaCloseIconHoverBg:rgba(255,255,255,0.1);
+$galleriaCloseIconHoverColor:rgba(255,255,255,.87);
+$galleriaCloseIconWidth:4rem;
+$galleriaCloseIconHeight:4rem;
+$galleriaCloseIconBorderRadius:50%;
+
+$galleriaItemNavigatorBg:transparent;
+$galleriaItemNavigatorColor:#f6f6f6;
+$galleriaItemNavigatorMargin:0 .5rem;
+$galleriaItemNavigatorFontSize:2rem;
+$galleriaItemNavigatorHoverBg:rgba(255,255,255,0.1);
+$galleriaItemNavigatorHoverColor:rgba(255,255,255,.87);
+$galleriaItemNavigatorWidth:4rem;
+$galleriaItemNavigatorHeight:4rem;
+$galleriaItemNavigatorBorderRadius:50%;
+
+$galleriaCaptionBg:rgba(0,0,0,.5);
+$galleriaCaptionTextColor:rgba(255,255,255,.87);
+$galleriaCaptionPadding:1rem;
+
+$galleriaIndicatorsPadding:1rem;
+$galleriaIndicatorBg:#dcdcdc;
+$galleriaIndicatorHoverBg:#ececec;
+$galleriaIndicatorBorderRadius:50%;
+$galleriaIndicatorWidth:1.25rem;
+$galleriaIndicatorHeight:1.25rem;
+$galleriaIndicatorsBgOnItem:rgba(0,0,0,.5);
+$galleriaIndicatorBgOnItem:rgba(255,255,255,.4);
+$galleriaIndicatorHoverBgOnItem:rgba(255,255,255,.6);
+
+$galleriaThumbnailContainerBg:rgba(0,0,0,.9);
+$galleriaThumbnailContainerPadding:1rem .25rem;
+$galleriaThumbnailNavigatorBg:transparent;
+$galleriaThumbnailNavigatorColor:rgba(255,255,255,.87);
+$galleriaThumbnailNavigatorHoverBg:rgba(255,255,255,0.1);
+$galleriaThumbnailNavigatorHoverColor:rgba(255,255,255,.87);
+$galleriaThumbnailNavigatorBorderRadius:50%;
+$galleriaThumbnailNavigatorWidth:2rem;
+$galleriaThumbnailNavigatorHeight:2rem;
+
+//divider
+$dividerHorizontalMargin:1.25rem 0;
+$dividerHorizontalPadding:0 1.25rem;
+$dividerVerticalMargin:0 1.25rem;
+$dividerVerticalPadding:1.25rem 0;
+$dividerSize:1px;
+$dividerColor:rgba(0,0,0,.12);
+
+//avatar
+$avatarBg:rgba(0,0,0,.12);
+$avatarColor:$textColor;
+
+//scrollTop
+$scrollTopBg:$accentColor;
+$scrollTopHoverBg:rgba($accentColor, .92);
+$scrollTopWidth:3rem;
+$scrollTopHeight:3rem;
+$scrollTopBorderRadius:50%;
+$scrollTopFontSize:1.5rem;
+$scrollTopTextColor:$accentTextColor;
+
+//skeleton
+$skeletonBg:rgba(0,0,0,.08);
+$skeletonAnimationBg:rgba(255,255,255,0.4);
+
+:root {
+--surface-a:#ffffff;
+--surface-b:#fafafa;
+--surface-c:rgba(0,0,0,.04);
+--surface-d:rgba(0,0,0,.12);
+--surface-e:#ffffff;
+--surface-f:#ffffff;
+--text-color:#{$textColor};
+--text-color-secondary:#{textSecondaryColor};
+--primary-color:#{$primaryColor};
+--primary-color-text:#{$primaryTextColor};
+--font-family:#{$fontFamily};
 }
-`
-                        }
-                    </AppCodeHighlight>
+`}
+</AppCodeHighlight>
+</div>
 
-                    <div className="card-title">Menu Modes</div>
+                    <h4>Menu Modes</h4>
                     <p>Menu has 2 modes; horizontal and overlay. Layout container element in App.js is used to define which mode to use by adding specific classes. List
-                        below indicates the style classes for each mode.</p>
+                    below indicates the style classes for each mode.</p>
 
                     <ul>
-                        <li>Horizontal: <b>"layout-container layout-menu-horizontal"</b></li>
-                        <li>Overlay: <b>"layout-container"</b></li>
+                        <li>Horizontal: "layout-container layout-menu-horizontal"</li>
+                        <li>Overlay: "layout-container"</li>
                     </ul>
 
-                    <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes.
-                            Sample application has an example implementation of such use case. Refer to App.js for an example..</p>
+                    <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
+                    application has an example implementation of such use case. Refer to App.js for an example.</p>
 
-                    <p>Result will be reflected at application breadcrumb component such as "Home Icon" -> "Admin" -> "Control Panel".</p>
-
-                    <div className="card-title">PrimeFlex Grid Syste</div>
-                    <p>Sapphire uses PrimeFlex Grid System throughout the samples, although any Grid library can be used we suggest using PrimeFlex as your grid system as it is well tested and supported by PrimeReact.
-                            PrimeFlex is available at npm and defined at package.json of Ultima so that it gets installed by default.</p>
-
-                    <div className="card-title">Customizing Styles</div>
+                    <h4>Customizing Styles</h4>
                     <p>It is suggested to add your customizations in the following sass files under the overrides folder instead of adding them to the
-                            scss files under sass folder to avoid maintenance issues after an update.</p>
+                        scss files under sass folder to avoid maintenance issues after an update.</p>
 
                     <ul>
                         <li><b>_layout_variables</b>: Variables of the layout.</li>
@@ -940,29 +1584,8 @@ $menuListPadding: .5em 0;
                         <li><b>_theme_styles</b>: Styles for the theme.</li>
                     </ul>
 
-                    <div className="card-title">Migration Guide</div>
-                    <p>4.0.0 to 4.0.1</p>
-                    <ul>
-                        <li>Update App.js</li>
-                        <li>Update layout css files</li>
-                        <li>Update theme css files</li>
-                    </ul>
-
-                    <p>1.0.1 to 4.0.0</p>
-                    <ul>
-                        <li>Update index.jx</li>
-                        <li>Update App.js</li>
-                        <li>Update AppMenu.js</li>
-                        <li>Update layout css files</li>
-                        <li>Update theme css files</li>
-                    </ul>
-
-                    <p>1.0.0 to 1.0.1</p>
-                    <ul>
-                        <li>Update layout css files</li>
-                        <li>Update theme css files</li>
-                    </ul>
-
+                    <h4>Migration Guide</h4>
+                    <p>Every change is included in <b>CHANGELOG.md</b> file at the root folder of the distribution along with the instructions to update.</p>
                 </div>
             </div>
         </div>
