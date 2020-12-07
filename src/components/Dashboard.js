@@ -589,7 +589,7 @@ export const Dashboard = () => {
                                 <span>&#8451;</span><img src="assets/layout/images/dashboard/asset-weathericon-2.svg" alt="sapphire" />
 							</div>
 							<div className="p-col-6">Tuesday</div>
-							<div className="p-col-6 weather-degree-col">--7
+							<div className="p-col-6 weather-degree-col">-7
                                 <span>&#8451;</span><img src="assets/layout/images/dashboard/asset-weathericon-3.svg" alt="sapphire" />
 							</div>
 							<div className="p-col-6">Wednesday</div>
