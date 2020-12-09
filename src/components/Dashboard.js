@@ -110,8 +110,7 @@ export const Dashboard = () => {
 
 	const formatCurrency = (value) => {
 		return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-	};
-
+    };
 
 	const onTaskChange = (e) => {
 		let selectedTasks = [...tasks];
@@ -120,7 +119,25 @@ export const Dashboard = () => {
 		else
 			selectedTasks.splice(selectedTasks.indexOf(e.value), 1);
 		setTasks(selectedTasks)
-	}
+    }
+
+    const bodyTemplate = (data, props) => {
+        return (
+            <>
+                <span className="p-column-title">{props.header}</span>
+                {data[props.field]}
+            </>
+        );
+    };
+
+    const priceBodyTemplate = (data) => {
+        return (
+            <>
+                <span className="p-column-title">Price</span>
+                {formatCurrency(data.price)}
+            </>
+        );
+    };
 
 	return (
 		<div className="dashboard">
@@ -611,12 +628,12 @@ export const Dashboard = () => {
 
 				<div className="p-col-12 p-lg-8">
 					<div className="inventory card">
-						<DataTable value={products} style={{ marginBottom: '20px' }} responsive={true} paginator={true} rows={5}
+						<DataTable value={products} style={{ marginBottom: '20px' }} className="p-datatable-orders" responsive={true} paginator={true} rows={5}
 							selection={selectedProduct} onSelectionChange={(e) => setSelectedProduct(e.value)}>
 							<Column header="Logo" body={logoTemplate} />
-							<Column field="name" header="Name" sortable />
-							<Column field="category" header="Category" sortable />
-							<Column field="price" header="Price" sortable body={(data) => formatCurrency(data.price)} />
+							<Column field="name" header="Name" sortable body={bodyTemplate} />
+							<Column field="category" header="Category" sortable body={bodyTemplate} />
+							<Column field="price" header="Price" sortable body={priceBodyTemplate} />
 							<Column header="View" body={actionTemplate} />
 						</DataTable>
 					</div>
