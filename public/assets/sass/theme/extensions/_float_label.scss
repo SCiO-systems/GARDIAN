@@ -23,14 +23,7 @@
 .p-input-filled {
     .p-float-label {
         .p-inputtext {
-            @if (nth($inputPadding, 1) == 1rem) {
-                padding-top: 1.5rem;
-                padding-bottom: .5rem;
-            }
-            @else if (nth($inputPadding, 1) == .75rem) {
-                padding-top: 1.25rem;
-                padding-bottom: .25rem;
-            }
+            @include filled-input-float-label();
         }
     
         input:focus ~ label,

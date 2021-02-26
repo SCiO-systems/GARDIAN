@@ -39,4 +39,16 @@
             }
         }
     }
+
+    .p-chips.p-invalid {
+        .p-chips-multiple-container {
+            @include invalid-filled-input-wrapper();
+        }
+    }
+}
+
+.p-chips.p-invalid .p-chips-multiple-container {
+    &:not(.p-disabled).p-focus {
+        box-shadow: inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor;
+    }
 }

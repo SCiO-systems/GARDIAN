@@ -11,6 +11,7 @@ import { Dashboard } from './components/Dashboard';
 import { FormLayoutDemo } from './components/FormLayoutDemo';
 import { InputDemo } from './components/InputDemo';
 import { FloatLabelDemo } from './components/FloatLabelDemo';
+import { InvalidStateDemo } from './components/InvalidStateDemo';
 import { ButtonDemo } from './components/ButtonDemo';
 import { TableDemo } from './components/TableDemo';
 import { ListDemo } from './components/ListDemo';
@@ -32,14 +33,15 @@ import { ElevationDemo } from './utilities/ElevationDemo';
 import { TextDemo } from './utilities/TextDemo';
 import { TypographyDemo } from './utilities/TypographyDemo';
 import { DisplayDemo } from './utilities/DisplayDemo';
-import { FlexBoxDemo } from './utilities/FlexBoxDemo';
+import { FlexBoxDemo } from './utilities/FlexboxDemo';
 import { CrudDemo } from './pages/CrudDemo';
+import { TimelineDemo } from './pages/TimelineDemo';
 import { CalendarDemo } from './pages/CalendarDemo';
 import { Invoice } from './pages/Invoice';
 import { Help } from './pages/Help';
 import { EmptyPage } from './pages/EmptyPage';
 
-import PrimeReact from 'primereact/utils';
+import PrimeReact from 'primereact/api';
 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -71,7 +73,8 @@ const App = () => {
                 { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
                 { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
                 { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/floatlabel' },
-                { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
+				{ label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/invalidstate' },
+				{ label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
                 { label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
                 { label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
                 { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree' },
@@ -94,6 +97,7 @@ const App = () => {
                         { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
                         { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
                         { label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel" },
+                        { label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/invalidstate' },
                         { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon' },
                         { label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
                         { label: 'List', icon: 'pi pi-fw pi-list', to: '/list' },
@@ -148,7 +152,8 @@ const App = () => {
             label: 'Pages', icon: 'pi pi-fw pi-clone',
             items: [
                 { label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud' },
-                { label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
+				{ label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
+				{ label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline' },
                 { label: 'Landing', icon: 'pi pi-fw pi-user-plus', url: 'assets/pages/landing.html', target: '_blank' },
                 { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
                 { label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice' },
@@ -212,7 +217,8 @@ const App = () => {
         { path: '/', component: Dashboard, exact: true },
         { path: '/formlayout', component: FormLayoutDemo },
         { path: '/input', component: InputDemo },
-        { path: '/floatlabel', component: FloatLabelDemo },
+		{ path: '/floatlabel', component: FloatLabelDemo },
+		{ path: '/invalidstate', component: InvalidStateDemo },
         { path: '/button', component: ButtonDemo },
         { path: '/table', component: TableDemo },
         { path: '/list', component: ListDemo },
@@ -234,7 +240,8 @@ const App = () => {
         { path: '/display', component: DisplayDemo },
         { path: '/flexbox', component: FlexBoxDemo },
         { path: '/text', component: TextDemo },
-        { path: '/crud', component: CrudDemo },
+		{ path: '/crud', component: CrudDemo },
+		{ path: '/timeline', component: TimelineDemo },
         { path: '/calendar', component: CalendarDemo },
         { path: '/invoice', component: Invoice },
         { path: '/help', component: Help },

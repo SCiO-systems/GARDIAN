@@ -189,8 +189,8 @@ $dangerButtonTextActiveColor:#ffffff;
 $dangerButtonActiveBorderColor:transparent;
 $dangerButtonFocusShadow:none;
 
-$linkButtonColor:transparent;
-$linkButtonHoverColor:transparent;
+$linkButtonColor:$primaryColor;
+$linkButtonHoverColor:$primaryColor;
 $linkButtonTextHoverDecoration:underline;
 $linkButtonFocusShadow:none;
 
@@ -745,6 +745,11 @@ $dividerColor:rgba(0,0,0,.12);
 $avatarBg:rgba(0,0,0,.12);
 $avatarColor:$textColor;
 
+//chip
+$chipBg:rgba(0,0,0,.12);
+$chipTextColor:$textColor;
+$chipBorderRadius: 16px;
+
 //scrollTop
 $scrollTopBg:$accentColor;
 $scrollTopHoverBg:rgba($accentColor, .92);
@@ -757,6 +762,10 @@ $scrollTopTextColor:$accentTextColor;
 //skeleton
 $skeletonBg:rgba(0,0,0,.08);
 $skeletonAnimationBg:rgba(255,255,255,0.4);
+
+//splitter
+$splitterGutterBg:rgba(0,0,0,.04);
+$splitterGutterHandleBg:rgba(0,0,0,.12);
 
 :root {
 	--surface-a:#ffffff;
