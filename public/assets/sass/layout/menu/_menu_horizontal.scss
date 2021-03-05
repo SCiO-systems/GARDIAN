@@ -39,7 +39,6 @@
                     border-top: 4px solid transparent;
                     border-bottom: 4px solid transparent;
                     @include border-radius(0);
-                    @include transition(border-bottom-color $transitionDuration);
 
                     .menuitem-text {
                         margin: 0 .5em;

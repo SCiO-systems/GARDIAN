@@ -42,7 +42,7 @@ const AppTopbar = (props) => {
 					</button>
 					<ul className={topbarMenuClassName} onClick={props.onTopbarUserMenuClick}>
 						<li className="layout-profile-menu-search">
-							<span className="p-float-label">
+							<span className="md-inputfield">
 								<InputText type="text" />
 								<label>Search</label>
 							</span>

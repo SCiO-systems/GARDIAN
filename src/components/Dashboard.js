@@ -503,7 +503,7 @@ export const Dashboard = () => {
 									</div>
 
 									<p>Earum porro tenetur consequuntur veritatis eos vel natus quisquam.</p>
-									<button type="button" className="p-link">READ MORE</button>
+									<Button label="READ MORE" className="p-button-link"></Button>
 								</div>
 							</div>
 						</div>

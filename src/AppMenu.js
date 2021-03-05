@@ -73,7 +73,7 @@ const AppSubmenu = (props) => {
             return <button type="button" {...commonLinkProps}>{content}</button>
         }
 
-        return <NavLink to={item.to} exact activeClassName="route-link-active" {...commonLinkProps}>{content}</NavLink>;
+        return <NavLink to={item.to} exact activeClassName="router-link-active" {...commonLinkProps}>{content}</NavLink>;
     };
 
     const isMenuActive = (item, i) => {

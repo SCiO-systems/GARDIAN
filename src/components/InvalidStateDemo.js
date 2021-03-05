@@ -56,7 +56,7 @@ export const InvalidStateDemo = () => {
         <div className="p-grid p-nogutter">
             <div className="card" style={{ width: '100%' }}>
                 <h5>Invalid State</h5>
-                <p>All form components have an invalid state style to display the validation errors when p-invalid is applied by React.</p>
+                <p>All form components have an invalid state style to display the validation errors.</p>
                 <div className="p-fluid p-grid">
                     <div className="p-col-12 p-md-6">
                         <div className="p-field">

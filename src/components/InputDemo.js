@@ -148,7 +148,7 @@ export const InputDemo = () => {
                             <InputText type="text" placeholder="Disabled" disabled></InputText>
                         </div>
                         <div className="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
-                            <InputText type="text" placeholder="Invalid" className="p-error" />
+                            <InputText type="text" placeholder="Invalid" className="p-invalid" />
                         </div>
                     </div>
 
