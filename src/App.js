@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { Route } from 'react-router-dom';
 
@@ -290,25 +290,22 @@ const App = () => {
         event.preventDefault();
     };
 
-    const blockBodyScroll = useCallback(() => {
-        let className = `blocked-scroll${horizontal ? '-horizontal-menu' : ''}`;
+    const blockBodyScroll = () => {
         if (document.body.classList) {
-            document.body.classList.add(className);
+            document.body.classList.add('blocked-scroll');
+        } else {
+            document.body.className += ' blocked-scroll';
         }
-        else {
-            document.body.className += ` ${className}`;
-        }
-    }, [horizontal]);
+    }
 
-    const unblockBodyScroll = useCallback(() => {
-        let className = `blocked-scroll${horizontal ? '-horizontal-menu' : ''}`;
+    const unblockBodyScroll = () => {
         if (document.body.classList) {
-            document.body.classList.remove(className);
+            document.body.classList.remove('blocked-scroll');
         } else {
             document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
-                `${className}`.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+                'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         }
-    }, [horizontal]);
+    }
 
     const onTopbarUserMenuButtonClick = (event) => {
         userMenuClick = true;
@@ -390,7 +387,7 @@ const App = () => {
         else {
             unblockBodyScroll();
         }
-    }, [menuActive, blockBodyScroll, unblockBodyScroll]);
+    }, [menuActive]);
 
     const layoutContainerClassName = classNames('layout-container', {
         'layout-menu-horizontal': horizontal,
