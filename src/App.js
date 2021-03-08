@@ -215,39 +215,39 @@ const App = () => {
     ];
 
     const routers = [
-        { path: '/', component: Dashboard, exact: true },
-        { path: '/formlayout', component: FormLayoutDemo },
-        { path: '/input', component: InputDemo },
-		{ path: '/floatlabel', component: FloatLabelDemo },
-		{ path: '/invalidstate', component: InvalidStateDemo },
-        { path: '/button', component: ButtonDemo },
-        { path: '/table', component: TableDemo },
-        { path: '/list', component: ListDemo },
-        { path: '/tree', component: TreeDemo },
-        { path: '/panel', component: PanelDemo },
-        { path: '/overlay', component: OverlayDemo },
-        { path: '/media', component: MediaDemo },
-        { path: '/menu', component: MenuDemo },
-        { path: '/messages', component: MessagesDemo },
-        { path: '/file', component: FileDemo },
-        { path: '/chart', component: ChartDemo },
-        { path: '/misc', component: MiscDemo },
-        { path: '/icons', component: IconsDemo },
-        { path: '/widgets', component: Widgets },
-        { path: '/grid', component: GridDemo },
-        { path: '/spacing', component: SpacingDemo },
-        { path: '/elevation', component: ElevationDemo },
-        { path: '/typography', component: TypographyDemo },
-        { path: '/display', component: DisplayDemo },
-        { path: '/flexbox', component: FlexBoxDemo },
-        { path: '/text', component: TextDemo },
-		{ path: '/crud', component: CrudDemo },
-		{ path: '/timeline', component: TimelineDemo },
-        { path: '/calendar', component: CalendarDemo },
-        { path: '/invoice', component: Invoice },
-        { path: '/help', component: Help },
-        { path: '/empty', component: EmptyPage },
-        { path: '/documentation', component: Documentation }
+        { path: '/',  label: 'Dashboard', component: Dashboard, exact: true },
+        { path: '/formlayout', label: 'Form Layout', component: FormLayoutDemo },
+        { path: '/input', label: 'Input', component: InputDemo },
+		{ path: '/floatlabel', label: 'Float Label', component: FloatLabelDemo },
+		{ path: '/invalidstate', label: 'Invalid State', component: InvalidStateDemo },
+        { path: '/button', label: 'Button', component: ButtonDemo },
+        { path: '/table', label: 'Table', component: TableDemo },
+        { path: '/list', label: 'List', component: ListDemo },
+        { path: '/tree', label: 'Tree', component: TreeDemo },
+        { path: '/panel', label: 'Panel', component: PanelDemo },
+        { path: '/overlay', label: 'Overlay', component: OverlayDemo },
+        { path: '/media', label: 'Media', component: MediaDemo },
+        { path: '/menu', label: 'Menu',component: MenuDemo },
+        { path: '/messages', label: 'Messages',component: MessagesDemo },
+        { path: '/file', label: 'File', component: FileDemo },
+        { path: '/chart', label: 'Chart', component: ChartDemo },
+        { path: '/misc',label: 'Misc',  component: MiscDemo },
+        { path: '/icons', label: 'Icons',  component: IconsDemo },
+        { path: '/widgets', label: 'Widgets',  component: Widgets },
+        { path: '/grid', label: 'Grid',  component: GridDemo },
+        { path: '/spacing', label: 'Spacing', component: SpacingDemo },
+        { path: '/elevation', label: 'Elevation', component: ElevationDemo },
+        { path: '/typography', label: 'Typography', component: TypographyDemo },
+        { path: '/display', label: 'Display',  component: DisplayDemo },
+        { path: '/flexbox', label: 'Flexbox' , component: FlexBoxDemo },
+        { path: '/text', label: 'Text', component: TextDemo },
+		{ path: '/crud', label: 'Crud', component: CrudDemo },
+		{ path: '/timeline', label: 'Timeline', component: TimelineDemo },
+        { path: '/calendar', label: 'Calendar', component: CalendarDemo },
+        { path: '/invoice', label: 'Invoice', component: Invoice },
+        { path: '/help', label: 'Help', component: Help },
+        { path: '/empty', label: 'Empty', component: EmptyPage },
+        { path: '/documentation', label: 'Documentation', component: Documentation }
     ];
 
     let menuClick;
@@ -409,7 +409,7 @@ const App = () => {
 
                 <div className="layout-topbar-separator" />
 
-                <AppBreadcrumb />
+                <AppBreadcrumb routers={routers}/>
             </div>
 
             <div className="layout-content">

@@ -39,7 +39,7 @@ export const IconsDemo = () => {
 
     return (
         <div className="card icons-demo">
-            <h3>Icons</h3>
+            <h4>Icons</h4>
             <h5>Getting Started</h5>
             <p>PrimeIcons use the pi pi-{`{icon}`} syntax such as pi pi-check. A standalone icon can be displayed using an element like i or span.</p>
 <AppCodeHighlight>

@@ -113,15 +113,6 @@ export const InputDemo = () => {
         setCheckboxValue(selectedValue);
     };
 
-    const itemTemplate = (option) => {
-        return (
-            <div className="country-item">
-                <span className={`flag flag-${option.code.toLowerCase()}`} />
-                <span>{option.name}</span>
-            </div>
-        );
-    };
-
     const selectedItemTemplate = (option) => {
         if (option) {
             return (
@@ -279,7 +270,7 @@ export const InputDemo = () => {
 
                     <h5>MultiSelect</h5>
                     <MultiSelect value={multiselectValue} onChange={(e) => setMultiselectValue(e.value)} options={multiselectValues} optionLabel="name" placeholder="Select Countries" filter
-                        itemTemplate={itemTemplate} selectedItemTemplate={selectedItemTemplate} className="multiselect-custom" />
+                        selectedItemTemplate={selectedItemTemplate} className="multiselect-custom" />
                 </div>
 
                 <div className="card">

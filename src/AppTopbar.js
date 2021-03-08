@@ -9,6 +9,29 @@ const AppTopbar = (props) => {
 	let topbarMenuClassName = classNames('layout-profile-menu fadeInDown ', { 'layout-profile-menu-active': props.topbarUserMenuActive });
 	let menuButtonClassName = classNames('layout-menubutton ', { 'layout-menubutton-active': props.menuActive })
 
+	const getInk = (el) => {
+        for (let i = 0; i < el.children.length; i++) {
+            if (typeof el.children[i].className === 'string' && el.children[i].className.indexOf('p-ink') !== -1) {
+                return el.children[i];
+            }
+        }
+        return null;
+	}
+	
+	const removeClass = (element, className) => {
+        if (element.classList)
+            element.classList.remove(className);
+        else
+            element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
+
+	const onItemClick = (event) => {
+		const ink = getInk(event.currentTarget);
+		if (ink) {
+			removeClass(ink, 'p-ink-active');
+		}
+	}
+
 	return (
 		<div className="layout-topbar">
 			<button type="button" className={menuButtonClassName} onClick={props.onMenuButtonClick}>
@@ -42,35 +65,35 @@ const AppTopbar = (props) => {
 					</button>
 					<ul className={topbarMenuClassName} onClick={props.onTopbarUserMenuClick}>
 						<li className="layout-profile-menu-search">
-							<span className="md-inputfield">
+							<span className="p-float-label">
 								<InputText type="text" />
 								<label>Search</label>
 							</span>
 						</li>
 
 						<li role="menuitem">
-							<button type="button" className="p-link">
+							<button type="button" className="p-link p-ripple" onClick={onItemClick}>
 								<i className="pi pi-user"></i>
 								<span>Profile</span>
                                 <Ripple />
 							</button>
 						</li>
 						<li role="menuitem">
-							<button type="button" className="p-link">
+							<button type="button" className="p-link p-ripple" onClick={onItemClick}>
 								<i className="pi pi-envelope"></i>
 								<span>Inbox</span>
                                 <Ripple />
 							</button>
 						</li>
 						<li role="menuitem">
-							<button type="button" className="p-link">
+							<button type="button" className="p-link p-ripple" onClick={onItemClick}>
 								<i className="pi pi-cog"></i>
 								<span>Settings</span>
                                 <Ripple />
 							</button>
 						</li>
 						<li role="menuitem">
-							<button type="button" className="p-link">
+							<button type="button" className="p-link p-ripple" onClick={onItemClick}>
 								<i className="pi pi-times"></i>
 								<span>Logout</span>
                                 <Ripple />

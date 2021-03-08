@@ -1,28 +1,22 @@
 import React from 'react';
 import { useHistory, useLocation, withRouter } from 'react-router-dom';
 
-const AppBreadcrumb = () => {
+const AppBreadcrumb = (props) => {
 
     const location = useLocation();
     const history = useHistory();
-    let pathname;
 
-    const capitalize = (s) => {
-        return s[0].toUpperCase() + s.slice(1);
-    }
+    let pathname = props.routers.filter((router) => {
+        return router.path === location.pathname;
+    })
 
-    if (location.pathname === '/') {
-        pathname = 'Dashboard'
-    } else {
-        pathname = capitalize(location.pathname.split('/')[1]);
-    }
 
     return (
         <div className="layout-breadcrumb">
             <ul>
                 <li><button type="button" className="p-link" onClick={() => history.push('/')} ><i className="pi pi-home"></i></button></li>
                 <li><i className="pi pi-chevron-right chevron-icon"></i></li>
-                <li><button className="p-link">{pathname}</button></li>
+                <li><button className="p-link">{pathname[0].label}</button></li>
             </ul>
         </div>
     );

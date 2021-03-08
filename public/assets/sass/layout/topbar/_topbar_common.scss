@@ -248,6 +248,23 @@
         .layout-profile-menu {
             .layout-profile-menu-search {
                 display: block;
+
+                .p-inputtext {
+                    color: rgba(102, 102, 102, 1) !important;
+        
+                    &:focus ~ label,
+                    &:focus ~ i {
+                        color: rgba(102, 102, 102, 1) !important;
+                    }
+                }
+        
+                i {
+                    color: rgba(102, 102, 102, 1) !important;
+                }
+        
+                label {
+                    color: rgba(102, 102, 102, 1) !important;
+                }
             }
         }
     }
