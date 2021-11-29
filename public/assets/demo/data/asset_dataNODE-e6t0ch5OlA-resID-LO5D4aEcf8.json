@@ -1,0 +1,264 @@
+{
+    "dataCORE_version": "1.0",
+    "dataNODE_id" :"dataNODE-e6t0ch5OlA-resID-LO5D4aEcf8",
+    "providers": [
+        {
+            "full_name": "IITA - International Institute of Tropical Agriculture",
+            "short_name": "IITA",
+            "url": "https://www.iita.org/",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "035a9pe58"
+                }
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "repository": "CGSpace",
+            "repository_url": "https://cgspace.cgiar.org/",
+            "resource_url": "https://hdl.handle.net/10568/92651"
+        }
+    ],
+    "resource_type": {
+        "type": "publication",
+        "category": "Scientific Publication"
+    },
+    "title": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "Economics of biological control of cassava mealybug in Africa"
+        }
+    ],
+    "description": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "Pest populations of the cassava mealybug Phenacoccus manihoti Mat.-Ferr. (Homoptera: Pseudococcidae) were reduced successfully by the biological control agent Apoanagyrus (Epidinocarsis) lopezi De Santis (Hymenoptera: Encyrtidae) throughout most of sub-Saharan Africa. The economics of the project were evaluated based on data from field trials, socio-economic surveys, published results, and financial information provided by the International Institute of Tropical Agriculture (IITA) and the national programmes. Costs and benefits for the biological control of P. manihoti were calculated over 40 years (1974–2013) for 27 African countries, for four different scenarios, taking into account that impact by A. lopezi and speed of the impact differ between ecological zones. A reasonable calculation considering compounded interest resulted in a benefit cost ratio of about 200 when cassava was costed at world market prices, and of about 370–740 when inter-African prices were considered"
+        }
+    ],
+    "resource_language": {
+        "name": "English",
+        "iso_code_639_1": "en",
+        "iso_code_639_2": "eng"
+    },
+    "release_year": "2001",
+    "embargo_date": "2018-05-17",
+    "thumbnails": [
+        {
+            "url": ""
+        }
+    ],
+    "dois": [
+        {
+            "value": "10.1016/S0169-5150(00)00064-5",
+            "url": "https://doi.org/10.1016/S0169-5150(00)00064-5"
+        }
+    ],
+    "other_pids": [
+        {
+            "scheme": "ISSN",
+            "value": "0169-5150"
+        }
+    ],
+    "rights": {
+        "access": "Limited",
+        "license": "",
+        "terms_of_use": [],
+        "rights_holders": []
+    },
+    "projects": [],
+    "funding_organisations": [
+        {
+            "full_name": "German Corporation for International Cooperation (GIZ)",
+            "short_name": "GIZ",
+            "url": "https://www.giz.de/en/html/index.html",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "00q08t645"
+                }
+            ]
+        }
+    ],
+    "contact_points": [],
+    "resource_files": [
+        {
+            "filename": "S0169-5150(00)00064-5",
+            "extension": "[text-mining]",
+            "mime_type": "[text-mining]",
+            "data_type": "[text-mining]",
+            "md5sum": "",
+            "pii_check": "",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                {
+                    "url": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1016/S0169-5150(00)00064-5"
+                }
+            ]
+        }
+    ],
+    "keywords": [
+        {
+            "scheme": "user",
+            "value": "economics of biological control",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "phenacoccus manihoti",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "apoanagyrus lopezi",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "cassava",
+            "code": "",
+            "frequency": "1"
+        }
+    ],
+    "geography": {
+        "regions": [
+            {
+                "value": "Africa",
+                "code_UNM49 ": "UNM49:002"
+            },
+            {
+                "value": "World",
+                "code_UNM49 ": "UNM49:001"
+            },
+            {
+                "value": "Western Africa",
+                "code_UNM49 ": "UNM49:011"
+            },
+            {
+                "value": "Sub-Saharan Africa",
+                "code_UNM49 ": "UNM49:202"
+            },
+            {
+                "value": "Middle Africa",
+                "code_UNM49 ": "UNM49:017"
+            },
+            {
+                "value": "Eastern Africa",
+                "code_UNM49 ": "UNM49:014"
+            }
+        ],
+        "countries": [
+            {
+                "value": "Ghana",
+                "code_UNM49": "UNM49:288",
+                "code_ISO3166_1_a2": "GH",
+                "code_ISO3166_1_a3": "GHA"
+            },
+            {
+                "value": "Benin",
+                "code_UNM49": "UNM49:204",
+                "code_ISO3166_1_a2": "BJ",
+                "code_ISO3166_1_a3": "BEN"
+            },
+            {
+                "value": "Nigeria",
+                "code_UNM49": "UNM49:566",
+                "code_ISO3166_1_a2": "NG",
+                "code_ISO3166_1_a3": "NGA"
+            },
+            {
+                "value": "Gabon",
+                "code_UNM49": "UNM49:266",
+                "code_ISO3166_1_a2": "GA",
+                "code_ISO3166_1_a3": "GAB"
+            },
+            {
+                "value": "Congo",
+                "code_UNM49": "UNM49:178",
+                "code_ISO3166_1_a2": "CG",
+                "code_ISO3166_1_a3": "COG"
+            },
+            {
+                "value": "Democratic Republic of the Congo",
+                "code_UNM49": "UNM49:180",
+                "code_ISO3166_1_a2": "CD",
+                "code_ISO3166_1_a3": "COD"
+            },
+            {
+                "value": "Tanzania",
+                "code_UNM49": "UNM49:834",
+                "code_ISO3166_1_a2": "TZ",
+                "code_ISO3166_1_a3": "TZA"
+            },
+            {
+                "value": "Malawi",
+                "code_UNM49": "UNM49:454",
+                "code_ISO3166_1_a2": "MW",
+                "code_ISO3166_1_a3": "MWI"
+            },
+            {
+                "value": "Zambia",
+                "code_UNM49": "UNM49:894",
+                "code_ISO3166_1_a2": "ZM",
+                "code_ISO3166_1_a3": "ZMB"
+            },
+            {
+                "value": "Uganda",
+                "code_UNM49": "UNM49:800",
+                "code_ISO3166_1_a2": "UG",
+                "code_ISO3166_1_a3": "UGA"
+            }
+        ]
+    },
+    "temporal_coverage": {
+        "from": "",
+        "to": "",
+        "description": ""
+    },
+    "citation": "Zeddies, J., Schaab, R.P., Neuenschwander, P. & Herren, H.R. (2001). Economics of biological control of cassava mealybug in Africa. Agricultural Economics, 24(2), 209-219",
+    "authors": [
+        {
+            "full_name": "Zeddies, J",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Schaab, R.P",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Neuenschwander, P",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Herren, H.R",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        }
+    ]
+}

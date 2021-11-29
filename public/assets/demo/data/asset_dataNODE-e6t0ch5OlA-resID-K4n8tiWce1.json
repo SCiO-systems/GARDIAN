@@ -1,0 +1,394 @@
+
+{
+    "dataCORE_version": "1.0",
+    "dataNODE_id" :"dataNODE-e6t0ch5OlA-resID-K4n8tiWce1",
+    "providers": [
+        {
+            "full_name": "International Water Management Institute (IWMI)",
+            "short_name": "IWMI",
+            "url": "https://www.iwmi.cgiar.org/",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "04vpcaw67"
+                }
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "repository": "CGSpace",
+            "repository_url": "https://cgspace.cgiar.org/",
+            "resource_url": "https://hdl.handle.net/10568/114245"
+        }
+    ],
+    "resource_type": {
+        "type": "publication",
+        "category": "Manual"
+    },
+    "title": [
+        {
+            "language": {
+                "name": "Burmese",
+                "iso_code_639_1": "my",
+                "iso_code_639_2": "mya"
+            },
+            "value": "လက်စ ွဲစာအုပ် မြစ်ရေတင်စီြံကိန််းြျာ်းတ င် ရေအသံု်းချသူအသင််းြျာ်း ဖ ွဲွဲ့စည််းတည်ရ ာင်မခင််း မြန်ြာနိုင်ငံ"
+        },
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "A handbook for establishing water user associations in pump-based irrigation schemes in Myanmar"
+        }
+    ],
+    "description": [],
+    "resource_language": {
+        "name": "Burmese",
+        "iso_code_639_1": "my",
+        "iso_code_639_2": "mya"
+    },
+    "release_year": "2021",
+    "embargo_date": "2021-07-10",
+    "thumbnails": [
+        {
+            "url": "https://cgspace.cgiar.org/bitstream/handle/10568/114245/a-handbook-for-establishing-wuas-in-pump-based-irrigation-schemes-in-myanmar-burmese_version.pdf.jpg"
+        }
+    ],
+    "dois": [
+        {
+            "value": "10.5337/2021.202",
+            "url": "https://doi.org/10.5337/2021.202"
+        }
+    ],
+    "other_pids": [
+        {
+            "scheme": "ISBN",
+            "value": "978-92-9090-909-5"
+        }
+    ],
+    "rights": {
+        "access": "Open",
+        "license": "CC-BY",
+        "terms_of_use": [],
+        "rights_holders": []
+    },
+    "projects": [
+        {
+            "full_name": "CRP - Water, Land and Ecosystems (WLE)",
+            "short_name": "WLE",
+            "url": "https://wle.cgiar.org/"
+        }
+    ],
+    "funding_organisations": [
+        {
+            "full_name": "Livelihoods and Food Security Fund (LIFT)",
+            "short_name": "LIFT",
+            "url": "https://www.lift-fund.org/en",
+            "agent_ids": []
+        }
+    ],
+    "contact_points": [],
+    "resource_files": [
+        {
+            "filename": "a-handbook-for-establishing-wuas-in-pump-based-irrigation-schemes-in-myanmar-burmese_version.pdf",
+            "extension": ".pdf",
+            "mime_type": "text/pdf",
+            "data_type": "",
+            "md5sum": "",
+            "pii_check": "",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                {
+                    "url": "https://cgspace.cgiar.org/bitstream/handle/10568/114245/a-handbook-for-establishing-wuas-in-pump-based-irrigation-schemes-in-myanmar-burmese_version.pdf"
+                }
+            ]
+        }
+    ],
+    "keywords": [
+        {
+            "scheme": "user",
+            "value": "water user associations",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "irrigation schemes",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "pumps",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "handbooks",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "guidelines",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "models",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "participatory management",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "irrigation management",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "farmer participation",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "gender",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "farmers organizations",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "water allocation",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "equity",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "organizational development",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "strategies",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "governing bodies",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "human resources",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "multi-stakeholder processes",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "nongovernmental organizations",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "government agencies",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "development policies",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "irrigation programs",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "infrastructure",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "costs",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "legal frameworks",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "regulations",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "awareness raising",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "empowerment",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "capacity building",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "training",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "villages",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "living standards",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "socioeconomic environment",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "conflicts",
+            "code": "",
+            "frequency": "1"
+        }
+    ],
+    "geography": {
+        "regions": [
+            {
+                "value": "South-eastern Asia",
+                "code_UNM49 ": "UNM49:035"
+            },
+            {
+                "value": "Asia",
+                "code_UNM49 ": "UNM49:142"
+            },
+            {
+                "value": "World",
+                "code_UNM49 ": "UNM49:001"
+            }
+        ],
+        "countries": [
+            {
+                "value": "Myanmar",
+                "code_UNM49": "UNM49:104",
+                "code_ISO3166_1_a2": "MM",
+                "code_ISO3166_1_a3": "MMR"
+            }
+        ]
+    },
+    "temporal_coverage": {
+        "from": "",
+        "to": "",
+        "description": ""
+    },
+    "citation": "de Silva, Sanjiv; Schmitter, Petra; Thiha, Nyan; Suhardiman, Diana. 2021. A handbook for establishing water user associations in pump-based irrigation schemes in Myanmar. In Burmese. Colombo, Sri Lanka: International Water Management Institute (IWMI). 135p. (Also in English) (doi: https://doi.org/10.5337/2021.202)",
+    "authors": [
+        {
+            "full_name": "Silva, Sanjiv de",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0001-8852-800X"
+                }
+            ]
+        },
+        {
+            "full_name": "Schmitter, Petra",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0002-3826-7224"
+                }
+            ]
+        },
+        {
+            "full_name": "Thiha, Nyan",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Suhardiman, Diana",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0001-7892-4148"
+                }
+            ]
+        }
+    ]
+}

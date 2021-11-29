@@ -1,0 +1,220 @@
+{
+    "dataCORE_version": "1.0",
+    "dataNODE_id" :"dataNODE-e6t0ch5OlA-resID-E6bye1hdOa",
+    "providers": [
+        {
+            "full_name": "ILRI - International Livestock Research Institute",
+            "short_name": "ILRI",
+            "url": "https://www.ilri.org/",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "01jxjwb74"
+                }
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "repository": "CGSpace",
+            "repository_url": "https://cgspace.cgiar.org/",
+            "resource_url": "https://hdl.handle.net/10568/114013"
+        }
+    ],
+    "resource_type": {
+        "type": "publication",
+        "category": "Scientific Publication"
+    },
+    "title": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "Genomics of adaptations in ungulates"
+        }
+    ],
+    "description": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "Ungulates are a group of hoofed animals that have long interacted with humans as essential sources of food, labor, clothing, and transportation. These consist of domesticated, feral, and wild species raised in a wide range of habitats and biomes. Given the diverse and extreme environments inhabited by ungulates, unique adaptive traits are fundamental for fitness. The documentation of genes that underlie their genomic signatures of selection is crucial in this regard. The increasing availability of advanced sequencing technologies has seen the rapid growth of ungulate genomic resources, which offers an exceptional opportunity to understand their adaptive evolution. Here, we summarize the current knowledge on evolutionary genetic signatures underlying the adaptations of ungulates to different habitats"
+        }
+    ],
+    "resource_language": {
+        "name": "English",
+        "iso_code_639_1": "en",
+        "iso_code_639_2": "eng"
+    },
+    "release_year": "2021",
+    "embargo_date": "2021-06-18",
+    "thumbnails": [
+        {
+            "url": ""
+        }
+    ],
+    "dois": [
+        {
+            "value": "10.3390/ani11061617",
+            "url": "https://doi.org/10.3390/ani11061617"
+        }
+    ],
+    "other_pids": [
+        {
+            "scheme": "eISSN",
+            "value": "2076-2615"
+        }
+    ],
+    "rights": {
+        "access": "Open",
+        "license": "CC-BY",
+        "terms_of_use": [],
+        "rights_holders": []
+    },
+    "projects": [],
+    "funding_organisations": [
+        {
+            "full_name": "Africa Biosciences Challenge Fund (ABCF)",
+            "short_name": "ABCF",
+            "url": "http://hub.africabiosciences.org/aboutbeca/121-about-the-challenge-fund",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Department of Foreign Affairs and Trade (DFAT)",
+            "short_name": "DFAT",
+            "url": "https://www.dfat.gov.au/",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "023wsvq95"
+                }
+            ]
+        },
+        {
+            "full_name": "Syngenta Foundation for Sustainable Agriculture (SFSA)",
+            "short_name": "SFSA",
+            "url": "https://www.syngentafoundation.org/",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "046ec5t14"
+                }
+            ]
+        },
+        {
+            "full_name": "Bill & Melinda Gates Foundation (BMGF)",
+            "short_name": "BMGF",
+            "url": "https://www.gatesfoundation.org/",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "0456r8d26"
+                }
+            ]
+        },
+        {
+            "full_name": "Department for International Development (DFID)",
+            "short_name": "DFID",
+            "url": "https://www.gov.uk/government/organisations/department-for-international-development",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "05rf29967"
+                }
+            ]
+        },
+        {
+            "full_name": "Swedish International Development Cooperation Agency (SIDA)",
+            "short_name": "SIDA",
+            "url": "https://www.sida.se/en",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "01fn7me06"
+                }
+            ]
+        }
+    ],
+    "contact_points": [],
+    "resource_files": [],
+    "keywords": [
+        {
+            "scheme": "user",
+            "value": "livestock",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "animal breeding",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "genetics",
+            "code": "",
+            "frequency": "1"
+        }
+    ],
+    "geography": {
+        "regions": [],
+        "countries": []
+    },
+    "temporal_coverage": {
+        "from": "",
+        "to": "",
+        "description": ""
+    },
+    "citation": "Chebii, V.J., Mpolya, E.A., Muchadeyi, F.C. and Domelevo Entfellner, J.-B. 2021. Genomics of adaptations in ungulates. Animals 11(6):1617",
+    "authors": [
+        {
+            "full_name": "Chebii, V.J",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0002-3382-5856"
+                }
+            ]
+        },
+        {
+            "full_name": "Mpolya, E.A",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0002-6210-9445"
+                }
+            ]
+        },
+        {
+            "full_name": "Muchadeyi, F.C",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Domelevo Entfellner, Jean-Baka",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0002-8282-1325"
+                }
+            ]
+        }
+    ]
+}

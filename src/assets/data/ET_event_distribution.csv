@@ -1,0 +1,133 @@
+Year,CATEGORY,Num of Events,Fatalities
+2000,Battles,275.999,537.784
+2000,Protests,298.121,585.268
+2000,Violence against civilians,302.52,596.278
+2000,Riots,262.388,519.261
+2000,Strategic developments,221.316,438.755
+2000,Explosions/Remote violence,196.727,391.041
+2001,Battles,268.683,523.427
+2001,Protests,293.42,576.152
+2001,Violence against civilians,304.738,600.993
+2001,Riots,269.367,533.13
+2001,Strategic developments,226.298,448.159
+2001,Explosions/Remote violence,199.091,395.648
+2002,Battles,260.719,508.111
+2002,Protests,286.597,562.65
+2002,Violence against civilians,304.558,600.851
+2002,Riots,276.814,547.902
+2002,Strategic developments,231.242,457.717
+2002,Explosions/Remote violence,201.037,398.675
+2003,Battles,181.648,358.256
+2003,Protests,169.806,342.577
+2003,Violence against civilians,150.631,311.79
+2003,Riots,120.52,246.749
+2003,Strategic developments,82.018,170.901
+2003,Explosions/Remote violence,44.2,93.216
+2004,Battles,49.353,107.816
+2004,Protests,46.17,105.129
+2004,Violence against civilians,35.492,85.487
+2004,Riots,21.489,58.672
+2004,Strategic developments,6.01,21.978
+2004,Explosions/Remote violence,1.915,8.394
+2005,Battles,0.816,3.593
+2005,Protests,0.159,0.899
+2005,Violence against civilians,0.019,0.115
+2005,Riots,252.701,492.999
+2005,Strategic developments,277.982,545.545
+2005,Explosions/Remote violence,302.526,596.957
+2006,Battles,284.547,563.275
+2006,Protests,236.285,467.751
+2006,Violence against civilians,203.34,402.149
+2006,Riots,183.58,363.056
+2006,Strategic developments,171.297,343.034
+2006,Explosions/Remote violence,154.405,318.804
+2007,Battles,123.949,255.611
+2007,Protests,87.351,180.336
+2007,Violence against civilians,48.919,104.684
+2007,Riots,41.448,90.065
+2007,Strategic developments,48.202,109.89
+2007,Explosions/Remote violence,32.798,78.493
+2008,Battles,24.455,63.433
+2008,Protests,7.42,25.218
+2008,Violence against civilians,1.629,7.711
+2008,Riots,0.814,3.55
+2008,Strategic developments,0.159,0.871
+2008,Explosions/Remote violence,0.016,0.106
+2009,Battles,247.113,482.827
+2009,Protests,268.25,526.383
+2009,Violence against civilians,299.154,590.449
+2009,Riots,291.595,577.483
+2009,Strategic developments,241.884,479.178
+2009,Explosions/Remote violence,206.486,407.563
+2010,Battles,185.081,366.297
+2010,Protests,172.918,344.878
+2010,Violence against civilians,158.342,325.377
+2010,Riots,127.56,264.701
+2010,Strategic developments,92.348,189.595
+2010,Explosions/Remote violence,54.14,116.679
+2011,Battles,35.704,77.284
+2011,Protests,48.414,110.749
+2011,Violence against civilians,30.807,73.601
+2011,Riots,25.998,65.217
+2011,Strategic developments,9.383,29.195
+2011,Explosions/Remote violence,1.494,7.44
+2012,Battles,0.713,3.233
+2012,Protests,0.138,0.766
+2012,Violence against civilians,0.014,0.1
+2012,Riots,246.748,482.883
+2012,Strategic developments,258.18,506.881
+2012,Explosions/Remote violence,294.407,581.371
+2013,Battles,296.994,588.722
+2013,Protests,248.526,492.962
+2013,Violence against civilians,210.438,415.107
+2013,Riots,186.466,368.655
+2013,Strategic developments,174.694,348.067
+2013,Explosions/Remote violence,162.127,331.372
+2014,Battles,131.694,274.245
+2014,Protests,97.052,199.249
+2014,Violence against civilians,59.09,127.272
+2014,Riots,33.275,72.16
+2014,Strategic developments,46.131,106.071
+2014,Explosions/Remote violence,30.043,71.932
+2015,Battles,25.989,63.969
+2015,Protests,11.594,33.256
+2015,Violence against civilians,1.672,7.928
+2015,Riots,0.52,2.642
+2015,Strategic developments,0.079,0.502
+2015,Explosions/Remote violence,0.013,0.094
+2016,Battles,252.982,495.252
+2016,Protests,253.375,496.646
+2016,Violence against civilians,290.07,572.009
+2016,Riots,303.214,601.379
+2016,Strategic developments,256.388,508.068
+2016,Explosions/Remote violence,212.043,418.845
+2017,Battles,185.816,368.119
+2017,Protests,173.414,345.708
+2017,Violence against civilians,163.745,333.911
+2017,Riots,135.481,283.017
+2017,Strategic developments,101.777,210.513
+2017,Explosions/Remote violence,63.409,136.585
+2018,Battles,33.841,73.726
+2018,Protests,42.57,98.075
+2018,Violence against civilians,30.644,73.614
+2018,Riots,24.532,60.318
+2018,Strategic developments,12.781,35.435
+2018,Explosions/Remote violence,2.505,9.93
+2019,Battles,0.447,2.606
+2019,Protests,0.09,0.536
+2019,Violence against civilians,0.012,0.087
+2019,Riots,262.495,514.183
+2019,Strategic developments,250.068,489.798
+2019,Explosions/Remote violence,284.348,559.93
+2020,Battles,307.093,609.309
+2020,Protests,267.578,530.457
+2020,Violence against civilians,214.353,423.602
+2020,Riots,185.35,367.933
+2020,Strategic developments,171.885,343.403
+2020,Explosions/Remote violence,164.21,334.194
+2021,Battles,139.796,292.246
+2021,Protests,105.898,221.378
+2021,Violence against civilians,68.157,146.255
+2021,Riots,36.082,79.812
+2021,Strategic developments,37.596,86.554
+2021,Explosions/Remote violence,32.353,78.05

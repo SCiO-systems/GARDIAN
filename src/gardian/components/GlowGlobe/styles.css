@@ -1,0 +1,43 @@
+.glow-globe {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.glow-globe .body{
+    display: flex;
+    flex-direction: row;
+    height: 139vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ece8e8;
+}
+.glow-globe .body .p-button{
+    position: absolute;
+    right: 6vw;
+    top: 17vh;
+    z-index:10;
+}
+
+.glow-globe .body .map-and-chart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 139vh;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 3vh;
+    margin-left: 3vh;
+}
+.leaflet-bar a {
+    color: black;
+}
+
+.leaflet-control-attribution {
+    display: none;
+}
+.jsPanel {
+    z-index: 1000 !important;
+}

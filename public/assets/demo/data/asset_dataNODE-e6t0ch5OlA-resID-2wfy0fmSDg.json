@@ -1,0 +1,559 @@
+{
+    "dataCORE_version" : "1.0",
+
+    "dataNODE_id" :"5cadec527c05e0ac8e90ab26",
+
+    "providers": [
+        {	"full_name":"International Center for Tropical Agriculture (CIAT)",
+            "short_name":"CIAT",
+            "url":"https://www.grid.ac/institutes/grid.418348.2",
+            "email": "",
+            "agent_ids": [
+                {	"scheme": "ROR",
+                    "value" : "037wny167"
+                },
+                {	"scheme": "ORCID",
+                    "value" : "0000-0002-2553-1129"
+                }
+            ]
+
+        },
+
+        {	"full_name":"International Food Policy Research Institute (IFPRI)",
+            "short_name":"IFPRI",
+            "url":"https://www.grid.ac/institutes/grid.4419346.d",
+            "email": "",
+            "agent_ids": [
+                {	"scheme": "ROR",
+                    "value" : "03pxz9p87"
+                }
+            ]
+
+        }
+    ],
+
+    "sources": [
+        {	"repository":"CGSpace",
+            "repository_url":"https://cgspace.cgiar.org/",
+            "resource_url":"https://hdl.handle.net/10681/14054"
+        },
+
+        {	"repository":"newSYSTEM",
+            "repository_url":"https://newsystem.org/",
+            "resource_url":"https://new.handle.xxx/12345/6789"
+        },
+
+        {	"repository":"IFPRI Ebrary",
+            "repository_url":"https://ebrary.ifpri.org/",
+            "resource_url":"https://hdl.handle.net/10568/44052"
+        }
+
+    ],
+
+    "resource_type": {
+        "type": "publication",
+        "category": "Scientific Publication"
+    },
+
+    "title": [
+        {
+            "language": {
+                "name": "French",
+                "iso_code_639_1": "fr",
+                "iso_code_639_2": "fra"
+            },
+            "value":"Restauration de la fertilité des terres de barre par le pois cajan cultivé en rotation ou en association avec le maïs dans la savane dérivée du Bénin"
+        },
+
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value":"Restoration of terre de barre fertility using pigeonpea grown in rotation or intercropping with maize in the derived savanna of Benin"
+        }
+
+    ],
+
+    "description": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "The following nine main cropping systems were evaluated: maize/maize in rotation without N-fertilizer (control); maize/cowpea in rotation where maize received N-fertilizer; maize/pigeonpea intercropping without N-fertilizer; maize/cowpea/pigeonpea in rotation where maize received N-fertilizer; maize/maize in rotation with N-fertilizer; maize/pigeonpea fallow in rotation where maize received N-fertilizer; maize/pigeonpea intercropping where maize received N-fertilizer; pigeonpea/maize/cowpea in rotation where maize received N-fertilizer; pigeonpea/maize/maize where maize received N-fertilizer. The rate of N-fertilizer applied was 74 kg N as urea (28 kg N/ha 2 weeks after planting maize and 46 kg N/ha 6 weeks after planting maize). Compared to the control, the increase in maize grain yield ranged from 1.55 to 215 % for all cropping systems receiving N-fertilizer and intercropping without N-fertilizer, maize grain yield in intercropping without N-fertilizer increased by 9 % in first year and decreased by 1.55 % in second year compared to the control. The maize stover yield with N-fertilizer application increased by -24 up to 203 %. Pigeonpea grain yield (in intercropping) without N-fertilizer was 56 % higher than with N-fertilizer. Pigeonpea as fallow produced 73-97 % more fresh wood than intercropped pigeonpea without fertilization and 91-118 % more fresh wood than intercropped pigeonpea with N-fertilizer. The intercropped Cajanus cajan with N-fertilizer produced 11 % less fresh wood than intercropped without N-fertilizer. The total N amount in the maize grain yield increased by 5-245 % for the first season of year 1 compared to the control and increased by 241-260 % for the second season of year 1 compared to the control. The total N amount in the maize grain of the intercropped pigeonpea/maize with N-fertilizer was 190 % higher than the intercropped pigeonpea/maize without N-fertilizer. The total amount of P follows the same trend as N- fertilizer in intercropped systems. The yield efficiency was low in year 1 compared to year 2. The Land Equivalent Ratio (LER) was higher in cropping system without N-fertilizer than with N-fertilizer."
+        },
+        {
+            "language": {
+                "name": "French",
+                "iso_code_639_1": "fr",
+                "iso_code_639_2": "fra"
+            },
+            "value":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+
+    ],
+
+    "resource_language": {
+        "name": "English",
+        "iso_code_639_1": "en",
+        "iso_code_639_2": "eng"
+    },
+
+    "release_year": "2008",
+
+    "embargo_date": "2008-10-15",
+
+    "thumbnails" : [
+        {
+            "url" : "https://cgspace.cgiar.org/bitstream/handle/10568/111443/agricutural%20water.gif"
+        }
+    ],
+
+    "dois":[
+        {	"value": "10.1016/j.biocon.2020.108849",
+            "url":"https://doi.org/10.1016/j.biocon.2020.108849"
+        },
+        {	"value": "10.1002/jsfa.2415",
+            "url":"https://doi.org/10.1002/jsfa.2415"
+        }
+    ],
+
+    "other_pids":[
+        {
+            "scheme": "ArXiv",
+            "value": "2104.13246"
+        },
+        {
+            "scheme": "ISBN",
+            "value": "978-3-16-148410-0"
+        },
+        {
+            "scheme": "ISSN",
+            "value": "2049-3630"
+        },
+        {
+            "scheme": "eISSN",
+            "value": "2049-3630"
+        }
+    ],
+
+    "rights" : {
+
+        "access": "Open",
+
+        "license":"CC BY 4.0",
+
+        "terms_of_use": [
+            { "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+                "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+            },
+            { "language": {
+                "name": "Greek",
+                "iso_code_639_1": "el",
+                "iso_code_639_2": "ell"
+            },
+                "value": "Το Lorem Ipsum είναι απλά ένα κείμενο χωρίς νόημα για τους επαγγελματίες της τυπογραφίας και στοιχειοθεσίας. Το Lorem Ipsum είναι το επαγγελματικό πρότυπο όσον αφορά το κείμενο χωρίς νόημα, από τον 15ο αιώνα, όταν ένας ανώνυμος τυπογράφος πήρε ένα δοκίμιο και ανακάτεψε τις λέξεις για να δημιουργήσει ένα δείγμα βιβλίου. Όχι μόνο επιβίωσε πέντε αιώνες, αλλά κυριάρχησε στην ηλεκτρονική στοιχειοθεσία, παραμένοντας με κάθε τρόπο αναλλοίωτο. Έγινε δημοφιλές τη δεκαετία του '60 με την έκδοση των δειγμάτων της Letraset όπου περιελάμβαναν αποσπάσματα του Lorem Ipsum, και πιο πρόσφατα με το λογισμικό ηλεκτρονικής σελιδοποίησης όπως το Aldus PageMaker που περιείχαν εκδοχές του Lorem Ipsum."
+            }
+        ],
+
+        "rights_holders": [
+
+            { 	"full_name": "John M. Smith",
+                "short_name": "",
+                "url": "https://orcid.org/0000-0002-5907-9177",
+                "email": "john.smith@org.com",
+                "agent_ids": [
+                    {	"scheme": "ORCID",
+                        "value" : "0000-0002-5907-9177"
+                    }
+                ]
+
+            },
+
+            { 	"full_name": "CIAT Data Management office",
+                "short_name":"CIAT-DMO",
+                "url": "https://www.grid.ac/institutes/grid.418348.2",
+                "email": "dataoffice@ciat.cgiar.org",
+                "agent_ids": [
+                    {	"scheme": "ROR",
+                        "value" : "037wny167"
+                    }
+                ]
+
+            }
+
+        ]
+
+    },
+
+    "projects": [
+        {	"full_name": "CGIAR Platform for Big Data in Agriculture",
+            "short_name":"BDP",
+            "url": "https://bigdata.cgiar.org/"
+        },
+        {	"full_name": "Climate Change, Agriculture and Food Security (CCAFS)",
+            "short_name":"CCAFS",
+            "url": "https://ccafs.cgiar.org/"
+        }
+    ],
+
+    "funding_organisations": [
+
+        {	"full_name":"Bill & Melinda Gates Foundation (BMGF)",
+            "short_name":"BMGF",
+            "url":"https://www.grid.ac/institutes/grid.418348.2",
+            "email": "",
+            "agent_ids": [
+                {	"scheme": "ROR",
+                    "value" : "037wny167"
+                }
+            ]
+
+        },
+
+        {	"full_name":"German Corporation for International Cooperation (GIZ)",
+            "short_name":"GIZ",
+            "url":"https://www.grid.ac/institutes/grid.418348.2",
+            "email": "",
+            "agent_ids": [
+                {	"scheme": "ROR",
+                    "value" : "037wny167"
+                }
+            ]
+
+        }
+
+    ],
+
+    "contact_points": [
+
+        {  "full_name": "John M. Smith",
+           "short_name":"",
+           "url": "",
+           "email": "john.smith@org.com",
+           "agent_ids": [
+                {	"scheme": "ORCID",
+                    "value" : "037wny167"
+                }
+            ]
+
+        },
+
+        {   "full_name": "CIAT Data Management office",
+            "short_name": "CIAT-DMO",
+            "url": "https://www.ciat.org",
+            "email": "",
+            "agent_ids": [
+                {	"scheme": "ROR",
+                    "value" : "037wny167"
+                }
+            ]
+        }
+
+    ],
+
+    "resource_files": [
+
+        {   "filename": "map.shp",
+            "extension": "shp",
+            "mime_type": "application/octet-stream",
+            "data_type": "data/geospatial/vector",
+            "md5sum": "595f44fec1e92a71d3e9e77456ba80d1",
+            "pii_check": "pass",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                { "url": "https://server1/resources/map.shp" },
+                { "url": "https://server2/resources/map.shp" },
+                { "url": "https://server3/resources/map.shp" }
+            ]
+        },
+        { "filename": "field_trials1.csv",
+            "extension": "[text-mining]",
+            "mime_type": "[text-mining]",
+            "data_type": "[text-mining]",
+            "md5sum": "71f920fa275127a7b60fa4d4d41432a3",
+            "pii_check": "fail",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                { "url": "https://filesamples.com/samples/document/csv/sample4.csv" },
+                { "url": "https://server2/resources/field_trials1.csv" },
+                { "url": "https://server3/resources/field_trials1.csv" }
+            ]
+        },
+        { "filename": "field_trials2.csv",
+            "extension": "csv",
+            "mime_type": "text/csv",
+            "data_type": "data/tabular",
+            "md5sum": "71f920fa275127a7b60fa4d4d41432a3",
+            "pii_check": "fail",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "2022-11-25",
+            "location": [
+                { "url": "https://server3/resources/field_trials2.csv" }
+            ]
+        },
+
+        { "filename": "field_trials3.csv",
+            "extension": "csv",
+            "mime_type": "text/csv",
+            "data_type": "data/tabular",
+            "md5sum": "71f920fa275127a7b60fa4d4d41432a3",
+            "pii_check": "fail",
+            "locked": false,
+            "publishable": false,
+            "embargo_date": "",
+            "location": [
+                { "url": "https://server3/resources/field_trials3.csv" }
+            ]
+        },
+
+        { "filename": "field_trials4.csv",
+            "extension": "csv",
+            "mime_type": "text/csv",
+            "data_type": "data/tabular",
+            "md5sum": "71f920fa275127a7b60fa4d4d41432a3",
+            "pii_check": "fail",
+            "locked": true,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                { "url": "https://server2/resources/field_trials4.csv" },
+                { "url": "https://server3/resources/field_trials4.csv" }
+            ]
+        },
+
+        { "filename": "field_trials5.csv",
+            "extension": "csv",
+            "mime_type": "text/csv",
+            "data_type": "data/tabular",
+            "md5sum": "71f920fa275127a7b60fa4d4d41432a3",
+            "pii_check": "fail",
+            "locked": true,
+            "publishable": true,
+            "embargo_date": "2022-11-25",
+            "location": [
+                { "url": "https://server3/resources/field_trials5.csv" }
+            ]
+        },
+
+        { "filename": "protocol.txt",
+            "extension": "txt",
+            "mime_type": "text",
+            "data_type": "text",
+            "md5sum": "71f920fa275127a7b60fa4d4d41432a3",
+            "pii_check": "pass",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+
+                { "url": "https://filesamples.com/samples/document/txt/sample3.txt" },
+                { "url": "https://server2/resources/protocol.txt" },
+                { "url": "https://server3/resources/protocol.txt" }
+            ]
+        },
+
+        { "filename": "methodology.pdf",
+            "extension": "pdf",
+            "mime_type": "application/pdf",
+            "data_type": "text/pdf",
+            "md5sum": "71f920fa275127a7b60fa4d4d41432a3",
+            "pii_check": "pass",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+
+                { "url": "https://filesamples.com/samples/document/pdf/sample3.pdf" }
+
+            ]
+        }
+
+    ],
+
+    "keywords": [
+        {
+            "scheme": "AGROVOC",
+            "value":"livestock",
+            "code": "c_9876-123",
+            "frequency": "0.85"
+        },
+        {
+            "scheme": "free",
+            "value":"climate change",
+            "code": "",
+            "frequency": "0.72"
+        },
+        {
+            "scheme": "AGROVOC",
+            "value":"biodiversity",
+            "code": "c_3172-234",
+            "frequency": "0.54"
+        },
+        {
+            "scheme": "free",
+            "value":"water management",
+            "code": "",
+            "frequency": "0.66"
+        }
+
+    ],
+
+    "geography" : {
+
+        "regions": [
+            {"value": "Africa",             "code_UNM49": "UNM49:002"},
+            {"value": "Northern Africa",    "code_UNM49": "UNM49:015"},
+            {"value": "Sub-Saharan Africa", "code_UNM49": "UNM49:202"},
+            {"value": "Eastern Africa",     "code_UNM49": "UNM49:014"},
+            {"value": "Western Africa",     "code_UNM49": "UNM49:011"},
+            {"value": "Asia",               "code_UNM49": "UNM49:142"},
+            {"value": "South-eastern Asia", "code_UNM49": "UNM49:035"},
+            {"value": "Southern Asia",      "code_UNM49": "UNM49:034"}
+        ],
+
+        "countries": [
+            { "value": "Algeria",     "code_ISO3166_1_a2": "DZ", "code_ISO3166_1_a3": "DZA", "code_UNM49": "UNM49:012" },
+            { "value": "Kenya",       "code_ISO3166_1_a2": "KE", "code_ISO3166_1_a3": "KEN", "code_UNM49": "UNM49:404" },
+            { "value": "Ghana",       "code_ISO3166_1_a2": "GH", "code_ISO3166_1_a3": "GHA", "code_UNM49": "UNM49:288" },
+            { "value": "Indonesia",   "code_ISO3166_1_a2": "ID", "code_ISO3166_1_a3": "IDN", "code_UNM49": "UNM49:360" },
+            { "value": "Philippines", "code_ISO3166_1_a2": "PH", "code_ISO3166_1_a3": "PHL", "code_UNM49": "UNM49:608" },
+            { "value": "India",       "code_ISO3166_1_a2": "IN", "code_ISO3166_1_a3": "IND", "code_UNM49": "UNM49:356" }
+        ]
+
+    },
+
+    "temporal_coverage": {
+        "from": "1990-01-01",
+        "to": "1999-12-31",
+        "description": "field data collection period"
+
+    },
+
+    "citation": "K. Aihou et al., Restoration of terre de barre fertility using pigeonpea grown in rotation or intercropping with maize in the derived savanna of Benin, Bulletin de la Recherche Agronomique du Bénin, 2014",
+
+    "authors": [
+
+        {	"full_name": "Amenu, K.",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {	"full_name":"Roesel, K.",
+            "short_name": "",
+            "url":"https://kati.org/0000-0002-2553-1129",
+            "email": "",
+            "agent_ids": [
+                {	"scheme": "ORCID",
+                    "value" : "0000-0002-2553-1129"
+                }
+            ]
+        },
+        {	"full_name":"Wagenberg, C. van",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {	"full_name":"Gemeda, Biruk A.",
+            "short_name": "",
+            "url":"https://orcid.org/0000-0002-8406-0494",
+            "email": "",
+            "agent_ids": [
+                {	"scheme": "ORCID",
+                    "value" : "0000-0002-8406-0494"
+                }
+            ]
+
+        },
+        {	"full_name":"Knight-Jones, T.",
+            "short_name": "",
+            "url":"",
+            "email": "",
+            "agent_ids": []
+        }
+
+    ],
+
+    "related_resources": [
+
+        { 	"dataNODE_id" :"5cd88c3d317da7f1ae0d0473",
+            "resource_type":  "Dataset",
+            "en_title": "Replication Data for: Yield gap survey",
+            "en_description": [
+                {"value": "To assess on-farm yield and yield gap for rice in sub-Saharan Africa"}
+            ],
+            "rights" : {
+                "access": "Open",
+                "license":"CC-BY-4.0"
+            }
+        },
+
+        { 	"dataNODE_id" :"5cd88c29317da7f1ae0d0363",
+            "resource_type":  "Dataset",
+            "en_title": "Rice Data Systems for Sub-Saharan Africa: Contribution to the Japan-AfricaRice Emergency Rice Project",
+            "en_description": [
+                {"value" :  "The rice data system for sub-Saharan Africa, which is a contribution to the Japan-AfricaRice Emergency Rice Initiative, is funded by the government of Japan. The project was coordinated at the regional level by Africa Rice Center (AfricaRice) and implemented at national levels by the national focal points. Throughout the course of the project implementation, the country focal points have made substantial and active contributions to ensure a smooth coordination of the project in-country activities. The national focal points are from the national agricultural research systems (NARS) and the national agricultural statistical services (NASS) of the countries that are members of the Coalition for African Rice Development (CARD). To ensure an effective communication between the project coordination unit and the countries, an intensive networking was established, which included sending of quarterly progress reports by the countries. Overall, the implementation of the project activities went well and it demonstrated the feasibility of building long-term collaborative working relationships between several national stakeholders to sustainably develop a multipurpose rice data systems. The surveys helped the countries develop well-structured rice statistical databases. Overall, the project activities went well and the national surveys were successfully conducted in the majority of the countries leading to the development of up-to-date and accessible rice data and information. In fact, as future project activities, the country teams will work to conduct in-depth analysis of the data collected in this project to update the national rice development strategies (NRDS), conduct rice research priority setting exercises and publish papers and policy briefs. AfricaRice discussed with the main donor in Japan who accepted that in-depth analysis of the data collected can continue after 30 April 2010, to publish the data in Google Map and transform the country reports into final and more comprehensive reports."}
+            ],
+            "rights" : {
+                "access": "Limited",
+                "license":"CC-BY-NC-SA 4.0"
+            }
+        },
+
+        { 	"dataNODE_id" :"5cd88b65317da7f1ae0cf08c",
+            "resource_type":  "Dataset",
+            "en_title": "Replication Data for: The geographic and sectoral patterns of large-scale farmland investments in sub-saharan Africa",
+            "en_description": [
+                { "value" : "Dataset of The geographic and sectoral patterns of large-scale farmland investments in sub-saharan Africa. Consist of 563 farmland projects that have been established between 2005 and 2013 in sub-Saharan Africa."}
+            ],
+            "rights" : {
+                "access": "Open",
+                "license":""
+            }
+
+        }
+
+    ],
+
+    "fair_score":[
+        {
+            "category": "R",
+            "cat": "Reusable",
+            "value": 2.35,
+            "full": 5
+        }, {
+            "category": "I",
+            "cat": "Interoperable",
+            "value": 3.7,
+            "full": 5
+        }, {
+            "category": "A",
+            "cat":"Accessible",
+            "value": 3.47,
+            "full": 5
+        }, {
+            "category": "F",
+            "cat": "Findable",
+            "value": 2.89,
+            "full": 5
+        }]
+
+
+}
+
+
+

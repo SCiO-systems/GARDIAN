@@ -1,0 +1,1395 @@
+{
+
+    "publications_summary": {
+
+        "asset_types": [
+            {   "value": "Scientific Publication", "frequency": 35000 },
+            {   "value": "Book / Monograph", "frequency": 31000 },
+            {   "value": "Report / Factsheet", "frequency": 30156 },
+            {   "value": "Poster / Presentation", "frequency": 30000 },
+            {   "value": "Thesis", "frequency": 20000 },
+            {   "value": "Working Paper", "frequency": 10000 },
+            {   "value": "Digital Material", "frequency": 5000 },
+            {   "value": "Other Types", "frequency": 1000 }
+        ],
+
+        "providers": [
+            {   "name" : "International Livestock Research Institute (ILRI)",
+                "value": "ILRI",
+                "frequency": 1837
+            },
+            {   "name" : "International Center for Tropical Agriculture (CIAT)",
+                "value": "CIAT",
+                "frequency": 842
+            },
+            {
+                "name": "International Food Policy Research Institute (IFPRI)",
+                "value": "IFPRI",
+                "frequency": 512
+            },
+            {
+                "name": "International Center for Agricultural Research in the Dry Areas (ICARDA)",
+                "value": "ICARDA",
+                "frequency": 286
+            }
+        ]
+
+    },
+
+    "datasets_summary": {
+
+        "asset_types": [
+            {   "value": "Dataset / Tabular", "frequency": 35000 },
+            {   "value": "Dataset / Geospatial", "frequency": 21000 },
+            {   "value": "Dataset / Omics", "frequency": 10156 },
+            {   "value": "Other Types", "frequency": 1000 }
+        ],
+
+        "providers": [
+            {   "name" : "International Livestock Research Institute (ILRI)",
+                "value": "ILRI",
+                "frequency": 1837
+            },
+            {   "name" : "International Center for Tropical Agriculture (CIAT)",
+                "value": "CIAT",
+                "frequency": 842
+            },
+            {
+                "name": "International Food Policy Research Institute (IFPRI)",
+                "value": "IFPRI",
+                "frequency": 512
+            },
+            {
+                "name": "International Center for Agricultural Research in the Dry Areas (ICARDA)",
+                "value": "ICARDA",
+                "frequency": 286
+            }
+        ]
+
+    },
+
+    "sources_summary": {
+
+        "publication_repos": [
+            {   "value": "CGSpace",
+                "frequency": 1837
+            },
+            {   "value": "IFPRI-Ebrary",
+                "frequency": 842
+            },
+            {
+                "value": "IITA-LIB",
+                "frequency": 512
+            },
+            {
+                "value": "ICARDA-MEL",
+                "frequency": 286
+            }
+        ],
+
+        "dataset_repos": [
+            {   "value": "Harvard Dataverse",
+                "frequency": 937
+            },
+            {   "value": "CIMMYT Dataverse",
+                "frequency": 842
+            },
+            {
+                "value": "IFPRI-Ebrary",
+                "frequency": 712
+            },
+            {
+                "value": "ICARDA-MEL",
+                "frequency": 586
+            }
+        ]
+
+
+    },
+
+    "publications": [
+
+        {  "provider": "CGIAR",
+
+            "access_rights_over_time": [
+                {
+                    "year": "2011",
+                    "Open": 18281,
+                    "Restricted": 28182
+                }, {
+                    "year": "2012",
+                    "Open": 21737,
+                    "Restricted": 29951
+                }, {
+                    "year": "2013",
+                    "Open": 26320,
+                    "Restricted": 33926
+                }, {
+                    "year": "2014",
+                    "Open": 30435,
+                    "Restricted": 42632
+                }, {
+                    "year": "2015",
+                    "Open": 35011,
+                    "Restricted": 48266
+                }, {
+                    "year": "2016",
+                    "Open": 40535,
+                    "Restricted": 51861
+                }, {
+                    "year": "2017",
+                    "Open": 46028,
+                    "Restricted": 55634
+                }, {
+                    "year": "2018",
+                    "Open": 51070,
+                    "Restricted": 58173
+                }, {
+                    "year": "2019",
+                    "Open": 56385,
+                    "Restricted": 60289
+                }, {
+                    "year": "2020",
+                    "Open": 60409,
+                    "Restricted": 62065
+                }, {
+                    "year": "2021",
+                    "Open": 60754,
+                    "Restricted": 62140
+                }
+            ],
+
+            "fair_over_time": [
+                {
+                    "year": "2003",
+                    "Findable": 2.5,
+                    "Accessible": 3.5,
+                    "Interoperable": 1.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2004",
+                    "Findable": 1.5,
+                    "Accessible": 2.5,
+                    "Interoperable": 1.9,
+                    "Reusable": 2.7
+                }, {
+                    "year": "2005",
+                    "Findable": 1.4,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2006",
+                    "Findable": 3.2,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 2.7
+                }, {
+                    "year": "2007",
+                    "Findable": 2.43,
+                    "Accessible": 2.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2008",
+                    "Findable": 2.51,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.4
+                }
+            ],
+
+            "countries": [
+                { "value": "Senegal", "code_ISO3166_1_a2": "SN", "code_UNM49": "UNM49:686", "frequency": 3055 },
+                { "value": "Kenya", "code_ISO3166_1_a2": "KE", "code_UNM49": "UNM49:404", "frequency": 3022 },
+                { "value": "Tunisia", "code_ISO3166_1_a2": "TN", "code_UNM49": "UNM49:788", "frequency": 2918 },
+                { "value": "Puerto Rico", "code_ISO3166_1_a2": "PR", "code_UNM49": "UNM49:630", "frequency": 2814 },
+                { "value": "Panama", "code_ISO3166_1_a2": "PA", "code_UNM49": "UNM49:591", "frequency": 2545 },
+                { "value": "Uganda", "code_ISO3166_1_a2": "UG", "code_UNM49": "UNM49:800", "frequency": 2475 },
+                { "value": "Rwanda", "code_ISO3166_1_a2": "RW", "code_UNM49": "UNM49:646", "frequency": 2427 },
+                { "value": "Algeria", "code_ISO3166_1_a2": "DZ", "code_UNM49": "UNM49:012", "frequency": 2378 },
+                { "value": "Colombia", "code_ISO3166_1_a2": "CO", "code_UNM49": "UNM49:170", "frequency": 2202 },
+                { "value": "Uzbekistan", "code_ISO3166_1_a2": "UZ", "code_UNM49": "UNM49:860", "frequency": 2176 },
+                { "value": "Nepal", "code_ISO3166_1_a2": "NP", "code_UNM49": "UNM49:524", "frequency": 2085 },
+                { "value": "Namibia", "code_ISO3166_1_a2": "NA", "code_UNM49": "UNM49:516", "frequency": 1920 },
+                { "value": "Bangladesh", "code_ISO3166_1_a2": "BD", "code_UNM49": "UNM49:050", "frequency": 1895 },
+                { "value": "Ecuador", "code_ISO3166_1_a2": "EC", "code_UNM49": "UNM49:218", "frequency": 1877 },
+                { "value": "Philippines", "code_ISO3166_1_a2": "PH", "code_UNM49": "UNM49:608", "frequency": 1864 },
+                { "value": "Armenia", "code_ISO3166_1_a2": "AM", "code_UNM49": "UNM49:051", "frequency": 1772 },
+                { "value": "Afghanistan", "code_ISO3166_1_a2": "AF", "code_UNM49": "UNM49:004", "frequency": 1657 },
+                { "value": "Iraq", "code_ISO3166_1_a2": "IQ", "code_UNM49": "UNM49:368", "frequency": 1572 },
+                { "value": "Kazakhstan", "code_ISO3166_1_a2": "KZ", "code_UNM49": "UNM49:398", "frequency": 1543 },
+                { "value": "Japan", "code_ISO3166_1_a2": "JP", "code_UNM49": "UNM49:392", "frequency": 1268 },
+                { "value": "Argentina", "code_ISO3166_1_a2": "AR", "code_UNM49": "UNM49:032", "frequency": 1222 },
+                { "value": "Burkina Faso", "code_ISO3166_1_a2": "BF", "code_UNM49": "UNM49:854", "frequency": 1116 },
+                { "value": "Brazil", "code_ISO3166_1_a2": "BR", "code_UNM49": "UNM49:076", "frequency": 1080 },
+                { "value": "Viet Nam", "code_ISO3166_1_a2": "VN", "code_UNM49": "UNM49:704", "frequency": 953 },
+                { "value": "Nigeria", "code_ISO3166_1_a2": "NG", "code_UNM49": "UNM49:566", "frequency": 854 },
+                { "value": "Chile", "code_ISO3166_1_a2": "CL", "code_UNM49": "UNM49:152", "frequency": 853 },
+                { "value": "Thailand", "code_ISO3166_1_a2": "TH", "code_UNM49": "UNM49:764", "frequency": 806 },
+                { "value": "Somalia", "code_ISO3166_1_a2": "SO", "code_UNM49": "UNM49:706", "frequency": 663 },
+                { "value": "Guatemala", "code_ISO3166_1_a2": "GT", "code_UNM49": "UNM49:320", "frequency": 543 },
+                { "value": "Canada", "code_ISO3166_1_a2": "CA", "code_UNM49": "UNM49:124", "frequency": 541 },
+                { "value": "Mexico", "code_ISO3166_1_a2": "MX", "code_UNM49": "UNM49:484", "frequency": 540 },
+                { "value": "Pakistan", "code_ISO3166_1_a2": "PK", "code_UNM49": "UNM49:586", "frequency": 398 },
+                { "value": "India", "code_ISO3166_1_a2": "IN", "code_UNM49": "UNM49:356", "frequency": 321 },
+                { "value": "Mongolia", "code_ISO3166_1_a2": "MN", "code_UNM49": "UNM49:496", "frequency": 288 },
+                { "value": "Benin", "code_ISO3166_1_a2": "BJ", "code_UNM49": "UNM49:204", "frequency": 252 },
+                { "value": "Peru", "code_ISO3166_1_a2": "PE", "code_UNM49": "UNM49:604", "frequency": 228 },
+                { "value": "Nicaragua", "code_ISO3166_1_a2": "NI", "code_UNM49": "UNM49:558", "frequency": 59 },
+                { "value": "South Africa", "code_ISO3166_1_a2": "ZA", "code_UNM49": "UNM49:710", "frequency": 22 },
+                { "value": "Bhutan", "code_ISO3166_1_a2": "BT", "code_UNM49": "UNM49:064", "frequency": 14 }
+            ],
+
+            "keywords": [
+                {
+                    "scheme": "SDGvoc",
+                    "value":"livestock",
+                    "code": "",
+                    "frequency": "0.85"
+                },
+                {
+                    "scheme": "free",
+                    "value":"climate change",
+                    "code": "",
+                    "frequency": "0.72"
+                },
+                {
+                    "scheme": "AGROVOC",
+                    "value":"biodiversity",
+                    "code": "c_3172-234",
+                    "frequency": "0.54"
+                },
+                {
+                    "scheme": "free",
+                    "value":"water management",
+                    "code": "",
+                    "frequency": "0.66"
+                }
+
+            ],
+
+            "projects": [
+
+                {"value": "A4NH", "name": "CRP - Agriculture for Nutrition and Health (A4NH)","frequency": 137},
+                {"value": "CCAFS", "name": "CRP - Climate Change, Agriculture and Food Security (CCAFS)","frequency": 483},
+                {"value": "Fish", "name": "CRP - Fish","frequency": 137},
+                {"value": "FTA", "name": "CRP - Forests, Trees and Agroforestry (FTA)","frequency": 432},
+                {"value": "GLDC", "name": "CRP - Grain Legumes and Dryland Cereals (GLDC)","frequency": 753},
+                {"value": "Livestock", "name": "CRP - Livestock","frequency": 316},
+                {"value": "Maize", "name": "CRP - Maize","frequency": 215},
+                {"value": "PIM", "name": "CRP - Policies, Institutions, and Markets (PIM)","frequency": 1837},
+                {"value": "Rice", "name": "CRP - Rice","frequency": 87},
+                {"value": "RTB", "name": "CRP - Roots, Tubers and Bananas (RTB)","frequency": 345},
+                {"value": "WLE", "name": "CRP - Water, Land and Ecosystems (WLE)","frequency": 912},
+                {"value": "Wheat", "name": "CRP - Wheat","frequency": 537},
+                {"value": "EiB", "name": "PTF - Excellence in Breeding Platform (EiB)","frequency": 1137},
+                {"value": "Gender", "name": "PTF - Gender Platform (Gender)","frequency": 637},
+                {"value": "Genebank", "name": "PTF - Genebank Platform (Genebank)","frequency": 833},
+                {"value": "BigData", "name": "PTF - Platform for Big Data in Agriculture (BigData)","frequency": 1837}
+
+            ],
+
+            "funders": [
+
+                {	"value": "BMGF",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF2",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID2",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ2",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF3",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID3",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ3",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF4",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID4",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ4",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF5",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID5",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ5",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                }
+            ]
+        },
+
+
+        {  "provider": "IFPRI",
+
+            "access_rights_over_time": [
+                {
+                    "year": "2011",
+                    "Open": 18281,
+                    "Restricted": 28182
+                }, {
+                    "year": "2012",
+                    "Open": 21737,
+                    "Restricted": 29951
+                }, {
+                    "year": "2013",
+                    "Open": 26320,
+                    "Restricted": 33926
+                }, {
+                    "year": "2014",
+                    "Open": 30435,
+                    "Restricted": 42632
+                }, {
+                    "year": "2015",
+                    "Open": 35011,
+                    "Restricted": 48266
+                }, {
+                    "year": "2016",
+                    "Open": 40535,
+                    "Restricted": 51861
+                }, {
+                    "year": "2017",
+                    "Open": 46028,
+                    "Restricted": 55634
+                }, {
+                    "year": "2018",
+                    "Open": 51070,
+                    "Restricted": 58173
+                }, {
+                    "year": "2019",
+                    "Open": 56385,
+                    "Restricted": 60289
+                }, {
+                    "year": "2020",
+                    "Open": 60409,
+                    "Restricted": 62065
+                }, {
+                    "year": "2021",
+                    "Open": 60754,
+                    "Restricted": 62140
+                }
+            ],
+
+            "fair_over_time": [
+                {
+                    "year": "2003",
+                    "Findable": 2.5,
+                    "Accessible": 3.5,
+                    "Interoperable": 1.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2004",
+                    "Findable": 1.5,
+                    "Accessible": 2.5,
+                    "Interoperable": 1.9,
+                    "Reusable": 2.7
+                }, {
+                    "year": "2005",
+                    "Findable": 1.4,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2006",
+                    "Findable": 3.2,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 2.7
+                }, {
+                    "year": "2007",
+                    "Findable": 2.43,
+                    "Accessible": 2.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2008",
+                    "Findable": 2.51,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.4
+                }
+            ],
+
+            "countries": [
+                { "value": "Senegal", "code_ISO3166_1_a2": "SN", "code_UNM49": "UNM49:686", "frequency": 3055 },
+                { "value": "Kenya", "code_ISO3166_1_a2": "KE", "code_UNM49": "UNM49:404", "frequency": 3022 },
+                { "value": "Tunisia", "code_ISO3166_1_a2": "TN", "code_UNM49": "UNM49:788", "frequency": 2918 },
+                { "value": "Puerto Rico", "code_ISO3166_1_a2": "PR", "code_UNM49": "UNM49:630", "frequency": 2814 },
+                { "value": "Panama", "code_ISO3166_1_a2": "PA", "code_UNM49": "UNM49:591", "frequency": 2545 },
+                { "value": "Uganda", "code_ISO3166_1_a2": "UG", "code_UNM49": "UNM49:800", "frequency": 2475 },
+                { "value": "Rwanda", "code_ISO3166_1_a2": "RW", "code_UNM49": "UNM49:646", "frequency": 2427 },
+                { "value": "Algeria", "code_ISO3166_1_a2": "DZ", "code_UNM49": "UNM49:012", "frequency": 2378 },
+                { "value": "Colombia", "code_ISO3166_1_a2": "CO", "code_UNM49": "UNM49:170", "frequency": 2202 },
+                { "value": "Uzbekistan", "code_ISO3166_1_a2": "UZ", "code_UNM49": "UNM49:860", "frequency": 2176 },
+                { "value": "Nepal", "code_ISO3166_1_a2": "NP", "code_UNM49": "UNM49:524", "frequency": 2085 },
+                { "value": "Namibia", "code_ISO3166_1_a2": "NA", "code_UNM49": "UNM49:516", "frequency": 1920 },
+                { "value": "Bangladesh", "code_ISO3166_1_a2": "BD", "code_UNM49": "UNM49:050", "frequency": 1895 },
+                { "value": "Ecuador", "code_ISO3166_1_a2": "EC", "code_UNM49": "UNM49:218", "frequency": 1877 },
+                { "value": "Philippines", "code_ISO3166_1_a2": "PH", "code_UNM49": "UNM49:608", "frequency": 1864 },
+                { "value": "Armenia", "code_ISO3166_1_a2": "AM", "code_UNM49": "UNM49:051", "frequency": 1772 },
+                { "value": "Afghanistan", "code_ISO3166_1_a2": "AF", "code_UNM49": "UNM49:004", "frequency": 1657 },
+                { "value": "Iraq", "code_ISO3166_1_a2": "IQ", "code_UNM49": "UNM49:368", "frequency": 1572 },
+                { "value": "Kazakhstan", "code_ISO3166_1_a2": "KZ", "code_UNM49": "UNM49:398", "frequency": 1543 },
+                { "value": "Japan", "code_ISO3166_1_a2": "JP", "code_UNM49": "UNM49:392", "frequency": 1268 },
+                { "value": "Argentina", "code_ISO3166_1_a2": "AR", "code_UNM49": "UNM49:032", "frequency": 1222 },
+                { "value": "Burkina Faso", "code_ISO3166_1_a2": "BF", "code_UNM49": "UNM49:854", "frequency": 1116 },
+                { "value": "Brazil", "code_ISO3166_1_a2": "BR", "code_UNM49": "UNM49:076", "frequency": 1080 },
+                { "value": "Viet Nam", "code_ISO3166_1_a2": "VN", "code_UNM49": "UNM49:704", "frequency": 953 },
+                { "value": "Nigeria", "code_ISO3166_1_a2": "NG", "code_UNM49": "UNM49:566", "frequency": 854 },
+                { "value": "Chile", "code_ISO3166_1_a2": "CL", "code_UNM49": "UNM49:152", "frequency": 853 },
+                { "value": "Thailand", "code_ISO3166_1_a2": "TH", "code_UNM49": "UNM49:764", "frequency": 806 },
+                { "value": "Somalia", "code_ISO3166_1_a2": "SO", "code_UNM49": "UNM49:706", "frequency": 663 },
+                { "value": "Guatemala", "code_ISO3166_1_a2": "GT", "code_UNM49": "UNM49:320", "frequency": 543 },
+                { "value": "Canada", "code_ISO3166_1_a2": "CA", "code_UNM49": "UNM49:124", "frequency": 541 },
+                { "value": "Mexico", "code_ISO3166_1_a2": "MX", "code_UNM49": "UNM49:484", "frequency": 540 },
+                { "value": "Pakistan", "code_ISO3166_1_a2": "PK", "code_UNM49": "UNM49:586", "frequency": 398 },
+                { "value": "India", "code_ISO3166_1_a2": "IN", "code_UNM49": "UNM49:356", "frequency": 321 },
+                { "value": "Mongolia", "code_ISO3166_1_a2": "MN", "code_UNM49": "UNM49:496", "frequency": 288 },
+                { "value": "Benin", "code_ISO3166_1_a2": "BJ", "code_UNM49": "UNM49:204", "frequency": 252 },
+                { "value": "Peru", "code_ISO3166_1_a2": "PE", "code_UNM49": "UNM49:604", "frequency": 228 },
+                { "value": "Nicaragua", "code_ISO3166_1_a2": "NI", "code_UNM49": "UNM49:558", "frequency": 59 },
+                { "value": "South Africa", "code_ISO3166_1_a2": "ZA", "code_UNM49": "UNM49:710", "frequency": 22 },
+                { "value": "Bhutan", "code_ISO3166_1_a2": "BT", "code_UNM49": "UNM49:064", "frequency": 14 }
+            ],
+
+            "keywords": [
+                {
+                    "scheme": "SDGvoc",
+                    "value":"livestock",
+                    "code": "",
+                    "frequency": "0.85"
+                },
+                {
+                    "scheme": "free",
+                    "value":"climate change",
+                    "code": "",
+                    "frequency": "0.72"
+                },
+                {
+                    "scheme": "AGROVOC",
+                    "value":"biodiversity",
+                    "code": "c_3172-234",
+                    "frequency": "0.54"
+                },
+                {
+                    "scheme": "free",
+                    "value":"water management",
+                    "code": "",
+                    "frequency": "0.66"
+                }
+
+            ],
+
+            "projects": [
+
+                {"value": "A4NH", "name": "CRP - Agriculture for Nutrition and Health (A4NH)","frequency": 137},
+                {"value": "CCAFS", "name": "CRP - Climate Change, Agriculture and Food Security (CCAFS)","frequency": 483},
+                {"value": "Fish", "name": "CRP - Fish","frequency": 137},
+                {"value": "FTA", "name": "CRP - Forests, Trees and Agroforestry (FTA)","frequency": 432},
+                {"value": "GLDC", "name": "CRP - Grain Legumes and Dryland Cereals (GLDC)","frequency": 753},
+                {"value": "Livestock", "name": "CRP - Livestock","frequency": 316},
+                {"value": "Maize", "name": "CRP - Maize","frequency": 215},
+                {"value": "PIM", "name": "CRP - Policies, Institutions, and Markets (PIM)","frequency": 1837},
+                {"value": "Rice", "name": "CRP - Rice","frequency": 87},
+                {"value": "RTB", "name": "CRP - Roots, Tubers and Bananas (RTB)","frequency": 345},
+                {"value": "WLE", "name": "CRP - Water, Land and Ecosystems (WLE)","frequency": 912},
+                {"value": "Wheat", "name": "CRP - Wheat","frequency": 537},
+                {"value": "EiB", "name": "PTF - Excellence in Breeding Platform (EiB)","frequency": 1137},
+                {"value": "Gender", "name": "PTF - Gender Platform (Gender)","frequency": 637},
+                {"value": "Genebank", "name": "PTF - Genebank Platform (Genebank)","frequency": 833},
+                {"value": "BigData", "name": "PTF - Platform for Big Data in Agriculture (BigData)","frequency": 1837}
+
+            ],
+
+            "funders": [
+
+                {	"value": "BMGF",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF2",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID2",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ2",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF3",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID3",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ3",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF4",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID4",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ4",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF5",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID5",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ5",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                }
+            ]
+        }
+
+    ],
+
+    "datasets": [
+
+        {  "provider": "CGIAR",
+
+            "access_rights_over_time": [
+                {
+                    "year": "2011",
+                    "Open": 18281,
+                    "Restricted": 28182
+                }, {
+                    "year": "2012",
+                    "Open": 21737,
+                    "Restricted": 29951
+                }, {
+                    "year": "2013",
+                    "Open": 26320,
+                    "Restricted": 33926
+                }, {
+                    "year": "2014",
+                    "Open": 30435,
+                    "Restricted": 42632
+                }, {
+                    "year": "2015",
+                    "Open": 35011,
+                    "Restricted": 48266
+                }, {
+                    "year": "2016",
+                    "Open": 40535,
+                    "Restricted": 51861
+                }, {
+                    "year": "2017",
+                    "Open": 46028,
+                    "Restricted": 55634
+                }, {
+                    "year": "2018",
+                    "Open": 51070,
+                    "Restricted": 58173
+                }, {
+                    "year": "2019",
+                    "Open": 56385,
+                    "Restricted": 60289
+                }, {
+                    "year": "2020",
+                    "Open": 60409,
+                    "Restricted": 62065
+                }, {
+                    "year": "2021",
+                    "Open": 60754,
+                    "Restricted": 62140
+                }
+            ],
+
+            "fair_over_time": [
+                {
+                    "year": "2016",
+                    "Findable": 2.5,
+                    "Accessible": 3.5,
+                    "Interoperable": 1.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2017",
+                    "Findable": 1.5,
+                    "Accessible": 2.5,
+                    "Interoperable": 1.9,
+                    "Reusable": 2.7
+                }, {
+                    "year": "2018",
+                    "Findable": 1.4,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2019",
+                    "Findable": 3.2,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 2.7
+                }, {
+                    "year": "2020",
+                    "Findable": 2.43,
+                    "Accessible": 2.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2021",
+                    "Findable": 4.51,
+                    "Accessible": 4.5,
+                    "Interoperable": 4.5,
+                    "Reusable": 4.4
+                }
+            ],
+
+            "countries": [
+                { "value": "Armenia", "code_ISO3166_1_a2": "AM", "code_UNM49": "UNM49:051", "frequency": 1772 },
+                { "value": "Afghanistan", "code_ISO3166_1_a2": "AF", "code_UNM49": "UNM49:004", "frequency": 1657 },
+                { "value": "Iraq", "code_ISO3166_1_a2": "IQ", "code_UNM49": "UNM49:368", "frequency": 1572 },
+                { "value": "Kazakhstan", "code_ISO3166_1_a2": "KZ", "code_UNM49": "UNM49:398", "frequency": 1543 },
+                { "value": "Japan", "code_ISO3166_1_a2": "JP", "code_UNM49": "UNM49:392", "frequency": 1268 },
+                { "value": "Argentina", "code_ISO3166_1_a2": "AR", "code_UNM49": "UNM49:032", "frequency": 1222 },
+                { "value": "Somalia", "code_ISO3166_1_a2": "SO", "code_UNM49": "UNM49:706", "frequency": 663 },
+                { "value": "Guatemala", "code_ISO3166_1_a2": "GT", "code_UNM49": "UNM49:320", "frequency": 543 },
+                { "value": "Canada", "code_ISO3166_1_a2": "CA", "code_UNM49": "UNM49:124", "frequency": 541 },
+                { "value": "Mexico", "code_ISO3166_1_a2": "MX", "code_UNM49": "UNM49:484", "frequency": 540 },
+                { "value": "Pakistan", "code_ISO3166_1_a2": "PK", "code_UNM49": "UNM49:586", "frequency": 398 },
+                { "value": "India", "code_ISO3166_1_a2": "IN", "code_UNM49": "UNM49:356", "frequency": 321 },
+                { "value": "Mongolia", "code_ISO3166_1_a2": "MN", "code_UNM49": "UNM49:496", "frequency": 288 },
+                { "value": "Benin", "code_ISO3166_1_a2": "BJ", "code_UNM49": "UNM49:204", "frequency": 252 },
+                { "value": "Peru", "code_ISO3166_1_a2": "PE", "code_UNM49": "UNM49:604", "frequency": 228 },
+                { "value": "Nicaragua", "code_ISO3166_1_a2": "NI", "code_UNM49": "UNM49:558", "frequency": 59 },
+                { "value": "South Africa", "code_ISO3166_1_a2": "ZA", "code_UNM49": "UNM49:710", "frequency": 22 },
+                { "value": "Bhutan", "code_ISO3166_1_a2": "BT", "code_UNM49": "UNM49:064", "frequency": 14 }
+            ],
+
+            "keywords": [
+                {
+                    "scheme": "SDGvoc",
+                    "value":"livestock",
+                    "code": "",
+                    "frequency": "0.85"
+                },
+                {
+                    "scheme": "free",
+                    "value":"climate change",
+                    "code": "",
+                    "frequency": "0.72"
+                },
+                {
+                    "scheme": "AGROVOC",
+                    "value":"biodiversity",
+                    "code": "c_3172-234",
+                    "frequency": "0.54"
+                },
+                {
+                    "scheme": "free",
+                    "value":"water management",
+                    "code": "",
+                    "frequency": "0.66"
+                }
+
+            ],
+
+            "projects": [
+
+                {"value": "A4NH", "name": "CRP - Agriculture for Nutrition and Health (A4NH)","frequency": 137},
+                {"value": "CCAFS", "name": "CRP - Climate Change, Agriculture and Food Security (CCAFS)","frequency": 483},
+                {"value": "Fish", "name": "CRP - Fish","frequency": 137},
+                {"value": "FTA", "name": "CRP - Forests, Trees and Agroforestry (FTA)","frequency": 432},
+                {"value": "GLDC", "name": "CRP - Grain Legumes and Dryland Cereals (GLDC)","frequency": 753},
+                {"value": "Livestock", "name": "CRP - Livestock","frequency": 316},
+                {"value": "Maize", "name": "CRP - Maize","frequency": 215},
+                {"value": "PIM", "name": "CRP - Policies, Institutions, and Markets (PIM)","frequency": 1837},
+                {"value": "Rice", "name": "CRP - Rice","frequency": 87},
+                {"value": "RTB", "name": "CRP - Roots, Tubers and Bananas (RTB)","frequency": 345},
+                {"value": "WLE", "name": "CRP - Water, Land and Ecosystems (WLE)","frequency": 912},
+                {"value": "Wheat", "name": "CRP - Wheat","frequency": 537},
+                {"value": "EiB", "name": "PTF - Excellence in Breeding Platform (EiB)","frequency": 1137},
+                {"value": "Gender", "name": "PTF - Gender Platform (Gender)","frequency": 637},
+                {"value": "Genebank", "name": "PTF - Genebank Platform (Genebank)","frequency": 833},
+                {"value": "BigData", "name": "PTF - Platform for Big Data in Agriculture (BigData)","frequency": 1837}
+
+            ],
+
+            "funders": [
+
+                {	"value": "BMGF",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF2",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID2",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ2",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF3",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID3",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ3",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF4",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID4",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ4",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF5",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID5",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ5",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                }
+            ]
+
+        },
+
+        {  "provider": "CIAT",
+
+            "access_rights_over_time": [
+                {
+                    "year": "2011",
+                    "Open": 18281,
+                    "Restricted": 28182
+                }, {
+                    "year": "2012",
+                    "Open": 21737,
+                    "Restricted": 29951
+                }, {
+                    "year": "2013",
+                    "Open": 26320,
+                    "Restricted": 33926
+                }, {
+                    "year": "2014",
+                    "Open": 30435,
+                    "Restricted": 42632
+                }, {
+                    "year": "2015",
+                    "Open": 35011,
+                    "Restricted": 48266
+                }, {
+                    "year": "2016",
+                    "Open": 40535,
+                    "Restricted": 51861
+                }, {
+                    "year": "2017",
+                    "Open": 46028,
+                    "Restricted": 55634
+                }, {
+                    "year": "2018",
+                    "Open": 51070,
+                    "Restricted": 58173
+                }, {
+                    "year": "2019",
+                    "Open": 56385,
+                    "Restricted": 60289
+                }, {
+                    "year": "2020",
+                    "Open": 60409,
+                    "Restricted": 62065
+                }, {
+                    "year": "2021",
+                    "Open": 60754,
+                    "Restricted": 62140
+                }
+            ],
+
+            "fair_over_time": [
+                {
+                    "year": "2016",
+                    "Findable": 2.5,
+                    "Accessible": 3.5,
+                    "Interoperable": 1.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2017",
+                    "Findable": 1.5,
+                    "Accessible": 2.5,
+                    "Interoperable": 1.9,
+                    "Reusable": 2.7
+                }, {
+                    "year": "2018",
+                    "Findable": 1.4,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2019",
+                    "Findable": 3.2,
+                    "Accessible": 1.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 2.7
+                }, {
+                    "year": "2020",
+                    "Findable": 2.43,
+                    "Accessible": 2.5,
+                    "Interoperable": 2.5,
+                    "Reusable": 3.7
+                }, {
+                    "year": "2021",
+                    "Findable": 4.51,
+                    "Accessible": 4.5,
+                    "Interoperable": 4.5,
+                    "Reusable": 4.4
+                }
+            ],
+
+            "countries": [
+                { "value": "Armenia", "code_ISO3166_1_a2": "AM", "code_UNM49": "UNM49:051", "frequency": 1772 },
+                { "value": "Afghanistan", "code_ISO3166_1_a2": "AF", "code_UNM49": "UNM49:004", "frequency": 1657 },
+                { "value": "Iraq", "code_ISO3166_1_a2": "IQ", "code_UNM49": "UNM49:368", "frequency": 1572 },
+                { "value": "Kazakhstan", "code_ISO3166_1_a2": "KZ", "code_UNM49": "UNM49:398", "frequency": 1543 },
+                { "value": "Japan", "code_ISO3166_1_a2": "JP", "code_UNM49": "UNM49:392", "frequency": 1268 },
+                { "value": "Argentina", "code_ISO3166_1_a2": "AR", "code_UNM49": "UNM49:032", "frequency": 1222 },
+                { "value": "Somalia", "code_ISO3166_1_a2": "SO", "code_UNM49": "UNM49:706", "frequency": 663 },
+                { "value": "Guatemala", "code_ISO3166_1_a2": "GT", "code_UNM49": "UNM49:320", "frequency": 543 },
+                { "value": "Canada", "code_ISO3166_1_a2": "CA", "code_UNM49": "UNM49:124", "frequency": 541 },
+                { "value": "Mexico", "code_ISO3166_1_a2": "MX", "code_UNM49": "UNM49:484", "frequency": 540 },
+                { "value": "Pakistan", "code_ISO3166_1_a2": "PK", "code_UNM49": "UNM49:586", "frequency": 398 },
+                { "value": "India", "code_ISO3166_1_a2": "IN", "code_UNM49": "UNM49:356", "frequency": 321 },
+                { "value": "Mongolia", "code_ISO3166_1_a2": "MN", "code_UNM49": "UNM49:496", "frequency": 288 },
+                { "value": "Benin", "code_ISO3166_1_a2": "BJ", "code_UNM49": "UNM49:204", "frequency": 252 },
+                { "value": "Peru", "code_ISO3166_1_a2": "PE", "code_UNM49": "UNM49:604", "frequency": 228 },
+                { "value": "Nicaragua", "code_ISO3166_1_a2": "NI", "code_UNM49": "UNM49:558", "frequency": 59 },
+                { "value": "South Africa", "code_ISO3166_1_a2": "ZA", "code_UNM49": "UNM49:710", "frequency": 22 },
+                { "value": "Bhutan", "code_ISO3166_1_a2": "BT", "code_UNM49": "UNM49:064", "frequency": 14 }
+            ],
+
+            "keywords": [
+                {
+                    "scheme": "SDGvoc",
+                    "value":"livestock",
+                    "code": "",
+                    "frequency": "0.85"
+                },
+                {
+                    "scheme": "free",
+                    "value":"climate change",
+                    "code": "",
+                    "frequency": "0.72"
+                },
+                {
+                    "scheme": "AGROVOC",
+                    "value":"biodiversity",
+                    "code": "c_3172-234",
+                    "frequency": "0.54"
+                },
+                {
+                    "scheme": "free",
+                    "value":"water management",
+                    "code": "",
+                    "frequency": "0.66"
+                }
+
+            ],
+
+            "projects": [
+
+                {"value": "A4NH", "name": "CRP - Agriculture for Nutrition and Health (A4NH)","frequency": 137},
+                {"value": "CCAFS", "name": "CRP - Climate Change, Agriculture and Food Security (CCAFS)","frequency": 483},
+                {"value": "Fish", "name": "CRP - Fish","frequency": 137},
+                {"value": "FTA", "name": "CRP - Forests, Trees and Agroforestry (FTA)","frequency": 432},
+                {"value": "GLDC", "name": "CRP - Grain Legumes and Dryland Cereals (GLDC)","frequency": 753},
+                {"value": "Livestock", "name": "CRP - Livestock","frequency": 316},
+                {"value": "Maize", "name": "CRP - Maize","frequency": 215},
+                {"value": "PIM", "name": "CRP - Policies, Institutions, and Markets (PIM)","frequency": 1837},
+                {"value": "Rice", "name": "CRP - Rice","frequency": 87},
+                {"value": "RTB", "name": "CRP - Roots, Tubers and Bananas (RTB)","frequency": 345},
+                {"value": "WLE", "name": "CRP - Water, Land and Ecosystems (WLE)","frequency": 912},
+                {"value": "Wheat", "name": "CRP - Wheat","frequency": 537},
+                {"value": "EiB", "name": "PTF - Excellence in Breeding Platform (EiB)","frequency": 1137},
+                {"value": "Gender", "name": "PTF - Gender Platform (Gender)","frequency": 637},
+                {"value": "Genebank", "name": "PTF - Genebank Platform (Genebank)","frequency": 833},
+                {"value": "BigData", "name": "PTF - Platform for Big Data in Agriculture (BigData)","frequency": 1837}
+
+            ],
+
+            "funders": [
+
+                {	"value": "BMGF",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF2",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID2",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ2",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF3",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID3",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ3",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF4",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID4",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ4",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                },
+                {	"value": "BMGF5",
+                    "name":"Bill & Melinda Gates Foundation (BMGF)",
+                    "voc_code": "grid.418309.7",
+                    "url":"https://www.grid.ac/institutes/grid.418309.7",
+                    "frequency": 376
+                },
+
+                {	"value": "USAID5",
+                    "name":"United States Agency for International Development (USAID)",
+                    "voc_code": "grid.420285.9",
+                    "url":"https://www.grid.ac/institutes/grid.420285.9",
+                    "frequency": 261
+                },
+
+                {	"value": "GIZ5",
+                    "name":"German Corporation for International Cooperation (GIZ)",
+                    "voc_code": "grid.424161.4",
+                    "url":"https://www.grid.ac/institutes/grid.424161.4",
+                    "frequency": 145
+                }
+            ]
+
+        }
+
+    ],
+
+    "sources": [
+
+        {  "system": "CGSpace",
+
+            "publications" : {
+
+                "assets_over_time": [
+                    {
+                        "year": "2011",
+                        "Open": 18281,
+                        "Restricted": 28182
+                    }, {
+                        "year": "2012",
+                        "Open": 21737,
+                        "Restricted": 29951
+                    }, {
+                        "year": "2013",
+                        "Open": 26320,
+                        "Restricted": 33926
+                    }, {
+                        "year": "2014",
+                        "Open": 30435,
+                        "Restricted": 42632
+                    }, {
+                        "year": "2015",
+                        "Open": 35011,
+                        "Restricted": 48266
+                    }, {
+                        "year": "2016",
+                        "Open": 40535,
+                        "Restricted": 51861
+                    }, {
+                        "year": "2017",
+                        "Open": 46028,
+                        "Restricted": 55634
+                    }, {
+                        "year": "2018",
+                        "Open": 51070,
+                        "Restricted": 58173
+                    }, {
+                        "year": "2019",
+                        "Open": 56385,
+                        "Restricted": 60289
+                    }, {
+                        "year": "2020",
+                        "Open": 60409,
+                        "Restricted": 62065
+                    }, {
+                        "year": "2021",
+                        "Open": 60754,
+                        "Restricted": 62140
+                    }
+                ]
+            },
+
+            "datasets" : {
+
+                "assets_over_time": [
+
+                ]
+
+            }
+
+        },
+
+        {  "system": "IFPRI-Ebrary",
+
+            "publications" : {
+
+                "assets_over_time": [
+                    {
+                        "year": "2011",
+                        "Open": 18281,
+                        "Restricted": 28182
+                    }, {
+                        "year": "2012",
+                        "Open": 21737,
+                        "Restricted": 29951
+                    }, {
+                        "year": "2013",
+                        "Open": 26320,
+                        "Restricted": 33926
+                    }, {
+                        "year": "2014",
+                        "Open": 30435,
+                        "Restricted": 42632
+                    }, {
+                        "year": "2015",
+                        "Open": 35011,
+                        "Restricted": 48266
+                    }, {
+                        "year": "2016",
+                        "Open": 40535,
+                        "Restricted": 51861
+                    }, {
+                        "year": "2017",
+                        "Open": 46028,
+                        "Restricted": 55634
+                    }, {
+                        "year": "2018",
+                        "Open": 51070,
+                        "Restricted": 58173
+                    }, {
+                        "year": "2019",
+                        "Open": 56385,
+                        "Restricted": 60289
+                    }, {
+                        "year": "2020",
+                        "Open": 60409,
+                        "Restricted": 62065
+                    }, {
+                        "year": "2021",
+                        "Open": 1754,
+                        "Restricted": 2140
+                    }
+                ]
+            },
+
+            "datasets" : {
+
+                "assets_over_time": [
+                    {
+                        "year": "2011",
+                        "Open": 18281,
+                        "Restricted": 28182
+                    }, {
+                        "year": "2012",
+                        "Open": 21737,
+                        "Restricted": 29951
+                    }, {
+                        "year": "2013",
+                        "Open": 26320,
+                        "Restricted": 33926
+                    }, {
+                        "year": "2014",
+                        "Open": 30435,
+                        "Restricted": 42632
+                    }, {
+                        "year": "2015",
+                        "Open": 35011,
+                        "Restricted": 48266
+                    }, {
+                        "year": "2016",
+                        "Open": 40535,
+                        "Restricted": 51861
+                    }, {
+                        "year": "2017",
+                        "Open": 46028,
+                        "Restricted": 55634
+                    }, {
+                        "year": "2018",
+                        "Open": 51070,
+                        "Restricted": 58173
+                    }, {
+                        "year": "2019",
+                        "Open": 56385,
+                        "Restricted": 60289
+                    }, {
+                        "year": "2020",
+                        "Open": 60409,
+                        "Restricted": 62065
+                    }, {
+                        "year": "2021",
+                        "Open": 60754,
+                        "Restricted": 62140
+                    }
+                ]
+            }
+
+        }
+
+    ]
+}

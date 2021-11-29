@@ -1,0 +1,266 @@
+
+{
+    "dataCORE_version": "1.0",
+    "dataNODE_id" :"dataNODE-e6t0ch5OlA-resID-YVatsY3ow9",
+    "providers": [
+        {
+            "full_name": "International Water Management Institute (IWMI)",
+            "short_name": "IWMI",
+            "url": "https://www.iwmi.cgiar.org/",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "04vpcaw67"
+                }
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "repository": "CGSpace",
+            "repository_url": "https://cgspace.cgiar.org/",
+            "resource_url": "https://hdl.handle.net/10568/106349"
+        }
+    ],
+    "resource_type": {
+        "type": "publication",
+        "category": "Scientific Publication"
+    },
+    "title": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "Groundwater governance: addressing core concepts and challenges"
+        }
+    ],
+    "description": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "With decreasing aquifer levels, increasing groundwater pollution, inequitable access, and generally poor management outcomes, better groundwater governance has been put forward as a recipe to address these challenges worldwide. Existing recommendations focus on improved legal frameworks, monitoring and control of access and abstraction through permits or formal rights. In addition, decentralized water management, enforcement of regulations, and supply-side technological solutions are seen as cornerstone components of good groundwater governance systems. However, until now, these approaches have generally failed to reconcile the fundamental dynamics and properties of groundwater as a natural resource and of governance as a social and political phenomenon. This has caused a disregard for local to planetary boundaries, power dynamics, and intra- and intergenerational inequalities in access to benefits from groundwater. As the current general notion of good groundwater governance is limited, solutions put forward are also partial and do not encompass the wider challenges affecting groundwater governance, in effect replacing sustainable management goals and policy for governance as a process. This paper takes a particular look at the Middle East and North Africa and agricultural groundwater use for irrigation to constructively redefine groundwater governance and fully address the multilayered and multifaceted core challenges of groundwater governance. Equally, the paper puts forward a new conceptual thinking that will help support the effective development of governance-based solutions to achieve sustainable, socially acceptable, resilient and equitable resource use"
+        }
+    ],
+    "resource_language": {
+        "name": "English",
+        "iso_code_639_1": "en",
+        "iso_code_639_2": "eng"
+    },
+    "release_year": "2020",
+    "embargo_date": "2019-12-31",
+    "thumbnails": [
+        {
+            "url": ""
+        }
+    ],
+    "dois": [
+        {
+            "value": "10.1002/wat2.1392",
+            "url": "https://doi.org/10.1002/wat2.1392"
+        }
+    ],
+    "other_pids": [
+        {
+            "scheme": "eISSN",
+            "value": "2049-1948"
+        }
+    ],
+    "rights": {
+        "access": "Limited",
+        "license": "CP",
+        "terms_of_use": [],
+        "rights_holders": []
+    },
+    "projects": [
+        {
+            "full_name": "CRP - Water, Land and Ecosystems (WLE)",
+            "short_name": "WLE",
+            "url": "https://wle.cgiar.org/"
+        }
+    ],
+    "funding_organisations": [
+        {
+            "full_name": "United States Agency for International Development (USAID)",
+            "short_name": "USAID",
+            "url": "https://www.usaid.gov/",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "01n6e6j62"
+                }
+            ]
+        }
+    ],
+    "contact_points": [],
+    "resource_files": [
+        {
+            "filename": "wat2.1392",
+            "extension": "[text-mining]",
+            "mime_type": "[text-mining]",
+            "data_type": "[text-mining]",
+            "md5sum": "",
+            "pii_check": "",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                {
+                    "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/wat2.1392"
+                }
+            ]
+        },
+        {
+            "filename": "wat2.1392",
+            "extension": "[text-mining]",
+            "mime_type": "[text-mining]",
+            "data_type": "[text-mining]",
+            "md5sum": "",
+            "pii_check": "",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                {
+                    "url": "https://onlinelibrary.wiley.com/doi/full-xml/10.1002/wat2.1392"
+                }
+            ]
+        }
+    ],
+    "keywords": [
+        {
+            "scheme": "user",
+            "value": "groundwater management",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "water governance",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "water policy",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "water law",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "legislation",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "decentralization",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "water supply",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "social aspects",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "political aspects",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "sustainability",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "agriculture",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "monitoring",
+            "code": "",
+            "frequency": "1"
+        }
+    ],
+    "geography": {
+        "regions": [
+            {
+                "value": "Western Asia",
+                "code_UNM49 ": "UNM49:145"
+            },
+            {
+                "value": "Asia",
+                "code_UNM49 ": "UNM49:142"
+            },
+            {
+                "value": "World",
+                "code_UNM49 ": "UNM49:001"
+            },
+            {
+                "value": "Northern Africa",
+                "code_UNM49 ": "UNM49:015"
+            },
+            {
+                "value": "Africa",
+                "code_UNM49 ": "UNM49:002"
+            }
+        ],
+        "countries": []
+    },
+    "temporal_coverage": {
+        "from": "",
+        "to": "",
+        "description": ""
+    },
+    "citation": "Closas, Alvar; Villholth, Karen G. 2020. Groundwater governance: addressing core concepts and challenges. WIREs Water 7:e1392. https://doi.org/10.1002/wat2.1392",
+    "authors": [
+        {
+            "full_name": "Closas, Alvar",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0002-9110-3480"
+                }
+            ]
+        },
+        {
+            "full_name": "Villholth, Karen G",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0002-7552-6715"
+                }
+            ]
+        }
+    ]
+}

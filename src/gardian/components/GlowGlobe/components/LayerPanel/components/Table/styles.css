@@ -1,0 +1,12 @@
+.layer-panel .p-datatable-tbody i{
+    color: #d16d16;
+}
+
+.layer-panel .p-datatable-thead span{
+    font-weight: bold;
+    font-family: Lato;
+}
+
+.layer-panel .p-datatable-tbody.tr.td {
+    justify-content: center;
+}

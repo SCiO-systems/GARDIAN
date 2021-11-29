@@ -1,0 +1,241 @@
+{
+
+    "summaries": {
+
+        "countries": [
+            {
+                "value": "Ethiopia",
+                "code": "ET",
+                "frequency": 6101
+            },
+            {
+                "value": "Nigeria",
+                "code": "NG",
+                "frequency": 4708
+            },
+            {
+                "value": "Kenya",
+                "code": "KE",
+                "frequency": 4471
+            },
+            {
+                "value": "Colombia",
+                "code": "CO",
+                "frequency": 3832
+            }
+        ],
+
+        "agrovoc": [
+            {
+                "value": "javascript",
+                "frequency": "1765836"
+            },
+            {
+                "value": "java",
+                "frequency": "1517355"
+            },
+            {
+                "value": "c#",
+                "frequency": "1287629"
+            },
+            {
+                "value": "php",
+                "frequency": "1263946"
+            },
+            {
+                "value": "android",
+                "frequency": "1174721"
+            },
+            {
+                "value": "python",
+                "frequency": "1116769"
+            },
+            {
+                "value": "jquery",
+                "frequency": "944983"
+            },
+            {
+                "value": "html",
+                "frequency": "805679"
+            },
+            {
+                "value": "c++",
+                "frequency": "606051"
+            },
+            {
+                "value": "ios",
+                "frequency": "591410"
+            },
+            {
+                "value": "css",
+                "frequency": "574684"
+            },
+            {
+                "value": "mysql",
+                "frequency": "550916"
+            },
+            {
+                "value": "sql",
+                "frequency": "479892"
+            },
+            {
+                "value": "asp.net",
+                "frequency": "343092"
+            },
+            {
+                "value": "ruby-on-rails",
+                "frequency": "303311"
+            },
+            {
+                "value": "c",
+                "frequency": "296963"
+            },
+            {
+                "value": "arrays",
+                "frequency": "288445"
+            },
+            {
+                "value": "objective-c",
+                "frequency": "286823"
+            },
+            {
+                "value": ".net",
+                "frequency": "280079"
+            },
+            {
+                "value": "r",
+                "frequency": "277144"
+            }
+        ],
+
+        "keywords": [
+            {
+                "value": "livestock",
+                "frequency": 542
+            },
+            {
+                "value": "climate change",
+                "frequency": 512
+            },
+            {
+                "value": "biodiversity",
+                "frequency": 486
+            },
+            {
+                "value": "water management",
+                "frequency": 432
+            }
+        ],
+        "providers": [
+        ],
+        "human_agents": [
+        ],
+        "projects": [
+        ],
+        "funders": [
+        ],
+        "series": [
+        ]
+    },
+
+    "results": [
+
+        {   "gardian_id" :"5cadec527c05e0ac8e90ab26",
+            "thumbnail_url":"https://cgspace.cgiar.org/bitstream/handle/10568/111443/agricutural%20water.gif",
+            "issued_year": 2008,
+            "type":  "Scientific Publication",
+            "title": "Restoration of terre de barre fertility using pigeonpea grown in rotation or intercropping with maize in the derived savanna of Benin",
+            "providers": [
+                {	"name":"International Center for Tropical Agriculture (CIAT)",
+                    "short_name":"CIAT",
+                    "url":"https://hdl.handle.net/10568/44052"
+                },
+                {	"name":"International Food Policy Research Institute (IFPRI)",
+                    "short_name":"IFPRI",
+                    "url":"https://hdl.handle.net/10568/44052"
+                }
+            ],
+            "dois":["https://doi.org/10.1016/j.agwat.2021.106758"],
+            "agrovoc":[ "zea mays", "maize", "pigeon peas"],
+            "geography":[ "Kenya", "Tunisia", "Marocco" ],
+            "is_open": true,
+            "license":"CC-BY-4.0"
+
+        },
+
+
+        {   "gardian_id" :"5cadec527c05e0ac8e90ab26",
+            "thumbnail_url":"https://cgspace.cgiar.org/bitstream/handle/10568/111443/agricutural%20water.gif",
+            "issued_year": 2009,
+            "type": "Report / Factsheet",
+            "title": "Maize and livestock: their inter-linked roles in meeting human needs in Ethiopia",
+            "providers": [
+                {	"name":"International Center for Tropical Agriculture (CIAT)",
+                    "short_name":"CIAT",
+                    "url":"https://hdl.handle.net/10568/44052"
+                }
+            ],
+            "dois":["https://doi.org/10.1016/j.agwat.2021.106758"],
+            "agrovoc":[ "zea mays", "maize", "pigeon peas"],
+            "geography":[ "Kenya", "Tunisia", "Marocco" ],
+            "is_open": true,
+            "license":"CC-BY-4.0"
+
+        },
+
+        {   "gardian_id" :"5cadec527c05e0ac8e90ab26",
+            "thumbnail_url":"https://cgspace.cgiar.org/bitstream/handle/10568/111443/agricutural%20water.gif",
+            "issued_year": 2012,
+            "type": "Other",
+            "title": "1986 CIMMYT World maize facts and trends: the economics of commercial maize seed production in developing countries",
+            "providers": [
+                {	"name":"International Center for Tropical Agriculture (CIAT)",
+                    "short_name":"CIAT",
+                    "url":"https://hdl.handle.net/10568/44052"
+                }
+            ],
+            "dois":["https://doi.org/10.1016/j.agwat.2021.106758"],
+            "agrovoc":[ "zea mays", "maize", "pigeon peas"],
+            "geography":[ "Kenya", "Tunisia", "Marocco" ],
+            "is_open": true,
+            "license":"CC-BY-4.0"
+        },
+
+        {   "gardian_id" :"5cadec527c05e0ac8e90ab26",
+            "thumbnail_url":"https://cgspace.cgiar.org/bitstream/handle/10568/111443/agricutural%20water.gif",
+            "issued_year": 2012,
+            "type": "Scientific Publication",
+            "title": "Reduced tillage, mulching and rotational effects on maize (Zea mays L.), cowpea (Vigna unguiculata (Walp) L.) and sorghum (Sorghum bicolor L. (Moench)) yields under semi-arid conditions",
+            "providers": [
+                {	"name":"International Center for Tropical Agriculture (CIAT)",
+                    "short_name":"CIAT",
+                    "url":"https://hdl.handle.net/10568/44052"
+                }
+            ],
+            "dois":["https://doi.org/10.1016/j.agwat.2021.106758"],
+            "agrovoc":[ "zea mays", "maize", "pigeon peas"],
+            "geography":[ "Kenya", "Tunisia", "Marocco" ],
+            "is_open": true,
+            "license":"CC-BY-4.0"
+        },
+
+        {   "gardian_id" :"5cadec527c05e0ac8e90ab26",
+            "thumbnail_url":"https://cgspace.cgiar.org/bitstream/handle/10568/111443/agricutural%20water.gif",
+            "issued_year": 2012,
+            "type": "Scientific Publication",
+            "title": "Reduced tillage, mulching and rotational effects on maize (Zea mays L.), cowpea (Vigna unguiculata (Walp) L.) and sorghum (Sorghum bicolor L. (Moench)) yields under semi-arid conditions",
+            "providers": [
+                {	"name":"International Center for Tropical Agriculture (CIAT)",
+                    "short_name":"CIAT",
+                    "url":"https://hdl.handle.net/10568/44052"
+                }
+            ],
+            "dois":["https://doi.org/10.1016/j.agwat.2021.106758"],
+            "agrovoc":[ "zea mays", "maize", "pigeon peas"],
+            "geography":[ "Kenya", "Tunisia", "Marocco" ],
+            "is_open": true,
+            "license":"CC-BY-4.0"
+        }
+    ]
+
+}

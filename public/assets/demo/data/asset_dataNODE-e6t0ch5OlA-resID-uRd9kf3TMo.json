@@ -1,0 +1,210 @@
+
+{
+    "dataCORE_version": "1.0",
+    "dataNODE_id" :"dataNODE-e6t0ch5OlA-resID-uRd9kf3TMo",
+    "providers": [
+        {
+            "full_name": "Bioversity-CIAT Alliance",
+            "short_name": "Bioversity-CIAT",
+            "url": "https://alliancebioversityciat.org/",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "",
+                    "value": ""
+                }
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "repository": "CGSpace",
+            "repository_url": "https://cgspace.cgiar.org/",
+            "resource_url": "https://hdl.handle.net/10568/109053"
+        }
+    ],
+    "resource_type": {
+        "type": "publication",
+        "category": "Report / Factsheet"
+    },
+    "title": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "Considering gender in pest and disease management: FAQs for gender-responsive data collection and extension work (Vietnamese)"
+        }
+    ],
+    "description": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "This brief explores the potentials and gains to be made by applying a gender perspective in agronomic research and extension work. While many people would readily acknowledge the importance of gender in any kind of agronomic research, the methods and techniques for applying the perspective are not as obvious nor easy to implement. What follows is a helpful Q&A by the interdisciplinary team who work on gender and pest and disease management in the CGIAR Research Program on Roots, Tubers and Bananas (RTB). Some additional references are available at the end of the article"
+        }
+    ],
+    "resource_language": {
+        "name": "Vietnamese",
+        "iso_code_639_1": "vi",
+        "iso_code_639_2": "vie"
+    },
+    "release_year": "2020",
+    "embargo_date": "2020-08-21",
+    "thumbnails": [
+        {
+            "url": "https://cgspace.cgiar.org/bitstream/handle/10568/109053/VN-Gender-pest-disease.pdf.jpg"
+        }
+    ],
+    "dois": [],
+    "other_pids": [],
+    "rights": {
+        "access": "Open",
+        "license": "",
+        "terms_of_use": [],
+        "rights_holders": []
+    },
+    "projects": [
+        {
+            "full_name": "CRP - Roots, Tubers and Bananas (RTB)",
+            "short_name": "RTB",
+            "url": "https://www.rtb.cgiar.org/"
+        }
+    ],
+    "funding_organisations": [],
+    "contact_points": [],
+    "resource_files": [
+        {
+            "filename": "VN-Gender-pest-disease.pdf",
+            "extension": ".pdf",
+            "mime_type": "text/pdf",
+            "data_type": "",
+            "md5sum": "",
+            "pii_check": "",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                {
+                    "url": "https://cgspace.cgiar.org/bitstream/handle/10568/109053/VN-Gender-pest-disease.pdf"
+                }
+            ]
+        }
+    ],
+    "keywords": [
+        {
+            "scheme": "user",
+            "value": "gender",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "women",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "pest management",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "extension activities",
+            "code": "",
+            "frequency": "1"
+        }
+    ],
+    "geography": {
+        "regions": [
+            {
+                "value": "Asia",
+                "code_UNM49 ": "UNM49:142"
+            },
+            {
+                "value": "World",
+                "code_UNM49 ": "UNM49:001"
+            },
+            {
+                "value": "South-eastern Asia",
+                "code_UNM49 ": "UNM49:035"
+            }
+        ],
+        "countries": [
+            {
+                "value": "Viet Nam",
+                "code_UNM49": "UNM49:704",
+                "code_ISO3166_1_a2": "VN",
+                "code_ISO3166_1_a3": "VNM"
+            }
+        ]
+    },
+    "temporal_coverage": {
+        "from": "",
+        "to": "",
+        "description": ""
+    },
+    "citation": "Kawarazuka, N.; Damtew, E.; Mayanja, S.; Okonya, J.S.; Rietveld, A.M.; Slavchevska, V.; Teeken; B. (2020). Considering gender in pest and disease management: FAQs for gender-responsive data collection and extension work. (Vietnamese). Lima, Peru: International Potato Center. 4p",
+    "authors": [
+        {
+            "full_name": "Kawarazuka, N",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Damtew, Elias",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Mayanja, S",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Okonya, J",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Rietveld, Anne M",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0002-9400-9473"
+                }
+            ]
+        },
+        {
+            "full_name": "Slavchevska, Vanya",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Teeken, B",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        }
+    ]
+}
+

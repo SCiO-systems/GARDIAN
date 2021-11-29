@@ -1,0 +1,272 @@
+
+{
+    "dataCORE_version": "1.0",
+    "dataNODE_id" :"dataNODE-e6t0ch5OlA-resID-fPmrFp3J3H",
+    "providers": [
+        {
+            "full_name": "International Water Management Institute (IWMI)",
+            "short_name": "IWMI",
+            "url": "https://www.iwmi.cgiar.org/",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ROR",
+                    "value": "04vpcaw67"
+                }
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "repository": "CGSpace",
+            "repository_url": "https://cgspace.cgiar.org/",
+            "resource_url": "https://hdl.handle.net/10568/114154"
+        }
+    ],
+    "resource_type": {
+        "type": "publication",
+        "category": "Scientific Publication"
+    },
+    "title": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "Water balance component analysis of a spring catchment of western Nepal"
+        }
+    ],
+    "description": [
+        {
+            "language": {
+                "name": "English",
+                "iso_code_639_1": "en",
+                "iso_code_639_2": "eng"
+            },
+            "value": "Springs in the mountains and hills are getting affected by both climatic and non-climatic changes. Hydrologic models are used to simulate the response of spring systems to the changes; however, only a limited number of studies using the hydrologic modeling approach have been accomplished on studying springs and spring-dominated watersheds in Nepal. This research aimed at understanding changing hydrological processes through hydrologic modeling in a spring catchment. A micro-catchment named 'Sikharpur' of West Seti watershed of Nepal was selected to get insights into the process influencing the spring system. The RRAWFLOW models with gamma distribution and time variant IRFs were calibrated and validated for the catchment to get the best fit model. The discharge was simulated according to the future projected climate scenarios. Then, a water balance was assessed for the micro-catchment. The results showed that understanding of likely response of hydrologic variables to potential future climate scenarios is critical for water resource management. It was estimated that the spring discharge would be decreased by more than 40 percentage after 50 years mainly due to the increase in evapo-transpiration (91.47% of the precipitation). Evapo-transpiration was found as a major hydrologic process impacting upon water balance in the spring catchment; therefore, its management for better spring resource conservation is recommended by considering high evapo-transpiration months, water deficient period and crop factor. The change in the storage was observed to be 51.78%; so, detail isotopic analysis and long-term monitoring of water balance is required for further characterization of water balance components"
+        }
+    ],
+    "resource_language": {
+        "name": "English",
+        "iso_code_639_1": "en",
+        "iso_code_639_2": "eng"
+    },
+    "release_year": "2021",
+    "embargo_date": "2021-06-30",
+    "thumbnails": [
+        {
+            "url": ""
+        }
+    ],
+    "dois": [
+        {
+            "value": "10.3126/banko.v31i1.37341",
+            "url": "https://doi.org/10.3126/banko.v31i1.37341"
+        }
+    ],
+    "other_pids": [
+        {
+            "scheme": "ISSN",
+            "value": "1016-0582"
+        },
+        {
+            "scheme": "eISSN",
+            "value": "2631-2301"
+        }
+    ],
+    "rights": {
+        "access": "Open",
+        "license": "CP",
+        "terms_of_use": [],
+        "rights_holders": []
+    },
+    "projects": [],
+    "funding_organisations": [],
+    "contact_points": [],
+    "resource_files": [
+        {
+            "filename": "28908",
+            "extension": "[text-mining]",
+            "mime_type": "[text-mining]",
+            "data_type": "[text-mining]",
+            "md5sum": "",
+            "pii_check": "",
+            "locked": false,
+            "publishable": true,
+            "embargo_date": "",
+            "location": [
+                {
+                    "url": "https://www.nepjol.info/index.php/BANKO/article/download/37341/28908"
+                }
+            ]
+        }
+    ],
+    "keywords": [
+        {
+            "scheme": "user",
+            "value": "water balance",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "catchment areas",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "water springs",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "watersheds",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "climate change",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "forecasting",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "discharges",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "hydrology",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "models",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "land use",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "land cover",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "evapotranspiration",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "precipitation",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "rain",
+            "code": "",
+            "frequency": "1"
+        },
+        {
+            "scheme": "user",
+            "value": "temperature",
+            "code": "",
+            "frequency": "1"
+        }
+    ],
+    "geography": {
+        "regions": [
+            {
+                "value": "Southern Asia",
+                "code_UNM49 ": "UNM49:034"
+            },
+            {
+                "value": "Asia",
+                "code_UNM49 ": "UNM49:142"
+            },
+            {
+                "value": "World",
+                "code_UNM49 ": "UNM49:001"
+            }
+        ],
+        "countries": [
+            {
+                "value": "Nepal",
+                "code_UNM49": "UNM49:524",
+                "code_ISO3166_1_a2": "NP",
+                "code_ISO3166_1_a3": "NPL"
+            }
+        ]
+    },
+    "temporal_coverage": {
+        "from": "",
+        "to": "",
+        "description": ""
+    },
+    "citation": "Jibesh Kumar, K. C.; Dhaubanjar, S.; Pandey, Vishnu P.; Subedi, R. 2021. Water balance component analysis of a spring catchment of western Nepal. Banko Janakari, 31(1):23-32. (doi: https://doi.org/10.3126/banko.v31i1.37341)",
+    "authors": [
+        {
+            "full_name": "Jibesh Kumar, K. C",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": []
+        },
+        {
+            "full_name": "Dhaubanjar, S",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0003-2974-0427"
+                }
+            ]
+        },
+        {
+            "full_name": "Pandey, Vishnu P",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0001-5258-7446"
+                }
+            ]
+        },
+        {
+            "full_name": "Subedi, R",
+            "short_name": "",
+            "url": "",
+            "email": "",
+            "agent_ids": [
+                {
+                    "scheme": "ORCID",
+                    "value": "0000-0002-0471-070X"
+                }
+            ]
+        }
+    ]
+}
